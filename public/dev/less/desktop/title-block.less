@@ -1,0 +1,428 @@
+.title-block{
+  padding: 35px 40px 95px;
+  background-image: url("/img/title_backg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  position: relative;
+
+  &__menu-button{
+    display: none;
+    width: 38px;
+    height: 38px;
+    background: transparent url("/img/menu_white.png") center no-repeat;
+    border: 1px solid #433c33;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    z-index: 11;
+    transition: .3s;
+
+    &.is-open{
+      transform: rotate(90deg);
+      background: #ffffff url("/img/menu_black.png") center no-repeat;
+      border-color: #ffffff;
+    }
+  }
+  
+  &__header{
+    max-width: 1140px;
+    margin: 0 auto;
+  }
+
+  &__text-wrap{
+    margin: 85px auto 0;
+    max-width: 1100px;
+    text-align: center;
+    position: relative;
+
+    &::before{
+      content: '';
+      position: absolute;
+      width: 1500px;
+      height: 1500px;
+      left: -202px;
+      top: -486px;
+      background: url("/img/title_elipses.png") no-repeat;
+      background-size: cover;
+      animation: wave 4s ease-in infinite;
+      -webkit-animation: wave 4s ease-in infinite;
+      opacity: 0;
+    }
+
+    &::after{
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      width: 19px;
+      height: 19px;
+      left: 538px;
+      top: 251px;
+      box-shadow: 0 0 25px 3px #f7ec99;
+      background: rgba(247,236,153,1);
+      background: -moz-linear-gradient(top, rgba(247,236,153,1) 0%, rgba(226,200,124,1) 100%);
+      background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(247,236,153,1)), color-stop(100%, rgba(226,200,124,1)));
+      background: -webkit-linear-gradient(top, rgba(247,236,153,1) 0%, rgba(226,200,124,1) 100%);
+      background: -o-linear-gradient(top, rgba(247,236,153,1) 0%, rgba(226,200,124,1) 100%);
+      background: -ms-linear-gradient(top, rgba(247,236,153,1) 0%, rgba(226,200,124,1) 100%);
+      background: linear-gradient(to bottom, rgba(247,236,153,1) 0%, rgba(226,200,124,1) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7ec99', endColorstr='#e2c87c', GradientType=0 );
+      animation: flash 1.5s ease-in infinite;
+      -webkit-animation: flash 4s ease-in infinite;
+    }
+  }
+
+  &__title{
+    letter-spacing: .28em;
+    line-height: 1.2;
+    color: #ffffff;
+    position: relative;
+  }
+
+  &__delimiter{}
+
+  &__tenge{
+    color: transparent;
+    font-size: 70px;
+    background: url("/img/title_tenge.png") no-repeat bottom center;
+    position: relative;
+    bottom: 15px;
+    margin-left: 5px;
+  }
+
+  &__delimiter{
+    font-family: "Gilroy";
+    font-size: 90px;
+    font-weight: 800;
+    color: #ffffff;
+  }
+
+  &__small-text{
+    font-family: "Gilroy";
+    letter-spacing: 0;
+    font-size: 80px;
+    font-weight: 800;
+    color: #ffffff;
+    position: relative;
+
+    &--sqr{
+      margin-left: -10px;
+
+      sup{
+        font-family: "Gilroy";
+        font-size: 34px;
+        font-weight: 800;
+        color: #ffffff;
+        position: relative;
+        top: 6px;
+      }
+    }
+  }
+
+  &__text{
+    margin: 20px auto 0;
+    font-family: "Gilroy";
+    line-height: 1;
+    white-space: nowrap;
+    width: 1100px;
+  }
+
+  &__pros{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 70px;
+  }
+
+  &__pros-item{
+    max-width: 470px;
+    width: 100%;
+    height: 255px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: rgba(238, 221, 141, 0.6);
+    box-sizing: border-box;
+    padding: 30px 10px 0;
+
+    &:first-child{
+      margin-right: 20px;
+    }
+
+    &:last-child{
+      margin-left: 20px;
+    }
+  }
+
+  &__pros-img{}
+
+  &__pros-big-text{
+    margin-top: 10px;
+    color: #2f2013;
+    font-size: 60px;
+    font-family: "Gilroy";
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: .02em;
+  }
+
+  &__pros-medium-text{
+    color: #2f2013;
+    font-size: 30px;
+    font-family: "Gilroy";
+    font-weight: 800;
+  }
+
+  &__pros-small-text{
+    margin-top: 12px;
+    line-height: 1;
+    letter-spacing: .05em;
+    color: #2f2013;
+    font-size: 12px;
+    font-family: "AvenirNext";
+    font-weight: 500;
+  }
+
+  &__price{
+    margin-left: 50px;
+    font-family: "Gilroy";
+    font-weight: 800;
+    font-size: 192px;
+    letter-spacing: 0.06em;
+    line-height: 1;
+    color: #ff0000;
+    text-shadow:
+              -0   -5px 0   #FFFFFF,
+              0   -5px 0   #FFFFFF,
+            -0    5px 0   #FFFFFF,
+            0    5px 0   #FFFFFF,
+              -5px -0   0   #FFFFFF,
+              5px -0   0   #FFFFFF,
+            -5px  0   0   #FFFFFF,
+            5px  0   0   #FFFFFF,
+              -1px -5px 0   #FFFFFF,
+              1px -5px 0   #FFFFFF,
+            -1px  5px 0   #FFFFFF,
+            1px  5px 0   #FFFFFF,
+              -5px -1px 0   #FFFFFF,
+              5px -1px 0   #FFFFFF,
+            -5px  1px 0   #FFFFFF,
+            5px  1px 0   #FFFFFF,
+              -2px -5px 0   #FFFFFF,
+              2px -5px 0   #FFFFFF,
+            -2px  5px 0   #FFFFFF,
+            2px  5px 0   #FFFFFF,
+              -5px -2px 0   #FFFFFF,
+              5px -2px 0   #FFFFFF,
+            -5px  2px 0   #FFFFFF,
+            5px  2px 0   #FFFFFF,
+              -3px -5px 0   #FFFFFF,
+              3px -5px 0   #FFFFFF,
+            -3px  5px 0   #FFFFFF,
+            3px  5px 0   #FFFFFF,
+              -5px -3px 0   #FFFFFF,
+              5px -3px 0   #FFFFFF,
+            -5px  3px 0   #FFFFFF,
+            5px  3px 0   #FFFFFF,
+              -4px -5px 0   #FFFFFF,
+              4px -5px 0   #FFFFFF,
+            -4px  5px 0   #FFFFFF,
+            4px  5px 0   #FFFFFF,
+              -5px -4px 0   #FFFFFF,
+              5px -4px 0   #FFFFFF,
+            -5px  4px 0   #FFFFFF,
+            5px  4px 0   #FFFFFF,
+              -5px -5px 0   #FFFFFF,
+              5px -5px 0   #FFFFFF,
+            -5px  5px 0   #FFFFFF,
+            5px  5px 0   #FFFFFF,
+              -5px -5px 0   #FFFFFF,
+              5px -5px 0   #FFFFFF,
+            -5px  5px 0   #FFFFFF,
+            5px  5px 0   #FFFFFF;
+    position: relative;
+  }
+}
+
+@keyframes wave {
+  0% {
+    opacity: 0;
+    transform: scale(0.4);
+  }
+  55% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.4);
+  }
+}
+@-webkit-keyframes wave {
+  0% {
+    opacity: 0;
+    transform: scale(0.4);
+  }
+  55% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.4);
+  }
+}
+
+@keyframes flash {
+  0% {
+    transform: scale(1);
+  }
+  35% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes flash {
+  0% {
+    transform: scale(1);
+  }
+  35% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+.title-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__nav-wrap{
+    position: relative;
+    z-index: 10;
+  }
+
+  &__menu-logo-wrap{
+    padding: 15px 0 20px;
+    border-bottom: 1px solid #ccbe7a;
+    position: relative;
+    z-index: 9;
+    display: none;
+    text-align: center;
+    font-size: 0;
+  }
+
+  &__menu-logo{
+    display: inline-block;
+  }
+
+  &__nav-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 285px;
+    width: 100%;
+  }
+
+  &__nav-item{
+    width: 125px;
+
+    &:nth-child(n+3){
+      margin-top: 15px;
+    }
+  }
+
+  &__nav-link{
+    font-size: 13px;
+    font-family: "Gilroy";
+    font-weight: 800;
+    letter-spacing: .2em;
+    color: #ffffff;
+    background: -moz-linear-gradient(to to left, #977c50 4px, transparent 2px);
+    background: -ms-linear-gradient(to left, #977c50 4px, transparent 2px);
+    background: -o-linear-gradient(to left, #977c50 4px, transparent 2px);
+    background: -webkit-gradient(linear, 0 0, 100% 0, from(#977c50), color-stop(0.6, #977c50), color-stop(0.6, transparent));
+    background: -webkit-linear-gradient(to left, #977c50 4px, transparent 2px);
+    background: linear-gradient(to left, #977c50 4px, transparent 2px);
+    background-position: 0 100%;
+    background-size: 6px 1px;
+    background-repeat: repeat-x;
+    display: inline-block;
+    padding: 0 2px;
+    transition: color .3s;
+
+    &:hover{
+      color: rgba(213, 177, 75, 0.5);
+      background: none;
+    }
+  }
+
+  &__logo-wrap{
+    position: relative;
+    z-index: 9;
+  }
+
+  &__logo{}
+
+  &__feedback-wrap{
+    text-align: right;
+    max-width: 285px;
+    width: 100%;
+    position: relative;
+    z-index: 9;
+  }
+
+  &__phone-number{
+    padding-right: 10px;
+    font-size: 16px;
+    font-family: "Gilroy";
+    font-weight: 800;
+    letter-spacing: .05em;
+    color: #ffffff;
+  }
+
+  &__order-call{
+    margin-top: 10px;
+    height: 38px;
+    padding: 7px 17px 6px 36px;
+    border: none;
+    background: rgba(247,236,153,1) url("/img/phone_black.png") no-repeat;
+    background: url("/img/phone_black.png") no-repeat 14px 50%, -moz-linear-gradient(top, rgba(247,236,153,1) 0%, rgba(226,200,124,1) 100%);
+    background: url("/img/phone_black.png") no-repeat 14px 50%, -webkit-gradient(left top, left bottom, color-stop(0%, rgba(247,236,153,1)), color-stop(100%, rgba(226,200,124,1)));
+    background: url("/img/phone_black.png") no-repeat 14px 50%, -webkit-linear-gradient(top, rgba(247,236,153,1) 0%, rgba(226,200,124,1) 100%);
+    background: url("/img/phone_black.png") no-repeat 14px 50%, -o-linear-gradient(top, rgba(247,236,153,1) 0%, rgba(226,200,124,1) 100%);
+    background: url("/img/phone_black.png") no-repeat 14px 50%, -ms-linear-gradient(top, rgba(247,236,153,1) 0%, rgba(226,200,124,1) 100%);
+    background: url("/img/phone_black.png") no-repeat 14px 50%, linear-gradient(to bottom, rgba(247,236,153,1) 0%, rgba(226,200,124,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7ec99', endColorstr='#e2c87c', GradientType=0 );
+    transition: .3s;
+    position: relative;
+
+    &:hover{
+      box-shadow: 0 0 25px 3px #f7ec99;
+    }
+  }
+
+  &__btn-text{
+    font-size: 14px;
+    letter-spacing: .05em;
+    color: #2f2013;
+    font-family: 'MuseoSansCyrl-500';
+  }
+}
+
+.top-phone{
+  display: none;
+  position: relative;
+  padding: 10px 0;
+  background-color: #ffffff;
+  text-align: center;
+  letter-spacing: 0.05em;
+  z-index: 9999;
+}
+
+.top-phone-link{
+  font-size: 16px;
+  font-family: "Gilroy";
+  font-weight: 800;
+  color: #201306;
+}

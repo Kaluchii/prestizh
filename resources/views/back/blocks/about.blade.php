@@ -64,17 +64,17 @@
 
                                         <div class="file-preview-frame">
                                             <div class="kv-file-content">
-                                                <img src="{{$about->image7_field->link}}?{{$about->image7_field->cache_index}}" class="kv-preview-data file-preview-image"
-                                                     title="{{$about->image7_field->alt}}" alt="{{$about->image7_field->alt}}">
+                                                <img src="{{$about->image1_field->link}}?{{$about->image1_field->cache_index}}" class="kv-preview-data file-preview-image"
+                                                     title="{{$about->image1_field->alt}}" alt="{{$about->image1_field->alt}}">
                                             </div>
                                             <div class="file-thumbnail-footer">
                                                 <div class="file-footer-caption"
-                                                     title="{{$about->image7_field->alt}}">{{$about->image7_field->name_field}}
+                                                     title="{{$about->image1_field->alt}}">{{$about->image1_field->name_field}}
                                                     <br> </div>
                                                 <div class="file-actions">
                                                     <input type="text" class="form-control alt-text" data-block="about"
                                                            data-type="images" data-id="0" data-name="alt"
-                                                           value="{{$about->image7_field->alt}}">
+                                                           value="{{$about->image1_field->alt}}">
                                                     <div class="clearfix"></div>
                                                 </div>
                                             </div>
@@ -508,17 +508,17 @@
 
                                         <div class="file-preview-frame">
                                             <div class="kv-file-content">
-                                                <img src="{{$about->image1_field->link}}?{{$about->image1_field->cache_index}}" class="kv-preview-data file-preview-image"
-                                                     title="{{$about->image1_field->alt}}" alt="{{$about->image1_field->alt}}">
+                                                <img src="{{$about->image7_field->link}}?{{$about->image7_field->cache_index}}" class="kv-preview-data file-preview-image"
+                                                     title="{{$about->image7_field->alt}}" alt="{{$about->image7_field->alt}}">
                                             </div>
                                             <div class="file-thumbnail-footer">
                                                 <div class="file-footer-caption"
-                                                     title="{{$about->image1_field->alt}}">{{$about->image1_field->name_field}}
+                                                     title="{{$about->image7_field->alt}}">{{$about->image7_field->name_field}}
                                                     <br> </div>
                                                 <div class="file-actions">
                                                     <input type="text" class="form-control alt-text" data-block="about"
                                                            data-type="images" data-id="0" data-name="alt"
-                                                           value="{{$about->image1_field->alt}}">
+                                                           value="{{$about->image7_field->alt}}">
                                                     <div class="clearfix"></div>
                                                 </div>
                                             </div>

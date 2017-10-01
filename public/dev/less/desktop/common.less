@@ -4,13 +4,7 @@
 
 
                                       Пример подключения шрифтов
-
-@font-face {
-  font-family: 'Roboto';
-  src: local('Roboto Light'), local('RobotoLight'), url('../fonts/Roboto/Robotolight.woff2') format('woff2'), url('../fonts/Roboto/Robotolight.woff') format('woff'), url('../fonts/Roboto/Robotolight.ttf') format('truetype');
-  font-weight: 300;
-  font-style: normal;
-}
+*/
 @font-face {
   font-family: 'Roboto';
   src: local('Roboto'), local('RobotoRegular'), url('../fonts/Roboto/Roboto.woff2') format('woff2'), url('../fonts/Roboto/Roboto.woff') format('woff'), url('../fonts/Roboto/Roboto.ttf') format('truetype');
@@ -18,12 +12,80 @@
   font-style: normal;
 }
 @font-face {
-  font-family: 'Roboto';
-  src: local('Roboto Black'), local('RobotoBlack'), url('../fonts/Roboto/Robotoblack.woff2') format('woff2'), url('../fonts/Roboto/Robotoblack.woff') format('woff'), url('../fonts/Roboto/Robotoblack.ttf') format('truetype');
-  font-weight: 900;
+  font-family: 'AvenirNext';
+  src: local('AvenirNextCyr-Regular'), local('AvenirNextCyr Regular'), url('../fonts/AvenirNextCyr/AvenirNextCyr-Regular_0.otf') format('opentype');
+  font-weight: 400;
   font-style: normal;
-}*/
+}
+@font-face {
+  font-family: 'AvenirNext';
+  src: local('AvenirNextCyr-Medium'), local('AvenirNextCyr Medium'), url('../fonts/AvenirNextCyr/AvenirNextCyr-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'AvenirNext';
+  src: local('AvenirNextCyr-Demi'), local('AvenirNextCyr Demi'), url('../fonts/AvenirNextCyr/AvenirNextCyr-Demi.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'AvenirNext';
+  src: local('AvenirNextCyr-Bold'), local('AvenirNextCyr Bold'), url('../fonts/AvenirNextCyr/AvenirNextCyr-Bold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gilroy';
+  src: local('Gilroy-Light'), local('GilroyLight'), url('../fonts/gilroy-300-normal.woff2') format('woff2'), url('../fonts/gilroy-300-normal.woff') format('woff'), url('../fonts/gilroy-300-normal.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gilroy';
+  src: local('Gilroy-ExtraBold'), local('GilroyExtraBold'), url('../fonts/gilroy-800-normal.woff2') format('woff2'), url('../fonts/gilroy-800-normal.woff') format('woff'), url('../fonts/gilroy-800-normal.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Lato';
+  src: local('Lato-Light'), local('LatoLight'), url('../fonts/lato-300-normal.woff2') format('woff2'), url('../fonts/lato-300-normal.woff') format('woff'), url('../fonts/lato-300-normal.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'MuseoSansCyrl-500';
+  src: local('MuseoSansCyrl-500'), url('../fonts/museosanscyrl-500-normal.woff2') format('woff2'), url('../fonts/museosanscyrl-500-normal.woff') format('woff'), url('../fonts/museosanscyrl-500-normal.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
 
 .link{
   .link(@link-color,@link-border,@hover-color,@hover-border);
+}
+
+.bg{
+  background-color: #ecebe7;
+  background-image: url("/img/bg.jpg");
+}
+
+.wrapper-1140{
+  max-width: 1140px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.no-br{
+  white-space: nowrap;
+  font-size: inherit;
+}
+
+.button{
+  box-sizing: border-box;
+  height: 46px;
+  padding: 10px 25px;
+  border-radius: 23px;
+  cursor: pointer;
+  display: inline-block;
+  user-select: none;
 }
