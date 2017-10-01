@@ -1,20 +1,44 @@
 <?php
 
 return [
-
-    'modimages.wmimage' => [
-        'resizes' => ['res100x100', 'res400'],
-        'crops' => ['crop400x300']
+    'about.image1' => [
+        'resizes' => ['preview']
     ],
 
-    'modimages.maskimage' => [
-        'resizes' => ['res100x100', 'res400'],
-        'crops' => ['crop400x300']
+    'about.image2' => [
+        'resizes' => ['preview']
     ],
 
-    'group_bird_class.foto' => [
-        'resizes' => ['res100x100', 'res400', 'res800', 'res1000'],
-        'crops' => ['crop800x600']
-    ]
+    'about.image3' => [
+        'resizes' => ['preview']
+    ],
+
+    'about.image4' => [
+        'resizes' => ['preview']
+    ],
+
+    'about.image5' => [
+        'resizes' => ['preview']
+    ],
+
+    'about.image6' => [
+        'resizes' => ['preview']
+    ],
+
+    'about.image7' => [
+        'resizes' => ['preview']
+    ],
+
+    'slider.slide' => [
+        'resizes' => ['preview']
+    ],
+
+    'layout.layout_scheme' => [
+        'resizes' => ['preview']
+    ],
+
+    'stage_images.stage_photo' => [
+        'resizes' => ['preview']
+    ],
 
 ];

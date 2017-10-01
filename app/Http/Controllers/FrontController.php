@@ -17,17 +17,38 @@ class FrontController extends Controller
     private $extract;
     public function __construct(ExtractAgent $ext){
         $this->extract = $ext;
-        $scripts = $this->extract->getBlock('scripts');
-        view()->share([
-            'scripts' => $scripts,
-        ]);
+        $this->extract->tuneSelection('dom_flat')->sortBy('sorter','ASC');
+        $this->extract->tuneSelection('layout')->sortBy('sorter','ASC');
+        $this->extract->tuneSelection('slider')->sortBy('sorter','DESC');
+        $this->extract->tuneSelection('stage_images')->sortBy('sorter','DESC');
     }
 
 
     public function getIndex(){
-        $example = $this->extract->getBlock('example');
+        $main_block = $this->extract->getBlock('main_block');
+        $about = $this->extract->getBlock('about');
+        $gallery = $this->extract->getBlock('gallery');
+        $stages = $this->extract->getBlock('stages');
+        $flats = $this->extract->getBlock('flats');
+        $contacts = $this->extract->getBlock('contacts');
+        $prices = $this->extract->getBlock('prices');
+        $scripts = $this->extract->getBlock('scripts');
         return view('front.index.index', [
-            'example' => $example,
+            'main_block' => $main_block,
+            'about' => $about,
+            'gallery' => $gallery,
+            'stages' => $stages,
+            'flats' => $flats,
+            'contacts' => $contacts,
+            'prices' => $prices,
+            'scripts' => $scripts
+        ]);
+    }
+
+    public function getThanks(){
+        $scripts = $this->extract->getBlock('scripts');
+        return view('front.index.thanks', [
+            'scripts' => $scripts
         ]);
     }
 }

@@ -11,9 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',         'FrontController@getIndex');
+Route::get('/thanks',    'FrontController@getThanks');
 
 
 Route::post('/captcha',          'Back\MailController@Captcha');
@@ -23,7 +22,18 @@ Route::post('/feedback/mail',    'Back\MailController@send');
 Route::auth();
 Route::group(['middleware' => 'auth', 'prefix' => 'adm'],function(){
 
-    Route::get('/',         'AdminController@getIndex');
+    Route::get('/',                  'AdminController@getIndex');
+    Route::get('/main',              'AdminController@getMain');
+    Route::get('/about',             'AdminController@getAbout');
+    Route::get('/gallery',           'AdminController@getGallery');
+    Route::get('/flats',             'AdminController@getFlats');
+    Route::get('/flats/{id}',        'AdminController@getFlatsItem');
+    Route::get('/stages',            'AdminController@getStages');
+    Route::get('/stages/{id}',       'AdminController@getStagesItem');
+    Route::get('/contacts',          'AdminController@getContacts');
+    Route::get('/course',            'AdminController@getCourse');
+    Route::get('/meta',              'AdminController@getMeta');
+    Route::get('/mails',             'AdminController@getMails');
 
 
 
