@@ -2,47 +2,71 @@
 @section('content')
 {{--@include('front.index.stages_obj')
 @yield('stageObj')--}}
-    {{--<div class="top-phone"><a href="tel:{{ $contacts->phone_field }}" class="top-phone-link">{{ $contacts->phone_field }}</a></div>
+    {{--<div class="top-phone"><a href="tel:{{ $contacts->phone_field }}" class="top-phone-link">{{ $contacts->phone_field }}</a></div>--}}
     <section class="title-block" id="title">
         <header class="title-block__header title-header">
             <div class="title-block__menu-button js_menu"></div>
+            <div class="title-header__logo-wrap">
+                <img src="/img/logo.png" alt="Жилой комплекс Престиж" class="title-header__logo">
+            </div>
             <nav class="title-header__nav-wrap">
                 <div class="title-header__menu-logo-wrap">
-                    <img src="/img/dark_logo.png" alt="Жилой комплекс Центральный" class="title-header__menu-logo">
+                    <img src="/img/dark_logo.png" alt="Жилой комплекс Престиж" class="title-header__menu-logo">
                 </div>
                 <ul class="title-header__nav-list">
                     <li class="title-header__nav-item"><a href="#about" class="js_goto_anchor title-header__nav-link">О КОМПЛЕКСЕ</a></li>
                     <li class="title-header__nav-item"><a href="#gallery" class="js_goto_anchor title-header__nav-link">ГАЛЕРЕЯ</a></li>
-                    <li class="title-header__nav-item"><a href="#flats" class="js_goto_anchor title-header__nav-link">КВАРТИРЫ</a></li>
+                    <li class="title-header__nav-item"><a href="#flats" class="js_goto_anchor title-header__nav-link">ПЛАНИРОВКИ</a></li>
+                    <li class="title-header__nav-item"><a href="#stages" class="js_goto_anchor title-header__nav-link">СТРОЙКА</a></li>
                     <li class="title-header__nav-item"><a href="#contacts" class="js_goto_anchor title-header__nav-link">КОНТАКТЫ</a></li>
                 </ul>
             </nav>
-            <div class="title-header__logo-wrap">
-                <img src="/img/logo.png" alt="Жилой комплекс Центральный" class="title-header__logo">
-            </div>
             <div class="title-header__feedback-wrap">
                 <p class="title-header__phone-number">{{ $contacts->phone_field }}</p>
-                <a href="#call" class="title-header__order-call button order_call_btn button"><span class="title-header__btn-text">Заказать звонок</span></a>
+                <a href="#contacts" class="js_goto_anchor title-header__order-call button order_call_btn button"><span class="title-header__btn-text">Заказать звонок</span></a>
             </div>
         </header>
         <div class="title-block__text-wrap">
-            <h1 class="title-block__title">{!! $main_block->block_title_field !!}</h1>
-            <p class="title-block__text"><span class="title-block__small-text">от</span><span class="title-block__price"></span><span class="title-block__tenge">T</span><span class="title-block__delimiter">/</span><span class="title-block__small-text title-block__small-text--sqr">м<sup>2</sup></span></p>
-        </div>
-        <div class="title-block__pros">
-            <div class="title-block__pros-item">
-                <img src="/img/parking.png" alt="Парковка ЖК Центральный" class="title-block__pros-img">
-                <p class="title-block__pros-big-text">Паркинг</p>
-                <p class="title-block__pros-medium-text">в подарок</p>
-                <p class="title-block__pros-small-text">ПРИ ПОКУПКЕ КВАРТИРЫ<br>ДО КОНЦА 2017 ГОДА</p>
+            <div class="title-block__col1">
+                <h1 class="title-block__title">{{ $main_block->block_title_field }}</h1>
+                <p class="title-block__price-wrap">
+                    <span class="title-block__price">{{ $main_block->price_field }}</span>
+                    <span class="title-block__t-m"><span class="title-block__t">T</span><span class="title-block__m">м²</span></span>
+                </p>
+                <p class="title-block__address">{!! $main_block->address_field !!}</p>
             </div>
-            <div class="title-block__pros-item">
-                <img src="/img/time.png" alt="Рассрочка" class="title-block__pros-img">
-                <p class="title-block__pros-big-text">Рассрочка</p>
-                <p class="title-block__pros-medium-text">от застройщика</p>
+            <div class="title-block__col2">
+                <p class="title-block__installment">РАССРОЧКА<br>ОТ ЗАСТРОЙЩИКА</p>
+                <div class="title-block__popup title-popup">
+                    <p class="title-popup__top-text">ПРИ ПОКУПКЕ КВАРТИРЫ</p>
+                    <p class="title-popup__middle-text">ПАРКИНГ</p>
+                    <p class="title-popup__bottom-text">В ПОДАРОК!</p>
+
+                    <div class="title-popup__input-rows form-id" id="feedback_call">
+                        <input type="hidden" name="form" class="form-input" value="call">
+                        <div class="feedback-form__row form-row">
+                            <div class="form-row__validation-wrap feedbacks-input">
+                                <label class="feedbacks-input__label feedbacks-input__label--name"><span class="feedbacks-input__label-text">Имя</span></label>
+                                <input type="text" name="client_name" required class="form-row__input form-input feedbacks-input__input">
+                                <div class="form-row__tooltip-wrap form-row__tooltip-wrap--popup-none"><p class="form-row__tooltip form-row__tooltip--border">Как к вам обращаться</p></div>
+                            </div>
+                        </div>
+
+                        <div class="feedback-form__row form-row">
+                            <div class="form-row__validation-wrap feedbacks-input">
+                                <label class="feedbacks-input__label feedbacks-input__label--tel"><span class="feedbacks-input__label-text">+7</span></label>
+                                <input type="tel" class="form-row__input form-input feedbacks-input__input" maxlength="25" data-mask="(000) 000-00-00" name="phone">
+                                <div class="form-row__tooltip-wrap form-row__tooltip-wrap--popup-none"><p class="form-row__tooltip form-row__tooltip--border">Телефонный номер для связи</p></div>
+                            </div>
+                        </div>
+                        <div class="feedbacks__input-wrapper feedbacks__input-wrapper--btn">
+                            <input type="submit" value="УЗНАТЬ ПОДРОБНЕЕ" class="feedbacks__btn form-row__send-form button send-form">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>--}}
+    </section>
     <section class="about" id="about">
         <div class="about__wrapper">
             <div class="about__text-wrap">
@@ -264,7 +288,7 @@
             </div>
         </div>
     </section>
-    <section class="stages">
+    <section class="stages" id="stages">
         <div class="stages__wrapper">
             <h3 class="stages__title">{{ $stages->block_title_field }}</h3>
             <div class="stages__row-wrap">
@@ -292,19 +316,38 @@
                  data-auto="false" data-transition="crossfade">
             </div>
         </div>
-    </section>
+    </section>--}}
     <section class="contacts" id="contacts">
         <div class="contacts__wrapper">
-            <div class="contacts__contact-block js_revealOnScroll" data-viewport-offset="30" data-animation="display">
+            <div class="contacts__contact-block">
                 <h2 class="contacts__title">{{ $contacts->block_title_field }}</h2>
-                <p class="contacts__phone">{{ $contacts->phone_field }}</p>
-                <p class="contacts__address">{!! $contacts->address_field !!}</p>
-                <p class="contacts__info-text">Информация предоставлена с целью изучения спроса потенциальных потребителей. Договоры о долевом участии заключаются после получения разрешения на привлечение денег дольщиков местным исполнительным органом согласно Закона РК «О долевом участии в жилищном строительстве».</p>
+                <p class="contacts__text">{{ $contacts->text_field }}</p>
+                <div class="contacts__input-rows form-id" id="contacts_call">
+                    <input type="hidden" name="form" class="form-input" value="call">
+                    <div class="feedback-form__row form-row">
+                        <div class="form-row__validation-wrap feedbacks-input">
+                            <label class="feedbacks-input__label feedbacks-input__label--name"><span class="feedbacks-input__label-text">Имя</span></label>
+                            <input type="text" name="client_name" required class="form-row__input form-input feedbacks-input__input">
+                            <div class="form-row__tooltip-wrap form-row__tooltip-wrap--popup-none"><p class="form-row__tooltip form-row__tooltip--border">Как к вам обращаться</p></div>
+                        </div>
+                    </div>
+
+                    <div class="feedback-form__row form-row">
+                        <div class="form-row__validation-wrap feedbacks-input">
+                            <label class="feedbacks-input__label feedbacks-input__label--tel"><span class="feedbacks-input__label-text">+7</span></label>
+                            <input type="tel" class="form-row__input form-input feedbacks-input__input" maxlength="25" data-mask="(000) 000-00-00" name="phone">
+                            <div class="form-row__tooltip-wrap form-row__tooltip-wrap--popup-none"><p class="form-row__tooltip form-row__tooltip--border">Телефонный номер для связи</p></div>
+                        </div>
+                    </div>
+                    <div class="feedbacks__input-wrapper feedbacks__input-wrapper--btn">
+                        <input type="submit" value="УЗНАТЬ ПОДРОБНЕЕ" class="feedbacks__btn form-row__send-form button send-form">
+                    </div>
+                </div>
             </div>
             <div class="contacts__map-wrapper">
                 <div class="contacts__map" id="map"></div>
             </div>
         </div>
-    </section>--}}
+    </section>
     @include('front.index.meta')
 @endsection
