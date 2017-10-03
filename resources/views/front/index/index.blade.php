@@ -14,16 +14,19 @@
                     <img src="/img/dark_logo.png" alt="Жилой комплекс Престиж" class="title-header__menu-logo">
                 </div>
                 <ul class="title-header__nav-list">
-                    <li class="title-header__nav-item"><a href="#about" class="js_goto_anchor title-header__nav-link">О КОМПЛЕКСЕ</a></li>
-                    <li class="title-header__nav-item"><a href="#gallery" class="js_goto_anchor title-header__nav-link">ГАЛЕРЕЯ</a></li>
-                    <li class="title-header__nav-item"><a href="#flats" class="js_goto_anchor title-header__nav-link">ПЛАНИРОВКИ</a></li>
-                    <li class="title-header__nav-item"><a href="#stages" class="js_goto_anchor title-header__nav-link">СТРОЙКА</a></li>
-                    <li class="title-header__nav-item"><a href="#contacts" class="js_goto_anchor title-header__nav-link">КОНТАКТЫ</a></li>
+                    <li class="title-header__nav-item"><a href="#about" class="js_goto_anchor title-header__nav-link">О комплексе</a></li>
+                    <li class="title-header__nav-item"><a href="#gallery" class="js_goto_anchor title-header__nav-link">Галерея</a></li>
+                    <li class="title-header__nav-item"><a href="#flats" class="js_goto_anchor title-header__nav-link">Планировки</a></li>
+                    <li class="title-header__nav-item"><a href="#stages" class="js_goto_anchor title-header__nav-link">Стройка</a></li>
+                    <li class="title-header__nav-item"><a href="#contacts" class="js_goto_anchor title-header__nav-link">Контакты</a></li>
                 </ul>
             </nav>
             <div class="title-header__feedback-wrap">
-                <p class="title-header__phone-number">{{ $contacts->phone_field }}</p>
-                <a href="#contacts" class="js_goto_anchor title-header__order-call button order_call_btn button"><span class="title-header__btn-text">Заказать звонок</span></a>
+                <div class="title-header__phone-wrap">
+                    <p class="title-header__consult">Позвоните для консультации</p>
+                    <p class="title-header__phone-number">{{ $contacts->phone_field }}</p>
+                </div>
+                <a href="#contacts" class="js_goto_anchor title-header__order-call button"><span class="title-header__btn-text">ЗАКАЗАТЬ ЗВОНОК</span></a>
             </div>
         </header>
         <div class="title-block__text-wrap">
@@ -31,37 +34,42 @@
                 <h1 class="title-block__title">{{ $main_block->block_title_field }}</h1>
                 <p class="title-block__price-wrap">
                     <span class="title-block__price">{{ $main_block->price_field }}</span>
-                    <span class="title-block__t-m"><span class="title-block__t">T</span><span class="title-block__m">м²</span></span>
+                    <span class="title-block__t-m"><span class="title-block__t">T</span><span class="title-block__m">м<sup>2</sup></span></span>
                 </p>
                 <p class="title-block__address">{!! $main_block->address_field !!}</p>
             </div>
             <div class="title-block__col2">
                 <p class="title-block__installment">РАССРОЧКА<br>ОТ ЗАСТРОЙЩИКА</p>
                 <div class="title-block__popup title-popup">
-                    <p class="title-popup__top-text">ПРИ ПОКУПКЕ КВАРТИРЫ</p>
-                    <p class="title-popup__middle-text">ПАРКИНГ</p>
-                    <p class="title-popup__bottom-text">В ПОДАРОК!</p>
+                    <div class="title-popup__wrapper">
+                        <p class="title-popup__top-text">ПРИ ПОКУПКЕ КВАРТИРЫ</p>
+                        <p class="title-popup__middle-text">ПАРКИНГ</p>
+                        <p class="title-popup__bottom-text">В ПОДАРОК!</p>
+                        <hr class="title-popup__hr">
+                        <p class="title-popup__interest-text">ЗАИНТЕРЕСОВАЛИСЬ?</p>
 
-                    <div class="title-popup__input-rows form-id" id="feedback_call">
-                        <input type="hidden" name="form" class="form-input" value="call">
-                        <div class="feedback-form__row form-row">
-                            <div class="form-row__validation-wrap feedbacks-input">
-                                <label class="feedbacks-input__label feedbacks-input__label--name"><span class="feedbacks-input__label-text">Имя</span></label>
-                                <input type="text" name="client_name" required class="form-row__input form-input feedbacks-input__input">
-                                <div class="form-row__tooltip-wrap form-row__tooltip-wrap--popup-none"><p class="form-row__tooltip form-row__tooltip--border">Как к вам обращаться</p></div>
+                        <div class="title-popup__input-rows form-id" id="popup_call">
+                            <input type="hidden" name="form" class="form-input" value="call">
+                            <div class="title-popup__row form-row">
+                                <div class="form-row__validation-wrap popup-input">
+                                    <label class="popup-input__label popup-input__label--name"><span class="popup-input__label-text">Имя</span></label>
+                                    <input type="text" name="client_name" required class="form-row__input form-input popup-input__input">
+                                    <div class="form-row__tooltip-wrap form-row__tooltip-wrap--popup-none"><p class="form-row__tooltip form-row__tooltip--border">Как к вам обращаться</p></div>
+                                </div>
+                            </div>
+
+                            <div class="title-popup__row form-row">
+                                <div class="form-row__validation-wrap popup-input">
+                                    <label class="popup-input__label popup-input__label--tel"><span class="popup-input__label-text">+7</span></label>
+                                    <input type="tel" class="form-row__input form-input popup-input__input" maxlength="25" data-mask="(000) 000-00-00" name="phone">
+                                    <div class="form-row__tooltip-wrap form-row__tooltip-wrap--popup-none"><p class="form-row__tooltip form-row__tooltip--border">Телефонный номер для связи</p></div>
+                                </div>
+                            </div>
+                            <div class="title-popup__row title-popup__row--btn">
+                                <input type="submit" value="УЗНАТЬ ПОДРОБНЕЕ" class="title-popup__btn form-row__send-form button-tr send-form">
                             </div>
                         </div>
-
-                        <div class="feedback-form__row form-row">
-                            <div class="form-row__validation-wrap feedbacks-input">
-                                <label class="feedbacks-input__label feedbacks-input__label--tel"><span class="feedbacks-input__label-text">+7</span></label>
-                                <input type="tel" class="form-row__input form-input feedbacks-input__input" maxlength="25" data-mask="(000) 000-00-00" name="phone">
-                                <div class="form-row__tooltip-wrap form-row__tooltip-wrap--popup-none"><p class="form-row__tooltip form-row__tooltip--border">Телефонный номер для связи</p></div>
-                            </div>
-                        </div>
-                        <div class="feedbacks__input-wrapper feedbacks__input-wrapper--btn">
-                            <input type="submit" value="УЗНАТЬ ПОДРОБНЕЕ" class="feedbacks__btn form-row__send-form button send-form">
-                        </div>
+                        <div class="title-popup__close js_popup_close"></div>
                     </div>
                 </div>
             </div>

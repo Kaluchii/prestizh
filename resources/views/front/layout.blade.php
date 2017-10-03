@@ -22,10 +22,6 @@
     @include('front.footer')
     @yield('footer')
 
-    <div class="hide">
-        @include('front.popups.call')
-    </div>
-
     @include('front.scripts')
     @yield('scripts')
 
