@@ -46,29 +46,29 @@
     <section class="about" id="about">
         <div class="about__wrapper">
             <div class="about__text-wrap">
-                <h2 class="text-col__title">{{ $about->block_title_field }}</h2>
-                <p class="text-col__text">{!! $about->text_field !!}</p>
+                <h2 class="about__title">{{ $about->block_title_field }}</h2>
+                <p class="about__text">{!! $about->text_field !!}</p>
             </div>
             <div class="about__in-detail in-detail">
                 <div class="in-detail__triad">
                     <div class="in-detail__item detail-item">
                         <div class="detail-item__img-wrap"><img src="{{$about->image1->link_field}}?{{$about->image1->cache_index}}" alt="{{$about->image1->alt_field}}" height="400" width="400" class="detail-item__img"></div>
                         <div class="detail-item__text-wrap">
-                            <h3 class="detail-item__title">{{ $about->title1_field }}</h3>
-                            <p class="detail-item__text">{{ $about->text1_field }}</p>
+                            <h3 class="detail-item__title">{!! $about->title1_field !!}</h3>
+                            <p class="detail-item__text">{!! $about->text1_field !!}</p>
                         </div>
                     </div>
                     <div class="in-detail__item detail-item detail-item--middle">
                         <div class="detail-item__img-wrap"><img src="{{$about->image2->link_field}}?{{$about->image2->cache_index}}" alt="{{$about->image2->alt_field}}" height="330" width="330" class="detail-item__img"></div>
                         <div class="detail-item__text-wrap">
-                            <h3 class="detail-item__title">{{ $about->title2_field }}</h3>
-                            <p class="detail-item__text">{{ $about->text2_field }}</p>
+                            <h3 class="detail-item__title">{!! $about->title2_field !!}</h3>
+                            <p class="detail-item__text">{!! $about->text2_field !!}</p>
                         </div>
                     </div>
                     <div class="in-detail__item detail-item detail-item--small">
                         <div class="detail-item__text-wrap">
-                            <h3 class="detail-item__title">{{ $about->title3_field }}</h3>
-                            <p class="detail-item__text">{{ $about->text3_field }}</p>
+                            <h3 class="detail-item__title">{!! $about->title3_field !!}</h3>
+                            <p class="detail-item__text">{!! $about->text3_field !!}</p>
                         </div>
                         <div class="detail-item__img-wrap"><img src="{{$about->image3->link_field}}?{{$about->image3->cache_index}}" alt="{{$about->image3->alt_field}}" height="170" width="180" class="detail-item__img"></div>
                     </div>
@@ -77,21 +77,21 @@
                     <div class="in-detail__item detail-item">
                         <div class="detail-item__img-wrap"><img src="{{$about->image4->link_field}}?{{$about->image4->cache_index}}" alt="{{$about->image4->alt_field}}" height="400" width="400" class="detail-item__img"></div>
                         <div class="detail-item__text-wrap">
-                            <h3 class="detail-item__title">{{ $about->title4_field }}</h3>
-                            <p class="detail-item__text">{{ $about->text4_field }}</p>
+                            <h3 class="detail-item__title">{!! $about->title4_field !!}</h3>
+                            <p class="detail-item__text">{!! $about->text4_field !!}</p>
                         </div>
                     </div>
                     <div class="in-detail__item detail-item detail-item--middle">
                         <div class="detail-item__img-wrap"><img src="{{$about->image5->link_field}}?{{$about->image5->cache_index}}" alt="{{$about->image5->alt_field}}" height="330" width="330" class="detail-item__img"></div>
                         <div class="detail-item__text-wrap">
-                            <h3 class="detail-item__title">{{ $about->title5_field }}</h3>
-                            <p class="detail-item__text">{{ $about->text5_field }}</p>
+                            <h3 class="detail-item__title">{!! $about->title5_field !!}</h3>
+                            <p class="detail-item__text">{!! $about->text5_field !!}</p>
                         </div>
                     </div>
                     <div class="in-detail__item detail-item detail-item--small">
                         <div class="detail-item__text-wrap">
-                            <h3 class="detail-item__title">{{ $about->title6_field }}</h3>
-                            <p class="detail-item__text">{{ $about->text6_field }}</p>
+                            <h3 class="detail-item__title">{!! $about->title6_field !!}</h3>
+                            <p class="detail-item__text">{!! $about->text6_field !!}</p>
                         </div>
                         <div class="detail-item__img-wrap"><img src="{{$about->image6->link_field}}?{{$about->image6->cache_index}}" alt="{{$about->image6->alt_field}}" height="170" width="180" class="detail-item__img"></div>
                     </div>
@@ -100,8 +100,8 @@
                     <div class="in-detail__item detail-item">
                         <div class="detail-item__img-wrap"><img src="{{$about->image7->link_field}}?{{$about->image7->cache_index}}" alt="{{$about->image7->alt_field}}" height="400" width="400" class="detail-item__img"></div>
                         <div class="detail-item__text-wrap">
-                            <h3 class="detail-item__title">{{ $about->title7_field }}</h3>
-                            <p class="detail-item__text">{{ $about->text7_field }}</p>
+                            <h3 class="detail-item__title">{!! $about->title7_field !!}</h3>
+                            <p class="detail-item__text">{!! $about->text7_field !!}</p>
                         </div>
                     </div>
                 </div>

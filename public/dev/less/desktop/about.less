@@ -5,13 +5,22 @@
     position: relative;
   }
 
-  &__text-wrap{}
+  &__text-wrap{
+    max-width: 545px;
+  }
 
-  &__title{}
+  &__title{
+  }
 
-  &__text{}
+  &__text{
+    font-size: 18px;
+    margin-top: 25px;
+    line-height: 1.556;
+  }
 
-  &__in-detail{}
+  &__in-detail{
+    margin-top: 80px;
+  }
 }
 
 .in-detail{
@@ -69,6 +78,7 @@
     align-self: flex-end;
     max-width: 380px;
     margin-top: -190px;
+    z-index: 3;
 
     .detail-item{
       &__img{
@@ -82,7 +92,7 @@
   }
 
   &--small{
-    margin-top: -180px;
+    margin-top: -280px;
 
     .detail-item{
       &__img{
@@ -90,7 +100,7 @@
       }
 
       &__text-wrap{
-        max-width: 230px;
+        max-width: 235px;
         margin: 0 30px 0 -25px;
         text-align: right;
       }
@@ -107,7 +117,7 @@
 
   &__text-wrap{
     max-width: 365px;
-    padding-top: 30px;
+    padding-top: 25px;
     margin-left: 30px;
   }
 
@@ -115,5 +125,7 @@
     text-transform: uppercase;
   }
 
-  &__text{}
+  &__text{
+    margin-top: 5px;
+  }
 }
