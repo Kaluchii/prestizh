@@ -140,191 +140,6 @@
             </div>
         </div>
     </section>
-    <section class="gallery" id="gallery">
-        <div class="gallery__wrapper">
-            <h2 class="gallery__title">{{ $gallery->block_title_field }}</h2>
-            <div class="gallery__fotorama-wrap">
-                <div class="js_gallery__fotorama fotorama"  data-auto="false" data-ratio="1140/510"
-                     data-nav="thumbs" data-allowfullscreen="true"
-                     data-thumbmargin="15" data-loop="true"
-                     data-thumbwidth="110" data-thumbheight="100" data-transition="crossfade">
-                    <?php $slider_arr = [] ?>
-                    @foreach($gallery->slider_group as $slide)
-                        <a href="{{$slide->slide_field->link}}?{{$slide->slide_field->cache_index}}"></a>
-                        <?php $slider_arr[] = $slide->slide_field->link.'?'.$slide->slide_field->cache_index ?>
-                    @endforeach
-                </div>
-            </div>
-            <div class="for-Google-PageSpeed">
-                @for($i = 0; $i < 9, isset($slider_arr[$i]); $i++)
-                    <img src="{{ $slider_arr[$i] }}" alt="">
-                @endfor
-                @foreach($stages->dom_stages_group as $stage)
-                    @if($stage->show_field == 1)
-                        @foreach($stage->stage_images_group as $stage_img)
-                            <img src="{{$stage_img->stage_photo_field->link}}?{{$stage_img->stage_photo_field->cache_index}}" alt="">
-                        @endforeach
-                    @endif
-                    @break
-                @endforeach
-            </div>
-            <div class="gallery__mobile-gallery mobile-gallery">
-                <div class="mobile-gallery__top-row">
-                    <div class="mobile-gallery__col">
-                        <div class="mobile-gallery__img-wrap mobile-gallery__img-wrap--left-big">
-                            <div class="mobile-gallery__pseudo-img js_open_fotorama" data-img="1" style="background-image: url('{{$slider_arr[0] or "/img/1140x510.jpg"}}')"></div>
-                        </div>
-                        <div class="mobile-gallery__small-row">
-                            <div class="mobile-gallery__img-wrap mobile-gallery__img-wrap--left-small">
-                                <div class="mobile-gallery__pseudo-img js_open_fotorama" data-img="2" style="background-image: url('{{$slider_arr[1] or "/img/1140x510.jpg"}}')"></div>
-                            </div>
-                            <div class="mobile-gallery__img-wrap mobile-gallery__img-wrap--left-small">
-                                <div class="mobile-gallery__pseudo-img js_open_fotorama" data-img="3" style="background-image: url('{{$slider_arr[2] or "/img/1140x510.jpg"}}')"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mobile-gallery__col">
-                        <div class="mobile-gallery__img-wrap mobile-gallery__img-wrap--right-small">
-                            <div class="mobile-gallery__pseudo-img js_open_fotorama" data-img="4" style="background-image: url('{{$slider_arr[3] or "/img/1140x510.jpg"}}')"></div>
-                        </div>
-                        <div class="mobile-gallery__img-wrap mobile-gallery__img-wrap--right-big">
-                            <div class="mobile-gallery__pseudo-img js_open_fotorama" data-img="5" style="background-image: url('{{$slider_arr[4] or "/img/1140x510.jpg"}}')"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="mobile-gallery__big-img-wrap">
-                    <div class="mobile-gallery__pseudo-img js_open_fotorama" data-img="6" style="background-image: url('{{$slider_arr[5] or "/img/1140x510.jpg"}}')"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-    {{--<section class="feedbacks">
-        <div class="feedbacks__wrapper js_revealOnScroll" data-viewport-offset="30" data-animation="display">
-            <h2 class="feedbacks__title">Вам понравился<br>ЖК Центральный?</h2>
-            <div class="feedbacks__sub-title">Оставьте ваши контакты, и наши менеджеры ответят на все ваши вопросы.</div>
-            <div class="feedbacks__input-rows form-id" id="feedback_call">
-                <input type="hidden" name="form" class="form-input" value="call">
-                <div class="feedback-form__row form-row">
-                    <div class="form-row__validation-wrap feedbacks-input">
-                        <label class="feedbacks-input__label feedbacks-input__label--name"><span class="feedbacks-input__label-text">Имя</span></label>
-                        <input type="text" name="client_name" required class="form-row__input form-input feedbacks-input__input">
-                        <div class="form-row__tooltip-wrap form-row__tooltip-wrap--popup-none"><p class="form-row__tooltip form-row__tooltip--border">Как к вам обращаться</p></div>
-                    </div>
-                </div>
-
-                <div class="feedback-form__row form-row">
-                    <div class="form-row__validation-wrap feedbacks-input">
-                        <label class="feedbacks-input__label feedbacks-input__label--tel"><span class="feedbacks-input__label-text">+7</span></label>
-                        <input type="tel" class="form-row__input form-input feedbacks-input__input" maxlength="25" data-mask="(000) 000-00-00" name="phone">
-                        <div class="form-row__tooltip-wrap form-row__tooltip-wrap--popup-none"><p class="form-row__tooltip form-row__tooltip--border">Телефонный номер для связи</p></div>
-                    </div>
-                </div>
-                <div class="feedbacks__input-wrapper feedbacks__input-wrapper--btn">
-                    <input type="submit" value="Перезвонить мне" class="feedbacks__btn form-row__send-form button send-form">
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="flats" id="flats" data-exchange="{{$prices->dollar_field}}">
-        <div class="flats__wrapper">
-            <div class="flats__layout-choice layout-choice">
-                <h2 class="layout-choice__title">{{ $flats->block_title_field }}</h2>
-                <div class="layout-choice__wrap">
-                    <div class="layout-choice__nav">
-                        <div class="layout-choice__section">
-                            <p class="layout-choice__section-title">ВЫБЕРИТЕ КОЛИЧЕСТВО КОМНАТ</p>
-                            <ul class="layout-choice__list">
-                                @foreach($flats->dom_flat_group as $item)
-                                    <li class="layout-choice__item"><button class="layout-choice__button js_rooms_btn" data-id="flat{{$item->id_field}}" data-singularly="{{$item->singularly_field}}">{{$item->dom_flat_name_field}}</button></li>
-                                @endforeach
-                            </ul>
-                        </div>
-                        <div class="layout-choice__section">
-                            <p class="layout-choice__section-title">ВЫБЕРИТЕ ПЛОЩАДЬ</p>
-                            <ul class="layout-choice__list">
-                                @foreach($flats->dom_flat_group as $item)
-                                    @foreach($item->layout_group as $layout_item)
-                                        <li class="layout-choice__item"><button class="layout-choice__button js_area_btn layout-choice__button--area flat{{$layout_item->superior_item->id_field}}" data-img="{{$layout_item->layout_scheme->link_field}}?{{$layout_item->layout_scheme->cache_index}}" data-area="{{$layout_item->area_field}}" data-cost="{{$layout_item->meter_cost_field}}">{{$layout_item->area_field}} м<sup class="layout-choice__btn-sup">2</sup></button></li>
-                                    @endforeach
-                                @endforeach
-                            </ul>
-                        </div>
-                        <div class="layout-choice__section">
-                            <p class="layout-choice__section-title">СТОИМОСТЬ КВАРТИРЫ ОТ:</p>
-                            <p class="layout-choice__price"></p>
-                            <p class="layout-choice__under-price"></p>
-                        </div>
-                    </div>
-                    <div class="layout-choice__layout-view-wrap">
-                        <div class="layout-choice__layout-view">
-                            <img src="" alt="" class="layout-choice__img">
-                            <p class="layout-choice__info"></p>
-                            <div class="layout-choice__descr-wrap">
-                                <p class="layout-choice__name"></p>
-                                <p class="layout-choice__area"><span class="layout-choice__area-text"></span>м<sup class="layout-choice__area-sup">2</sup></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <hr class="flats__hr">
-        <div class="flats__feedback-wrapper feedback-row">
-            <div class="feedback-row__wrapper form-id" id="flats_call">
-                <div class="feedback-row__text-wrapper">
-                    <p class="feedback-row__text-title">Понравилась планировка?</p>
-                    <p class="feedback-row__text">Свяжитесь с нашим менеджером и обсудите все детали.</p>
-                </div>
-                <div class="feedback-row__inputs-wrapper">
-                    <input type="hidden" name="form" class="form-input" value="call">
-                    <div class="feedback-row__input-wrapper form-row">
-                        <div class="form-row__validation-wrap">
-                            <label class="feedbacks-input__label feedbacks-input__label--flats feedbacks-input__label--name"><span class="feedbacks-input__label-text">Имя</span></label>
-                            <input type="text" name="client_name" required class="form-row__input form-input feedbacks-input__input feedbacks-input__input--flats">
-                        </div>
-                    </div>
-                    <div class="feedback-row__input-wrapper form-row">
-                        <div class="form-row__validation-wrap">
-                            <label class="feedbacks-input__label feedbacks-input__label--flats feedbacks-input__label--tel"><span class="feedbacks-input__label-text">+7</span></label>
-                            <input type="tel" class="form-row__input form-input feedbacks-input__input feedbacks-input__input--flats" data-mask="(000) 000-00-00" maxlength="25" name="phone">
-                        </div>
-                    </div>
-                    <div class="feedback-row__input-wrapper feedback-row__input-wrapper--btn form-row">
-                        <input type="submit" value="Перезвонить мне" class="form-row__send-form form-row__send-form--flats send-form">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="stages" id="stages">
-        <div class="stages__wrapper">
-            <h3 class="stages__title">{{ $stages->block_title_field }}</h3>
-            <div class="stages__row-wrap">
-                <div class="stages__row">
-                    @foreach($stages->dom_stages_group as $stage)
-                        @if($stage->show_field == 1)
-                            <button class="stages__btn js_stage_btn" id="{{$stage->id_field}}">{{$stage->dom_stages_name_field}}</button>
-                        @endif
-                    @endforeach
-                </div>
-                <div class="stages__control">
-                    <div class="stages__left js_stages_left"></div>
-                    <div class="stages__right js_stages_right"></div>
-                </div>
-            </div>
-            <div class="stages__text-wrap">
-                <p class="stages__text js_give_me_text"></p>
-            </div>
-            <ul class="stages__images-list js_fotorama_thumbs">
-            </ul>
-            <div class="stages__fotorama js_stages_fotorama fotorama"
-                 data-nav="thumbs" data-allowfullscreen="true"
-                 data-thumbmargin="15" data-loop="true"
-                 data-thumbwidth="110" data-thumbheight="100"
-                 data-auto="false" data-transition="crossfade">
-            </div>
-        </div>
-    </section>--}}
     <section class="contacts" id="contacts">
         <div class="contacts__wrapper">
             <div class="contacts__contact-block">
@@ -357,6 +172,26 @@
             </div>
             <div class="contacts__map-wrapper">
                 <div class="contacts__map" id="map"></div>
+                <script>
+                    function initMap() {
+                        var prestizh = {lat: 43.236143, lng: 76.919868};
+                        var map = new google.maps.Map(document.getElementById('map'), {
+                            zoom: 16,
+                            disableDefaultUI: true,
+                            center: prestizh
+                        });
+                        var image = {
+                            url: '/img/map_icon.png',
+                            size: new google.maps.Size(102, 96),
+                            anchor: new google.maps.Point(95, 27)
+                        };
+                        var marker = new google.maps.Marker({
+                            position: prestizh,
+                            icon: image,
+                            map: map
+                        });
+                    }
+                </script>
             </div>
         </div>
     </section>
