@@ -2,7 +2,7 @@
 @section('content')
 {{--@include('front.index.stages_obj')
 @yield('stageObj')--}}
-    {{--<div class="top-phone"><a href="tel:{{ $contacts->phone_field }}" class="top-phone-link">{{ $contacts->phone_field }}</a></div>--}}
+    <div class="top-phone"><a href="tel:{{ $contacts->phone_field }}" class="top-phone-link">{{ $contacts->phone_field }}</a></div>
     <section class="title-block" id="title">
         <header class="title-block__header title-header">
             <div class="title-block__menu-button js_menu"></div>
@@ -328,27 +328,30 @@
     <section class="contacts" id="contacts">
         <div class="contacts__wrapper">
             <div class="contacts__contact-block">
-                <h2 class="contacts__title">{{ $contacts->block_title_field }}</h2>
-                <p class="contacts__text">{{ $contacts->text_field }}</p>
-                <div class="contacts__input-rows form-id" id="contacts_call">
-                    <input type="hidden" name="form" class="form-input" value="call">
-                    <div class="feedback-form__row form-row">
-                        <div class="form-row__validation-wrap feedbacks-input">
-                            <label class="feedbacks-input__label feedbacks-input__label--name"><span class="feedbacks-input__label-text">Имя</span></label>
-                            <input type="text" name="client_name" required class="form-row__input form-input feedbacks-input__input">
-                            <div class="form-row__tooltip-wrap form-row__tooltip-wrap--popup-none"><p class="form-row__tooltip form-row__tooltip--border">Как к вам обращаться</p></div>
+                <div class="contacts__contact-block-wrapper">
+                    <h2 class="contacts__title">{{ $contacts->block_title_field }}</h2>
+                    <p class="contacts__text">{{ $contacts->text_field }}</p>
+                    <div class="contacts__input-rows form-id" id="contacts_call">
+                        <input type="hidden" name="form" class="form-input" value="call">
+                        <div class="contacts__row form-row">
+                            <div class="form-row__validation-wrap contacts-input">
+                                <label class="contacts-input__label contacts-input__label--name" for="contact_name"><span class="contacts-input__label-text">Имя</span></label>
+                                <input type="text" name="client_name" id="contact_name" placeholder="Введите имя" autocomplete="false" required class="form-row__input form-input contacts-input__input">
+                                <div class="form-row__tooltip-wrap form-row__tooltip-wrap--popup-none"><p class="form-row__tooltip form-row__tooltip--border">Как к вам обращаться</p></div>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="feedback-form__row form-row">
-                        <div class="form-row__validation-wrap feedbacks-input">
-                            <label class="feedbacks-input__label feedbacks-input__label--tel"><span class="feedbacks-input__label-text">+7</span></label>
-                            <input type="tel" class="form-row__input form-input feedbacks-input__input" maxlength="25" data-mask="(000) 000-00-00" name="phone">
-                            <div class="form-row__tooltip-wrap form-row__tooltip-wrap--popup-none"><p class="form-row__tooltip form-row__tooltip--border">Телефонный номер для связи</p></div>
+                        <div class="contacts__row form-row">
+                            <div class="form-row__validation-wrap contacts-input">
+                                <label class="contacts-input__label contacts-input__label--tel" for="contact_tel"><span class="contacts-input__label-text">Телефон</span></label>
+                                <input type="tel" id="contact_tel" class="form-row__input form-input contacts-input__input contacts-input__input--tel" maxlength="25" data-mask="(000) 000-00-00" name="phone">
+                                <div class="form-row__tooltip-wrap form-row__tooltip-wrap--popup-none"><p class="form-row__tooltip form-row__tooltip--border">Телефонный номер для связи</p></div>
+                                <label class="contacts-input__num-label" for="contact_tel">+7</label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="feedbacks__input-wrapper feedbacks__input-wrapper--btn">
-                        <input type="submit" value="УЗНАТЬ ПОДРОБНЕЕ" class="feedbacks__btn form-row__send-form button send-form">
+                        <div class="contacts__row contacts__row--btn">
+                            <input type="submit" value="ЗАКАЗАТЬ ЗВОНОК" class="contacts__btn form-row__send-form button send-form">
+                        </div>
                     </div>
                 </div>
             </div>

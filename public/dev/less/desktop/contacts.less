@@ -1,164 +1,158 @@
 .contacts{
-  background: rgba(247,236,153,1);
-  background: -moz-linear-gradient(top, rgba(247,236,153,1) 0%, rgba(226,200,124,1) 100%);
-  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(247,236,153,1)), color-stop(100%, rgba(226,200,124,1)));
-  background: -webkit-linear-gradient(top, rgba(247,236,153,1) 0%, rgba(226,200,124,1) 100%);
-  background: -o-linear-gradient(top, rgba(247,236,153,1) 0%, rgba(226,200,124,1) 100%);
-  background: -ms-linear-gradient(top, rgba(247,236,153,1) 0%, rgba(226,200,124,1) 100%);
-  background: linear-gradient(to bottom, rgba(247,236,153,1) 0%, rgba(226,200,124,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7ec99', endColorstr='#e2c87c', GradientType=0 );
-  overflow: hidden;
-
   &__wrapper{
-    height: 100%;
-    position: relative;
+    max-width: 1560px;
   }
 
   &__contact-block{
-    max-width: 1180px;
-    padding-left: 40px;
-    padding-bottom: 300px;
-    margin: 0 auto;
-    padding-top: 100px;
-    position: relative;
+    width: 50%;
+    padding-bottom: 30px;
+    padding-top: 55px;
+    background: url("/img/contacts_bg.jpg") no-repeat left bottom;
+    background-size: cover;
+  }
 
-    &:before{
-      content: '';
-      position: absolute;
-      left: -295px;
-      top: -213px;
-      width: 995px;
-      height: 995px;
-      background: url("/img/contact_elipses.png") no-repeat;
-      transform: scale(0);
-      transition: .8s;
-    }
-
-    &.display{
-      &:before{
-        left: -295px;
-        top: -213px;
-        width: 995px;
-        height: 995px;
-        transform: scale(1);
-      }
-
-      .contacts{
-        &__title{
-          left: 0;
-          opacity: 1;
-        }
-
-        &__phone{
-          left: 0;
-          opacity: 1;
-        }
-
-        &__address{
-          left: 0;
-          opacity: 1;
-        }
-
-        &__info-text{
-          left: 0;
-          opacity: 1;
-        }
-      }
-    }
+  &__contact-block-wrapper{
+    max-width: 470px;
+    margin-left: auto;
   }
 
   &__title{
-    position: relative;
-    left: -20px;
-    opacity: 0;
-    transition: .6s .6s;
-    color: #201306;
+    max-width: 280px;
+    font-size: 40px;
+    line-height: 1.25;
+    color: #ffffff;
+  }
+
+  &__text{
+    margin-top: 15px;
+    max-width: 385px;
+    color: rgba(255, 255, 255, 0.3);
+    line-height: 1.571428571;
+  }
+
+  &__input-rows{
+    padding-left: 5px;
+    margin-top: 20px;
+    max-width: 300px;
+  }
+
+  &__row{
+    margin-top: 50px;
+
+    &--btn{
+      margin-top: 40px;
+    }
   }
 
   &__phone{
-    position: relative;
-    left: -20px;
-    opacity: 0;
-    transition: .4s 1.2s;
-    margin-top: 60px;
-    padding-left: 35px;
-    font-size: 20px;
-    letter-spacing: .4px;
-    color: #201306;
-    font-family: "Gilroy";
-    font-weight: 300;
-
     &:before{
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 1px;
-      width: 20px;
-      height: 20px;
-      background: url("/img/contact_phone_icon.png") no-repeat;
     }
   }
 
   &__address{
-    position: relative;
-    left: -20px;
-    opacity: 0;
-    transition: .4s 1.6s;
-    line-height: 1.4;
-    margin-top: 30px;
-    padding-left: 35px;
-    font-size: 18px;
-    letter-spacing: .4px;
-    color: #201306;
-    font-family: "Gilroy";
-    font-weight: 300;
-
     &:before{
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 5px;
-      width: 18px;
-      height: 23px;
-      background: url("/img/location_icon.png") no-repeat;
     }
   }
 
-  &__info-text{
-    margin-top: 50px;
-    max-width: 300px;
-    color: #000000;
-    font-size: 11px;
-    line-height: 1.4;
-    font-family: "Lato";
-    letter-spacing: .03em;
-    position: relative;
-    left: -20px;
-    opacity: 0;
-    transition: .4s 2s;
-  }
-
   &__map-wrapper{
-    position: absolute;
-    height: 150%;
-    transform: translateY(-20%);
-    width: 58%;
-    top: 0;
-    right: 0;
+    width: 50%;
   }
 
   &__map{
-    height: 100%;
-    border-radius: ~"140% 0 0 70% / 90% 0 0 60%";
-    overflow: hidden;
-    position: relative;
   }
-}
-
-.ymaps-2-1-55-events-pane.ymaps-2-1-55-user-selection-none{
-  border-radius: ~"140% 0 0 70% / 90% 0 0 60%";
 }
 
 .leaflet-marker-shadow{
   max-width: none;
+}
+
+.contacts-input{
+  position: relative;
+
+  &__label{
+    background-color: transparent;
+    position: absolute;
+    color: #ddc777;
+    font-size: 14px;
+  }
+
+  &__label-text{
+    position: absolute;
+    top: -17px;
+    left: 0;
+    font-size: inherit;
+    text-align: center;
+    color: inherit;
+  }
+
+  &__num-label{
+    position: absolute;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 16px;
+    bottom: 0;
+    height: 35px;
+    box-sizing: border-box;
+    color: rgba(255, 255, 255, 0.2);
+    transition: .3s;
+  }
+
+  &__input{
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 16px;
+    box-sizing: border-box;
+    height: 50px;
+    width: 100%;
+    letter-spacing: 0.04em;
+    color: rgba(255, 255, 255, 0.5);
+    transition: .3s;
+
+    &::placeholder{
+      color: rgba(255, 255, 255, 0.2);
+      transition: .3s;
+    }
+
+    &:focus{
+      border-color: rgba(255, 255, 255, 0.6);
+      color: rgba(255, 255, 255, 0.7);
+
+      &::placeholder{
+        color: rgba(255, 255, 255, 0.4);
+      }
+
+      & ~ .contacts-input__num-label{
+        border-color: rgba(255, 255, 255, 0.6);
+        color: rgba(255, 255, 255, 0.7);
+      }
+    }
+
+    &--tel{
+      margin-left: 35px;
+      width: ~'calc(100% - 35px)';
+    }
+  }
+
+  &__btn{}
+}
+
+.form-row__validation-wrap.error:not(.filling) .form-row__input.contacts-input__input{
+  border: none;
+  border-bottom: 1px solid rgba(214, 81, 55, 0.5);
+  background: transparent;
+
+  & ~ .contacts-input__num-label{
+    border-color: rgba(214, 81, 55, 0.5);
+    color: rgba(214, 81, 55, 0.5);
+  }
+
+  &:focus{
+    border-color: rgba(214, 81, 55, 0.7);
+
+    & ~ .contacts-input__num-label{
+      border-color: rgba(214, 81, 55, 0.7);
+      color: rgba(214, 81, 55, 0.7);
+    }
+  }
+
 }
