@@ -2,17 +2,13 @@
 @section('content')
 {{--@include('front.index.stages_obj')
 @yield('stageObj')--}}
-    <div class="top-phone"><a href="tel:{{ $contacts->phone_field }}" class="top-phone-link">{{ $contacts->phone_field }}</a></div>
+    {{--<div class="top-phone"><a href="tel:{{ $contacts->phone_field }}" class="top-phone-link">{{ $contacts->phone_field }}</a></div>--}}
     <section class="title-block" id="title">
         <header class="title-block__header title-header">
-            <div class="title-block__menu-button js_menu"></div>
             <div class="title-header__logo-wrap">
                 <img src="/img/logo.png" alt="Жилой комплекс Престиж" class="title-header__logo">
             </div>
             <nav class="title-header__nav-wrap">
-                <div class="title-header__menu-logo-wrap">
-                    <img src="/img/dark_logo.png" alt="Жилой комплекс Престиж" class="title-header__menu-logo">
-                </div>
                 <ul class="title-header__nav-list">
                     <li class="title-header__nav-item"><a href="#about" class="js_goto_anchor title-header__nav-link">О комплексе</a></li>
                     <li class="title-header__nav-item"><a href="#gallery" class="js_goto_anchor title-header__nav-link">Галерея</a></li>
@@ -24,10 +20,11 @@
             <div class="title-header__feedback-wrap">
                 <div class="title-header__phone-wrap">
                     <p class="title-header__consult">Позвоните для консультации</p>
-                    <p class="title-header__phone-number">{{ $contacts->phone_field }}</p>
+                    <p class="title-header__phone-number"><a href="tel:{{ $contacts->phone_field }}" class="title-header__phone-number-link">{{ $contacts->phone_field }}</a></p>
                 </div>
                 <a href="#contacts" class="js_goto_anchor title-header__order-call button"><span class="title-header__btn-text">ЗАКАЗАТЬ ЗВОНОК</span></a>
             </div>
+            <div class="title-header__menu-button js_menu"></div>
         </header>
         <div class="title-block__text-wrap">
             <div class="title-block__col1">
@@ -174,7 +171,7 @@
                 <div class="contacts__map" id="map"></div>
                 <script>
                     function initMap() {
-                        var prestizh = {lat: 43.236143, lng: 76.919868};
+                        var prestizh = {lat: 43.233779, lng: 76.921195};
                         var map = new google.maps.Map(document.getElementById('map'), {
                             zoom: 16,
                             disableDefaultUI: true,

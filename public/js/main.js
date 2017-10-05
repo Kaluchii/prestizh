@@ -40,9 +40,17 @@ $(document).ready(function () {
     }
 
 
-    $('.js_popup_close').on('click', function () {
-        $('.title-popup').fadeOut();
+    $(window).on('load resize', function () {
+        if ($(window).width() > 620) {
+            $('.title-header__logo').attr('src', '/img/logo.png');
+        } else {
+            $('.title-header__logo').attr('src', '/img/logo_mob.png');
+        }
     });
+
+    /*$('.js_popup_close').on('click', function () {
+        $('.title-popup').fadeOut();
+    });*/
 
     $('.js_goto_anchor').bind("click", function(e){
         $('html, body').stop().animate({

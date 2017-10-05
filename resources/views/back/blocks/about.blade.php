@@ -204,7 +204,7 @@
                                   data-id="0">{{$about->text3_field}}</textarea>
                     </div>
                     <div class="form-group">
-                        <label>Изображение (jpg, png 180×170 пикселей)</label>
+                        <label>Изображение (jpg, png 280×250 пикселей)</label>
                         <div class="dropzone">
                             <div class="file-input">
                                 <div class="file-preview">
@@ -426,7 +426,7 @@
                                   data-id="0">{{$about->text6_field}}</textarea>
                     </div>
                     <div class="form-group">
-                        <label>Изображение (jpg, png 180×170 пикселей)</label>
+                        <label>Изображение (jpg, png 280×250 пикселей)</label>
                         <div class="dropzone">
                             <div class="file-input">
                                 <div class="file-preview">
