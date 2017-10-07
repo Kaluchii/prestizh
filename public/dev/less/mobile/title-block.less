@@ -39,8 +39,6 @@
     }
 
     &__installment{
-      color: #ffffff;
-
       &::before{
       }
     }
@@ -95,6 +93,42 @@
 
   .title-popup{
     background: url("/img/popup_light.png") repeat, url("/img/car.png") no-repeat right bottom, url("/img/car_bg.jpg") no-repeat top left/100% 100% ;
+
+    .form-row{
+      &__tooltip-wrap{
+        left: auto;
+        right: 0;
+        top: auto;
+        bottom: ~'calc(100% + 10px)';
+        transform: none;
+        width: auto;
+        max-width: none;
+      }
+
+      &__tooltip{
+        &--shadow{
+          &::before, &::after {
+            bottom: -5px;
+            top: auto;
+            left: ~'calc(50% - 5px)';
+          }
+        }
+
+        &--border{
+          &::before, &::after {
+            bottom: -5px;
+            top: auto;
+            left: ~'calc(50% - 5px)';
+          }
+
+          &::before{
+            bottom: -3px;
+            top: auto;
+            left: ~'calc(50% - 3px)';
+          }
+        }
+      }
+    }
 
     &__wrapper{
     }

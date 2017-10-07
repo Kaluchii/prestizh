@@ -56,8 +56,8 @@
                             aria-label="">Название</th>
                         <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
                             colspan="1" aria-label="">Дата</th>
-                        {{--<th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
-                            colspan="1" aria-label="">Статус публикации</th>--}}
+                        <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
+                            colspan="1" aria-label="">Статус публикации</th>
                         <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
                             colspan="1" aria-label="">Порядок выдачи</th>
                         <th  tabindex="0"  rowspan="1"

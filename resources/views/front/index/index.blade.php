@@ -1,7 +1,7 @@
 @extends('front.layout')
 @section('content')
-{{--@include('front.index.stages_obj')
-@yield('stageObj')--}}
+@include('front.index.objects')
+@yield('objects')
     {{--<div class="top-phone"><a href="tel:{{ $contacts->phone_field }}" class="top-phone-link">{{ $contacts->phone_field }}</a></div>--}}
     <section class="title-block" id="title">
         <header class="title-block__header title-header">
@@ -131,6 +131,92 @@
                         <div class="detail-item__text-wrap">
                             <h3 class="detail-item__title">{!! $about->title7_field !!}</h3>
                             <p class="detail-item__text">{!! $about->text7_field !!}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="flats" id="flats">
+        <div class="flats__wrapper">
+            <div class="flats__top-wrapper">
+                <div class="flats__col1">
+                    <h2 class="flats__title">{{ $flats->block_title_field }}</h2>
+                    <p class="flats__text">{{ $flats->text_field }}</p>
+                </div>
+                <div class="flats__col2 layout-choice">
+                    <div class="layout-choice__btns-wrapper">
+                        <p class="layout-choice__title">Количество комнат</p>
+                        <ul class="layout-choice__btns-list">
+                            @foreach($flats->dom_flat_group as $item)
+                                @if($item->show_field == 1)
+                                    <li class="layout-choice__btns-item"><button class="layout-choice__button js_rooms_btn" data-id="{{$item->id_field}}">{{$item->dom_flat_name_field}}</button></li>
+                                @endif
+                            @endforeach
+                        </ul>
+                    </div>
+                    <div class="layout-choice__btns-wrapper">
+                        <p class="layout-choice__title">Площадь</p>
+                        <ul class="layout-choice__btns-list">
+                            @foreach($flats->dom_flat_group as $item)
+                                @foreach($item->layout_group as $layout_item)
+                                    <li class="layout-choice__btns-item"><button class="layout-choice__button js_area_btn layout-choice__button--area flat{{$item->id_field}}" data-id="{{$layout_item->id_field}}">{{str_replace('.', ',', $layout_item->area_field)}} м<sup class="layout-choice__btn-sup">2</sup></button></li>
+                                @endforeach
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flats__layout layout">
+                <div class="layout__img-wrapper">
+                    <img src="" alt="" class="layout__img js_give_src">
+                </div>
+                <div class="layout__feedback-info-wrapper">
+                    <div class="layout__info">
+                        <p class="layout__flat-name"></p>
+                        <div class="layout__info-row">
+                            <div class="layout__row-item">
+                                <p class="layout__info-title">Площадь</p>
+                                <p class="layout__info-value"><span class="layout__info-value-text js_give_area"></span>м<sup class="layout__area-sup">2</sup></p>
+                            </div>
+                            <div class="layout__row-item">
+                                <p class="layout__info-title">Блок</p>
+                                <p class="layout__info-value js_give_block"></p>
+                            </div>
+                            <div class="layout__row-item">
+                                <p class="layout__info-title">Этаж</p>
+                                <p class="layout__info-value js_give_floor"></p>
+                            </div>
+                        </div>
+                        <div class="layout__price-wrap">
+                            <p class="layout__price-title">Стоимость</p>
+                            <p class="layout__price js_give_price"></p>
+                        </div>
+                    </div>
+                    <div class="layout__feedback layout-feedback">
+                        <p class="layout-feedback__title">ПОНРАВИЛАСЬ КВАРТИРА?</p>
+                        <p class="layout-feedback__text">Свяжитесь с нами и узнайте подробности</p>
+                        <div class="layout-feedback__input-rows form-id" id="layout_call">
+                            <input type="hidden" name="form" class="form-input" value="call">
+                            <div class="layout-feedback__row form-row">
+                                <div class="form-row__validation-wrap layout-feedback-input">
+                                    <label class="layout-feedback-input__label layout-feedback-input__label--name" for="layout_name"><span class="layout-feedback-input__label-text">Имя</span></label>
+                                    <input type="text" name="client_name" id="layout_name" autocomplete="false" required class="form-row__input form-input layout-feedback-input__input">
+                                    <div class="form-row__tooltip-wrap form-row__tooltip-wrap--popup-none"><p class="form-row__tooltip form-row__tooltip--border">Как к вам обращаться</p></div>
+                                </div>
+                            </div>
+
+                            <div class="layout-feedback__row form-row">
+                                <div class="form-row__validation-wrap layout-feedback-input">
+                                    <input type="tel" id="layout_tel" class="form-row__input form-input layout-feedback-input__input layout-feedback-input__input--tel" maxlength="25" data-mask="(000) 000-00-00" name="phone">
+                                    <div class="form-row__tooltip-wrap form-row__tooltip-wrap--popup-none"><p class="form-row__tooltip form-row__tooltip--border">Телефонный номер для связи</p></div>
+                                    <label class="layout-feedback-input__label layout-feedback-input__label--tel" for="layout_tel"><span class="layout-feedback-input__label-text layout-feedback-input__label-text--tel">+7</span></label>
+                                </div>
+                            </div>
+                            <div class="layout-feedback__row layout-feedback__row--btn">
+                                <input type="submit" value="УЗНАТЬ ПОДРОБНЕЕ" class="layout-feedback__btn form-row__send-form button-tr button-tr--yellow-br send-form">
+                            </div>
                         </div>
                     </div>
                 </div>
