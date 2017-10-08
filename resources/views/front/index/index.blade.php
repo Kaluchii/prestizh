@@ -137,7 +137,43 @@
             </div>
         </div>
     </section>
-
+    <section class="gallery" id="gallery">
+        <div class="gallery__wrapper">
+            <h2 class="gallery__title">{{ $gallery->block_title_field }}</h2>
+            <div class="gallery__fotorama-wrap">
+                <div class="gallery__fotorama js_gallery__fotorama fotorama"  data-auto="false" data-ratio="980/560"
+                     data-nav="thumbs" data-allowfullscreen="true"
+                     data-thumbmargin="15" data-loop="true"
+                     data-thumbwidth="110" data-thumbheight="100" data-transition="crossfade">
+                    <?php $slider_arr = [] ?>
+                    @foreach($gallery->slider_group as $slide)
+                        <a href="{{$slide->slide_field->link}}?{{$slide->slide_field->cache_index}}"></a>
+                        <?php $slider_arr[] = $slide->slide_field->link.'?'.$slide->slide_field->cache_index ?>
+                    @endforeach
+                </div>
+            </div>
+            <div class="for-Google-PageSpeed">
+                @for($i = 0; $i < 9 && isset($slider_arr[$i]); $i++)
+                    <img src="{{ $slider_arr[$i] }}" alt="">
+                @endfor
+                @foreach($stages->dom_stages_group as $stage)
+                    @if($stage->show_field == 1)
+                        @foreach($stage->stage_images_group as $stage_img)
+                            <img src="{{$stage_img->stage_photo_field->link}}?{{$stage_img->stage_photo_field->cache_index}}" alt="">
+                        @endforeach
+                    @endif
+                    @break
+                @endforeach
+            </div>
+            <div class="gallery__mobile-gallery mobile-gallery">
+                <ul class="mobile-gallery__list">
+                    @for($i = 0; $i < 9 && isset($slider_arr[$i]); $i++)
+                        <li class="mobile-gallery__item"><img class="mobile-gallery__img js_open_fotorama" data-img="{{$i}}" src="{{ $slider_arr[$i] }}" alt=""></li>
+                    @endfor
+                </ul>
+            </div>
+        </div>
+    </section>
     <section class="feedback">
         <div class="feedback__wrapper">
             <h2 class="feedback__title">Хотите посмотреть поближе?<br>Приходите в&nbsp;гости!</h2>
@@ -165,7 +201,6 @@
             </div>
         </div>
     </section>
-
     <section class="flats" id="flats">
         <div class="flats__wrapper">
             <div class="flats__top-wrapper">

@@ -100,7 +100,7 @@
   border: none;
   transition: .3s;
 
-  &:not([class*='load']):hover{
+  &:not([class*='load']):hover, &:not([class*='load']):focus{
     background-color: #f7e089;
   }
 }
@@ -120,7 +120,7 @@
   background-color: transparent;
   transition: .3s;
 
-  &:not([class*='load']):hover{
+  &:not([class*='load']):hover, &:not([class*='load']):focus{
     border-width: 1px;
     padding: 17px 22px;
     color: #000;
@@ -130,7 +130,7 @@
   &--yellow-br{
     border: 2px solid #cbbe76;
 
-    &:not([class*='load']):hover{
+    &:not([class*='load']):hover, &:not([class*='load']):focus{
       padding: 16px 21px;
     }
   }

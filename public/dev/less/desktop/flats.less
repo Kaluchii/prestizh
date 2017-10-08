@@ -83,7 +83,7 @@
     cursor: pointer;
     transition: .2s;
 
-    &:hover{
+    &:hover, &:focus{
       background-color: rgba(255, 233, 145, 0.61);
     }
 
@@ -362,6 +362,9 @@
 
 .for-Google-PageSpeed{
   position: absolute;
-  left: -9999px;
+  top: -99999px;
+  left: -99999px;
   z-index: -10;
+  opacity: 0;
+  visibility: hidden;
 }
