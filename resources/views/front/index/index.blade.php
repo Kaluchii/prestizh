@@ -58,7 +58,7 @@
                             <div class="title-popup__row form-row">
                                 <div class="form-row__validation-wrap popup-input">
                                     <label class="popup-input__label popup-input__label--tel"><span class="popup-input__label-text">+7</span></label>
-                                    <input type="tel" class="form-row__input form-input popup-input__input" maxlength="25" data-mask="(000) 000-00-00" name="phone">
+                                    <input type="tel" data-require="true" class="form-row__input form-input popup-input__input" maxlength="25" data-mask="(000) 000-00-00" name="phone">
                                     <div class="form-row__tooltip-wrap form-row__tooltip-wrap--popup-none"><p class="form-row__tooltip form-row__tooltip--border">Телефонный номер для связи</p></div>
                                 </div>
                             </div>
@@ -137,6 +137,35 @@
             </div>
         </div>
     </section>
+
+    <section class="feedback">
+        <div class="feedback__wrapper">
+            <h2 class="feedback__title">Хотите посмотреть поближе?<br>Приходите в&nbsp;гости!</h2>
+            <div class="feedback__input-rows form-id" id="feedback_call">
+                <input type="hidden" name="form" class="form-input" value="call">
+                <div class="feedback__row form-row">
+                    <div class="form-row__validation-wrap feedback-input">
+                        <label class="feedback-input__label feedback-input__label--name" for="feedback_name"><span class="feedback-input__label-text">Имя</span></label>
+                        <input type="text" name="client_name" id="feedback_name" placeholder="Введите имя" autocomplete="false" required class="form-row__input form-input feedback-input__input">
+                        <div class="form-row__tooltip-wrap form-row__tooltip-wrap--popup-none"><p class="form-row__tooltip form-row__tooltip--border">Как к вам обращаться</p></div>
+                    </div>
+                </div>
+
+                <div class="feedback__row form-row">
+                    <div class="form-row__validation-wrap feedback-input">
+                        <label class="feedback-input__label feedback-input__label--tel" for="feedback_tel"><span class="feedback-input__label-text">Телефон</span></label>
+                        <input type="tel" data-require="true" id="feedback_tel" class="form-row__input form-input feedback-input__input feedback-input__input--tel" maxlength="25" data-mask="(000) 000-00-00" name="phone">
+                        <div class="form-row__tooltip-wrap form-row__tooltip-wrap--popup-none"><p class="form-row__tooltip form-row__tooltip--border">Телефонный номер для связи</p></div>
+                        <label class="feedback-input__num-label" for="feedback_tel">+7</label>
+                    </div>
+                </div>
+                <div class="feedback__row feedback__row--btn">
+                    <input type="submit" value="ОТПРАВИТЬ ЗАЯВКУ" class="feedback__btn form-row__send-form button send-form">
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="flats" id="flats">
         <div class="flats__wrapper">
             <div class="flats__top-wrapper">
@@ -190,7 +219,7 @@
                             </div>
                         </div>
                         <div class="layout__price-wrap">
-                            <p class="layout__price-title">Стоимость</p>
+                            <p class="layout__price-title">Стоимость от:</p>
                             <p class="layout__price js_give_price"></p>
                         </div>
                     </div>
@@ -209,7 +238,7 @@
 
                             <div class="layout-feedback__row form-row">
                                 <div class="form-row__validation-wrap layout-feedback-input">
-                                    <input type="tel" id="layout_tel" class="form-row__input form-input layout-feedback-input__input layout-feedback-input__input--tel" maxlength="25" data-mask="(000) 000-00-00" name="phone">
+                                    <input type="tel" data-require="true" id="layout_tel" class="form-row__input form-input layout-feedback-input__input layout-feedback-input__input--tel" maxlength="25" data-mask="(000) 000-00-00" name="phone">
                                     <div class="form-row__tooltip-wrap form-row__tooltip-wrap--popup-none"><p class="form-row__tooltip form-row__tooltip--border">Телефонный номер для связи</p></div>
                                     <label class="layout-feedback-input__label layout-feedback-input__label--tel" for="layout_tel"><span class="layout-feedback-input__label-text layout-feedback-input__label-text--tel">+7</span></label>
                                 </div>
@@ -242,7 +271,7 @@
                         <div class="contacts__row form-row">
                             <div class="form-row__validation-wrap contacts-input">
                                 <label class="contacts-input__label contacts-input__label--tel" for="contact_tel"><span class="contacts-input__label-text">Телефон</span></label>
-                                <input type="tel" id="contact_tel" class="form-row__input form-input contacts-input__input contacts-input__input--tel" maxlength="25" data-mask="(000) 000-00-00" name="phone">
+                                <input type="tel" data-require="true" id="contact_tel" class="form-row__input form-input contacts-input__input contacts-input__input--tel" maxlength="25" data-mask="(000) 000-00-00" name="phone">
                                 <div class="form-row__tooltip-wrap form-row__tooltip-wrap--popup-none"><p class="form-row__tooltip form-row__tooltip--border">Телефонный номер для связи</p></div>
                                 <label class="contacts-input__num-label" for="contact_tel">+7</label>
                             </div>
