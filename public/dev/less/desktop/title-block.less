@@ -115,7 +115,23 @@
   }
 }
 
-.title-header{
+.fixed-header{
+  display: none;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px 30px 12px 25px;
+  background-color: #232323;
+
+  &__header{
+    max-width: 1500px;
+    margin: 0 auto;
+  }
+}
+.header{
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -138,6 +154,29 @@
   }
 
   &__nav-item{
+    &:hover{
+      &::before{
+        opacity: 1;
+      }
+    }
+
+    &--fixed{
+      position: relative;
+
+      &::before{
+        content: '';
+        position: absolute;
+        opacity: 0;
+        z-index: -1;
+        top: -32px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: url("/img/nav_link_lamp.png") no-repeat center;
+        width: 134px;
+        height: 37px;
+        transition: .3s;
+      }
+    }
   }
 
   &__nav-link{
@@ -156,9 +195,21 @@
     z-index: 9;
     padding-bottom: 13px;
     flex-shrink: 0;
+
+    &--fixed{
+      padding-bottom: 0;
+    }
   }
 
-  &__logo{}
+  &__logo-link{
+    font-size: 0;
+  }
+
+  &__logo{
+    &--fixed{
+      max-height: 62px;
+    }
+  }
 
   &__feedback-wrap{
     display: flex;
@@ -337,4 +388,78 @@
   }
 
   &__btn{}
+}
+
+.menu-button{
+  box-sizing: border-box;
+  width: 57px;
+  height: 62px;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  cursor: pointer;
+
+  &.is-open{
+    .menu-button{
+      &__top{
+        transform: rotate(45deg);
+        width: 11px;
+        top: 5px;
+        left: 1px;
+      }
+
+      &__middle{
+        transform: rotate(-45deg);
+        width: 22px;
+      }
+
+      &__bottom{
+        transform: rotate(45deg);
+        width: 11px;
+        left: 9px;
+        bottom: 5px;
+      }
+    }
+  }
+
+  &__rows-wrap{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__top{
+    display: block;
+    position: relative;
+    left: 0;
+    top: 0;
+    height: 2px;
+    width: 20px;
+    background-color: #c2ae68;
+    transition: .3s
+  }
+
+  &__middle{
+    margin-top: 7px;
+    display: block;
+    position: relative;
+    height: 2px;
+    width: 20px;
+    background-color: #c2ae68;
+    transition: .3s
+  }
+
+  &__bottom{
+    margin-top: 7px;
+    display: block;
+    position: relative;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 20px;
+    background-color: #c2ae68;
+    transition: .3s
+  }
 }

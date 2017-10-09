@@ -2,29 +2,34 @@
 @section('content')
 @include('front.index.objects')
 @yield('objects')
-    {{--<div class="top-phone"><a href="tel:{{ $contacts->phone_field }}" class="top-phone-link">{{ $contacts->phone_field }}</a></div>--}}
     <section class="title-block" id="title">
-        <header class="title-block__header title-header">
-            <div class="title-header__logo-wrap">
-                <img src="/img/logo.png" alt="Жилой комплекс Престиж" class="title-header__logo">
+        <header class="title-block__header header">
+            <div class="header__logo-wrap">
+                <img src="/img/logo.png" alt="Жилой комплекс Престиж" class="header__logo">
             </div>
-            <nav class="title-header__nav-wrap">
-                <ul class="title-header__nav-list">
-                    <li class="title-header__nav-item"><a href="#about" class="js_goto_anchor title-header__nav-link">О комплексе</a></li>
-                    <li class="title-header__nav-item"><a href="#gallery" class="js_goto_anchor title-header__nav-link">Галерея</a></li>
-                    <li class="title-header__nav-item"><a href="#flats" class="js_goto_anchor title-header__nav-link">Планировки</a></li>
-                    <li class="title-header__nav-item"><a href="#stages" class="js_goto_anchor title-header__nav-link">Стройка</a></li>
-                    <li class="title-header__nav-item"><a href="#contacts" class="js_goto_anchor title-header__nav-link">Контакты</a></li>
+            <nav class="header__nav-wrap js_nav_wrap">
+                <ul class="header__nav-list">
+                    <li class="header__nav-item"><a href="#about" class="js_goto_anchor header__nav-link">О комплексе</a></li>
+                    <li class="header__nav-item"><a href="#gallery" class="js_goto_anchor header__nav-link">Галерея</a></li>
+                    <li class="header__nav-item"><a href="#flats" class="js_goto_anchor header__nav-link">Планировки</a></li>
+                    {{--<li class="header__nav-item"><a href="#stages" class="js_goto_anchor header__nav-link">Стройка</a></li>--}}
+                    <li class="header__nav-item"><a href="#contacts" class="js_goto_anchor header__nav-link">Контакты</a></li>
                 </ul>
             </nav>
-            <div class="title-header__feedback-wrap">
-                <div class="title-header__phone-wrap">
-                    <p class="title-header__consult">Позвоните для консультации</p>
-                    <p class="title-header__phone-number"><a href="tel:{{ $contacts->phone_field }}" class="title-header__phone-number-link">{{ $contacts->phone_field }}</a></p>
+            <div class="header__feedback-wrap">
+                <div class="header__phone-wrap">
+                    <p class="header__consult">Позвоните для консультации</p>
+                    <p class="header__phone-number"><a href="tel:{{ $contacts->phone_field }}" class="header__phone-number-link">{{ $contacts->phone_field }}</a></p>
                 </div>
-                <a href="#contacts" class="js_goto_anchor title-header__order-call button"><span class="title-header__btn-text">ЗАКАЗАТЬ ЗВОНОК</span></a>
+                <a href="#contacts" class="js_goto_anchor header__order-call button"><span class="header__btn-text">ЗАКАЗАТЬ ЗВОНОК</span></a>
             </div>
-            <div class="title-header__menu-button js_menu"></div>
+            <div class="header__menu-button menu-button js_menu">
+                <div class="menu-button__rows-wrap">
+                    <span class="menu-button__top"></span>
+                    <span class="menu-button__middle"></span>
+                    <span class="menu-button__bottom"></span>
+                </div>
+            </div>
         </header>
         <div class="title-block__text-wrap">
             <div class="title-block__col1">
