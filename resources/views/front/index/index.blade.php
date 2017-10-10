@@ -12,7 +12,7 @@
                     <li class="header__nav-item"><a href="#about" class="js_goto_anchor header__nav-link">О комплексе</a></li>
                     <li class="header__nav-item"><a href="#gallery" class="js_goto_anchor header__nav-link">Галерея</a></li>
                     <li class="header__nav-item"><a href="#flats" class="js_goto_anchor header__nav-link">Планировки</a></li>
-                    {{--<li class="header__nav-item"><a href="#stages" class="js_goto_anchor header__nav-link">Стройка</a></li>--}}
+                    <li class="header__nav-item"><a href="#stages" class="js_goto_anchor header__nav-link">Стройка</a></li>
                     <li class="header__nav-item"><a href="#contacts" class="js_goto_anchor header__nav-link">Контакты</a></li>
                 </ul>
             </nav>
@@ -292,6 +292,34 @@
             </div>
         </div>
     </section>
+    <section class="stages" id="stages">
+        <div class="stages__top-wrapper">
+            <div class="stages__col1">
+                <h2 class="stages__title">{{ $stages->block_title_field }}</h2>
+                <p class="stages__text">{{ $stages->text_field }}</p>
+            </div>
+            <div class="stages__col2">
+                <div class="stages__radial-col">
+                    <input value="{{ $stages->percent_field }}" data-width="100%" data-thickness=".02" type="text" class="stages__radial js_radial" data-bgColor="#FFFFFF" readonly data-fgColor="#ddc777" data-displayInput="false" data-rotation="anticlockwise">
+                </div>
+                <div class="stages__percent-col">
+                    <p class="stages__percent-text">Готовность жилого комплекса</p>
+                    <p class="stages__percent-digit-wrap"><span class="stages__percent-digit">{{ $stages->percent_field }}</span>%</p>
+                </div>
+            </div>
+        </div>
+        <div class="stages__date-list-wrapper"></div>
+        <div class="stages__stage-wrapper">
+            <div class="stages__fotorama">
+                <div class="stages__fotorama js_stages__fotorama fotorama" data-auto="false" data-ratio="820/490"
+                     data-nav="none" data-allowfullscreen="true"
+                     data-loop="true" data-transition="crossfade">
+                    <a href="{{$slide->slide_field->link}}?{{$slide->slide_field->cache_index}}"></a>
+                </div>
+            </div>
+            <p class="stages__stage-text js_give_stage_text"></p>
+        </div>
+    </section>
     <section class="contacts" id="contacts">
         <div class="contacts__wrapper">
             <div class="contacts__contact-block">
@@ -347,6 +375,6 @@
             </div>
         </div>
     </section>
-<div class="vl"></div>
+    <div class="vl"></div>
     @include('front.index.meta')
 @endsection

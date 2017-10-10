@@ -1,131 +1,13 @@
 .stages{
-  background-color: #f5f4ec;
-  
-  &__wrapper{
-    max-width: 1140px;
+  &__top-wrapper{
+    max-width: 980px;
     margin: 0 auto;
-    padding: 70px 40px 80px;
+    padding: 150px 40px 135px;
   }
 
   &__title{
-    color: #2f2013;
-    letter-spacing: .2em;
-  }
-
-  &__row-wrap{
-    margin-top: 35px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 40px;
-    overflow-y: hidden;
-  }
-
-  &__row{
-    display: flex;
-    max-width: ~'calc(100% - 60px)';
-    width: 100%;
-    height: 55px;
-    margin-top: 17px;
-    overflow-x: scroll;
-    overflow-y: hidden;
-  }
-
-  &__btn{
-    flex-shrink: 0;
-    height: 35px;
-    padding: 0 18px;
-    border-radius: 18px;
-    background-color: #ffffff;
-    color: #2f2013;
-    font-size: 14px;
-    font-family: 'AvenirNext';
-    font-weight: 500;
-    box-shadow: -2px 2px 4px rgba(54, 41, 18, 0.07);
-    border: none;
-    cursor: pointer;
-    transition: .3s;
-
-    &:nth-child(n+2){
-      margin-left: 20px;
-    }
-
-    &.is-active{
-      background-color: #ebd889;
-      box-shadow: none;
-    }
-  }
-
-  &__control{
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  }
-
-  &__left{
-    margin-right: 10px;
-    display: inline-block;
-    width: 20px;
-    height: 28px;
-    cursor: pointer;
-    background: url("/img/stage_arrow_left.png") no-repeat center;
-  }
-
-  &__right{
-    display: inline-block;
-    width: 20px;
-    height: 28px;
-    cursor: pointer;
-    background: url("/img/stage_arrow_right.png") no-repeat center;
-  }
-
-  &__text-wrap{
-    max-width: 540px;
-    margin-top: 35px;
   }
 
   &__text{
-    color: #201306;
-    line-height: 1.7;
-    letter-spacing: .02em;
-  }
-
-  &__images-list{
-    margin-top: 25px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-  }
-
-  &__images-item{
-    width: ~'calc(25% - 15px)';
-    margin-left: 20px;
-
-    &:nth-child(n+5){
-      margin-top: 20px;
-    }
-
-    &:nth-child(4n+1){
-      margin-left: 0;
-    }
-  }
-
-  &__img{
-    display: block;
-    box-shadow: -2px 2px 9px rgba(54, 41, 18, 0.37);
-    border-radius: 5px;
-    cursor: pointer;
-    object-fit: cover;
-    transition: .3s;
-
-    &:hover{
-      box-shadow: -2px 2px 11px rgba(54, 41, 18, 0.77);
-    }
-  }
-
-  &__fotorama{
-    position: absolute;
-    left: -9999px;
   }
 }

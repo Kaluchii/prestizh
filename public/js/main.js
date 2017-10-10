@@ -39,6 +39,8 @@ $(document).ready(function () {
         return s.join(dec);
     }
 
+    $(".js_radial").knob();
+
 
     $(window).on('load resize', function () {
         if ($(window).width() > 1010) {
@@ -160,6 +162,12 @@ $(document).ready(function () {
             $('.js_img_next').attr('src', fotorama.data[activeIndex+1]['img']);
         }
     });
+
+    var $stagesFotorama = $('.js_stages__fotorama').fotorama({
+        navwidth: '90%'
+    });
+    // 2. Get the API object.
+    var stagesFotorama = $stagesFotorama.data('fotorama');
 
     $("<div class='nav-scroll-btn nav-scroll-btn--prev'></div>").insertBefore(".fotorama__nav.fotorama__nav--thumbs");
     $("<div class='nav-scroll-btn nav-scroll-btn--next'></div>").insertAfter(".fotorama__nav.fotorama__nav--thumbs");
