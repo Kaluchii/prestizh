@@ -347,5 +347,6 @@
             </div>
         </div>
     </section>
+<div class="vl"></div>
     @include('front.index.meta')
 @endsection

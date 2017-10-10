@@ -45,11 +45,24 @@
   &__wrapper{
     max-width: 980px;
     margin: 0 auto;
-    padding: 110px 40px 135px;
+    padding: 150px 40px 135px;
   }
 
   &__title{
     color: #232323;
+    position: relative;
+
+    &::before{
+      content: 'ГАЛЕРЕЯ';
+      position: absolute;
+      top: 0;
+      left: -93px;
+      font-size: 12px;
+      color: rgba(35, 35, 35, 0.5);
+      transform: rotate(-90deg) translateX(-50%);
+      font-family: 'Gilroy';
+      font-weight: 300;
+    }
   }
 
   &__fotorama-wrap{

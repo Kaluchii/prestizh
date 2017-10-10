@@ -1,5 +1,5 @@
 .about{
-  padding: 150px 40px 100px;
+  padding: 150px 40px 60px;
 
   &__wrapper{
     max-width: 940px;
@@ -12,6 +12,19 @@
   }
 
   &__title{
+    position: relative;
+
+    &::before{
+      content: 'О КОМПЛЕКСЕ';
+      position: absolute;
+      top: 0;
+      left: -132px;
+      font-size: 12px;
+      color: rgba(35, 35, 35, 0.5);
+      transform: rotate(-90deg) translateX(-50%);
+      font-family: 'Gilroy';
+      font-weight: 300;
+    }
   }
 
   &__text{

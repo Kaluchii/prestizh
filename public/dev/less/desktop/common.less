@@ -13,6 +13,12 @@
 }
 @font-face {
   font-family: 'Gilroy';
+  src: local('Gilroy-Light'), local('GilroyLight'), url('../fonts/Gilroy/Gilroy-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gilroy';
   src: local('Gilroy-Regular'), local('GilroyRegular'), url('../fonts/Gilroy/Gilroy-Regular.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
@@ -133,5 +139,20 @@
     &:not([class*='load']):hover, &:not([class*='load']):focus{
       padding: 16px 21px;
     }
+  }
+}
+
+.vl{
+  position: fixed;
+  width: 1px;
+  background-color: rgba(0, 0, 0, 0.06);
+  height: 100%;
+  top: 0;
+  left: ~'calc(50% - 550px)';
+}
+
+@media screen and (max-width: 1180px) {
+  .vl{
+    display: none;
   }
 }

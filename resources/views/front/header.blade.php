@@ -9,7 +9,7 @@
                     <li class="header__nav-item header__nav-item--fixed"><a href="#about" class="js_goto_anchor header__nav-link">О комплексе</a></li>
                     <li class="header__nav-item header__nav-item--fixed"><a href="#gallery" class="js_goto_anchor header__nav-link">Галерея</a></li>
                     <li class="header__nav-item header__nav-item--fixed"><a href="#flats" class="js_goto_anchor header__nav-link">Планировки</a></li>
-                    {{--<li class="header__nav-item header__nav-item--fixed"><a href="#stages" class="js_goto_anchor header__nav-link">Стройка</a></li>--}}
+                    <li class="header__nav-item header__nav-item--fixed"><a href="#stages" class="js_goto_anchor header__nav-link">Стройка</a></li>
                     <li class="header__nav-item header__nav-item--fixed"><a href="#contacts" class="js_goto_anchor header__nav-link">Контакты</a></li>
                 </ul>
             </div>

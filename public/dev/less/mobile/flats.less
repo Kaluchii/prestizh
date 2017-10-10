@@ -4,6 +4,15 @@
       padding: 0 40px;
     }
 
+    &__title{
+      &::before{
+        top: -30px;
+        left: 0;
+        color: #c2ae67;
+        transform: none;
+      }
+    }
+
     &__col1{
       padding-left: 0;
     }
@@ -91,6 +100,13 @@
     &__title{
       margin: 0 auto;
       max-width: 280px;
+
+      &::before{
+        top: -25px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 10px;
+      }
     }
 
     &__text{
