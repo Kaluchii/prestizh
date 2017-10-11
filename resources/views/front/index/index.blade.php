@@ -77,10 +77,10 @@
             </div>
         </div>
     </section>
-    <section class="about" id="about">
+    <section class="about">
         <div class="about__wrapper">
             <div class="about__text-wrap">
-                <h2 class="about__title">{{ $about->block_title_field }}</h2>
+                <h2 class="about__title" id="about">{{ $about->block_title_field }}</h2>
                 <p class="about__text">{!! $about->text_field !!}</p>
             </div>
             <div class="about__in-detail in-detail">
@@ -142,9 +142,9 @@
             </div>
         </div>
     </section>
-    <section class="gallery" id="gallery">
+    <section class="gallery">
         <div class="gallery__wrapper">
-            <h2 class="gallery__title">{{ $gallery->block_title_field }}</h2>
+            <h2 class="gallery__title" id="gallery">{{ $gallery->block_title_field }}</h2>
             <div class="gallery__fotorama-wrap">
                 <div class="gallery__fotorama js_gallery__fotorama fotorama"  data-auto="false" data-ratio="980/560"
                      data-nav="thumbs" data-allowfullscreen="true"
@@ -206,11 +206,11 @@
             </div>
         </div>
     </section>
-    <section class="flats" id="flats">
+    <section class="flats">
         <div class="flats__wrapper">
             <div class="flats__top-wrapper">
                 <div class="flats__col1">
-                    <h2 class="flats__title">{{ $flats->block_title_field }}</h2>
+                    <h2 class="flats__title" id="flats">{{ $flats->block_title_field }}</h2>
                     <p class="flats__text">{{ $flats->text_field }}</p>
                 </div>
                 <div class="flats__col2 layout-choice">
@@ -292,10 +292,10 @@
             </div>
         </div>
     </section>
-    <section class="stages" id="stages">
+    <section class="stages">
         <div class="stages__top-wrapper">
             <div class="stages__col1">
-                <h2 class="stages__title">{{ $stages->block_title_field }}</h2>
+                <h2 class="stages__title" id="stages">{{ $stages->block_title_field }}</h2>
                 <p class="stages__text">{{ $stages->text_field }}</p>
             </div>
             <div class="stages__col2">
@@ -303,28 +303,32 @@
                     <input value="{{ $stages->percent_field }}" data-width="100%" data-thickness=".02" type="text" class="stages__radial js_radial" data-bgColor="#FFFFFF" readonly data-fgColor="#ddc777" data-displayInput="false" data-rotation="anticlockwise">
                 </div>
                 <div class="stages__percent-col">
-                    <p class="stages__percent-text">Готовность жилого комплекса</p>
+                    <p class="stages__percent-text">Готовность<br>жилого комплекса</p>
                     <p class="stages__percent-digit-wrap"><span class="stages__percent-digit">{{ $stages->percent_field }}</span>%</p>
                 </div>
             </div>
         </div>
-        <div class="stages__date-list-wrapper"></div>
+        <div class="stages__date-list-wrapper">
+            <ul class="stages__list">
+                @foreach($stages->dom_stages_group as $stage)
+                    <li class="stages__item"><button class="stages__item-btn js_stage_btn">{{$stage->dom_stages_name_field}}</button></li>
+                @endforeach
+            </ul>
+        </div>
         <div class="stages__stage-wrapper">
-            <div class="stages__fotorama">
-                <div class="stages__fotorama js_stages__fotorama fotorama" data-auto="false" data-ratio="820/490"
-                     data-nav="none" data-allowfullscreen="true"
-                     data-loop="true" data-transition="crossfade">
-                    <a href="{{$slide->slide_field->link}}?{{$slide->slide_field->cache_index}}"></a>
-                </div>
+            <div class="stages__fotorama js_stages__fotorama fotorama" data-auto="false" data-ratio="820/490"
+                 data-nav="none" data-allowfullscreen="true"
+                 data-loop="true" data-transition="crossfade">
+                <a href="{{$slide->slide_field->link}}?{{$slide->slide_field->cache_index}}"></a>
             </div>
             <p class="stages__stage-text js_give_stage_text"></p>
         </div>
     </section>
-    <section class="contacts" id="contacts">
+    <section class="contacts">
         <div class="contacts__wrapper">
             <div class="contacts__contact-block">
                 <div class="contacts__contact-block-wrapper">
-                    <h2 class="contacts__title">{{ $contacts->block_title_field }}</h2>
+                    <h2 class="contacts__title" id="contacts">{{ $contacts->block_title_field }}</h2>
                     <p class="contacts__text">{{ $contacts->text_field }}</p>
                     <div class="contacts__input-rows form-id" id="contacts_call">
                         <input type="hidden" name="form" class="form-input" value="call">
