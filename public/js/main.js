@@ -81,12 +81,6 @@ $(document).ready(function () {
         $('.title-popup').fadeOut();
     });
 
-    $('.js_stage_btn').on('click', function () {
-        $('.stages__list').css('left', $(window).width() / 2 + $(this).width() / 2);
-        $('.js_stage_btn.is-active').removeClass('is-active');
-        $(this).addClass('is-active');
-    });
-
     $('.js_goto_anchor').bind("click", function(e){
         $('html, body').stop().animate({
             scrollTop: $($(this).attr('href')).offset().top-120
@@ -99,6 +93,8 @@ $(document).ready(function () {
             $('.js_fixed_nav_wrap').removeClass('is-open').slideUp();
         }
     });
+
+
     var flat_category_id;
     $('.js_rooms_btn').on('click', function () {
         flat_category_id = $(this).data('id');
@@ -122,7 +118,11 @@ $(document).ready(function () {
             }, 200);
         }
 
-        $('.js_give_src').attr('src', thisLayout.src);
+        $('.js_give_src').animate({opacity: "toggle"}, 200);
+        setTimeout(function () {
+            $('.js_give_src').attr('src', thisLayout.src);
+        }, 200);
+        $('.js_give_src').animate({opacity: "toggle"}, 200);
         $('.js_give_area').text(thisLayout.area.replace('.', ','));
         $('.js_give_block').text(thisLayout.block);
         $('.js_give_floor').text(thisLayout.floor);
@@ -168,18 +168,11 @@ $(document).ready(function () {
             $('.js_img_next').attr('src', fotorama.data[activeIndex+1]['img']);
         }
     });
+    $("<div class='nav-scroll-btn nav-scroll-btn--prev'></div>").insertBefore(".gallery__fotorama .fotorama__nav.fotorama__nav--thumbs");
+    $("<div class='nav-scroll-btn nav-scroll-btn--next'></div>").insertAfter(".gallery__fotorama .fotorama__nav.fotorama__nav--thumbs");
 
-    var $stagesFotorama = $('.js_stages__fotorama').fotorama({
-        navwidth: '90%'
-    });
-    // 2. Get the API object.
-    var stagesFotorama = $stagesFotorama.data('fotorama');
-
-    $("<div class='nav-scroll-btn nav-scroll-btn--prev'></div>").insertBefore(".fotorama__nav.fotorama__nav--thumbs");
-    $("<div class='nav-scroll-btn nav-scroll-btn--next'></div>").insertAfter(".fotorama__nav.fotorama__nav--thumbs");
-
-    $("<div class='gallery__bg-image-block gallery__bg-image-block--prev'><div class='gallery__bg-image-wrap'><img class='gallery__bg-image js_img_prev'></div></div>").insertAfter(".fotorama__arr.fotorama__arr--next");
-    $("<div class='gallery__bg-image-block gallery__bg-image-block--next'><div class='gallery__bg-image-wrap'><img class='gallery__bg-image js_img_next'></div></div>").insertAfter(".fotorama__arr.fotorama__arr--next");
+    $("<div class='gallery__bg-image-block gallery__bg-image-block--prev'><div class='gallery__bg-image-wrap'><img class='gallery__bg-image js_img_prev'></div></div>").insertAfter(".gallery__fotorama .fotorama__arr.fotorama__arr--next");
+    $("<div class='gallery__bg-image-block gallery__bg-image-block--next'><div class='gallery__bg-image-wrap'><img class='gallery__bg-image js_img_next'></div></div>").insertAfter(".gallery__fotorama .fotorama__arr.fotorama__arr--next");
     // make the buttons functionality
 
     $('.nav-scroll-btn--prev').click(function () {
@@ -192,5 +185,51 @@ $(document).ready(function () {
     $('.js_open_fotorama').on('click', function () {
         fotorama.show($(this).data('img'));
         fotorama.requestFullScreen();
+    });
+
+
+    var $stagesFotorama = $('.js_stages__fotorama').fotorama({
+        navwidth: '90%'
+    });
+    // 2. Get the API object.
+    var stagesFotorama = $stagesFotorama.data('fotorama');
+
+    $('.js_stage_btn').on('click', function () {
+        if (!$(this).hasClass('is-active')) {
+
+            var thisId = $(this).data('id');
+
+            $('.js_stages__fotorama, .js_give_stage_text').animate({opacity: "toggle"}, 300);
+            var imageArray = [];
+            for (var stageImg in stageObj[thisId]['images']){
+                var imageSrc = stageObj[thisId]['images'][stageImg].src;
+                imageArray.push({img: imageSrc});
+            }
+            setTimeout(function () {
+                $('.js_give_stage_text').text(stageObj[thisId]['text']);
+                stagesFotorama.load(imageArray);
+            }, 300);
+
+            $('.js_stages__fotorama, .js_give_stage_text').animate({opacity: "toggle"}, 300);
+            var left = $(this).width() / 2;
+            for(var i = 0; i < $(this).index(); i++){
+                left += $('.js_stage_btn').eq(i).width() + 10;
+            }
+            $('.stages__list').css('left', $(window).width() / 2 - left);
+            $('.js_stage_btn.is-active').removeClass('is-active');
+
+            $(this).addClass('is-active');
+        }
+    });
+
+    $('.js_stage_btn:first-child').click();
+
+    $(window).on('resize', function () {
+        var activeBtn = $('.js_stage_btn.is-active');
+        var left = activeBtn.width() / 2;
+        for(var i = 0; i < activeBtn.index(); i++){
+            left += $('.js_stage_btn').eq(i).width() + 10;
+        }
+        $('.stages__list').css('left', $(window).width() / 2 - left);
     });
 });

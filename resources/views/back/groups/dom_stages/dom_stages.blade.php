@@ -35,7 +35,7 @@
     <div class="box box-info group-item-widget"
          data-block="stage_images">
         <div class="box-header with-border">
-            <h3 class="box-title"> Слайды </h3>
+            <h3 class="box-title"> Слайды (jpg, png 820×490 пикселей) </h3>
             <button type="submit" data-parent="{{$item->id_field}}" class="btn btn-primary pull-right add-flat-item">Добавить</button>
         </div>
         <div class="box-body">

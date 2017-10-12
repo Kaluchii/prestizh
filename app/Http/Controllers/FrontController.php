@@ -17,7 +17,7 @@ class FrontController extends Controller
     private $extract;
     public function __construct(ExtractAgent $ext){
         $this->extract = $ext;
-        $this->extract->tuneSelection('stage_images')->sortBy('sorter','DESC');
+        $this->extract->tuneSelection('dom_stages')->sortBy('sorter','DESC');
     }
 
 

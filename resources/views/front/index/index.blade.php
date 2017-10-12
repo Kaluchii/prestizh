@@ -300,7 +300,7 @@
             </div>
             <div class="stages__col2">
                 <div class="stages__radial-col">
-                    <input value="{{ $stages->percent_field }}" data-width="100%" data-thickness=".02" type="text" class="stages__radial js_radial" data-bgColor="#FFFFFF" readonly data-fgColor="#ddc777" data-displayInput="false" data-rotation="anticlockwise">
+                    <input value="{{ $stages->percent_field }}" data-width="100%" data-thickness=".04" type="text" class="stages__radial js_radial" data-bgColor="#FFFFFF" readonly data-fgColor="#ddc777" data-displayInput="false" data-rotation="anticlockwise">
                 </div>
                 <div class="stages__percent-col">
                     <p class="stages__percent-text">Готовность<br>жилого комплекса</p>
@@ -311,7 +311,7 @@
         <div class="stages__date-list-wrapper">
             <ul class="stages__list">
                 @foreach($stages->dom_stages_group as $stage)
-                    <li class="stages__item"><button class="stages__item-btn js_stage_btn">{{$stage->dom_stages_name_field}}</button></li>
+                    <li class="stages__item js_stage_btn" data-id="{{$stage->id_field}}"><button class="stages__item-btn">{{$stage->dom_stages_name_field}}</button></li>
                 @endforeach
             </ul>
         </div>
@@ -319,7 +319,6 @@
             <div class="stages__fotorama js_stages__fotorama fotorama" data-auto="false" data-ratio="820/490"
                  data-nav="none" data-allowfullscreen="true"
                  data-loop="true" data-transition="crossfade">
-                <a href="{{$slide->slide_field->link}}?{{$slide->slide_field->cache_index}}"></a>
             </div>
             <p class="stages__stage-text js_give_stage_text"></p>
         </div>
