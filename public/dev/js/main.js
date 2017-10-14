@@ -206,7 +206,7 @@ $(document).ready(function () {
                 imageArray.push({img: imageSrc});
             }
             setTimeout(function () {
-                $('.js_give_stage_text').text(stageObj[thisId]['text']);
+                $('.js_give_stage_text').html(stageObj[thisId]['text']);
                 stagesFotorama.load(imageArray);
             }, 300);
 
