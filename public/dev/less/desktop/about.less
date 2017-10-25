@@ -8,11 +8,13 @@
   }
 
   &__text-wrap{
-    max-width: 545px;
+    display: flex;
+    justify-content: space-between;
   }
 
   &__title{
     position: relative;
+    max-width: 345px;
 
     &::before{
       content: 'О КОМПЛЕКСЕ';
@@ -29,8 +31,9 @@
 
   &__text{
     font-size: 18px;
-    margin-top: 25px;
+    margin-top: 5px;
     line-height: 1.556;
+    max-width: 470px;
   }
 
   &__in-detail{
@@ -98,6 +101,14 @@
 .detail-item{
   position: relative;
   display: flex;
+
+  &--biggest{
+    .detail-item{
+      &__text-wrap{
+        max-width: 210px;
+      }
+    }
+  }
 
   &--middle{
     flex-direction: column;

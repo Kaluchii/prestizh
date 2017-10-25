@@ -7,9 +7,9 @@ return [
     ],
 
     'about' => [
-        'string' => ['block_title', 'title1', 'title2', 'title3', 'title4', 'title5', 'title6', 'title7'],
-        'text' => ['text', 'text1', 'text2', 'text3', 'text4', 'text5', 'text6', 'text7'],
-        'image' => ['image1', 'image2', 'image3', 'image4', 'image5', 'image6', 'image7']
+        'string' => ['block_title', 'title0', 'title1', 'title2', 'title3', 'title4', 'title5', 'title6', 'title7'],
+        'text' => ['text', 'text0', 'text1', 'text2', 'text3', 'text4', 'text5', 'text6', 'text7'],
+        'image' => ['image0', 'image1', 'image2', 'image3', 'image4', 'image5', 'image6', 'image7']
     ],
 
     'gallery' => [

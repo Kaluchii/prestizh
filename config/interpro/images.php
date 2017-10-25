@@ -1,6 +1,10 @@
 <?php
 
 return [
+    'about.image0' => [
+        'resizes' => ['preview']
+    ],
+
     'about.image1' => [
         'resizes' => ['preview']
     ],

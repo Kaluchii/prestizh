@@ -164,6 +164,12 @@
     &--fixed{
       position: relative;
 
+      &:hover{
+        .header__nav-link{
+          color: #f3e694;
+        }
+      }
+
       &::before{
         content: '';
         position: absolute;
@@ -176,6 +182,16 @@
         width: 134px;
         height: 37px;
         transition: .3s;
+      }
+
+      &.is-active{
+        &::before{
+          opacity: 1;
+        }
+
+        .header__nav-link{
+          color: #f3e694;
+        }
       }
     }
   }

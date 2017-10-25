@@ -85,6 +85,15 @@
             </div>
             <div class="about__in-detail in-detail">
                 <div class="in-detail__triad">
+                    <div class="in-detail__item detail-item detail-item--biggest">
+                        <div class="detail-item__img-wrap"><img src="{{$about->image0->link_field}}?{{$about->image0->cache_index}}" alt="{{$about->image0->alt_field}}" height="540" width="640" class="detail-item__img"></div>
+                        <div class="detail-item__text-wrap">
+                            <h3 class="detail-item__title">{!! $about->title0_field !!}</h3>
+                            <p class="detail-item__text">{!! $about->text0_field !!}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="in-detail__triad">
                     <div class="in-detail__item detail-item">
                         <div class="detail-item__img-wrap"><img src="{{$about->image1->link_field}}?{{$about->image1->cache_index}}" alt="{{$about->image1->alt_field}}" height="400" width="400" class="detail-item__img"></div>
                         <div class="detail-item__text-wrap">
