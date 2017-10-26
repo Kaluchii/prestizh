@@ -145,6 +145,44 @@
                         <div class="detail-item__text-wrap">
                             <h3 class="detail-item__title">{!! $about->title7_field !!}</h3>
                             <p class="detail-item__text">{!! $about->text7_field !!}</p>
+                            <div class="detail-item__places places">
+                                <div class="places__item">
+                                    <div class="places__img-wrap">
+                                        <img src="/img/tree.png" alt="" class="places__img">
+                                    </div>
+                                    <div class="places__text-wrap">
+                                        <p class="places__time">3 мин.</p>
+                                        <div class="places__name">Ботанический бульвар</div>
+                                    </div>
+                                </div>
+                                <div class="places__item">
+                                    <div class="places__img-wrap">
+                                        <img src="/img/trc_f.png" alt="" class="places__img">
+                                    </div>
+                                    <div class="places__text-wrap">
+                                        <p class="places__time">10 мин.</p>
+                                        <div class="places__name">ТРЦ "Forum"</div>
+                                    </div>
+                                </div>
+                                <div class="places__item">
+                                    <div class="places__img-wrap">
+                                        <img src="/img/road.png" alt="" class="places__img">
+                                    </div>
+                                    <div class="places__text-wrap">
+                                        <p class="places__time">1 мин.</p>
+                                        <div class="places__name">Река "Есентай"</div>
+                                    </div>
+                                </div>
+                                <div class="places__item">
+                                    <div class="places__img-wrap">
+                                        <img src="/img/trc_e.png" alt="" class="places__img">
+                                    </div>
+                                    <div class="places__text-wrap">
+                                        <p class="places__time">15 мин.</p>
+                                        <div class="places__name">ТРЦ "Esentai"</div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -364,26 +402,7 @@
             </div>
             <div class="contacts__map-wrapper">
                 <div class="contacts__map" id="map"></div>
-                <script>
-                    function initMap() {
-                        var prestizh = {lat: 43.233779, lng: 76.921195};
-                        var map = new google.maps.Map(document.getElementById('map'), {
-                            zoom: 16,
-                            disableDefaultUI: true,
-                            center: prestizh
-                        });
-                        var image = {
-                            url: '/img/map_icon.png',
-                            size: new google.maps.Size(102, 96),
-                            anchor: new google.maps.Point(95, 27)
-                        };
-                        var marker = new google.maps.Marker({
-                            position: prestizh,
-                            icon: image,
-                            map: map
-                        });
-                    }
-                </script>
+                @include('front.index.map_init')
             </div>
         </div>
     </section>
