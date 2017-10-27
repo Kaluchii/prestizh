@@ -163,21 +163,31 @@
                 ],
                 {name: 'Styled Map'});
         var prestizh = {lat: 43.233779, lng: 76.921195};
+        var popupContent = '<div class="contact-popup">'+
+                '<div class="contact-popup__wrapper">'+
+                '<p class="contact-popup__phone">{{ $contacts->phone_field }}</p>'+
+                '<p class="contact-popup__addr">{!! $main_block->address_field !!}</p>'+
+                '</div>'+
+                '</div>';
         var map = new google.maps.Map(document.getElementById('map'), {
             zoom: 16,
             disableDefaultUI: true,
-            center: prestizh
+            center: {lat: 43.233779, lng: 76.919950}
         });
         var image = {
             url: '/img/map_icon.png',
-            size: new google.maps.Size(102, 96),
-            anchor: new google.maps.Point(95, 27)
+            size: new google.maps.Size(1, 1),
+            anchor: new google.maps.Point(1, 1)
         };
         var marker = new google.maps.Marker({
             position: prestizh,
             icon: image,
             map: map
         });
+        var infowindow = new google.maps.InfoWindow({
+            content: popupContent
+        });
+        infowindow.open(map, marker);
 
         map.mapTypes.set('styled_map', styledMapType);
         map.setMapTypeId('styled_map');
