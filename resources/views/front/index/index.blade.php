@@ -19,7 +19,7 @@
             <div class="header__feedback-wrap">
                 <div class="header__phone-wrap">
                     <p class="header__consult">Позвоните для консультации</p>
-                    <p class="header__phone-number"><a href="tel:{{ $contacts->phone_field }}" class="header__phone-number-link">{{ $contacts->phone_field }}</a></p>
+                    <p class="header__phone-number"><a href="tel:{{ $contacts->phone_field }}" class="header__phone-number-link js_top_phone">{{ $contacts->phone_field }}</a></p>
                 </div>
                 <a href="#contacts" class="js_goto_anchor header__order-call button"><span class="header__btn-text">ЗАКАЗАТЬ ЗВОНОК</span></a>
             </div>
