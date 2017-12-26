@@ -1,7 +1,6 @@
 .title-block{
-  padding: 25px 30px 495px;
-  background: url("/img/title_bg.jpg") no-repeat center;
-  background-size: cover;
+  padding: 25px 30px 480px;
+  background: url("/img/stock.png") no-repeat center top, url("/img/title_bg.jpg") no-repeat center top/cover;
   //overflow: hidden;
   position: relative;
   z-index: 1;
@@ -30,11 +29,21 @@
   }
 
   &__price{
+    position: relative;
     font-family: 'RozhaOne';
     font-size: 118px;
-    color: #ffffff;
     line-height: .8;
     letter-spacing: -0.004em;
+    color: transparent;
+    background: #c3b06a;
+    background: -moz-linear-gradient(45deg, #c3b06a 0%, #eade85 17%, #c3b06a 61%, #eade85 100%);
+    background: -webkit-gradient(left bottom, right top, color-stop(0%, #c3b06a), color-stop(17%, #eade85), color-stop(61%, #c3b06a), color-stop(100%, #eade85));
+    background: -webkit-linear-gradient(45deg, #c3b06a 0%, #eade85 17%, #c3b06a 61%, #eade85 100%);
+    background: -o-linear-gradient(45deg, #c3b06a 0%, #eade85 17%, #c3b06a 61%, #eade85 100%);
+    background: -ms-linear-gradient(45deg, #c3b06a 0%, #eade85 17%, #c3b06a 61%, #eade85 100%);
+    background: repeating-linear-gradient(4deg, #eade85 0%, #c3b06a 17%, #eade85 61%, #c3b06a 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c3b06a', endColorstr='#eade85', GradientType=1 );
+    -webkit-background-clip: text;
 
     &::before{
       content: 'от';
@@ -43,6 +52,17 @@
       font-size: 30px;
       left: -8px;
       bottom: 45px;
+      color: #ffffff;
+      text-shadow: none;
+    }
+
+    &--bg{
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: -1;
+      color: #000000;
+      text-shadow: 1px 1px 1px rgba(17, 31, 65, 0.62);
     }
   }
 

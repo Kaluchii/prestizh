@@ -1,3 +1,19 @@
+@media screen and (max-width: 1440px) {
+  .title-block{
+    background: url("/img/stock.png") no-repeat ~'50% 10px / 400px 387.12446px', url("/img/title_bg.jpg") no-repeat center top/cover;
+
+    &__text-wrap{
+      padding-top: 120px;
+    }
+  }
+}
+
+@media screen and (max-width: 1360px) {
+  .title-block{
+    background: url("/img/stock.png") no-repeat ~'50% 20px / 320px 309.69957px', url("/img/title_bg.jpg") no-repeat center top/cover;
+  }
+}
+
 @media screen and (max-width: 1240px) {
   .title-block{
     &__header{
@@ -197,12 +213,15 @@
   .title-block{
     padding: 0;
     height: 770px;
+    background-size: 240px 232.274678px, cover;
+    background-position: 50% 40px, center top;
 
     &__text-wrap{
+      padding-top: 180px;
       flex-direction: column;
       margin: 0 auto;
       max-width: none;
-      height: ~'calc(100% - 155px)';
+      height: ~'calc(100% - 270px)';
     }
     
     &__title{
@@ -373,8 +392,8 @@
 @media screen and (max-width: 620px) {
   .title-block{
     &__text-wrap{
-      padding-top: 40px;
-      height: ~'calc(100% - 130px)';
+      /*padding-top: 40px;
+      height: ~'calc(100% - 130px)';*/
     }
 
     &__price-wrap{
