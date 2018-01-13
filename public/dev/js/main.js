@@ -138,7 +138,13 @@ $(document).ready(function () {
         $('.js_give_area').text(thisLayout.area.replace('.', ','));
         $('.js_give_block').text(thisLayout.block);
         $('.js_give_floor').text(thisLayout.floor);
-        var half_tg = number_format(Math.round(thisLayout.meter_cost * thisLayout.area * EXCHANGE_COST), 0, ',', ' ');
+
+        var half_tg;
+        if(thisLayout.floor == '1'){
+            half_tg = number_format(Math.round(375000 * thisLayout.area), 0, ',', ' ');
+        } else {
+            half_tg = number_format(Math.round(thisLayout.meter_cost * thisLayout.area * EXCHANGE_COST), 0, ',', ' ');
+        }
         $('.js_give_price').text(half_tg);
         $('.js_area_btn').removeClass('is-active').closest('.layout-choice__btns-item').removeClass('is-active');
         $(this).addClass('is-active').closest('.layout-choice__btns-item').addClass('is-active');
