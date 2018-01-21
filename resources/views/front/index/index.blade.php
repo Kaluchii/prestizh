@@ -406,6 +406,9 @@
             </div>
         </div>
     </section>
+    <a href="#title" class="to-top js_goto_anchor js-top-btn" title="Перейти наверх страницы" style="display: none">
+        <span class="to-top__arrow"></span>
+    </a>
     <div class="vl"></div>
     @include('front.index.meta')
 @endsection
