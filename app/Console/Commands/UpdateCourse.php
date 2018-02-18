@@ -40,7 +40,7 @@ class UpdateCourse extends Command
      */
     public function handle()
     {
-        $url = "https://www.bcc.kz/about/kursy-valyut/";
+        $url = "http://course.wonderbar.kz/courses.json";
 
         $dataObj = json_decode(file_get_contents($url), true);
         $price = $dataObj['courses']['usd'];
