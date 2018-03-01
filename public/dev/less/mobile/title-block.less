@@ -1,16 +1,8 @@
 @media screen and (max-width: 1440px) {
   .title-block{
-    background: url("/img/stock.png") no-repeat ~'50% 10px / 400px 387.12446px', url("/img/title_bg.jpg") no-repeat center top/cover;
-
     &__text-wrap{
       padding-top: 120px;
     }
-  }
-}
-
-@media screen and (max-width: 1360px) {
-  .title-block{
-    background: url("/img/stock.png") no-repeat ~'50% 20px / 320px 309.69957px', url("/img/title_bg.jpg") no-repeat center top/cover;
   }
 }
 
@@ -213,8 +205,6 @@
   .title-block{
     padding: 0;
     height: 770px;
-    background-size: 240px 232.274678px, cover;
-    background-position: 50% 40px, 37% top;
 
     &__text-wrap{
       padding-top: 180px;
@@ -226,6 +216,12 @@
     
     &__title{
       text-align: center;
+    }
+
+    &__price-wrap{
+      &::before{
+        width: 330px;
+      }
     }
     
     &__price{
@@ -419,6 +415,12 @@
       width: 300px;
       padding-left: 20px;
       margin: 15px auto 0;
+
+      &::before{
+        top: -60px;
+        left: 25px;
+        width: 260px;
+      }
     }
 
     &__t{

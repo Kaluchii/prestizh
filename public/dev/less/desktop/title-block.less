@@ -1,6 +1,6 @@
 .title-block{
-  padding: 25px 30px 480px;
-  background: url("/img/stock.png") no-repeat center top, url("/img/title_bg.jpg") no-repeat center top/cover;
+  padding: 25px 30px 458px;
+  background: url("/img/title_bg.jpg?1") no-repeat center top/cover;
   //overflow: hidden;
   position: relative;
   z-index: 1;
@@ -18,14 +18,26 @@
     justify-content: space-between;
   }
 
-  &__col1{}
+  &__col1{
+    padding-top: 65px;
+  }
 
   &__title{}
 
   &__price-wrap{
-    margin-top: 10px;
-    padding-left: 5px;
+    position: relative;
     display: flex;
+    padding-left: 5px;
+
+    &::before{
+      content: "";
+      position: absolute;
+      top: -70px;
+      left: 0;
+      width: 407px;
+      height: 65px;
+      background: url("/img/stock.png?1") no-repeat center / contain;
+    }
   }
 
   &__price{

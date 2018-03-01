@@ -33,7 +33,7 @@
         </header>
         <div class="title-block__text-wrap">
             <div class="title-block__col1">
-                <h1 class="title-block__title">{{ $main_block->block_title_field }}</h1>
+                {{--<h1 class="title-block__title">{{ $main_block->block_title_field }}</h1>--}}
                 <p class="title-block__price-wrap">
                     <span class="title-block__price">{{ $main_block->price_field }} <span class="title-block__price title-block__price--bg">{{ $main_block->price_field }}</span> </span>
                     <span class="title-block__t-m"><span class="title-block__t">T</span><span class="title-block__m">м<sup>2</sup></span></span>
