@@ -387,14 +387,20 @@
 
 @media screen and (max-width: 620px) {
   .title-block{
-    background: url(/img/title_bg.jpg?1) no-repeat ~'38% -8% / 1110px';
+    height: 695px;
+    background: url(/img/title_bg.jpg?1) ~'38% -155%/1110px no-repeat';
 
     &__text-wrap{
-      padding-top: 50px;
+      height: ~'calc(100% - 195px)';
+      padding-top: 0;
     }
 
     &__price-wrap{
       margin-top: 20px;
+    }
+
+    &__popup{
+      margin-top: 10px;
     }
   }
 }
