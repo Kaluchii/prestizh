@@ -19,7 +19,6 @@
   }
 
   &__col1{
-    padding-top: 65px;
   }
 
   &__title{}
@@ -28,16 +27,6 @@
     position: relative;
     display: flex;
     padding-left: 5px;
-
-    &::before{
-      content: "";
-      position: absolute;
-      top: -70px;
-      left: 0;
-      width: 407px;
-      height: 65px;
-      background: url("/img/stock.png?3") no-repeat left center / contain;
-    }
   }
 
   &__price{
@@ -106,17 +95,8 @@
     }
   }
 
-  &__address{
-    margin-top: 10px;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 1.5;
-    max-width: 345px;
-    padding-left: 40px;
-    color: #ffffff;
-  }
-
   &__col2{
+    padding-top: 15px;
     width: 580px;
     position: relative;
   }
@@ -143,8 +123,13 @@
 
   &__popup{
     position: absolute;
-    margin-top: 40px;
+    margin-top: 35px;
     z-index: 10;
+  }
+
+  &__parking{
+    margin-top: 25px;
+    width: 260px;
   }
 }
 
@@ -302,54 +287,23 @@
 
 .title-popup{
   width: 100%;
-  background: url("/img/car.png") no-repeat right bottom, url("/img/car_bg.jpg") no-repeat top left/100% 100% ;
 
   &__wrapper{
-    padding: 35px 20px;
     position: relative;
-  }
 
-  &__top-text{
-    padding-left: 3px;
-    font-weight: 700;
-    color: #232323;
-    line-height: 1;
-    letter-spacing: .2em;
-  }
-
-  &__middle-text{
-    margin-top: 10px;
-    font-size: 80px;
-    font-weight: 800;
-    color: #232323;
-    line-height: .8;
-    letter-spacing: .025em;
-  }
-
-  &__bottom-text{
-    padding-left: 3px;
-    font-size: 38px;
-    font-weight: 900;
-    color: #232323;
-    line-height: 1;
-    letter-spacing: .025em;
-  }
-
-  &__hr{
-    margin-top: 20px;
-    margin-left: -20px;
-    width: ~'calc(100% + 40px)';
-    border: none;
-    height: 1px;
-    background: linear-gradient(to left, rgba(35, 35, 35, 0.2) 2px, transparent 2px);
-    background-position: 0 100%;
-    background-size: 4px 2px;
-    background-repeat: repeat-x;
+    &::after{
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 331px;
+      height: 456px;
+      background: url('/img/balls.png') no-repeat center / contain;
+    }
   }
 
   &__interest-text{
-    margin-top: 20px;
-    padding-left: 3px;
+    padding-left: 5px;
     font-size: 20px;
     font-weight: 700;
     line-height: 1;
@@ -358,6 +312,8 @@
   }
 
   &__input-rows{
+    position: relative;
+    z-index: 1;
     padding-left: 5px;
     margin-top: 20px;
     max-width: 300px;
@@ -386,25 +342,96 @@
       opacity: 1;
     }
   }
+
+  &__parking{
+    display: none;
+  }
+
+  &__row-1{
+    padding: 25px 25px 28px;
+    background-color: #fff;
+  }
+
+  &__row-2{
+    padding: 20px 20px 35px;
+    background: url("/img/form_lighter.png") no-repeat left bottom / 540px 300px, url("/img/popup_bg.png") repeat;
+  }
+
+  &__discount-wrap{
+    display: flex;
+  }
+
+  &__discount{
+    font-size: 40px;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: .03em;
+    color: #ac9530;
+  }
+
+  &__discount-img{
+    position: relative;
+    left: -5px;
+    margin-top: 10px;
+    width: 273px;
+    height: 80px;
+    background: url('/img/discount_7.png') no-repeat center / contain;
+  }
+
+  &__condition{
+    position: relative;
+    top: 2px;
+    max-width: 80px;
+    padding-left: 15px;
+    font-size: 15px;
+    line-height: 1.2;
+    letter-spacing: .05em;
+    color: #232323;
+  }
+
+  &__bold{
+    font-weight: 800;
+  }
 }
 
 .popup-input{
   position: relative;
 
+  &.error:not(.filling){
+    .popup-input{
+      &__input{
+        background-color: #fff;
+
+        &:focus{
+          background-color: #fff;
+        }
+      }
+
+      &__label{
+        &--tel{
+          border-color: #d65137;
+        }
+      }
+    }
+  }
+
   &__label{
     background-color: transparent;
     position: absolute;
-    height: 48px;
+    height: 50px;
     width: 55px;
+    font-size: 16px;
     color: #201306;
+    transition: .3s;
 
     &--name{
-      font-size: 18px;
     }
 
     &--tel{
-      font-size: 20px;
-      border-right: 1px solid rgba(0, 0, 0, 0.2);
+      height: 48px;
+      width: 47px;
+      border: 1px solid #fff;
+      background-color: #fff;
     }
   }
 
@@ -412,27 +439,32 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    left: 20px;
+    left: 17px;
     font-size: inherit;
     text-align: center;
     color: inherit;
   }
 
   &__input{
-    background-color: rgba(35, 35, 35, 0.2);
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    padding: 0 30px 0 70px;
+    background-color: #fff;
+    border: 1px solid #fff;
+    padding: 0 30px 0 80px;
     font-size: 18px;
     box-sizing: border-box;
-    height: 48px;
+    height: 50px;
     width: 100%;
     color: #201306;
     letter-spacing: 0.04em;
     transition: .3s;
 
     &:focus{
-      background-color: rgba(35, 35, 35, 0.1);
-      border-color: rgba(0, 0, 0, 0.5);
+      border-color: #bbbbbb;
+    }
+
+    &--tel{
+      width: ~'calc(100% - 60px)';
+      margin-left: 60px;
+      padding-left: 20px;
     }
   }
 
@@ -510,5 +542,36 @@
     width: 20px;
     background-color: #c2ae68;
     transition: .3s
+  }
+}
+
+.parking{
+  padding: 20px 0 77px;
+  text-align: center;
+  background: url("/img/parking_car.jpg") no-repeat center bottom / 260px, #fff;
+
+  &__top-text{
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: .03em;
+    color: #bba543;
+  }
+
+  &__middle-text{
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: .02em;
+    color: #bba543;
+  }
+
+  &__bottom-text{
+    margin-top: 4px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: .04em;
+    color: #232323;
   }
 }

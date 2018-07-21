@@ -38,9 +38,6 @@
       }
     }
 
-    &__address{
-    }
-
     &__col2{
       width: 100%;
       max-width: 450px;
@@ -100,8 +97,6 @@
   }
 
   .title-popup{
-    background: url("/img/popup_light.png") repeat, url("/img/car.png") no-repeat right bottom, url("/img/car_bg.jpg") no-repeat top left/100% 100% ;
-
     .form-row{
       &__tooltip-wrap{
         left: auto;
@@ -139,18 +134,9 @@
     }
 
     &__wrapper{
-    }
-
-    &__top-text{
-    }
-
-    &__middle-text{
-    }
-
-    &__bottom-text{
-    }
-
-    &__hr{
+      &::after{
+        display: none;
+      }
     }
 
     &__interest-text{
@@ -206,6 +192,10 @@
     padding: 0;
     height: 770px;
 
+    &__parking{
+      display: none;
+    }
+
     &__text-wrap{
       padding-top: 180px;
       flex-direction: column;
@@ -219,8 +209,14 @@
     }
 
     &__price-wrap{
-      &::before{
-        width: 330px;
+      &::after{
+        content: '';
+        position: absolute;
+        bottom: -105px;
+        right: 10px;
+        width: 235px;
+        height: 84px;
+        background: url('/img/discount_under_price.png') no-repeat center / contain;
       }
     }
     
@@ -245,12 +241,6 @@
     &__col2{
       max-width: none;
     }
-    
-    &__address{
-      text-align: center;
-      padding-left: 0;
-      margin: 10px auto;
-    }
 
     &__installment{
       padding: 65px 0 0;
@@ -269,13 +259,18 @@
     width: 100%;
     margin-left: 0;
 
-    &__hr{
-      margin-left: -20px;
-      width: ~'calc(100% + 40px)';
+    &__wrapper{
+      &::after{
+        display: block;
+      }
     }
 
-    &__wrapper{
-      padding: 45px 20px 50px;
+    &__parking{
+      display: block;
+    }
+
+    &__row-2{
+      padding-bottom: 25px;
     }
 
     &__close{
@@ -321,6 +316,23 @@
       font-size: 16px;
       margin-top: 0;
       text-align: center;
+    }
+  }
+
+  .parking{
+    padding: 25px 0 115px;
+    background: url('/img/popup_bg.png') repeat-x bottom / 100% 20px, url("/img/parking_car.jpg") no-repeat 50% ~'calc(100% - 20px)' / 320px, #fff;
+
+    &__top-text{
+      font-size: 60px;
+    }
+
+    &__middle-text{
+      font-size: 37px;
+    }
+
+    &__bottom-text{
+      font-size: 17px;
     }
   }
 }
@@ -385,6 +397,16 @@
   }
 }
 
+@media screen and (max-width: 690px) {
+  .title-popup{
+    &__wrapper{
+      &::after{
+        display: none;
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 620px) {
   .title-block{
     height: 695px;
@@ -396,7 +418,7 @@
     }
 
     &__price-wrap{
-      margin-top: 20px;
+      margin-top: 25px;
     }
 
     &__popup{
@@ -421,13 +443,7 @@
     &__price-wrap{
       width: 300px;
       padding-left: 20px;
-      margin: 15px auto 0;
-
-      &::before{
-        top: -60px;
-        left: 25px;
-        width: 260px;
-      }
+      margin: 25px auto 0;
     }
 
     &__t{
@@ -443,14 +459,6 @@
       }
     }
 
-    &__address{
-      font-size: 13px;
-      font-weight: 500;
-      line-height: 1.384615385;
-      letter-spacing: -0.02em;
-      max-width: 280px;
-    }
-
     &__installment{
       font-size: 16px;
       line-height: 1.4375;
@@ -464,36 +472,7 @@
   }
 
   .title-popup{
-    background: url("/img/popup_light.png") repeat, url("/img/car.png") no-repeat 100% 50px, url("/img/car_bg.jpg") no-repeat top left/100% 100% ;
-
     &__wrapper{
-      padding: 45px 10px 50px;
-    }
-
-    &__top-text{
-      text-align: center;
-    }
-
-    &__middle-text{
-      text-align: center;
-      font-size: 60px;
-      margin-top: 6px;
-    }
-
-    &__bottom-text{
-      text-align: center;
-      font-size: 30px;
-      margin-top: 2px;
-    }
-
-    &__hr{
-      margin-left: -10px;
-      width: ~'calc(100% + 20px)';
-    }
-
-    &__interest-text{
-      text-align: center;
-      margin-top: 23px;
     }
 
     &__input-rows{
@@ -529,14 +508,6 @@
     }
 
     &__btn{
-    }
-  }
-
-  .form-row__validation-wrap.error:not(.filling) .form-row__input.popup-input__input{
-    background-color: #fff;
-
-    &:focus{
-      background-color: #fff;
     }
   }
 }

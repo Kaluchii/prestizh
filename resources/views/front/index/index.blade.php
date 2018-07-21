@@ -38,37 +38,50 @@
                     <span class="title-block__price">{{ $main_block->price_field }} <span class="title-block__price title-block__price--bg">{{ $main_block->price_field }}</span> </span>
                     <span class="title-block__t-m"><span class="title-block__t">T</span><span class="title-block__m">м<sup>2</sup></span></span>
                 </p>
-                <p class="title-block__address">{!! $main_block->address_field !!}</p>
+                <div class="title-block__parking parking">
+                    <p class="parking__top-text">ПАРКИНГ</p>
+                    <p class="parking__middle-text">В ПОДАРОК!</p>
+                    <p class="parking__bottom-text">Условия в отделе продаж</p>
+                </div>
             </div>
             <div class="title-block__col2">
                 <p class="title-block__installment">РАССРОЧКА<br>ОТ ЗАСТРОЙЩИКА</p>
                 <div class="title-block__popup title-popup">
                     <div class="title-popup__wrapper">
-                        <p class="title-popup__top-text">ПРИ ПОКУПКЕ КВАРТИРЫ</p>
-                        <p class="title-popup__middle-text">ПАРКИНГ</p>
-                        <p class="title-popup__bottom-text">В ПОДАРОК!</p>
-                        <hr class="title-popup__hr">
-                        <p class="title-popup__interest-text">ЗАИНТЕРЕСОВАЛИСЬ?</p>
-
-                        <div class="title-popup__input-rows form-id" id="popup_call">
-                            <input type="hidden" name="form" class="form-input" value="call">
-                            <div class="title-popup__row form-row">
-                                <div class="form-row__validation-wrap popup-input">
-                                    <label class="popup-input__label popup-input__label--name"><span class="popup-input__label-text">Имя</span></label>
-                                    <input type="text" name="client_name" required class="form-row__input form-input popup-input__input">
-                                    <div class="form-row__tooltip-wrap form-row__tooltip-wrap--popup-none"><p class="form-row__tooltip form-row__tooltip--border">Как к вам обращаться</p></div>
-                                </div>
+                        <div class="title-popup__parking parking">
+                            <p class="parking__top-text">ПАРКИНГ</p>
+                            <p class="parking__middle-text">В ПОДАРОК!</p>
+                            <p class="parking__bottom-text">Условия в отделе продаж</p>
+                        </div>
+                        <div class="title-popup__row-1">
+                            <div class="title-popup__discount-wrap">
+                                <p class="title-popup__discount">СКИДКА</p>
+                                <p class="title-popup__condition">Только до <span class="title-popup__bold">31</span> августа</p>
                             </div>
-
-                            <div class="title-popup__row form-row">
-                                <div class="form-row__validation-wrap popup-input">
-                                    <label class="popup-input__label popup-input__label--tel"><span class="popup-input__label-text">+7</span></label>
-                                    <input type="tel" data-require="true" class="form-row__input form-input popup-input__input" maxlength="25" data-mask="(000) 000-00-00" name="phone">
-                                    <div class="form-row__tooltip-wrap form-row__tooltip-wrap--popup-none"><p class="form-row__tooltip form-row__tooltip--border">Телефонный номер для связи</p></div>
+                            <div class="title-popup__discount-img"></div>
+                        </div>
+                        <div class="title-popup__row-2">
+                            <p class="title-popup__interest-text">ЗАИНТЕРЕСОВАЛИСЬ?</p>
+                            <div class="title-popup__input-rows form-id" id="popup_call">
+                                <input type="hidden" name="form" class="form-input" value="call">
+                                <div class="title-popup__row form-row">
+                                    <div class="form-row__validation-wrap popup-input">
+                                        <label class="popup-input__label popup-input__label--name" for="popup-client-name"><span class="popup-input__label-text">Имя</span></label>
+                                        <input type="text" name="client_name" required id="popup-client-name" class="form-row__input form-input popup-input__input">
+                                        <div class="form-row__tooltip-wrap form-row__tooltip-wrap--popup-none"><p class="form-row__tooltip form-row__tooltip--border">Как к вам обращаться</p></div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="title-popup__row title-popup__row--btn">
-                                <input type="submit" value="УЗНАТЬ ПОДРОБНЕЕ" class="title-popup__btn form-row__send-form button-tr send-form">
+
+                                <div class="title-popup__row form-row">
+                                    <div class="form-row__validation-wrap popup-input">
+                                        <label class="popup-input__label popup-input__label--tel" for="popup-phone"><span class="popup-input__label-text">+7</span></label>
+                                        <input type="tel" data-require="true" id="popup-phone" class="form-row__input form-input popup-input__input popup-input__input--tel" maxlength="25" data-mask="(000) 000-00-00" name="phone">
+                                        <div class="form-row__tooltip-wrap form-row__tooltip-wrap--popup-none"><p class="form-row__tooltip form-row__tooltip--border">Телефонный номер для связи</p></div>
+                                    </div>
+                                </div>
+                                <div class="title-popup__row title-popup__row--btn">
+                                    <input type="submit" value="УЗНАТЬ ПОДРОБНЕЕ" class="title-popup__btn form-row__send-form button-tr send-form">
+                                </div>
                             </div>
                         </div>
                         <div class="title-popup__close js_popup_close"></div>
@@ -345,7 +358,7 @@
                 <h2 class="stages__title" id="stages">{{ $stages->block_title_field }}</h2>
                 <p class="stages__text">{{ $stages->text_field }}</p>
             </div>
-            <div class="stages__col2">
+            {{--<div class="stages__col2">
                 <div class="stages__radial-col">
                     <input value="{{ $stages->percent_field }}" data-width="100%" data-thickness=".04" type="text" class="stages__radial js_radial" data-bgColor="#FFFFFF" readonly data-fgColor="#ddc777" data-displayInput="false" data-rotation="anticlockwise">
                 </div>
@@ -353,7 +366,7 @@
                     <p class="stages__percent-text">Готовность<br>жилого комплекса</p>
                     <p class="stages__percent-digit-wrap"><span class="stages__percent-digit">{{ $stages->percent_field }}</span>%</p>
                 </div>
-            </div>
+            </div>--}}
         </div>
         <div class="stages__date-list-wrapper">
             <ul class="stages__list">
