@@ -56,7 +56,7 @@
                         <div class="title-popup__row-1">
                             <div class="title-popup__discount-wrap">
                                 <p class="title-popup__discount">СКИДКА</p>
-                                <p class="title-popup__condition">Только до <span class="title-popup__bold">31</span> августа</p>
+                                <p class="title-popup__condition">Только до <span class="title-popup__bold">30</span> сентября</p>
                             </div>
                             <div class="title-popup__discount-img"></div>
                         </div>
@@ -74,8 +74,8 @@
 
                                 <div class="title-popup__row form-row">
                                     <div class="form-row__validation-wrap popup-input">
-                                        <label class="popup-input__label popup-input__label--tel" for="popup-phone"><span class="popup-input__label-text">+7</span></label>
                                         <input type="tel" data-require="true" id="popup-phone" class="form-row__input form-input popup-input__input popup-input__input--tel" maxlength="25" data-mask="(000) 000-00-00" name="phone">
+                                        <label class="popup-input__label popup-input__label--tel" for="popup-phone"><span class="popup-input__label-text">+7</span></label>
                                         <div class="form-row__tooltip-wrap form-row__tooltip-wrap--popup-none"><p class="form-row__tooltip form-row__tooltip--border">Телефонный номер для связи</p></div>
                                     </div>
                                 </div>
@@ -319,9 +319,13 @@
                             </div>
                         </div>
                         <div class="layout__price-wrap">
-                            <p class="layout__price-title">Стоимость от:</p>
+                            <p class="layout__price-title">Стоимость:</p>
                             <p class="layout__price js_give_price"></p>
                         </div>
+                    </div>
+                    <div class="layout__discount-price-wrap">
+                        <p class="layout__discount-price-title">Стоимость при 100% оплате:</p>
+                        <p class="layout__discount-price js_at_once_price"></p>
                     </div>
                     <div class="layout__feedback layout-feedback">
                         <p class="layout-feedback__title">ПОНРАВИЛАСЬ КВАРТИРА?</p>

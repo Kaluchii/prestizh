@@ -14,6 +14,8 @@
                     floor: '{{$layout->floor_field}}',
                     meter_cost: '{{$layout->meter_cost_field}}',
                     area: '{{$layout->area_field}}',
+                    discount: '{{$layout->discount}}',
+                    stock_price: '{{$layout->stock_price}}',
                 },
                 @endforeach
             }

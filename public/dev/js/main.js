@@ -17,7 +17,7 @@ $(document).ready(function () {
             toFixedFix = function (n, prec) {
                 var k = Math.pow(10, prec);
                 return '' + (Math.round(n * k) / k)
-                        .toFixed(prec);
+                    .toFixed(prec);
             };
         // Fix for IE parseFloat(0.55).toFixed(0) = 0;
         s = (prec ? toFixedFix(n, prec) : '' + Math.round(n))
@@ -31,7 +31,7 @@ $(document).ready(function () {
         }
         //////
         if ((s[1] || '')
-                .length < prec) {
+            .length < prec) {
             s[1] = s[1] || '';
             s[1] += new Array(prec - s[1].length + 1)
                 .join('0');
@@ -161,13 +161,15 @@ $(document).ready(function () {
         $('.js_give_block').text(thisLayout.block);
         $('.js_give_floor').text(thisLayout.floor);
 
-        var half_tg;
-        if(thisLayout.floor == '1'){
-            half_tg = number_format(Math.round(375000 * thisLayout.area), 0, ',', ' ');
+        var half_tg,
+            basic_price = Math.round(thisLayout.meter_cost * thisLayout.area * EXCHANGE_COST);
+        if(+thisLayout.stock_price > 0){
+            half_tg = number_format(Math.round(thisLayout.stock_price * thisLayout.area), 0, ',', ' ');
         } else {
-            half_tg = number_format(Math.round(thisLayout.meter_cost * thisLayout.area * EXCHANGE_COST), 0, ',', ' ');
+            half_tg = number_format(basic_price, 0, ',', ' ');
         }
         $('.js_give_price').text(half_tg);
+        $('.js_at_once_price').text(number_format(Math.round(basic_price - basic_price / 100 * thisLayout.discount), 0, ',', ' '));
         $('.js_area_btn').removeClass('is-active').closest('.layout-choice__btns-item').removeClass('is-active');
         $(this).addClass('is-active').closest('.layout-choice__btns-item').addClass('is-active');
 

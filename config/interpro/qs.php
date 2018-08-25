@@ -27,7 +27,7 @@ return [
             'layout' => [
                 'image' => ['layout_scheme'],
                 'string' => ['block', 'floor'],
-                'float' => ['area', 'meter_cost'],
+                'float' => ['area', 'meter_cost', 'stock_price', 'discount'],
                 'dom_flat' => ['superior']
             ]
         ]

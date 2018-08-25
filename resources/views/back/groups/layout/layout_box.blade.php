@@ -29,6 +29,28 @@
         </div>
 
         <div class="form-group">
+            <label>Размер скидки при 100%-ой оплате</label>
+            <input class="form-control float"
+                   type="number" placeholder=""
+                   value="{{$item->discount_field}}"
+                   data-name="discount"
+                   data-type="float"
+                   data-block="layout"
+                   data-id="{{$item->id_field}}">
+        </div>
+
+        <div class="form-group">
+            <label>Акционная стоимость в тг (включается при значении > 0)</label>
+            <input class="form-control float"
+                   type="number" placeholder=""
+                   value="{{$item->stock_price_field}}"
+                   data-name="stock_price"
+                   data-type="float"
+                   data-block="layout"
+                   data-id="{{$item->id_field}}">
+        </div>
+
+        <div class="form-group">
             <label>Блок</label>
             <input class="form-control string"
                    type="text" placeholder=""
