@@ -144,7 +144,7 @@
   }
 
   &__info{
-    padding: 40px 30px 25px;
+    padding: 40px 30px 20px;
   }
 
   &__flat-name{
@@ -215,7 +215,8 @@
   }
 
   &__discount-price-wrap{
-    padding: 10px 30px;
+    padding: 12px 30px 20px ;
+    background: url("/img/price_bg.jpg") no-repeat center / cover;
   }
 
   &__discount-price-title{
@@ -224,17 +225,27 @@
   }
 
   &__discount-price{
+    margin-top: 3px;
     font-size: 40px;
     line-height: 1;
     font-weight: bold;
     color: #000;
+    white-space: nowrap;
+
+    &::after{
+      content: '\006C';
+      margin-left: 5px;
+      font-size: 34px;
+      font-weight: normal;
+      font-family: 'Tenge';
+    }
   }
 
   &__feedback{}
 }
 
 .layout-feedback{
-  padding: 30px;
+  padding: 25px 30px 30px;
 
   &__title{
     font-size: 18px;

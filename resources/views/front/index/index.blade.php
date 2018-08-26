@@ -75,8 +75,8 @@
                                 <div class="title-popup__row form-row">
                                     <div class="form-row__validation-wrap popup-input">
                                         <input type="tel" data-require="true" id="popup-phone" class="form-row__input form-input popup-input__input popup-input__input--tel" maxlength="25" data-mask="(000) 000-00-00" name="phone">
-                                        <label class="popup-input__label popup-input__label--tel" for="popup-phone"><span class="popup-input__label-text">+7</span></label>
                                         <div class="form-row__tooltip-wrap form-row__tooltip-wrap--popup-none"><p class="form-row__tooltip form-row__tooltip--border">Телефонный номер для связи</p></div>
+                                        <label class="popup-input__label popup-input__label--tel" for="popup-phone"><span class="popup-input__label-text">+7</span></label>
                                     </div>
                                 </div>
                                 <div class="title-popup__row title-popup__row--btn">
@@ -302,30 +302,32 @@
                     <img src="" alt="" class="layout__img js_give_src">
                 </div>
                 <div class="layout__feedback-info-wrapper">
-                    <div class="layout__info">
-                        <p class="layout__flat-name"></p>
-                        <div class="layout__info-row">
-                            <div class="layout__row-item">
-                                <p class="layout__info-title">Площадь</p>
-                                <p class="layout__info-value"><span class="layout__info-value-text js_give_area"></span>м<sup class="layout__area-sup">2</sup></p>
+                    <div class="layout__common-info-wrapper">
+                        <div class="layout__info">
+                            <p class="layout__flat-name"></p>
+                            <div class="layout__info-row">
+                                <div class="layout__row-item">
+                                    <p class="layout__info-title">Площадь</p>
+                                    <p class="layout__info-value"><span class="layout__info-value-text js_give_area"></span>м<sup class="layout__area-sup">2</sup></p>
+                                </div>
+                                <div class="layout__row-item">
+                                    <p class="layout__info-title">Блок</p>
+                                    <p class="layout__info-value js_give_block"></p>
+                                </div>
+                                <div class="layout__row-item">
+                                    <p class="layout__info-title">Этаж</p>
+                                    <p class="layout__info-value js_give_floor"></p>
+                                </div>
                             </div>
-                            <div class="layout__row-item">
-                                <p class="layout__info-title">Блок</p>
-                                <p class="layout__info-value js_give_block"></p>
-                            </div>
-                            <div class="layout__row-item">
-                                <p class="layout__info-title">Этаж</p>
-                                <p class="layout__info-value js_give_floor"></p>
+                            <div class="layout__price-wrap">
+                                <p class="layout__price-title">Стоимость:</p>
+                                <p class="layout__price js_give_price"></p>
                             </div>
                         </div>
-                        <div class="layout__price-wrap">
-                            <p class="layout__price-title">Стоимость:</p>
-                            <p class="layout__price js_give_price"></p>
+                        <div class="layout__discount-price-wrap">
+                            <p class="layout__discount-price-title">Стоимость при 100% оплате:</p>
+                            <p class="layout__discount-price js_at_once_price"></p>
                         </div>
-                    </div>
-                    <div class="layout__discount-price-wrap">
-                        <p class="layout__discount-price-title">Стоимость при 100% оплате:</p>
-                        <p class="layout__discount-price js_at_once_price"></p>
                     </div>
                     <div class="layout__feedback layout-feedback">
                         <p class="layout-feedback__title">ПОНРАВИЛАСЬ КВАРТИРА?</p>

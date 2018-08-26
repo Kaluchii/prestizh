@@ -296,9 +296,9 @@
       position: absolute;
       bottom: 0;
       right: 0;
-      width: 331px;
-      height: 456px;
-      background: url('/img/balls.png') no-repeat center / contain;
+      width: 232px;
+      height: 427px;
+      background: url('/img/balls.png?1') no-repeat center / contain;
     }
   }
 
@@ -354,7 +354,7 @@
 
   &__row-2{
     padding: 20px 20px 35px;
-    background: url("/img/form_lighter.png") no-repeat left bottom / 540px 300px, url("/img/popup_bg.png") repeat;
+    background: url("/img/form_lighter.png?1") no-repeat left bottom / 397px 360px, url("/img/popup_bg.png?1") repeat;
   }
 
   &__discount-wrap{
@@ -373,15 +373,15 @@
     position: relative;
     left: -5px;
     margin-top: 10px;
-    width: 273px;
+    width: 308px;
     height: 80px;
-    background: url('/img/discount_7.png') no-repeat center / contain;
+    background: url('/img/discount_10.png') no-repeat center / contain;
   }
 
   &__condition{
     position: relative;
     top: 2px;
-    max-width: 80px;
+    max-width: 97px;
     padding-left: 15px;
     font-size: 15px;
     line-height: 1.2;
@@ -462,13 +462,13 @@
     width: 100%;
     color: #201306;
     letter-spacing: 0.04em;
-    border-radius: 5px;
+    border-radius: 4px;
     transition: .3s;
 
     &:focus{
       border-color: #bbbbbb;
 
-      & + .popup-input{
+      & ~ .popup-input{
         &__label {
           border-color: #bbbbbb;
         }
