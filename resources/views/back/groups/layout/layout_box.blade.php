@@ -40,7 +40,7 @@
         </div>
 
         <div class="form-group">
-            <label>Акционная стоимость в тг (включается при значении > 0)</label>
+            <label>Стоимость при 100%-ой оплате в тг (включается при значении > 0)</label>
             <input class="form-control float"
                    type="number" placeholder=""
                    value="{{$item->stock_price_field}}"
