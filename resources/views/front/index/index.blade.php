@@ -56,7 +56,7 @@
                         <div class="title-popup__row-1">
                             <div class="title-popup__discount-wrap">
                                 <p class="title-popup__discount">СКИДКА</p>
-                                <p class="title-popup__condition">Только до <span class="title-popup__bold">30</span> сентября</p>
+                                {{--<p class="title-popup__condition">Только до <span class="title-popup__bold">30</span> сентября</p>--}}
                             </div>
                             <div class="title-popup__discount-img"></div>
                         </div>
