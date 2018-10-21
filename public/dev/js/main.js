@@ -278,4 +278,55 @@ $(document).ready(function () {
             $('.js-top-btn').css('display', 'none');
         }
     });
+
+
+    /* Yandex map */
+
+    var init = function () {
+        myMap = new ymaps.Map("map",
+            {center: [43.233779, 76.921195], zoom: 16, controls: ['zoomControl']});
+        myMap.behaviors.disable("scrollZoom");
+        myMap.behaviors.disable("dblClickZoom");
+        if ($window.width() < 1000) {
+            var myPlacemark = new ymaps.Placemark([43.233179, 76.92095], {}, {
+                iconLayout: "default#image",
+                iconImageHref: "/img/map_icon.png",
+                iconImageSize: [100, 90],
+                iconImageOffset: [-100, -45]
+            });
+        } else {
+            var myPlacemark = new ymaps.Placemark([43.233179, 76.92095], {}, {
+                iconLayout: "default#image",
+                iconImageHref: "/img/map_icon.png",
+                iconImageSize: [135, 121],
+                iconImageOffset: [-135, -60]
+            });
+        }
+        myMap.geoObjects.add(myPlacemark);
+
+        $window.on('resize', function (){
+            if ($window.width() < 1000) {
+                myMap.geoObjects.removeAll();
+                myPlacemark = new ymaps.Placemark([43.233179, 76.92095], {}, {
+                    iconLayout: "default#image",
+                    iconImageHref: "/img/map_icon.png",
+                    iconImageSize: [100, 90],
+                    iconImageOffset: [-100, -45]
+                });
+                myMap.geoObjects.add(myPlacemark);
+            } else {
+                myMap.geoObjects.removeAll();
+                myPlacemark = new ymaps.Placemark([43.233179, 76.92095], {}, {
+                    iconLayout: "default#image",
+                    iconImageHref: "/img/map_icon.png",
+                    iconImageSize: [135, 121],
+                    iconImageOffset: [-135, -60]
+                });
+                myMap.geoObjects.add(myPlacemark);
+            }
+        });
+    };
+
+    ymaps.ready(init);
+    var myMap;
 });
