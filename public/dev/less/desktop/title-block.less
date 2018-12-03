@@ -1,29 +1,66 @@
 .title-block{
-  padding: 25px 30px 350px;
-  background: url("/img/title_bg.jpg?2") no-repeat center bottom/cover;
-  //overflow: hidden;
+  box-sizing: border-box;
+  height: 821px;
+  padding: 25px 30px;
+  background: url("/img/title_bg.jpg?2") no-repeat center bottom / cover;
   position: relative;
   z-index: 1;
 
+  &::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate3d(-50%, 0 , 0);
+    height: 100%;
+    width: 100%;
+    max-width: 1560px;
+    background: url("/img/title_moon.png") no-repeat 27px 5px,
+                url("/img/title_snowflake-brown.png") no-repeat 84.5% 120px,
+                url("/img/title_small-toys.png") no-repeat 100% 0,
+                url("/img/title_big-toy.png") no-repeat 100% 0,
+                url("/img/title_snowflake-transparent.png") no-repeat ~'calc(100% + 5px)' 400px,
+                url("/img/title_border.png") no-repeat 65px 151px;
+  }
+
   &__header{
+    position: relative;
     max-width: 1500px;
     margin: 0 auto;
   }
 
-  &__text-wrap{
+  &__content{
+    position: relative;
+    z-index: 2;
     padding: 40px 0 0 35px;
     max-width: 1465px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
   }
 
-  &__col1{
+  &__text-wrap{
+    position: absolute;
+    right: 28%;
+    top: 95px;
   }
 
-  &__title{}
+  &__title{
+    font-size: 27px;
+    font-weight: bold;
+    line-height: 1;
+    font-family: "Gilroy", "Arial", sans-serif;
+    color: #FFFFFF;
+  }
+
+  &__address{
+    margin-top: 10px;
+    padding-left: 35px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #FFFFFF;
+  }
 
   &__price-wrap{
+    margin-top: 15px;
     position: relative;
     display: flex;
     padding-left: 5px;
@@ -49,7 +86,7 @@
     &::before{
       content: 'от';
       position: relative;
-      font-family: "Georgia";
+      font-family: "Gilroy", "Arial", sans-serif;
       font-size: 30px;
       left: -8px;
       bottom: 45px;
@@ -75,61 +112,52 @@
   }
 
   &__t{
+    font-size: 32px;
     line-height: 1;
-    height: 25px;
-    color: transparent;
-    background: url("/img/tenge.png") no-repeat center;
-    background-size: contain;
+    font-family: "Tenge";
+    color: #ffffff;
+    background: linear-gradient(left,#fff,#fff 100%);
+    background-position: center bottom;
+    background-size: 17px 2px;
+    background-repeat: no-repeat;
   }
 
   &__m{
     line-height: 1;
-    font-family: "Georgia";
     font-size: 30px;
     color: #ffffff;
 
     sup{
-      font-family: "Georgia";
       position: absolute;
-      font-size: 18px;
+      font-size: 16px;
+      font-weight: 600;
     }
-  }
-
-  &__col2{
-    padding-top: 15px;
-    width: 580px;
-    position: relative;
   }
 
   &__installment{
-    padding-left: 85px;
-    font-size: 20px;
+    position: absolute;
+    top: 520px;
+    left: 250px;
+  }
+}
+
+.installment{
+  display: flex;
+  align-items: center;
+  height: 63px;
+  width: 287px;
+  padding-left: 90px;
+  box-sizing: border-box;
+  background: url("/img/title_installment-symbol.png") no-repeat 28px 50%,
+              url("/img/title_installment-bg.png") no-repeat center / cover;
+
+  &__container{
+    position: relative;
+    font-size: 14px;
     font-weight: 700;
-    line-height: 1.2;
+    line-height: 1.3;
     letter-spacing: .19em;
     color: #ffffff;
-    position: relative;
-
-    &::before{
-      content: '';
-      position: absolute;
-      width: 57px;
-      height: 56px;
-      top: -3px;
-      left: 0;
-      background: url("/img/tenge_circle.png") no-repeat center;
-    }
-  }
-
-  &__popup{
-    position: absolute;
-    margin-top: 35px;
-    z-index: 10;
-  }
-
-  &__parking{
-    margin-top: 25px;
-    width: 260px;
   }
 }
 
@@ -149,6 +177,7 @@
     margin: 0 auto;
   }
 }
+
 .header{
   display: flex;
   justify-content: space-between;
@@ -285,21 +314,13 @@
   }
 }
 
-.title-popup{
+.discount-info{
+  display: none;
   width: 100%;
+  z-index: 10;
 
   &__wrapper{
     position: relative;
-
-    &::after{
-      content: '';
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      width: 232px;
-      height: 427px;
-      background: url('/img/balls_5.png?1') no-repeat center / contain;
-    }
   }
 
   &__interest-text{
@@ -343,39 +364,12 @@
     }
   }
 
-  &__parking{
-    display: none;
+  &__new-year-discounts{
   }
 
-  &__row-1{
-    padding: 25px 25px 28px;
-    background-color: #fff;
-  }
-
-  &__row-2{
+  &__container{
     padding: 20px 20px 35px;
     background: url("/img/form_lighter.png?1") no-repeat left bottom / 397px 360px, url("/img/popup_bg.png?1") repeat;
-  }
-
-  &__discount-wrap{
-    display: flex;
-  }
-
-  &__discount{
-    font-size: 40px;
-    font-weight: 900;
-    line-height: 1;
-    letter-spacing: .03em;
-    color: #ac9530;
-  }
-
-  &__discount-img{
-    position: relative;
-    left: -5px;
-    margin-top: 10px;
-    width: 308px;
-    height: 81px;
-    background: url('/img/discount_5.png') no-repeat left center / contain;
   }
 
   &__condition{
@@ -556,36 +550,5 @@
     width: 20px;
     background-color: #c2ae68;
     transition: .3s
-  }
-}
-
-.parking{
-  padding: 20px 0 77px;
-  text-align: center;
-  background: url("/img/parking_car.jpg") no-repeat center bottom / 260px, #fff;
-
-  &__top-text{
-    font-size: 48px;
-    font-weight: 900;
-    line-height: 1;
-    letter-spacing: .03em;
-    color: #bba543;
-  }
-
-  &__middle-text{
-    font-size: 30px;
-    font-weight: 700;
-    line-height: 1;
-    letter-spacing: .02em;
-    color: #bba543;
-  }
-
-  &__bottom-text{
-    margin-top: 4px;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1;
-    letter-spacing: .04em;
-    color: #232323;
   }
 }
