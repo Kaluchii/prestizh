@@ -1,38 +1,47 @@
-@media screen and (max-width: 1500px) {
+@media screen and (max-width: 1520px) {
   .title-block{
-    height: 700px;
-
-    &::after{
-      background: url("/img/title_moon.png") no-repeat -20px 55px / ~'356.25px 336px',
-                  url("/img/title_snowflake-brown.png") no-repeat 80% 120px,
-                  url("/img/title_small-toys.png") no-repeat 100% 30px / ~'192px 308.25px',
-                  url("/img/title_big-toy.png") no-repeat ~'calc(100% - 20px)' 100% / ~'292.2px 546px',
-                  url("/img/title_snowflake-transparent.png") no-repeat ~'calc(100% + 5px)' 350px;
+    &__col1{
+      margin-left: 0;
+      flex-direction: column;
     }
 
-    &__text-wrap{
-      top: 40px;
+    &__price-col{
+      margin-top: 30px;
+      padding-left: 35px;
     }
 
-    &__installment{
-      top: 400px;
-      left: 60px;
+    &__discount-addr-col{
+      //margin-top: 50px;
+      margin-left: 35px;
+
+      &::after{
+        display: none;
+      }
+    }
+
+    &__price-desc{
+      text-shadow: 0 0 3px rgba(0, 0, 0, 1);
+    }
+
+    &__price-currency{
+      text-shadow: 0 0 3px rgba(0, 0, 0, 1);
     }
   }
 }
 
 @media screen and (max-width: 1240px) {
   .title-block{
-    &__content{
+    &__text-wrap{
       padding-left: 0;
     }
-    
-    &__text-wrap{
-      right: 22%;
+
+    &__col2{
+      width: 100%;
+      max-width: 450px;
     }
   }
 
-  .discount-info{
+  .title-popup{
     .form-row{
       &__tooltip-wrap{
         left: auto;
@@ -88,92 +97,99 @@
     padding: 0;
   }
 
-  .discount-info{
-    display: block;
-  }
-
   .title-block{
-    height: 650px;
     padding: 0;
+    height: 620px;
 
-    &::after{
-      display: none;
-    }
-
-    &__content{
+    &__text-wrap{
+      flex-direction: column;
       margin: 0 auto;
       max-width: none;
     }
     
     &__title{
-      font-size: 22px;
+      text-align: center;
     }
 
-    &__price-wrap{
-      &::after{
-        content: '';
-        display: none;
-        position: absolute;
-        bottom: -105px;
-        right: 10px;
-        width: 270px;
-        height: 84px;
-        background: url('/img/discount_under_price.png') no-repeat center / contain;
-      }
+    &__price-col{
+      margin-top: 0;
     }
-    
+
+    &__discount{
+      background-image: url('/img/spring_discount_mob.png');
+      height: 87px;
+      width: 174px;
+    }
+
     &__price{
-      font-size: 92px;
-
-      &::before{
-        left: -8px;
-        bottom: 35px;
-      }
+      font-size: 80px;
+      letter-spacing: -2px;
     }
 
-    &__t{
-      font-size: 28px;
+    &__price-desc{
+      font-size: 20px;
+      text-shadow: none;
     }
 
-    &__m{
-      font-size: 28px;
+    &__price-currency{
+      font-size: 20px;
+      text-shadow: none;
     }
 
-    &__text-wrap{
-      position: static;
-      max-width: 395px;
+    &__col1{
       margin: 0 auto;
+      flex-direction: column-reverse;
+      align-items: flex-end;
+    }
+
+    &__discount-addr-col{
+      margin-top: 35px;
+      width: auto;
+    }
+
+    &__addr{
+      display: none;
+    }
+
+    &__col2{
+      max-width: none;
+      padding-top: 180px;
     }
 
     &__installment{
-      top: 490px;
-      left: ~'calc(50% - 143px)';
+      margin: auto;
+      max-width: 210px;
+      padding-left: 75px;
+      font-size: 18px;
+
+      &::before{
+        top: -7px;
+      }
     }
   }
 
-  .discount-info{
+  .title-popup{
+    display: block !important;
+    margin-top: 25px;
     width: 100%;
     margin-left: 0;
 
-    &__new-year-discounts{
-      height: 442px;
-      background: url("/img/title_big-toy_m.png") no-repeat left top,
-                  url("/img/title_small-toys_m.png") no-repeat 70% 0,
-                  url("/img/title_snowflake-transparent_m.png") no-repeat 20px -20px,
-                  url("/img/title_snowflake-transparent_m.png") no-repeat 30% 100px,
-                  url("/img/title_snowflake-transparent_m.png") no-repeat 60% 270px,
-                  url("/img/title_snowflake_m.png") no-repeat 20px 115px,
-                  url("/img/title_snowflake_m.png") no-repeat 40% 195px,
-                  url("/img/title_snowflake_m.png") no-repeat 95% 35px,
-                  url("/img/title_snowflake_m.png") no-repeat 85% 320px,
-                  url("/img/title_snowflake-brown_m.png") no-repeat 100% 220px,
-                  url("/img/title_snowflake-brown_m.png") no-repeat 30% 20px,
-                  url("/img/title_snowflake-brown_m.png") no-repeat 48% 320px,
-                  #fff;
+    &__row-1{
+      height: 405px;
+      box-sizing: border-box;
+      background: url("/img/popup_bg_680.jpg") no-repeat right center, #f1c6d0;
     }
 
-    &__container{
+    &__row-2{
       padding-bottom: 25px;
+      background: url("/img/form_lighter.png?1") no-repeat left bottom / 397px 360px, url("/img/popup_bg.png?1") repeat;
+    }
+
+    &__condition{
+      margin-top: 150px;
+      max-width: 90px;
+      font-size: 10px;
+      line-height: 1.7em;
     }
 
     &__close{
@@ -219,6 +235,36 @@
       font-size: 16px;
       margin-top: 0;
       text-align: center;
+    }
+  }
+
+  .popup-input{
+
+    &.error:not(.filling){
+      .popup-input{
+        &__input{
+          background-color: #fff;
+
+          &:focus{
+            background-color: #fff;
+          }
+        }
+
+        &__label{
+          &--tel{
+            border-color: #d65137;
+          }
+        }
+      }
+    }
+
+    &__label{
+      &--tel{
+        background: linear-gradient(to left, #dbd193, #dbd193 100%);
+        background-position: 100% 8px;
+        background-size: 1px 34px;
+        background-repeat: no-repeat;
+      }
     }
   }
 }
@@ -283,86 +329,82 @@
   }
 }
 
-@media screen and (max-width: 620px) {
+@media screen and (max-width: 680px) {
   .title-block{
-    height: 492px;
-    background: url(/img/title_bg_m.jpg) no-repeat center top / cover;
+    height: 592px;
+    background: url('/img/title_bg_680.jpg?2') no-repeat center bottom;
 
-    &::after{
-      display: block;
-      background: url("/img/title_moon.png") no-repeat ~'calc(100% + 25px) 85px / 237.5px 224px';
-    }
-
-    &__content{
-      height: ~'calc(100% - 215px)';
+    &__text-wrap{
+      height: ~'calc(100% - 65px)';
       padding-top: 0;
     }
 
-    &__title{
-      display: none;
-    }
-
-    &__address{
-      display: none;
-    }
-
     &__price-wrap{
-      margin-top: 15px;
     }
 
-    &__installment{
-      top: 335px;
-      left: ~'calc(50% - 133px)';
+    &__popup{
+      margin-top: 30px;
+    }
+
+    &__price-col{
+      padding-top: 30px;
+      padding-left: 27px;
+    }
+
+    &__price{
+      font-size: 63px;
+    }
+
+    &__price-desc{
+      top: 2px;
+      right: ~'calc(100% + 8px)';
+      font-size: 16px;
+    }
+
+    &__price-currency{
+      font-size: 16px;
+      left: ~'calc(100% + 8px)';
+
+      &--up{
+        top: 95%;
+        left: auto;
+        bottom: auto;
+        right: 0;
+      }
+    }
+
+    &__discount-addr-col{
+      margin-top: 30px;
+    }
+
+    &__col2{
+      padding-bottom: 30px;
     }
   }
 
-  .installment{
-    height: 58px;
-    width: 266px;
-    padding-left: 85px;
-    background-size: 38px 38px, cover;
+  .title-popup{
+    &__gift{
+      font-size: 57px;
+      letter-spacing: 3.5px;
+    }
 
-    &__container{
-      font-size: 13px;
+    &__gift-row-2{
+      font-size: 30px;
+      letter-spacing: 2px;
+    }
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .title-popup{
+    &__row-1{
+      background-image: url('/img/popup_bg_360.jpg');
     }
   }
 }
 
 @media screen and (max-width: 480px) {
-  .title-block{
-    &__price{
-      font-size: 66px;
-      letter-spacing: -0.02em;
-
-      &::before{
-        bottom: 25px;
-        left: -10px;
-        font-size: 18px;
-      }
-    }
-
-    &__price-wrap{
-      width: 280px;
-      padding-left: 20px;
-      margin: 15px auto 0;
-    }
-
-    &__t{
-      font-size: 18px;
-      background-size: 17px 1px;
-    }
-
-    &__m{
-      font-size: 18px;
-      margin-top: 2px;
-
-      sup{
-        font-size: 9px;
-      }
-    }
-  }
-
-  .discount-info{
+  .title-popup{
     &__input-rows{
       padding-left: 0;
       margin: 20px auto 0;
@@ -388,15 +430,10 @@
       }
     }
   }
+}
 
-  .discount-info{
-    &__new-year-discounts{
-      background: url("/img/title_big-toy_m.png") no-repeat left top,
-                  url("/img/title_small-toys_m.png") no-repeat right top,
-                  url("/img/title_snowflake-transparent_m.png") no-repeat 20px -20px,
-                  url("/img/title_snowflake_m.png") no-repeat 20px 115px,
-                  url("/img/title_snowflake-brown_m.png") no-repeat 100% 220px,
-                  #fff;
-    }
+@media screen and (max-width: 360px) {
+  .title-block{
+    background-image: url('/img/title_bg_360.jpg?2');
   }
 }

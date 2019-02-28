@@ -27,11 +27,21 @@
                        data-id="0">
             </div>
             <div class="form-group">
-                <label>Цена</label>
+                <label>Цена "от"</label>
                 <input class="form-control string"
                        type="text" placeholder=""
                        value="{{$main_block->price_field}}"
                        data-name="price"
+                       data-type="string"
+                       data-block="main_block"
+                       data-id="0">
+            </div>
+            <div class="form-group">
+                <label>Цена "до"</label>
+                <input class="form-control string"
+                       type="text" placeholder=""
+                       value="{{$main_block->price_up_field}}"
+                       data-name="price_up"
                        data-type="string"
                        data-block="main_block"
                        data-id="0">

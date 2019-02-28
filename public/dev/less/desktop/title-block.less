@@ -1,78 +1,108 @@
 .title-block{
-  box-sizing: border-box;
-  height: 821px;
-  padding: 25px 30px;
-  background: url("/img/title_bg.jpg?2") no-repeat center bottom / cover;
+  padding: 25px 30px 0;
+  height: 770px;
+  background: url("/img/title_bg_1560.jpg?2") no-repeat center bottom/cover;
+  //overflow: hidden;
   position: relative;
   z-index: 1;
 
-  &::after{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translate3d(-50%, 0 , 0);
-    height: 100%;
-    width: 100%;
-    max-width: 1560px;
-    background: url("/img/title_moon.png") no-repeat 27px 5px,
-                url("/img/title_snowflake-brown.png") no-repeat 84.5% 120px,
-                url("/img/title_small-toys.png") no-repeat 100% 0,
-                url("/img/title_big-toy.png") no-repeat 100% 0,
-                url("/img/title_snowflake-transparent.png") no-repeat ~'calc(100% + 5px)' 400px,
-                url("/img/title_border.png") no-repeat 65px 151px;
-  }
-
   &__header{
-    position: relative;
     max-width: 1500px;
     margin: 0 auto;
   }
 
-  &__content{
-    position: relative;
-    z-index: 2;
+  &__text-wrap{
     padding: 40px 0 0 35px;
     max-width: 1465px;
     margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
   }
 
-  &__text-wrap{
+  &__title{}
+
+  &__col1{
+    margin-left: 3%;
+    display: flex;
+  }
+
+  &__discount-addr-col{
+    position: relative;
+    width: 255px;
+
+    &::after{
+      content: '';
+      position: absolute;
+      top: 20px;
+      right: 0;
+      width: 2px;
+      height: 150px;
+      background-color: #ffffff;
+    }
+  }
+
+  &__discount{
+    width: 220px;
+    height: 110px;
+    background: url("/img/spring_discount.png") no-repeat center / cover;
+  }
+
+  &__addr{
+    max-width: 300px;
+    font-size: 13px;
+    line-height: 1.40;
+    color: #ffffff;
+  }
+
+  &__price-col{
+    padding-top: 10px;
+    padding-left: 75px;
+  }
+
+  &__price-row{
+    & + &{
+      margin-top: 8px;
+    }
+  }
+
+  &__price-desc{
     position: absolute;
-    right: 28%;
-    top: 95px;
-  }
-
-  &__title{
-    font-size: 27px;
-    font-weight: bold;
+    top: 5px;
+    right: ~'calc(100% + 10px)';
+    font-size: 26px;
     line-height: 1;
-    font-family: "Gilroy", "Arial", sans-serif;
-    color: #FFFFFF;
+    letter-spacing: initial;
+    color: #ffffff;
   }
 
-  &__address{
-    margin-top: 10px;
-    padding-left: 35px;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 1.5;
-    color: #FFFFFF;
+  &__price-currency{
+    position: absolute;
+    bottom: 5px;
+    left: ~'calc(100% + 15px)';
+    font-size: 26px;
+    line-height: 1;
+    color: #ffffff;
+    letter-spacing: 1px;
+
+    &--up{
+      top: 100%;
+      left: auto;
+      bottom: auto;
+      right: 0;
+    }
   }
 
   &__price-wrap{
-    margin-top: 15px;
     position: relative;
     display: flex;
-    padding-left: 5px;
   }
 
   &__price{
     position: relative;
     font-family: 'RozhaOne';
-    font-size: 118px;
+    font-size: 102px;
     line-height: .8;
-    letter-spacing: -0.004em;
+    letter-spacing: -3px;
     color: transparent;
     background: #c3b06a;
     background: -moz-linear-gradient(45deg, #c3b06a 0%, #eade85 17%, #c3b06a 61%, #eade85 100%);
@@ -83,17 +113,7 @@
     background: repeating-linear-gradient(4deg, #eade85 0%, #c3b06a 17%, #eade85 61%, #c3b06a 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c3b06a', endColorstr='#eade85', GradientType=1 );
     -webkit-background-clip: text;
-
-    &::before{
-      content: 'от';
-      position: relative;
-      font-family: "Gilroy", "Arial", sans-serif;
-      font-size: 30px;
-      left: -8px;
-      bottom: 45px;
-      color: #ffffff;
-      text-shadow: none;
-    }
+    white-space: nowrap;
 
     &--bg{
       position: absolute;
@@ -105,60 +125,36 @@
     }
   }
 
-  &__t-m{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-left: 10px;
-  }
-
-  &__t{
-    font-size: 32px;
-    line-height: 1;
-    font-family: "Tenge";
-    color: #ffffff;
-    background: linear-gradient(left,#fff,#fff 100%);
-    background-position: center bottom;
-    background-size: 17px 2px;
-    background-repeat: no-repeat;
-  }
-
-  &__m{
-    line-height: 1;
-    font-size: 30px;
-    color: #ffffff;
-
-    sup{
-      position: absolute;
-      font-size: 16px;
-      font-weight: 600;
-    }
+  &__col2{
+    padding-top: 15px;
+    width: 580px;
+    position: relative;
   }
 
   &__installment{
-    position: absolute;
-    top: 520px;
-    left: 250px;
-  }
-}
-
-.installment{
-  display: flex;
-  align-items: center;
-  height: 63px;
-  width: 287px;
-  padding-left: 90px;
-  box-sizing: border-box;
-  background: url("/img/title_installment-symbol.png") no-repeat 28px 50%,
-              url("/img/title_installment-bg.png") no-repeat center / cover;
-
-  &__container{
-    position: relative;
-    font-size: 14px;
+    padding-left: 85px;
+    font-size: 20px;
     font-weight: 700;
-    line-height: 1.3;
+    line-height: 1.2;
     letter-spacing: .19em;
     color: #ffffff;
+    position: relative;
+
+    &::before{
+      content: '';
+      position: absolute;
+      width: 57px;
+      height: 56px;
+      top: -3px;
+      left: 0;
+      background: url("/img/tenge_circle.png") no-repeat center;
+    }
+  }
+
+  &__popup{
+    position: absolute;
+    margin-top: 35px;
+    z-index: 10;
   }
 }
 
@@ -178,7 +174,6 @@
     margin: 0 auto;
   }
 }
-
 .header{
   display: flex;
   justify-content: space-between;
@@ -315,19 +310,16 @@
   }
 }
 
-.discount-info{
-  display: none;
+.title-popup{
   width: 100%;
-  z-index: 10;
+  background: url("/img/popup_bg_1560.jpg") no-repeat center, #f1c6d0;
 
   &__wrapper{
-    position: relative;
   }
 
   &__interest-text{
     padding-left: 5px;
     font-size: 20px;
-    font-weight: 700;
     line-height: 1;
     letter-spacing: .2em;
     color: #1b1b1b;
@@ -365,31 +357,42 @@
     }
   }
 
-  &__new-year-discounts{
+  &__row-1{
+    padding: 25px 25px 28px;
   }
 
-  &__container{
+  &__row-2{
     padding: 20px 20px 35px;
-    background: url("/img/form_lighter.png?1") no-repeat left bottom / 397px 360px, url("/img/popup_bg.png?1") repeat;
+  }
+
+  &__discount-wrap{
+  }
+
+  &__gift{
+    font-size: 64px;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: .03em;
+    color: #1b1b1b;
+  }
+
+  &__gift-row-2{
+    font-size: 40px;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: .05em;
+    color: #1b1b1b;
   }
 
   &__condition{
-    position: relative;
-    top: 2px;
-    max-width: 97px;
-    padding-left: 15px;
-    font-size: 15px;
-    line-height: 1.2;
-    letter-spacing: .05em;
-    color: #232323;
-  }
-
-  &__bold{
-    font-weight: 800;
+    margin-top: 15px;
+    font-size: 9px;
+    line-height: 1;
+    letter-spacing: 3.5px;
+    color: #1b1b1b;
   }
 
   &__btn{
-    border-radius: 4px;
   }
 }
 
@@ -399,10 +402,10 @@
   &.error:not(.filling){
     .popup-input{
       &__input{
-        background-color: #fff;
+        background-color: rgba(255, 255, 255, 0.3);
 
         &:focus{
-          background-color: #fff;
+          background-color: rgba(255, 255, 255, 0.3);
         }
       }
 
@@ -421,19 +424,18 @@
     left: 0;
     height: 50px;
     width: 55px;
-    font-size: 16px;
-    border-radius: 5px;
-    color: #201306;
+    font-size: 18px;
+    color: #000000;
     transition: .3s;
 
     &--name{
     }
 
     &--tel{
-      height: 48px;
-      width: 47px;
-      border: 1px solid #fff;
-      background-color: #fff;
+      background: linear-gradient(to left, #f1c6d0, #f1c6d0 100%);
+      background-position: 100% 8px;
+      background-size: 1px 34px;
+      background-repeat: no-repeat;
     }
   }
 
@@ -448,32 +450,27 @@
   }
 
   &__input{
-    background-color: #fff;
-    border: 1px solid #fff;
-    padding: 0 30px 0 80px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0 30px 0 72px;
     font-size: 18px;
     box-sizing: border-box;
     height: 50px;
     width: 100%;
     color: #201306;
     letter-spacing: 0.04em;
-    border-radius: 4px;
     transition: .3s;
 
     &:focus{
-      border-color: #bbbbbb;
+      border-color: #fff;
 
       & ~ .popup-input{
         &__label {
-          border-color: #bbbbbb;
         }
       }
     }
 
     &--tel{
-      width: ~'calc(100% - 60px)';
-      margin-left: 60px;
-      padding-left: 20px;
     }
   }
 
