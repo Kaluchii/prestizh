@@ -33,32 +33,48 @@
         </header>
         <div class="title-block__text-wrap">
             <div class="title-block__col1">
-                {{--<h1 class="title-block__title">{{ $main_block->block_title_field }}</h1>--}}
-                <p class="title-block__price-wrap">
-                    <span class="title-block__price">{{ $main_block->price_field }} <span class="title-block__price title-block__price--bg">{{ $main_block->price_field }}</span> </span>
-                    <span class="title-block__t-m"><span class="title-block__t">T</span><span class="title-block__m">м<sup>2</sup></span></span>
-                </p>
-                <div class="title-block__parking parking">
-                    <p class="parking__top-text">ПАРКИНГ</p>
-                    <p class="parking__middle-text">В ПОДАРОК!</p>
-                    <p class="parking__bottom-text">Условия в отделе продаж</p>
+                <div class="title-block__discount-addr-col">
+                    <div class="title-block__discount"></div>
+                    <div class="title-block__addr">{!! $main_block->address_field !!}</div>
                 </div>
+                <div class="title-block__price-col">
+                    <div class="title-block__price-row">
+                        <span class="title-block__price-wrap">
+                            <span class="title-block__price">
+                                <span class="title-block__price-desc">от</span>
+                                {{ $main_block->price_field }}
+                                <span class="title-block__price title-block__price--bg">
+                                    {{ $main_block->price_field }}
+                                </span>
+                                <span class="title-block__price-currency">тенге</span>
+                            </span>
+                        </span>
+                    </div>
+                    <div class="title-block__price-row">
+                        <span class="title-block__price-wrap">
+                            <span class="title-block__price">
+                                <span class="title-block__price-desc">до</span>
+                                {{ $main_block->price_up_field }}
+                                <span class="title-block__price title-block__price--bg">
+                                    {{ $main_block->price_up_field }}
+                                </span>
+                                <span class="title-block__price-currency title-block__price-currency--up">тенге</span>
+                            </span>
+                        </span>
+                    </div>
+                </div>
+                {{--<h1 class="title-block__title">{{ $main_block->block_title_field }}</h1>--}}
             </div>
             <div class="title-block__col2">
                 <p class="title-block__installment">РАССРОЧКА<br>ОТ ЗАСТРОЙЩИКА</p>
                 <div class="title-block__popup title-popup">
                     <div class="title-popup__wrapper">
-                        <div class="title-popup__parking parking">
-                            <p class="parking__top-text">ПАРКИНГ</p>
-                            <p class="parking__middle-text">В ПОДАРОК!</p>
-                            <p class="parking__bottom-text">Условия в отделе продаж</p>
-                        </div>
                         <div class="title-popup__row-1">
                             <div class="title-popup__discount-wrap">
-                                <p class="title-popup__discount">СКИДКА</p>
-                                {{--<p class="title-popup__condition">Только до <span class="title-popup__bold">30</span> сентября</p>--}}
+                                <p class="title-popup__gift">ПАРКИНГ</p>
+                                <p class="title-popup__gift-row-2">В ПОДАРОК!</p>
+                                <p class="title-popup__condition">УСЛОВИЯ УТОЧНЯЙТЕ В ОТДЕЛЕ ПРОДАЖ</p>
                             </div>
-                            <div class="title-popup__discount-img"></div>
                         </div>
                         <div class="title-popup__row-2">
                             <p class="title-popup__interest-text">ЗАИНТЕРЕСОВАЛИСЬ?</p>
@@ -80,7 +96,7 @@
                                     </div>
                                 </div>
                                 <div class="title-popup__row title-popup__row--btn">
-                                    <input type="submit" value="УЗНАТЬ ПОДРОБНЕЕ" class="title-popup__btn form-row__send-form button-tr send-form">
+                                    <input type="submit" value="УЗНАТЬ ПОДРОБНЕЕ" class="title-popup__btn form-row__send-form button-tr button-tr--popup send-form">
                                 </div>
                             </div>
                         </div>

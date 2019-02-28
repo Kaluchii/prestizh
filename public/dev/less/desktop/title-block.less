@@ -1,6 +1,7 @@
 .title-block{
-  padding: 25px 30px 350px;
-  background: url("/img/title_bg.jpg?2") no-repeat center bottom/cover;
+  padding: 25px 30px 0;
+  height: 770px;
+  background: url("/img/title_bg_1560.jpg?2") no-repeat center bottom/cover;
   //overflow: hidden;
   position: relative;
   z-index: 1;
@@ -18,23 +19,90 @@
     justify-content: space-between;
   }
 
+  &__title{}
+
   &__col1{
+    margin-left: 3%;
+    display: flex;
   }
 
-  &__title{}
+  &__discount-addr-col{
+    position: relative;
+    width: 255px;
+
+    &::after{
+      content: '';
+      position: absolute;
+      top: 20px;
+      right: 0;
+      width: 2px;
+      height: 150px;
+      background-color: #ffffff;
+    }
+  }
+
+  &__discount{
+    width: 220px;
+    height: 110px;
+    background: url("/img/spring_discount.png") no-repeat center / cover;
+  }
+
+  &__addr{
+    max-width: 300px;
+    font-size: 13px;
+    line-height: 1.40;
+    color: #ffffff;
+  }
+
+  &__price-col{
+    padding-top: 10px;
+    padding-left: 75px;
+  }
+
+  &__price-row{
+    & + &{
+      margin-top: 8px;
+    }
+  }
+
+  &__price-desc{
+    position: absolute;
+    top: 5px;
+    right: ~'calc(100% + 10px)';
+    font-size: 26px;
+    line-height: 1;
+    letter-spacing: initial;
+    color: #ffffff;
+  }
+
+  &__price-currency{
+    position: absolute;
+    bottom: 5px;
+    left: ~'calc(100% + 15px)';
+    font-size: 26px;
+    line-height: 1;
+    color: #ffffff;
+    letter-spacing: 1px;
+
+    &--up{
+      top: 100%;
+      left: auto;
+      bottom: auto;
+      right: 0;
+    }
+  }
 
   &__price-wrap{
     position: relative;
     display: flex;
-    padding-left: 5px;
   }
 
   &__price{
     position: relative;
     font-family: 'RozhaOne';
-    font-size: 118px;
+    font-size: 102px;
     line-height: .8;
-    letter-spacing: -0.004em;
+    letter-spacing: -3px;
     color: transparent;
     background: #c3b06a;
     background: -moz-linear-gradient(45deg, #c3b06a 0%, #eade85 17%, #c3b06a 61%, #eade85 100%);
@@ -45,17 +113,7 @@
     background: repeating-linear-gradient(4deg, #eade85 0%, #c3b06a 17%, #eade85 61%, #c3b06a 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c3b06a', endColorstr='#eade85', GradientType=1 );
     -webkit-background-clip: text;
-
-    &::before{
-      content: 'от';
-      position: relative;
-      font-family: "Georgia";
-      font-size: 30px;
-      left: -8px;
-      bottom: 45px;
-      color: #ffffff;
-      text-shadow: none;
-    }
+    white-space: nowrap;
 
     &--bg{
       position: absolute;
@@ -64,34 +122,6 @@
       z-index: -1;
       color: #000000;
       text-shadow: 1px 1px 1px rgba(17, 31, 65, 0.62);
-    }
-  }
-
-  &__t-m{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-left: 10px;
-  }
-
-  &__t{
-    line-height: 1;
-    height: 25px;
-    color: transparent;
-    background: url("/img/tenge.png") no-repeat center;
-    background-size: contain;
-  }
-
-  &__m{
-    line-height: 1;
-    font-family: "Georgia";
-    font-size: 30px;
-    color: #ffffff;
-
-    sup{
-      font-family: "Georgia";
-      position: absolute;
-      font-size: 18px;
     }
   }
 
@@ -125,11 +155,6 @@
     position: absolute;
     margin-top: 35px;
     z-index: 10;
-  }
-
-  &__parking{
-    margin-top: 25px;
-    width: 260px;
   }
 }
 
@@ -287,25 +312,14 @@
 
 .title-popup{
   width: 100%;
+  background: url("/img/popup_bg_1560.jpg") no-repeat center, #f1c6d0;
 
   &__wrapper{
-    position: relative;
-
-    &::after{
-      content: '';
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      width: 232px;
-      height: 427px;
-      background: url('/img/balls_5.png?1') no-repeat center / contain;
-    }
   }
 
   &__interest-text{
     padding-left: 5px;
     font-size: 20px;
-    font-weight: 700;
     line-height: 1;
     letter-spacing: .2em;
     color: #1b1b1b;
@@ -343,58 +357,42 @@
     }
   }
 
-  &__parking{
-    display: none;
-  }
-
   &__row-1{
     padding: 25px 25px 28px;
-    background-color: #fff;
   }
 
   &__row-2{
     padding: 20px 20px 35px;
-    background: url("/img/form_lighter.png?1") no-repeat left bottom / 397px 360px, url("/img/popup_bg.png?1") repeat;
   }
 
   &__discount-wrap{
-    display: flex;
   }
 
-  &__discount{
-    font-size: 40px;
+  &__gift{
+    font-size: 64px;
     font-weight: 900;
     line-height: 1;
     letter-spacing: .03em;
-    color: #ac9530;
+    color: #1b1b1b;
   }
 
-  &__discount-img{
-    position: relative;
-    left: -5px;
-    margin-top: 10px;
-    width: 308px;
-    height: 81px;
-    background: url('/img/discount_5.png') no-repeat left center / contain;
+  &__gift-row-2{
+    font-size: 40px;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: .05em;
+    color: #1b1b1b;
   }
 
   &__condition{
-    position: relative;
-    top: 2px;
-    max-width: 97px;
-    padding-left: 15px;
-    font-size: 15px;
-    line-height: 1.2;
-    letter-spacing: .05em;
-    color: #232323;
-  }
-
-  &__bold{
-    font-weight: 800;
+    margin-top: 15px;
+    font-size: 9px;
+    line-height: 1;
+    letter-spacing: 3.5px;
+    color: #1b1b1b;
   }
 
   &__btn{
-    border-radius: 4px;
   }
 }
 
@@ -404,10 +402,10 @@
   &.error:not(.filling){
     .popup-input{
       &__input{
-        background-color: #fff;
+        background-color: rgba(255, 255, 255, 0.3);
 
         &:focus{
-          background-color: #fff;
+          background-color: rgba(255, 255, 255, 0.3);
         }
       }
 
@@ -426,19 +424,18 @@
     left: 0;
     height: 50px;
     width: 55px;
-    font-size: 16px;
-    border-radius: 5px;
-    color: #201306;
+    font-size: 18px;
+    color: #000000;
     transition: .3s;
 
     &--name{
     }
 
     &--tel{
-      height: 48px;
-      width: 47px;
-      border: 1px solid #fff;
-      background-color: #fff;
+      background: linear-gradient(to left, #f1c6d0, #f1c6d0 100%);
+      background-position: 100% 8px;
+      background-size: 1px 34px;
+      background-repeat: no-repeat;
     }
   }
 
@@ -453,32 +450,27 @@
   }
 
   &__input{
-    background-color: #fff;
-    border: 1px solid #fff;
-    padding: 0 30px 0 80px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0 30px 0 72px;
     font-size: 18px;
     box-sizing: border-box;
     height: 50px;
     width: 100%;
     color: #201306;
     letter-spacing: 0.04em;
-    border-radius: 4px;
     transition: .3s;
 
     &:focus{
-      border-color: #bbbbbb;
+      border-color: #fff;
 
       & ~ .popup-input{
         &__label {
-          border-color: #bbbbbb;
         }
       }
     }
 
     &--tel{
-      width: ~'calc(100% - 60px)';
-      margin-left: 60px;
-      padding-left: 20px;
     }
   }
 
@@ -556,36 +548,5 @@
     width: 20px;
     background-color: #c2ae68;
     transition: .3s
-  }
-}
-
-.parking{
-  padding: 20px 0 77px;
-  text-align: center;
-  background: url("/img/parking_car.jpg") no-repeat center bottom / 260px, #fff;
-
-  &__top-text{
-    font-size: 48px;
-    font-weight: 900;
-    line-height: 1;
-    letter-spacing: .03em;
-    color: #bba543;
-  }
-
-  &__middle-text{
-    font-size: 30px;
-    font-weight: 700;
-    line-height: 1;
-    letter-spacing: .02em;
-    color: #bba543;
-  }
-
-  &__bottom-text{
-    margin-top: 4px;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1;
-    letter-spacing: .04em;
-    color: #232323;
   }
 }
