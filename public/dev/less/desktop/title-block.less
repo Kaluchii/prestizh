@@ -19,107 +19,55 @@
     justify-content: space-between;
   }
 
-  &__title{}
-
   &__col1{
-    margin-left: 3%;
     display: flex;
   }
 
-  &__discount-addr-col{
-    position: relative;
-    width: 255px;
+  &__title{
+    margin-top: 5px;
+    font-size: 60px;
+    line-height: 1;
+    font-weight: 800;
+    letter-spacing: 4px;
+    font-family: 'Gilroy';
+  }
 
-    &::after{
-      content: '';
-      position: absolute;
-      top: 20px;
-      right: 0;
-      width: 2px;
-      height: 150px;
-      background-color: #ffffff;
-    }
+  &__discount-row{
+    margin-top: 13px;
+    display: flex;
+    align-items: center;
+    font-size: 48px;
+    font-family: inherit;
+    letter-spacing: 3px;
+  }
+
+  &__discount-tenge{
+    margin-left: 6px;
+    font-size: 42px;
+    font-family: 'Tenge';
+    font-weight: 400;
   }
 
   &__discount{
-    width: 220px;
-    height: 110px;
-    background: url("/img/spring_discount.png") no-repeat center / cover;
-  }
-
-  &__addr{
-    max-width: 300px;
-    font-size: 13px;
-    line-height: 1.40;
-    color: #ffffff;
-  }
-
-  &__price-col{
-    padding-top: 10px;
-    padding-left: 75px;
-  }
-
-  &__price-row{
-    & + &{
-      margin-top: 8px;
-    }
-  }
-
-  &__price-desc{
-    position: absolute;
-    top: 5px;
-    right: ~'calc(100% + 10px)';
-    font-size: 26px;
-    line-height: 1;
+    position: relative;
+    margin-left: 15px;
+    font-size: 63px;
+    font-weight: 800;
     letter-spacing: initial;
-    color: #ffffff;
-  }
-
-  &__price-currency{
-    position: absolute;
-    bottom: 5px;
-    left: ~'calc(100% + 15px)';
-    font-size: 26px;
-    line-height: 1;
-    color: #ffffff;
-    letter-spacing: 1px;
-
-    &--up{
-      top: 100%;
-      left: auto;
-      bottom: auto;
-      right: 0;
-    }
-  }
-
-  &__price-wrap{
-    position: relative;
-    display: flex;
-  }
-
-  &__price{
-    position: relative;
-    font-family: 'RozhaOne';
-    font-size: 102px;
     line-height: .8;
-    letter-spacing: -3px;
     color: transparent;
     background: #c3b06a;
-    background: -moz-linear-gradient(45deg, #c3b06a 0%, #eade85 17%, #c3b06a 61%, #eade85 100%);
-    background: -webkit-gradient(left bottom, right top, color-stop(0%, #c3b06a), color-stop(17%, #eade85), color-stop(61%, #c3b06a), color-stop(100%, #eade85));
-    background: -webkit-linear-gradient(45deg, #c3b06a 0%, #eade85 17%, #c3b06a 61%, #eade85 100%);
-    background: -o-linear-gradient(45deg, #c3b06a 0%, #eade85 17%, #c3b06a 61%, #eade85 100%);
-    background: -ms-linear-gradient(45deg, #c3b06a 0%, #eade85 17%, #c3b06a 61%, #eade85 100%);
-    background: repeating-linear-gradient(4deg, #eade85 0%, #c3b06a 17%, #eade85 61%, #c3b06a 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c3b06a', endColorstr='#eade85', GradientType=1 );
+    background: repeating-linear-gradient(7deg, #eade85 0%, #c3b06a 8.5%, #eade85 17%, #c3b06a 30.5%, #eade85 50%, #c3b06a 61%, #eade85 100%);
     -webkit-background-clip: text;
     white-space: nowrap;
+    font-family: inherit;
 
     &--bg{
       position: absolute;
       left: 0;
       top: 0;
       z-index: -1;
+      margin-left: 0;
       color: #000000;
       text-shadow: 1px 1px 1px rgba(17, 31, 65, 0.62);
     }

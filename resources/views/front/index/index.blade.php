@@ -33,37 +33,17 @@
         </header>
         <div class="title-block__text-wrap">
             <div class="title-block__col1">
-                <div class="title-block__discount-addr-col">
-                    <div class="title-block__discount"></div>
-                    <div class="title-block__addr">{!! $main_block->address_field !!}</div>
-                </div>
-                <div class="title-block__price-col">
-                    <div class="title-block__price-row">
-                        <span class="title-block__price-wrap">
-                            <span class="title-block__price">
-                                <span class="title-block__price-desc">от</span>
-                                {{ $main_block->price_field }}
-                                <span class="title-block__price title-block__price--bg">
-                                    {{ $main_block->price_field }}
-                                </span>
-                                <span class="title-block__price-currency">тенге</span>
+                <h1 class="title-block__title">
+                    ВЕСЕННИЕ СКИДКИ!
+                    <span class="title-block__discount-row">ДО
+                        <span class="title-block__discount">
+                            {{ $main_block->price_up }}<span class="title-block__discount-tenge">o</span>
+                            <span class="title-block__discount title-block__discount--bg">
+                                {{ $main_block->price_up }}<span class="title-block__discount-tenge">o</span>
                             </span>
                         </span>
-                    </div>
-                    <div class="title-block__price-row">
-                        <span class="title-block__price-wrap">
-                            <span class="title-block__price">
-                                <span class="title-block__price-desc">до</span>
-                                {{ $main_block->price_up_field }}
-                                <span class="title-block__price title-block__price--bg">
-                                    {{ $main_block->price_up_field }}
-                                </span>
-                                <span class="title-block__price-currency title-block__price-currency--up">тенге</span>
-                            </span>
-                        </span>
-                    </div>
-                </div>
-                {{--<h1 class="title-block__title">{{ $main_block->block_title_field }}</h1>--}}
+                    </span>
+                </h1>
             </div>
             <div class="title-block__col2">
                 <p class="title-block__installment">РАССРОЧКА<br>ОТ ЗАСТРОЙЩИКА</p>

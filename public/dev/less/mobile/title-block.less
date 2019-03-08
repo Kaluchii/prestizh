@@ -4,27 +4,25 @@
       margin-left: 0;
       flex-direction: column;
     }
+  }
+}
 
-    &__price-col{
-      margin-top: 30px;
-      padding-left: 35px;
+@media screen and (max-width: 1380px) {
+  .title-block{
+    &__title{
+      font-size: 48px;
     }
 
-    &__discount-addr-col{
-      //margin-top: 50px;
-      margin-left: 35px;
-
-      &::after{
-        display: none;
-      }
+    &__discount-row{
+      font-size: 36px;
     }
 
-    &__price-desc{
-      text-shadow: 0 0 3px rgba(0, 0, 0, 1);
+    &__discount-tenge{
+      font-size: 30px;
     }
 
-    &__price-currency{
-      text-shadow: 0 0 3px rgba(0, 0, 0, 1);
+    &__discount{
+      font-size: 50px;
     }
   }
 }
@@ -105,35 +103,7 @@
       flex-direction: column;
       align-items: center;
       max-width: none;
-    }
-    
-    &__title{
-      text-align: center;
-    }
-
-    &__price-col{
-      margin-top: 0;
-    }
-
-    &__discount{
-      background-image: url('/img/spring_discount_mob.png');
-      height: 87px;
-      width: 174px;
-    }
-
-    &__price{
-      font-size: 80px;
-      letter-spacing: -2px;
-    }
-
-    &__price-desc{
-      font-size: 20px;
-      text-shadow: none;
-    }
-
-    &__price-currency{
-      font-size: 20px;
-      text-shadow: none;
+      height: ~'calc(100% - 130px)';
     }
 
     &__col1{
@@ -141,18 +111,9 @@
       align-items: flex-end;
     }
 
-    &__discount-addr-col{
-      margin-top: 35px;
-      width: auto;
-    }
-
-    &__addr{
-      display: none;
-    }
-
     &__col2{
       max-width: none;
-      padding-top: 180px;
+      //padding-top: 340px;
     }
 
     &__installment{
@@ -334,50 +295,42 @@
     background: url('/img/title_bg_680.jpg?2') no-repeat center bottom;
 
     &__text-wrap{
-      height: ~'calc(100% - 65px)';
-      padding-top: 0;
-    }
-
-    &__price-wrap{
+      height: ~'calc(100% - 105px)';
+      align-items: flex-start;
     }
 
     &__popup{
       margin-top: 30px;
     }
 
-    &__price-col{
-      padding-top: 30px;
-      padding-left: 27px;
-    }
-
-    &__price{
-      font-size: 63px;
-    }
-
-    &__price-desc{
-      top: 2px;
-      right: ~'calc(100% + 8px)';
-      font-size: 16px;
-    }
-
-    &__price-currency{
-      font-size: 16px;
-      left: ~'calc(100% + 8px)';
-
-      &--up{
-        top: 95%;
-        left: auto;
-        bottom: auto;
-        right: 0;
-      }
-    }
-
-    &__discount-addr-col{
-      margin-top: 30px;
-    }
-
     &__col2{
       padding-bottom: 30px;
+    }
+
+    &__title{
+      margin-top: -3px;
+      padding: 0 20px;
+      font-size: 36px;
+      letter-spacing: 2.5px;
+    }
+
+    &__discount-row{
+      margin-top: 6px;
+      font-size: 29px;
+      letter-spacing: 2px;
+    }
+
+    &__discount-tenge{
+      font-size: 25px;
+    }
+
+    &__discount{
+      margin-left: 8px;
+      font-size: 38px;
+
+      &--bg{
+        margin-left: 0;
+      }
     }
   }
 
