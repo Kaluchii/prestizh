@@ -326,6 +326,9 @@
                         </div>
                     </div>
                     <div class="layout__feedback layout-feedback">
+                        <p class="layout-feedback__calculation-method">
+                            На планировке указана проектная площадь. Расчет осуществляется по фактической площади.
+                        </p>
                         <p class="layout-feedback__title">ПОНРАВИЛАСЬ КВАРТИРА?</p>
                         <p class="layout-feedback__text">Свяжитесь с нами и узнайте подробности</p>
                         <div class="layout-feedback__input-rows form-id" id="layout_call">

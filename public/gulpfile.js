@@ -32,8 +32,10 @@ var gulp         = require('gulp'),
 var config         = '/dev/config',
     dev_css        = 'dev/less/',
     dev_img        = 'dev/img/',
+    dev_js         = 'dev/js/',
     production_css = './css/',
     production_img = './img/',
+    production_js  = './js/',
     html           = '../resources/views/front/';
 // Параметры для галпа
 var arguments    = args.argv;
@@ -63,7 +65,7 @@ gulp.task('style', function () {
         .pipe(plumber())
         .pipe(_if(isProduction, sourcemaps.init()))// Если передан ключ --production то sourcemap не пишется.
         .pipe(less())
-        .pipe(autoprefixer('last 20 version', 'safari 5', 'ie 8', 'ie9', 'opera 12.1', 'chrome', 'ff', 'ios'))
+        .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie9', 'opera 12.1', 'chrome', 'ff', 'ios'))
         .pipe(csscomb('./dev/config/.csscomb.json'))
         .pipe(_if(!isProduction, cssmin())) // Если передан ключ --production то css файл будет минимизирован и оптимизирован
         .pipe(_if(isProduction, sourcemaps.write() )) // Если передан ключ --production то sourcemap не пишется.
@@ -72,7 +74,13 @@ gulp.task('style', function () {
 });
 //======================================================================================================================
 
-
+gulp.task('js', function () {
+    gulp.src(dev_js + '*.js')
+        .pipe(_if(isProduction, sourcemaps.init()))// Если передан ключ --production то sourcemap не пишется.
+        .pipe(concat('scripts.js'))
+        .pipe(_if(isProduction, sourcemaps.write() )) // Если передан ключ --production то sourcemap не пишется.
+        .pipe(gulp.dest(production_js))
+});
 
 
 //======================================================================================================================
@@ -125,7 +133,7 @@ gulp.task('image', function () {
     gulp.src(dev_img + '**.' + image_ext)
         .pipe(plumber())
         .pipe(imagemin({
-            progressive      : true,
+            progressive      : false,
             interlaced       : true,
             optimizationLevel: 7
         }))
@@ -160,6 +168,7 @@ gulp.task('watch', function () {
     gulp.watch(dev_img + '*.*', {cwd: './'}, ['image']);
     gulp.watch(dev_css + '*.less', {cwd: './'}, ['style']);
     gulp.watch(dev_css + '**/*.less', {cwd: './'}, ['style']);
+    gulp.watch(dev_js  + '**/*.js', {cwd: './'}, ['js']);
 });
 //======================================================================================================================
 
