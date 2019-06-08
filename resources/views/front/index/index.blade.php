@@ -34,16 +34,28 @@
         <div class="title-block__text-wrap">
             <div class="title-block__col1">
                 <h1 class="title-block__title">
-                    ВЕСЕННИЕ СКИДКИ!
-                    <span class="title-block__discount-row">ДО
-                        <span class="title-block__discount">
-                            {{ $main_block->price_up }}<span class="title-block__discount-tenge">o</span>
-                            <span class="title-block__discount title-block__discount--bg">
-                                {{ $main_block->price_up }}<span class="title-block__discount-tenge">o</span>
-                            </span>
-                        </span>
-                    </span>
+                    СКИДКИ ДО 5% <br>
+                    <span class="title-block__discount-condition">ПРИ 100% ОПЛАТЕ</span>
                 </h1>
+                <div class="title-block__box-prices-wrap">
+                    <div class="title-block__box-prices-slider js_prices_slider">
+                        @foreach($main_block_flats as $item)
+                            <div class="flat-price">
+                                <div class="flat-price__name">{{ $item['name'] }} квартиры</div>
+                                <div class="flat-price__sum-wrap">
+                                    <span class="flat-price__pretext">ОТ</span>
+                                    <span class="flat-price__discount">
+                                        {{ number_format($item['min_price'], 0, ',', ' ') }}<span class="flat-price__discount-tenge">o</span>
+                                        <span class="flat-price__discount flat-price__discount--bg">
+                                            {{ number_format($item['min_price'], 0, ',', ' ') }}<span class="flat-price__discount-tenge">o</span>
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                    <span class="title-block__box-prices-bottom-line"></span>
+                </div>
             </div>
             <div class="title-block__col2">
                 <p class="title-block__installment">РАССРОЧКА<br>ОТ ЗАСТРОЙЩИКА</p>

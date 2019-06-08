@@ -4,34 +4,21 @@
   }
 }
 
-@media screen and (max-width: 1520px) {
+
+@media screen and (max-width: 1380px) {
   .title-block{
     &__col1{
       margin-left: 0;
       flex-direction: column;
     }
-  }
-}
 
-@media screen and (max-width: 1380px) {
-  .title-block{
-    &__title{
-      font-size: 48px;
-    }
-
-    &__discount-row{
-      font-size: 36px;
-    }
-
-    &__discount-tenge{
-      font-size: 30px;
-    }
-
-    &__discount{
-      font-size: 50px;
+    &__box-prices-wrap{
+      margin-top: 20px;
+      margin-left: 0;
     }
   }
 }
+
 
 @media screen and (max-width: 1240px) {
   .title-block{
@@ -84,6 +71,7 @@
   }
 }
 
+
 @media screen and (max-width: 1200px){
   .header{
     &__phone-wrap{
@@ -96,6 +84,7 @@
   }
 }
 
+
 @media screen and (max-width: 1010px) {
   .fixed-header{
     padding: 0;
@@ -105,6 +94,10 @@
     padding: 0;
     height: 620px;
 
+    &__box-prices-wrap{
+      margin-top: 30px;
+    }
+
     &__text-wrap{
       flex-direction: column;
       align-items: center;
@@ -112,14 +105,8 @@
       height: ~'calc(100% - 130px)';
     }
 
-    &__col1{
-      flex-direction: column-reverse;
-      align-items: flex-end;
-    }
-
     &__col2{
       max-width: none;
-      //padding-top: 340px;
     }
 
     &__installment{
@@ -235,6 +222,7 @@
   }
 }
 
+
 @media screen and (max-width: 940px) {
   .header{
     position: relative;
@@ -295,6 +283,7 @@
   }
 }
 
+
 @media screen and (max-width: 680px) {
   .title-block{
     height: 592px;
@@ -302,7 +291,10 @@
 
     &__text-wrap{
       height: ~'calc(100% - 105px)';
-      align-items: flex-start;
+    }
+
+    &__col1{
+      align-items: center;
     }
 
     &__popup{
@@ -314,29 +306,18 @@
     }
 
     &__title{
+      max-width: 282px;
       margin-top: -3px;
-      padding: 0 20px;
-      font-size: 36px;
-      letter-spacing: 2.5px;
+      padding: 0 18px;
+      font-size: 34px;
     }
 
-    &__discount-row{
-      margin-top: 6px;
-      font-size: 29px;
-      letter-spacing: 2px;
+    &__discount-condition{
+      font-size: 28px;
     }
 
-    &__discount-tenge{
-      font-size: 25px;
-    }
-
-    &__discount{
-      margin-left: 8px;
-      font-size: 38px;
-
-      &--bg{
-        margin-left: 0;
-      }
+    &__box-prices-wrap{
+      margin-top: 20px;
     }
   }
 
@@ -353,6 +334,7 @@
   }
 }
 
+
 @media screen and (max-width: 580px) {
   .title-popup{
     &__row-1{
@@ -360,6 +342,7 @@
     }
   }
 }
+
 
 @media screen and (max-width: 480px) {
   .title-popup{
@@ -389,6 +372,7 @@
     }
   }
 }
+
 
 @media screen and (max-width: 360px) {
   .title-block{

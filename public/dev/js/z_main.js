@@ -105,6 +105,15 @@ $(document).ready(function () {
         $('.title-popup').fadeOut();
     });
 
+
+    $('.js_prices_slider').slick({
+        dots: true,
+        arrows: false,
+        autoplay: true,
+        fade: true,
+        autoplaySpeed: 5000
+    });
+
     if (window.location.href.indexOf("/#/") >= 0) {
         var path = window.location.href;
         var anchor = path.split('/')[4];

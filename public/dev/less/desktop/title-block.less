@@ -25,51 +25,110 @@
 
   &__title{
     margin-top: 5px;
-    font-size: 60px;
+    font-size: 36px;
     line-height: 1;
     font-weight: 800;
-    letter-spacing: 4px;
+    letter-spacing: 0.075em;
     font-family: 'Gilroy';
   }
 
-  &__discount-row{
-    margin-top: 13px;
-    display: flex;
-    align-items: center;
-    font-size: 48px;
-    font-family: inherit;
-    letter-spacing: 3px;
-  }
-
-  &__discount-tenge{
-    margin-left: 6px;
-    font-size: 42px;
-    font-family: 'Tenge';
+  &__discount-condition{
+    font-size: 30px;
     font-weight: 400;
+    letter-spacing: 0.075em;
   }
 
-  &__discount{
+  &__box-prices-wrap{
     position: relative;
-    margin-left: 15px;
-    font-size: 63px;
-    font-weight: 800;
-    letter-spacing: initial;
-    line-height: .8;
-    color: transparent;
-    background: #c3b06a;
-    background: repeating-linear-gradient(7deg, #eade85 0%, #c3b06a 8.5%, #eade85 17%, #c3b06a 30.5%, #eade85 50%, #c3b06a 61%, #eade85 100%);
-    -webkit-background-clip: text;
-    white-space: nowrap;
-    font-family: inherit;
+    margin-top: 3px;
+    margin-left: 10px;
+    width: 290px;
+    height: 76px;
 
-    &--bg{
+    &::before, &::after{
+      content: '';
       position: absolute;
+      bottom: 0;
+      width: 31px;
+      height: 68px;
+      border: 1px solid #e3d580;
+    }
+
+    &::before{
       left: 0;
-      top: 0;
-      z-index: -1;
-      margin-left: 0;
-      color: #000000;
-      text-shadow: 1px 1px 1px rgba(17, 31, 65, 0.62);
+      border-right: none;
+      border-top-left-radius: 9px;
+      border-bottom-left-radius: 9px;
+    }
+
+    &::after{
+      right: 0;
+      border-left: none;
+      border-top-right-radius: 9px;
+      border-bottom-right-radius: 9px;
+    }
+  }
+
+  &__box-prices-bottom-line{
+    &::before, &::after{
+      content: '';
+      position: absolute;
+      bottom: 0;
+      width: 64px;
+      height: 1px;
+      background-color: #e3d580;
+    }
+
+    &::before{
+      left: 32px;
+    }
+
+    &::after{
+      right: 32px;
+    }
+  }
+
+  &__box-prices-slider{
+    .flat-price{
+      &:nth-child(n + 2){
+        display: none;
+      }
+    }
+
+    .slick-dots{
+      bottom: -24px;
+
+      li{
+        margin: 0;
+
+        button{
+          &::before{
+            content: '';
+            top: 7.5px;
+            left: 7.5px;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background-color: #ffffff;
+            opacity: .4;
+            transition: .1s;
+          }
+
+          &:hover{
+            &::before{
+              opacity: .75;
+            }
+          }
+        }
+
+        &.slick-active{
+          button{
+            &::before{
+              opacity: 1;
+            }
+          }
+        }
+      }
     }
   }
 
@@ -106,6 +165,66 @@
   }
 }
 
+
+.flat-price{
+  font-family: 'Gilroy';
+  color: #ffffff;
+  text-align: center;
+
+  &__name{
+    font-size: 12px;
+    letter-spacing: 0.175em;
+    text-transform: uppercase;
+    font-family: inherit;
+  }
+
+  &__sum-wrap{
+    margin-top: 14px;
+    font-family: inherit;
+  }
+
+  &__pretext{
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    font-family: inherit;
+  }
+
+  &__discount-tenge{
+    margin-left: 6px;
+    font-size: 26px;
+    font-family: 'Tenge';
+    font-weight: 400;
+  }
+
+  &__discount{
+    position: relative;
+    margin-left: 8px;
+    display: inline-block;
+    font-size: 38px;
+    font-weight: 800;
+    letter-spacing: initial;
+    line-height: .8;
+    color: transparent;
+    background: #c3b06a;
+    background: repeating-linear-gradient(7deg, #eade85 0%, #c3b06a 8.5%, #eade85 17%, #c3b06a 30.5%, #eade85 50%, #c3b06a 61%, #eade85 100%);
+    -webkit-background-clip: text;
+    white-space: nowrap;
+    font-family: inherit;
+
+    &--bg{
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: -1;
+      margin-left: 0;
+      color: #000000;
+      text-shadow: 1px 1px 1px rgba(17, 31, 65, 0.62);
+    }
+  }
+}
+
+
 .fixed-header{
   display: none;
   position: fixed;
@@ -122,6 +241,8 @@
     margin: 0 auto;
   }
 }
+
+
 .header{
   display: flex;
   justify-content: space-between;
@@ -258,6 +379,7 @@
   }
 }
 
+
 .title-popup{
   width: 100%;
   background: url("/img/popup_bg_1560.jpg") no-repeat center, #f1c6d0;
@@ -344,6 +466,7 @@
   }
 }
 
+
 .popup-input{
   position: relative;
 
@@ -424,6 +547,7 @@
 
   &__btn{}
 }
+
 
 .menu-button{
   box-sizing: border-box;

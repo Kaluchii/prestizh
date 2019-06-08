@@ -33,8 +33,34 @@ class FrontController extends Controller
         $contacts = $this->extract->getBlock('contacts');
         $prices = $this->extract->getBlock('prices');
         $scripts = $this->extract->getBlock('scripts');
+
+        $main_block_flats = [];
+        foreach ($flats->dom_flat_group as $item) {
+            $min = null;
+            $i = 1;
+            foreach ($item->layout_group as $layout_item) {
+                if ($layout_item->stock_price > 0) {
+                    $price = round($layout_item->stock_price * $layout_item->area);
+                } else {
+                    $price = round($layout_item->meter_cost * $layout_item->area * $prices->dollar);
+                    $price = $price - $price / 100 * $layout_item->discount;
+                }
+                if ($i === 1) {
+                    $min = $price;
+                } else {
+                    $min = $price < $min ? $price : $min;
+                }
+                $i++;
+            }
+            if ($min === null) {
+                continue;
+            }
+            $main_block_flats[] = ['name' => $item->dom_flat_name, 'min_price' => $min];
+        }
+
         return view('front.index.index', [
             'main_block' => $main_block,
+            'main_block_flats' => $main_block_flats,
             'about' => $about,
             'gallery' => $gallery,
             'stages' => $stages,
