@@ -178,7 +178,7 @@ $(document).ready(function () {
             $('.js_at_once_price').text(number_format(Math.round(basic_price - basic_price / 100 * thisLayout.discount), 0, ',', ' '));
         }
 
-        $('.js_give_price').text(number_format(basic_price, 0, ',', ' '));
+        $('.js_give_price').text(number_format(thisLayout.stock_price, 0, ',', ' '));
         $('.js_area_btn').removeClass('is-active').closest('.layout-choice__btns-item').removeClass('is-active');
         $(this).addClass('is-active').closest('.layout-choice__btns-item').addClass('is-active');
 

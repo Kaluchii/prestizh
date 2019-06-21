@@ -58,7 +58,7 @@
                 </div>
             </div>
             <div class="title-block__col2">
-                <p class="title-block__installment">РАССРОЧКА<br>ОТ ЗАСТРОЙЩИКА</p>
+{{--                <p class="title-block__installment">РАССРОЧКА<br>ОТ ЗАСТРОЙЩИКА</p>--}}
                 <div class="title-block__popup title-popup">
                     <div class="title-popup__wrapper">
                         <div class="title-popup__row-1">
@@ -328,7 +328,7 @@
                                 </div>
                             </div>
                             <div class="layout__price-wrap">
-                                <p class="layout__price-title">Стоимость:</p>
+                                <p class="layout__price-title">Цена за 1 м<sup class="layout__sup">2</sup>:</p>
                                 <p class="layout__price js_give_price"></p>
                             </div>
                         </div>
