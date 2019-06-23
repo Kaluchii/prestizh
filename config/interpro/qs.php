@@ -3,7 +3,7 @@
 return [
 
     'main_block' => [
-        'string' => ['block_title', 'price', 'price_up', 'address']
+        'string' => ['block_title', 'price', 'price_up', 'address', 'apartments_left']
     ],
 
     'about' => [

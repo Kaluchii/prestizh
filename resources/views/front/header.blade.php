@@ -2,7 +2,12 @@
     <div class="fixed-header">
         <div class="fixed-header__header header">
             <div class="header__logo-wrap header__logo-wrap--fixed">
-                <a href="#title" class="header__logo-link js_goto_anchor"><img src="/img/logo.png" alt="Жилой комплекс Престиж" class="header__logo header__logo--fixed"></a>
+                <a href="#title" class="header__logo-link js_goto_anchor">
+                    <picture>
+                        <source srcset="/img/logo_mob.png" media="(max-width: 1010px)">
+                        <img src="/img/logo.png" alt="Жилой комплекс Престиж" class="header__logo header__logo--fixed">
+                    </picture>
+                </a>
             </div>
             <div class="header__nav-wrap js_fixed_nav_wrap">
                 <ul class="header__nav-list">

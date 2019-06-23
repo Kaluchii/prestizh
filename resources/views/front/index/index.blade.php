@@ -5,7 +5,10 @@
     <section class="title-block" id="title">
         <header class="title-block__header header">
             <div class="header__logo-wrap">
-                <img src="/img/logo.png" alt="Жилой комплекс Престиж" class="header__logo">
+                <picture>
+                    <source srcset="/img/logo_mob.png" media="(max-width: 1010px)">
+                    <img src="/img/logo.png" alt="Жилой комплекс Престиж" class="header__logo">
+                </picture>
             </div>
             <nav class="header__nav-wrap js_nav_wrap">
                 <ul class="header__nav-list">
@@ -34,8 +37,8 @@
         <div class="title-block__text-wrap">
             <div class="title-block__col1">
                 <h1 class="title-block__title">
-                    СКИДКИ ДО 5% <br>
-                    <span class="title-block__discount-condition">ПРИ 100% ОПЛАТЕ</span>
+                    Сдан <br>
+                    <span class="title-block__discount-condition">в эксплуатацию!</span>
                 </h1>
                 <div class="title-block__box-prices-wrap">
                     <div class="title-block__box-prices-slider js_prices_slider">
@@ -59,16 +62,46 @@
             </div>
             <div class="title-block__col2">
 {{--                <p class="title-block__installment">РАССРОЧКА<br>ОТ ЗАСТРОЙЩИКА</p>--}}
-                <div class="title-block__popup title-popup">
+                <div class="title-block__popup title-popup js_title_popup show-slide-1">
                     <div class="title-popup__wrapper">
-                        <div class="title-popup__row-1">
-                            <div class="title-popup__discount-wrap">
-                                <p class="title-popup__gift">ПАРКИНГ</p>
-                                <p class="title-popup__gift-row-2">В ПОДАРОК!</p>
-                                <p class="title-popup__condition">УСЛОВИЯ УТОЧНЯЙТЕ В ОТДЕЛЕ ПРОДАЖ</p>
+                        <div class="title-popup__info-row title-popup__info-row--discount">
+                            <div class="title-popup__discount">АКЦИОННАЯ <span class="title-popup__discount-row-2">ЦЕНА</span></div>
+                            <div class="title-popup__info-row-text-wrap">
+                                <div class="title-popup__meter-price-wrap">
+                                    <div class="title-popup__meter-price">
+                                        {{ $main_block->price }}
+                                        <span class="title-popup__tenge-meter">
+                                            <span class="title-popup__tenge">f</span>
+                                            <span class="title-popup__meter">м<sup>2</sup></span>
+                                        </span>
+                                        <span class="title-popup__meter-price title-popup__meter-price--bg">
+                                            {{ $main_block->price }}
+                                            <span class="title-popup__tenge-meter">
+                                                <span class="title-popup__tenge">f</span>
+                                                <span class="title-popup__meter">м<sup>2</sup></span>
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="title-popup__discount-price-condition">
+                                    НА ДВУХКОМНАТНЫЕ КВАРТИРЫ <br>
+                                    <span class="title-popup__discount-limit">(КОЛИЧЕСТВО КВАРТИР ОГРАНИЧЕНО)</span>
+                                </div>
+                            </div>
+                            <div class="title-popup__flats-count-wrap">
+                                <div class="title-popup__flats-count">
+                                    <div class="title-popup__flats-count-top">ОСТАЛОСЬ</div>
+                                    <div class="title-popup__flats-count-middle">{{ $main_block->apartments_left }}</div>
+                                    <div class="title-popup__flats-count-bottom">КВАРТИР</div>
+                                </div>
                             </div>
                         </div>
-                        <div class="title-popup__row-2">
+                        <div class="title-popup__info-row title-popup__info-row--parking">
+                            <p class="title-popup__gift">ПАРКИНГ</p>
+                            <p class="title-popup__gift-row-2">В ПОДАРОК!</p>
+                            <p class="title-popup__condition">УСЛОВИЯ УТОЧНЯЙТЕ В ОТДЕЛЕ ПРОДАЖ</p>
+                        </div>
+                        <div class="title-popup__feedback-row">
                             <p class="title-popup__interest-text">ЗАИНТЕРЕСОВАЛИСЬ?</p>
                             <div class="title-popup__input-rows form-id" id="popup_call">
                                 <input type="hidden" name="form" class="form-input" value="call">
@@ -93,6 +126,10 @@
                             </div>
                         </div>
                         <div class="title-popup__close js_popup_close"></div>
+                    </div>
+                    <div class="title-popup__slider-nav">
+                        <button type="button" class="title-popup__slider-nav-btn js_slider_btn" data-slide="1"></button>
+                        <button type="button" class="title-popup__slider-nav-btn js_slider_btn" data-slide="2"></button>
                     </div>
                 </div>
             </div>

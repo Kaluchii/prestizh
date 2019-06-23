@@ -27,7 +27,7 @@
                        data-id="0">
             </div>
             <div class="form-group">
-                <label>Цена "от"</label>
+                <label>Цена 1 кв.м по акции</label>
                 <input class="form-control string"
                        type="text" placeholder=""
                        value="{{$main_block->price_field}}"
@@ -37,11 +37,11 @@
                        data-id="0">
             </div>
             <div class="form-group">
-                <label>Цена "до"</label>
+                <label>Количество оставшихся квартир</label>
                 <input class="form-control string"
                        type="text" placeholder=""
-                       value="{{$main_block->price_up_field}}"
-                       data-name="price_up"
+                       value="{{$main_block->apartments_left}}"
+                       data-name="apartments_left"
                        data-type="string"
                        data-block="main_block"
                        data-id="0">

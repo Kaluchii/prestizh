@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(function () {
     /***
      number - исходное число
      decimals - количество знаков после разделителя
@@ -79,11 +79,6 @@ $(document).ready(function () {
     });
 
     $window.on('load resize', function () {
-        if ($window.width() > 1010) {
-            $('.header__logo').attr('src', '/img/logo.png');
-        } else {
-            $('.header__logo').attr('src', '/img/logo_mob.png');
-        }
         if ($window.width() > 940) {
             $('.js_nav_wrap').attr('style', '');
             $('.js_fixed_nav_wrap').attr('style', '');
@@ -287,6 +282,59 @@ $(document).ready(function () {
             $('.js-top-btn').css('display', 'none');
         }
     });
+
+
+    (function(){
+        var $titlePopup = $('.js_title_popup'),
+            timer = 0,
+            secondsForSwitch = 6,
+            hoverOnPopup = false,
+            focusInPopup = false;
+
+        $('.js_slider_btn').on('click', function () {
+            var slideNum = $(this).data('slide');
+
+            if (!$titlePopup.hasClass('show-slide-' + slideNum)){
+                $titlePopup.toggleClass('show-slide-1 show-slide-2');
+            }
+
+            timer = 0;
+        });
+
+        $titlePopup
+            .on('mouseenter', function () {
+                hoverOnPopup = true;
+            })
+            .on('mouseleave', function () {
+                hoverOnPopup = false;
+            })
+            .on('focusin', function () {
+                focusInPopup = true;
+            })
+            .on('focusout', function () {
+                focusInPopup = false;
+            });
+
+        setInterval(function () {
+            if ($window.width() <= 1010) {
+                return;
+            }
+
+            if (!(hoverOnPopup || focusInPopup)) {
+                timer++;
+            }
+            if (timer === secondsForSwitch) {
+                $titlePopup.toggleClass('show-slide-1 show-slide-2');
+                timer = 0;
+            }
+        }, 1000);
+
+        $window.on('resize', function () {
+            if ($window.width() <= 1010) {
+                $titlePopup.addClass('show-slide-1').removeClass('show-slide-2');
+            }
+        });
+    }());
 
 
     /* Yandex map */
