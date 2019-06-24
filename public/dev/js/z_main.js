@@ -287,7 +287,7 @@ $(function () {
     (function(){
         var $titlePopup = $('.js_title_popup'),
             timer = 0,
-            secondsForSwitch = 6,
+            secondsForSwitch = 9,
             hoverOnPopup = false,
             focusInPopup = false;
 
