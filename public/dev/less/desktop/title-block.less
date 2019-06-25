@@ -395,11 +395,6 @@
       transition: background-color .4s;
     }
 
-    &__gift, &__gift-row-2, &__condition{
-      transform: translateX(0);
-      opacity: 1;
-    }
-
     &__slider-nav-btn{
       &:nth-child(1){
         &::after{
@@ -412,9 +407,7 @@
   .show-slide-2 &{
     &__info-row{
       &--parking{
-        position: absolute;
-        opacity: 0;
-        pointer-events: none;
+        display: none;
       }
 
       &--discount{
@@ -724,9 +717,6 @@
     line-height: 1;
     letter-spacing: .03em;
     color: #1b1b1b;
-    transition: .3s;
-    transform: translateX(-20px);
-    opacity: 0;
   }
 
   &__gift-row-2{
@@ -735,9 +725,6 @@
     line-height: 1;
     letter-spacing: .05em;
     color: #1b1b1b;
-    transition: .3s .1s;
-    transform: translateX(-20px);
-    opacity: 0;
   }
 
   &__condition{
@@ -746,9 +733,6 @@
     line-height: 1;
     letter-spacing: 3.5px;
     color: #1b1b1b;
-    transition: .3s .2s;
-    transform: translateX(-20px);
-    opacity: 0;
   }
 
   &__btn{}
@@ -759,6 +743,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    display: none;
   }
 
   &__slider-nav-btn{

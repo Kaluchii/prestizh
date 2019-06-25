@@ -62,7 +62,7 @@
             </div>
             <div class="title-block__col2">
 {{--                <p class="title-block__installment">РАССРОЧКА<br>ОТ ЗАСТРОЙЩИКА</p>--}}
-                <div class="title-block__popup title-popup js_title_popup show-slide-1">
+                <div class="title-block__popup title-popup js_title_popup show-slide-2">
                     <div class="title-popup__wrapper">
                         <div class="title-popup__info-row title-popup__info-row--discount">
                             <div class="title-popup__discount">АКЦИОННАЯ <span class="title-popup__discount-row-2">ЦЕНА</span></div>

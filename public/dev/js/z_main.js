@@ -284,7 +284,7 @@ $(function () {
     });
 
 
-    (function(){
+    /*(function(){
         var $titlePopup = $('.js_title_popup'),
             timer = 0,
             secondsForSwitch = 9,
@@ -334,7 +334,7 @@ $(function () {
                 $titlePopup.addClass('show-slide-1').removeClass('show-slide-2');
             }
         });
-    }());
+    }());*/
 
 
     /* Yandex map */

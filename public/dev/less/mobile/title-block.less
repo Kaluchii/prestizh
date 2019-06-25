@@ -214,6 +214,18 @@
     &__slider-nav{
       display: none;
     }
+
+    .show-slide-2 &{
+      &__info-row{
+        &--parking{
+          display: block;
+        }
+      }
+
+      &__feedback-row{
+        background: url("/img/form_lighter.png?1") no-repeat left bottom / 397px 360px, url("/img/popup_bg.png?1") repeat;
+      }
+    }
   }
 
   .header{
@@ -258,7 +270,6 @@
   }
 
   .popup-input{
-
     &.error:not(.filling){
       .popup-input{
         &__input{
@@ -283,6 +294,24 @@
         background-position: 100% 8px;
         background-size: 1px 34px;
         background-repeat: no-repeat;
+      }
+    }
+
+
+    .show-slide-2 &{
+      &__input{
+        background-color: rgba(255, 255, 255, 0.3);
+
+        &:focus{
+          border-color: #fff;
+        }
+      }
+
+      &__label{
+        &--tel{
+          background-image: linear-gradient(to left, #f1c6d0, #f1c6d0 100%);
+          background-size: 1px 34px;
+        }
       }
     }
   }
