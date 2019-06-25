@@ -103,6 +103,18 @@
     &--area{
       width: 76px;
     }
+
+    &--labeled{
+      &::after{
+        content: '';
+        position: absolute;
+        right: 1px;
+        bottom: 1px;
+        border: 8px solid transparent;
+        border-right-color: #FF0000;
+        border-bottom-color: #FF0000;
+      }
+    }
     
     &.is-active{
       background-color: #ddc777;

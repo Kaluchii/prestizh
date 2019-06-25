@@ -263,9 +263,11 @@
                 </div>
             </div>
             <div class="for-Google-PageSpeed">
-                @for($i = 0; $i < 9 && isset($slider_arr[$i]); $i++)
-                    <img src="{{ $slider_arr[$i] }}" alt="">
-                @endfor
+                @php($i = 0)
+                @foreach($slider_arr as $slider_item)
+                    <img src="{{ $slider_item }}" alt="">
+                    @php($i++)
+                @endforeach
                 @foreach($stages->dom_stages_group as $stage)
                     @if($stage->show_field == 1)
                         @foreach($stage->stage_images_group as $stage_img)
@@ -277,9 +279,11 @@
             </div>
             <div class="gallery__mobile-gallery mobile-gallery">
                 <ul class="mobile-gallery__list">
-                    @for($i = 0; $i < 9 && isset($slider_arr[$i]); $i++)
-                        <li class="mobile-gallery__item"><img class="mobile-gallery__img js_open_fotorama" data-img="{{$i}}" src="{{ $slider_arr[$i] }}" alt=""></li>
-                    @endfor
+                    @php($i = 0)
+                    @foreach($slider_arr as $slider_item)
+                        <li class="mobile-gallery__item"><img class="mobile-gallery__img js_open_fotorama" data-img="{{$i}}" src="{{ $slider_item }}" alt=""></li>
+                        @php($i++)
+                    @endforeach
                 </ul>
             </div>
         </div>
@@ -334,7 +338,7 @@
                         <ul class="layout-choice__btns-list">
                             @foreach($flats->dom_flat_group as $item)
                                 @foreach($item->layout_group as $layout_item)
-                                    <li class="layout-choice__btns-item"><button class="layout-choice__button js_area_btn layout-choice__button--area flat{{$item->id_field}}" data-id="{{$layout_item->id_field}}">{{str_replace('.', ',', $layout_item->area_field)}} м<sup class="layout-choice__btn-sup">2</sup></button></li>
+                                    <li class="layout-choice__btns-item"><button class="layout-choice__button js_area_btn layout-choice__button--area @if($layout_item->labeled)layout-choice__button--labeled @endif flat{{$item->id_field}}" data-id="{{$layout_item->id_field}}">{{str_replace('.', ',', $layout_item->area_field)}} м<sup class="layout-choice__btn-sup">2</sup></button></li>
                                 @endforeach
                             @endforeach
                         </ul>

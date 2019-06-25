@@ -18,6 +18,18 @@
         </div>
 
         <div class="form-group">
+            <label>
+                <input type="checkbox" class="minimal bool"
+                       data-name="labeled"
+                       data-type="bool"
+                       data-block="layout"
+                       data-id="{{$item->id_field}}"
+                       @if($item->labeled) checked @endif>
+                Выделить кнопку
+            </label>
+        </div>
+
+        <div class="form-group">
             <label>Стоимость 1 м² площади квартиры в долларах</label>
             <input class="form-control float"
                    type="number" placeholder=""
