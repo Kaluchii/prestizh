@@ -73,31 +73,71 @@
                 {{--                <p class="title-block__installment">РАССРОЧКА<br>ОТ ЗАСТРОЙЩИКА</p>--}}
                 <div class="title-block__popup title-popup js_title_popup show-slide-2">
                     <div class="title-popup__wrapper">
-                        <div class="title-popup__info-row title-popup__info-row--discount">
-                            <div class="title-popup__discount">АКЦИОННАЯ <span
-                                        class="title-popup__discount-row-2">ЦЕНА</span></div>
-                            <div class="title-popup__info-row-text-wrap">
-                                <div class="title-popup__meter-price-wrap">
-                                    <div class="title-popup__meter-price">
+
+
+                        <div class="title-popup__slick">
+                            <div class="title-popup__info-row title-popup__info-row--discount">
+                                <div class="title-popup__discount">АКЦИОННАЯ <span
+                                            class="title-popup__discount-row-2">ЦЕНА</span></div>
+                                <div class="title-popup__info-row-text-wrap">
+                                    <div class="title-popup__meter-price-wrap">
+                                        <div class="title-popup__meter-price">
+                                            {{ $main_block->price }}
+                                            <span class="title-popup__tenge-meter">
+                                        <span class="title-popup__tenge">f</span>
+                                        <span class="title-popup__meter">м<sup>2</sup></span>
+                                    </span>
+                                            <span class="title-popup__meter-price title-popup__meter-price--bg">
                                         {{ $main_block->price }}
                                         <span class="title-popup__tenge-meter">
                                             <span class="title-popup__tenge">f</span>
                                             <span class="title-popup__meter">м<sup>2</sup></span>
                                         </span>
-                                        <span class="title-popup__meter-price title-popup__meter-price--bg">
+                                    </span>
+                                        </div>
+                                    </div>
+                                    <div class="title-popup__discount-price-condition">
+                                        НА ДВУХКОМНАТНЫЕ КВАРТИРЫ <br>
+                                        <span class="title-popup__discount-limit">(КОЛИЧЕСТВО КВАРТИР ОГРАНИЧЕНО)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="title-popup__info-row title-popup__info-row--discount">
+                                <div class="title-popup__discount">АКЦИОННАЯ <span
+                                            class="title-popup__discount-row-2">ЦЕНА</span></div>
+                                <div class="title-popup__info-row-text-wrap">
+                                    <div class="title-popup__meter-price-wrap">
+                                        <div class="title-popup__meter-price">
+                                            {{ $main_block->price }}
+                                            <span class="title-popup__tenge-meter">
+                                            <span class="title-popup__tenge">f</span>
+                                            <span class="title-popup__meter">м<sup>2</sup></span>
+                                        </span>
+                                            <span class="title-popup__meter-price title-popup__meter-price--bg">
                                             {{ $main_block->price }}
                                             <span class="title-popup__tenge-meter">
                                                 <span class="title-popup__tenge">f</span>
                                                 <span class="title-popup__meter">м<sup>2</sup></span>
                                             </span>
                                         </span>
+                                        </div>
+                                    </div>
+                                    <div class="title-popup__discount-price-condition">
+                                        НА ДВУХКОМНАТНЫЕ КВАРТИРЫ <br>
+                                        <span class="title-popup__discount-limit">(КОЛИЧЕСТВО КВАРТИР ОГРАНИЧЕНО)</span>
                                     </div>
                                 </div>
-                                <div class="title-popup__discount-price-condition">
-                                    НА ДВУХКОМНАТНЫЕ КВАРТИРЫ <br>
-                                    <span class="title-popup__discount-limit">(КОЛИЧЕСТВО КВАРТИР ОГРАНИЧЕНО)</span>
-                                </div>
                             </div>
+                        </div>
+
+
+
+                        <div class="title-popup__info-row title-popup__info-row--parking">
+                            <p class="title-popup__gift">ПАРКИНГ</p>
+                            <p class="title-popup__gift-row-2">В ПОДАРОК!</p>
+                            <p class="title-popup__condition">УСЛОВИЯ УТОЧНЯЙТЕ В ОТДЕЛЕ ПРОДАЖ</p>
+                        </div>
+                        <div class="title-popup__feedback-row">
                             <div class="title-popup__flats-count-wrap">
                                 <div class="title-popup__flats-count">
                                     <div class="title-popup__flats-count-top">ОСТАЛОСЬ</div>
@@ -105,13 +145,6 @@
                                     <div class="title-popup__flats-count-bottom">КВАРТИР</div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="title-popup__info-row title-popup__info-row--parking">
-                            <p class="title-popup__gift">ПАРКИНГ</p>
-                            <p class="title-popup__gift-row-2">В ПОДАРОК!</p>
-                            <p class="title-popup__condition">УСЛОВИЯ УТОЧНЯЙТЕ В ОТДЕЛЕ ПРОДАЖ</p>
-                        </div>
-                        <div class="title-popup__feedback-row">
                             <p class="title-popup__interest-text">ЗАИНТЕРЕСОВАЛИСЬ?</p>
                             <div class="title-popup__input-rows form-id" id="popup_call">
                                 <input type="hidden" name="form" class="form-input" value="call">
@@ -267,14 +300,16 @@
             * количество квартир по акциям ограничено
         </p>
         <div class="stock__parking">
-            <p class="stock__parking-title">
-                паркинг <br>
-                <span class="stock__parking-subtitle">в подарок</span>
-            </p>
-            <p class="stock__parking-text">
-                на большие квартиры от 128 м2 <br>
-                (на этажах 2-9)
-            </p>
+            <div class="stock__parking-wrap">
+                <p class="stock__parking-title">
+                    паркинг <br>
+                    <span class="stock__parking-subtitle">в подарок</span>
+                </p>
+                <p class="stock__parking-text">
+                    на большие квартиры от 128 м2 <br>
+                    (на этажах 2-9)
+                </p>
+            </div>
         </div>
         <div class="title-popup__feedback-row mobile">
             <p class="title-popup__interest-text mobile">ЗАИНТЕРЕСОВАЛИСЬ?</p>

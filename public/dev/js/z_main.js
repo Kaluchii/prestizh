@@ -387,3 +387,10 @@ $(function () {
     ymaps.ready(init);
     var myMap;
 });
+
+$(function () {
+    $(document).ready(function(){
+            $('.title-popup__slick').slick({
+        });
+    });
+});
