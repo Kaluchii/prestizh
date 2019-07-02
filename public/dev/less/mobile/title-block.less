@@ -121,115 +121,24 @@
   }
 
   .title-popup{
-    display: none !important;
+    display: none;
     margin-top: 25px;
     width: 100%;
     margin-left: 0;
 
-    &__info-row{
-      &--parking{
-        height: 405px;
-        box-sizing: border-box;
-        background: url("/img/popup_bg_680.jpg") no-repeat right center, #f1c6d0;
-      }
-
-      &--discount{
-        position: static;
-        height: auto;
-        padding: 20px 20px 40px;
-        background-color: #fff;
-        opacity: 1;
-        pointer-events: auto;
-      }
-    }
-
-    &__discount, &__discount-row-2, &__meter-price-wrap, &__discount-price-condition,
-    &__flats-count-wrap, &__flats-count-middle{
+    &__meter-price-wrap{
       opacity: 1;
       transform: translate(0);
     }
 
-    &__discount{
-      position: static;
-      margin: auto;
-      height: auto;
-      max-width: 720px;
-      padding: 3px 0;
-    }
-
-    &__discount-row-2{
-      display: inline;
-      font-size: inherit;
-      letter-spacing: inherit;
-    }
-
-    &__info-row-text-wrap{
-      margin: 20px auto 0;
-      max-width: 333px;
-    }
-
-    &__flats-count-wrap{
-      position: static;
-      margin: 40px auto 0;
-      height: auto;
-      width: auto;
-      background: none;
-    }
-
-    &__flats-count{
-      height: 102px;
-      width: 126px;
-
-      &::before, &::after{
-        border-color: #e4d681;
-      }
-    }
-
-    &__flats-count-top, &__flats-count-bottom{
-      &::before, &::after{
-        background-color: #e4d681;
-      }
-    }
-
-    &__flats-count-middle{
-      color: #000;
-    }
-
     &__feedback-row{
-      padding-bottom: 25px;
-      background: url("/img/form_lighter.png?1") no-repeat left bottom / 397px 360px, url("/img/popup_bg.png?1") repeat;
-
       &.mobile{
         padding: 15px 20px;
-        background: #fff;
       }
-    }
-
-    &__condition{
-      margin-top: 150px;
-      max-width: 90px;
-      font-size: 10px;
-      line-height: 1.7em;
     }
 
     &__close{
       display: none;
-    }
-
-    &__slider-nav{
-      display: none;
-    }
-
-    .show-slide-2 &{
-      &__info-row{
-        &--parking{
-          display: block;
-        }
-      }
-
-      &__feedback-row{
-        background: url("/img/form_lighter.png?1") no-repeat left bottom / 397px 360px, url("/img/popup_bg.png?1") repeat;
-      }
     }
   }
 
@@ -299,24 +208,6 @@
         background-position: 100% 8px;
         background-size: 1px 34px;
         background-repeat: no-repeat;
-      }
-    }
-
-
-    .show-slide-2 &{
-      &__input{
-        background-color: rgba(255, 255, 255, 0.3);
-
-        &:focus{
-          border-color: #fff;
-        }
-      }
-
-      &__label{
-        &--tel{
-          background-image: linear-gradient(to left, #f1c6d0, #f1c6d0 100%);
-          background-size: 1px 34px;
-        }
       }
     }
   }
@@ -415,29 +306,6 @@
       margin-top: 20px;
     }
   }
-
-  .title-popup{
-    &__gift{
-      font-size: 57px;
-      letter-spacing: 3.5px;
-    }
-
-    &__gift-row-2{
-      font-size: 30px;
-      letter-spacing: 2px;
-    }
-  }
-}
-
-
-@media screen and (max-width: 580px) {
-  .title-popup{
-    &__info-row{
-      &--parking{
-        background-image: url('/img/popup_bg_360.jpg');
-      }
-    }
-  }
 }
 
 
@@ -450,20 +318,12 @@
 
     &__row{
       &--btn{
-        text-align: center;
-
-        &.mobile{
-          text-align: left;
-        }
+        text-align: left;
       }
     }
 
     &__interest-text{
       text-align: center;
-
-      &.mobile{
-        padding-left: 0;
-      }
     }
   }
 
@@ -481,19 +341,6 @@
 
 @media screen and (max-width: 410px) {
   .title-popup{
-    &__info-row{
-      &--discount{
-        padding-top: 10px;
-        padding-bottom: 20px;
-      }
-    }
-
-    &__discount{
-      font-size: 11px;
-      padding-top: 7px;
-      padding-bottom: 6px;
-    }
-
     &__meter-price{
       font-size: 71px;
 
@@ -513,36 +360,6 @@
     &__meter{
       font-size: 23px;
     }
-
-    &__discount-price-condition{
-      margin-top: 5px;
-      font-size: 15px;
-      text-align: center;
-    }
-
-    &__discount-limit{
-      font-size: 11px;
-    }
-
-    &__info-row-text-wrap{
-      margin-top: 10px;
-      max-width: 278px;
-    }
-
-    &__flats-count-wrap{
-      margin-top: 25px;
-    }
-
-    &__flats-count{
-      &::before{
-        border-top-left-radius: 6px;
-        border-bottom-left-radius: 6px;
-      }
-
-      &::after{
-        border-top-right-radius: 6px;
-        border-bottom-right-radius: 6px;
-      }}
   }
 }
 

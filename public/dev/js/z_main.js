@@ -109,6 +109,13 @@ $(function () {
         autoplaySpeed: 5000
     });
 
+
+    $('.js_title_popup_slick').slick({
+        fade: true,
+        speed: 800
+    });
+
+
     if (window.location.href.indexOf("/#/") >= 0) {
         var path = window.location.href;
         var anchor = path.split('/')[4];
@@ -386,11 +393,4 @@ $(function () {
 
     ymaps.ready(init);
     var myMap;
-});
-
-$(function () {
-    $(document).ready(function(){
-            $('.title-popup__slick').slick({
-        });
-    });
 });

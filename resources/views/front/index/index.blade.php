@@ -75,7 +75,7 @@
                     <div class="title-popup__wrapper">
 
 
-                        <div class="title-popup__slick">
+                        <div class="title-popup__slick js_title_popup_slick">
                             <div class="title-popup__info-row title-popup__info-row--discount">
                                 <div class="title-popup__discount">АКЦИОННАЯ <span
                                             class="title-popup__discount-row-2">ЦЕНА</span></div>
@@ -138,9 +138,6 @@
                             </div>
                         </div>
 
-
-
-
                         <div class="title-popup__feedback-row">
                             <div class="title-popup__flats-count-wrap">
                                 <div class="title-popup__flats-count-middle">АКЦИИ <br> <span class="title-popup__flats-count--tiny">МЕСЯЦА</span></div>
@@ -180,14 +177,13 @@
                         </div>
                         <div class="title-popup__close js_popup_close"></div>
                     </div>
-                    <div class="title-popup__slider-nav">
-                        <button type="button" class="title-popup__slider-nav-btn js_slider_btn" data-slide="1"></button>
-                        <button type="button" class="title-popup__slider-nav-btn js_slider_btn" data-slide="2"></button>
-                    </div>
                 </div>
             </div>
         </div>
     </section>
+
+
+
     <section class="stock">
         <div class="stock__title">
             акции месяца*
@@ -202,10 +198,7 @@
                         </p>
                     </div>
                     <p class="stock__item-text">
-                        <span class="stock__item-text-wrap">
-                        на <span class="stock__item-text--bold">2</span>-комнатные <br>
-                        квартиры
-                        </span>
+                        <span class="stock__item-text-wrap">на <span class="stock__item-flat-name">2-комнатные</span> квартиры</span>
                     </p>
                 </div>
                 <div class="stock__item-row-2">
@@ -236,10 +229,7 @@
                         </p>
                     </div>
                     <p class="stock__item-text">
-                        <span class="stock__item-text-wrap">
-                        на <span class="stock__item-text--bold">2</span>-комнатные <br>
-                        квартиры
-                        </span>
+                        <span class="stock__item-text-wrap">на <span class="stock__item-flat-name">1-комнатные</span> квартиры</span>
                     </p>
                 </div>
                 <div class="stock__item-row-2">
@@ -270,10 +260,7 @@
                         </p>
                     </div>
                     <p class="stock__item-text">
-                        <span class="stock__item-text-wrap">
-                        на <span class="stock__item-text--bold">2</span>-комнатные <br>
-                        квартиры
-                        </span>
+                        <span class="stock__item-text-wrap">на <span class="stock__item-flat-name">4-комнатные</span> квартиры</span>
                     </p>
                 </div>
                 <div class="stock__item-row-2">
@@ -312,7 +299,7 @@
             </div>
         </div>
         <div class="title-popup__feedback-row mobile">
-            <p class="title-popup__interest-text mobile">ЗАИНТЕРЕСОВАЛИСЬ?</p>
+            <p class="title-popup__interest-text">ЗАИНТЕРЕСОВАЛИСЬ?</p>
             <div class="title-popup__input-rows form-id mobile" id="popup_call">
                 <input type="hidden" name="form" class="form-input" value="call">
                 <div class="title-popup__row form-row mobile">
@@ -338,7 +325,7 @@
                                     class="popup-input__label-text">+7</span></label>
                     </div>
                 </div>
-                <div class="title-popup__row title-popup__row--btn mobile">
+                <div class="title-popup__row title-popup__row--btn">
                     <input type="submit" value="УЗНАТЬ ПОДРОБНЕЕ"
                            class="title-popup__btn form-row__send-form button-tr button-tr--popup send-form mobile">
                 </div>
