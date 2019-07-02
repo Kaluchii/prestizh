@@ -46,6 +46,34 @@
                        data-block="main_block"
                        data-id="0">
             </div>
+
+            <div class="box box-info group-item-widget"
+                 data-block="flat_stocks">
+                <div class="box-header with-border">
+                    <h3 class="box-title"> Акции </h3>
+                    <button type="submit" data-parent="0" class="btn btn-primary pull-right add-flat-item">Добавить</button>
+                </div>
+                <div class="box-body">
+
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" class="minimal bool"
+                                   data-name="parking_actual"
+                                   data-type="bool"
+                                   data-block="main_block"
+                                   data-id="0"
+                                   @if($main_block->parking_actual) checked @endif>
+                            Акция "Паркинг в подарок" активна
+                        </label>
+                    </div>
+
+                    <div class="groupflat-widget group-item-wrap">
+                        @foreach($main_block->flat_stocks_group as $flat_stocks_item)
+                            @include('back.groups.flat_stocks.flat_stocks_box', ['item' => $flat_stocks_item])
+                        @endforeach
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 @endsection

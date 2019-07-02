@@ -21,6 +21,8 @@ class FrontController extends Controller
         $this->extract->tuneSelection('layout')->sortBy('sorter','ASC');
         $this->extract->tuneSelection('dom_flat')->sortBy('sorter','ASC');
         $this->extract->tuneSelection('stage_images')->sortBy('sorter','ASC');
+        $this->extract->tuneSelection('flat_stocks')->sortBy('price','ASC');
+        $this->extract->tuneSelection('flat_stocks')->eq('actual',true);
     }
 
 
