@@ -132,7 +132,7 @@
                                 <p class="title-popup__gift">ПАРКИНГ</p>
                                 <p class="title-popup__gift-row-2">В ПОДАРОК</p>
                                 <p class="title-popup__condition">
-                                    на большие квартиры от 128 м2 <br>
+                                    на большие квартиры от 128 м² <br>
                                     <span class="title-popup__condition--tiny">(на этажах 2-9)</span>
                                 </p>
                             </div>

@@ -3,7 +3,15 @@
 return [
 
     'main_block' => [
-        'string' => ['block_title', 'price', 'price_up', 'address', 'apartments_left']
+        'string' => ['block_title', 'price', 'price_up', 'address', 'apartments_left'],
+        'bool' => ['parking_actual'],
+        'groups' => [
+            'flat_stocks' => [
+                'string' => ['name_with_digit', 'name_in_words'],
+                'int' => ['price'],
+                'bool' => ['actual'],
+            ]
+        ]
     ],
 
     'about' => [
