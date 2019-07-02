@@ -70,64 +70,39 @@
                 </div>
             </div>
             <div class="title-block__col2">
-                {{--                <p class="title-block__installment">РАССРОЧКА<br>ОТ ЗАСТРОЙЩИКА</p>--}}
                 <div class="title-block__popup title-popup js_title_popup show-slide-2">
                     <div class="title-popup__wrapper">
-
-
+                        @if($main_block->parking_actual || $main_block->flat_stocks_group->count())
                         <div class="title-popup__slick js_title_popup_slick">
-                            <div class="title-popup__info-row title-popup__info-row--discount">
-                                <div class="title-popup__discount">АКЦИОННАЯ <span
-                                            class="title-popup__discount-row-2">ЦЕНА</span></div>
-                                <div class="title-popup__info-row-text-wrap">
-                                    <div class="title-popup__meter-price-wrap">
-                                        <div class="title-popup__meter-price">
-                                            {{ $main_block->price }}
-                                            <span class="title-popup__tenge-meter">
+                            @foreach($main_block->flat_stocks_group as $stock_item)
+                                <div class="title-popup__info-row title-popup__info-row--discount">
+                                    <div class="title-popup__discount">АКЦИОННАЯ <span
+                                                class="title-popup__discount-row-2">ЦЕНА</span></div>
+                                    <div class="title-popup__info-row-text-wrap">
+                                        <div class="title-popup__meter-price-wrap">
+                                            <div class="title-popup__meter-price">
+                                                {{ number_format($stock_item->price, 0, ',', ' ') }}
+                                                <span class="title-popup__tenge-meter">
                                         <span class="title-popup__tenge">f</span>
                                         <span class="title-popup__meter">м<sup>2</sup></span>
                                     </span>
-                                            <span class="title-popup__meter-price title-popup__meter-price--bg">
-                                        {{ $main_block->price }}
+                                                <span class="title-popup__meter-price title-popup__meter-price--bg">
+                                        {{ number_format($stock_item->price, 0, ',', ' ') }}
                                         <span class="title-popup__tenge-meter">
                                             <span class="title-popup__tenge">f</span>
                                             <span class="title-popup__meter">м<sup>2</sup></span>
                                         </span>
                                     </span>
+                                            </div>
+                                        </div>
+                                        <div class="title-popup__discount-price-condition">
+                                            НА {{ $stock_item->name_in_words }} КВАРТИРЫ <br>
+                                            <span class="title-popup__discount-limit">(КОЛИЧЕСТВО КВАРТИР ОГРАНИЧЕНО)</span>
                                         </div>
                                     </div>
-                                    <div class="title-popup__discount-price-condition">
-                                        НА ДВУХКОМНАТНЫЕ КВАРТИРЫ <br>
-                                        <span class="title-popup__discount-limit">(КОЛИЧЕСТВО КВАРТИР ОГРАНИЧЕНО)</span>
-                                    </div>
                                 </div>
-                            </div>
-                            <div class="title-popup__info-row title-popup__info-row--discount">
-                                <div class="title-popup__discount">АКЦИОННАЯ <span
-                                            class="title-popup__discount-row-2">ЦЕНА</span></div>
-                                <div class="title-popup__info-row-text-wrap">
-                                    <div class="title-popup__meter-price-wrap">
-                                        <div class="title-popup__meter-price">
-                                            {{ $main_block->price }}
-                                            <span class="title-popup__tenge-meter">
-                                            <span class="title-popup__tenge">f</span>
-                                            <span class="title-popup__meter">м<sup>2</sup></span>
-                                        </span>
-                                            <span class="title-popup__meter-price title-popup__meter-price--bg">
-                                            {{ $main_block->price }}
-                                            <span class="title-popup__tenge-meter">
-                                                <span class="title-popup__tenge">f</span>
-                                                <span class="title-popup__meter">м<sup>2</sup></span>
-                                            </span>
-                                        </span>
-                                        </div>
-                                    </div>
-                                    <div class="title-popup__discount-price-condition">
-                                        НА ДВУХКОМНАТНЫЕ КВАРТИРЫ <br>
-                                        <span class="title-popup__discount-limit">(КОЛИЧЕСТВО КВАРТИР ОГРАНИЧЕНО)</span>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
+                            @if($main_block->parking_actual)
                             <div class="title-popup__info-row title-popup__info-row--parking">
                                 <p class="title-popup__gift">ПАРКИНГ</p>
                                 <p class="title-popup__gift-row-2">В ПОДАРОК</p>
@@ -136,12 +111,16 @@
                                     <span class="title-popup__condition--tiny">(на этажах 2-9)</span>
                                 </p>
                             </div>
+                            @endif
                         </div>
+                        @endif
 
                         <div class="title-popup__feedback-row">
+                            @if($main_block->parking_actual || $main_block->flat_stocks_group->count())
                             <div class="title-popup__flats-count-wrap">
                                 <div class="title-popup__flats-count-middle">АКЦИИ <br> <span class="title-popup__flats-count--tiny">МЕСЯЦА</span></div>
                             </div>
+                            @endif
                             <p class="title-popup__interest-text">ЗАИНТЕРЕСОВАЛИСЬ?</p>
                             <div class="title-popup__input-rows form-id" id="popup_call">
                                 <input type="hidden" name="form" class="form-input" value="call">
@@ -185,10 +164,12 @@
 
 
     <section class="stock">
+        @if($main_block->flat_stocks_group->count())
         <div class="stock__title">
             акции месяца*
         </div>
         <ul class="stock__price-list">
+            @foreach($main_block->flat_stocks_group as $stock_item)
             <li class="stock__price-item">
                 <div class="stock__item-row-1">
                     <div class="stock__item-banner">
@@ -198,19 +179,19 @@
                         </p>
                     </div>
                     <p class="stock__item-text">
-                        <span class="stock__item-text-wrap">на <span class="stock__item-flat-name">2-комнатные</span> квартиры</span>
+                        <span class="stock__item-text-wrap">на <span class="stock__item-flat-name">{{ $stock_item->name_with_digit }}</span> квартиры</span>
                     </p>
                 </div>
                 <div class="stock__item-row-2">
                     <div class="stock__item-price title-popup__meter-price-wrap">
                         <div class="title-popup__meter-price">
-                            {{ $main_block->price }}
+                            {{ number_format($stock_item->price, 0, ',', ' ') }}
                             <span class="title-popup__tenge-meter">
                                             <span class="title-popup__tenge">f</span>
                                             <span class="title-popup__meter">м<sup>2</sup></span>
                                         </span>
                             <span class="title-popup__meter-price title-popup__meter-price--bg">
-                                            {{ $main_block->price }}
+                                            {{ number_format($stock_item->price, 0, ',', ' ') }}
                                 <span class="title-popup__tenge-meter">
                                     <span class="title-popup__tenge">f</span>
                                     <span class="title-popup__meter">м<sup>2</sup></span>
@@ -220,72 +201,13 @@
                     </div>
                 </div>
             </li>
-            <li class="stock__price-item">
-                <div class="stock__item-row-1">
-                    <div class="stock__item-banner">
-                        <p class="stock__item-banner-wrap">
-                            акционная <br>
-                            <span class="stock__item-banner--spacing">цена</span>
-                        </p>
-                    </div>
-                    <p class="stock__item-text">
-                        <span class="stock__item-text-wrap">на <span class="stock__item-flat-name">1-комнатные</span> квартиры</span>
-                    </p>
-                </div>
-                <div class="stock__item-row-2">
-                    <div class="stock__item-price title-popup__meter-price-wrap">
-                        <div class="title-popup__meter-price">
-                            {{ $main_block->price }}
-                            <span class="title-popup__tenge-meter">
-                                            <span class="title-popup__tenge">f</span>
-                                            <span class="title-popup__meter">м<sup>2</sup></span>
-                                        </span>
-                            <span class="title-popup__meter-price title-popup__meter-price--bg">
-                                            {{ $main_block->price }}
-                                <span class="title-popup__tenge-meter">
-                                    <span class="title-popup__tenge">f</span>
-                                    <span class="title-popup__meter">м<sup>2</sup></span>
-                                </span>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li class="stock__price-item">
-                <div class="stock__item-row-1">
-                    <div class="stock__item-banner">
-                        <p class="stock__item-banner-wrap">
-                            акционная <br>
-                            <span class="stock__item-banner--spacing">цена</span>
-                        </p>
-                    </div>
-                    <p class="stock__item-text">
-                        <span class="stock__item-text-wrap">на <span class="stock__item-flat-name">4-комнатные</span> квартиры</span>
-                    </p>
-                </div>
-                <div class="stock__item-row-2">
-                    <div class="stock__item-price title-popup__meter-price-wrap">
-                        <div class="title-popup__meter-price">
-                            {{ $main_block->price }}
-                            <span class="title-popup__tenge-meter">
-                                            <span class="title-popup__tenge">f</span>
-                                            <span class="title-popup__meter">м<sup>2</sup></span>
-                                        </span>
-                            <span class="title-popup__meter-price title-popup__meter-price--bg">
-                                            {{ $main_block->price }}
-                                <span class="title-popup__tenge-meter">
-                                    <span class="title-popup__tenge">f</span>
-                                    <span class="title-popup__meter">м<sup>2</sup></span>
-                                </span>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </li>
+            @endforeach
         </ul>
         <p class="stock__warning">
             * количество квартир по акциям ограничено
         </p>
+        @endif
+        @if($main_block->parking_actual)
         <div class="stock__parking">
             <div class="stock__parking-wrap">
                 <p class="stock__parking-title">
@@ -298,6 +220,7 @@
                 </p>
             </div>
         </div>
+        @endif
         <div class="title-popup__feedback-row mobile">
             <p class="title-popup__interest-text">ЗАИНТЕРЕСОВАЛИСЬ?</p>
             <div class="title-popup__input-rows form-id mobile" id="popup_call">
