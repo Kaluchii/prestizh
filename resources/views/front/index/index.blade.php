@@ -293,13 +293,13 @@
                     <span class="stock__parking-subtitle">в подарок</span>
                 </p>
                 <p class="stock__parking-text">
-                    на большие квартиры от 128 м2 <br>
+                    на большие квартиры от 128 м<sup class="stock__parking-text">2</sup> <br>
                     (на этажах 2-9)
                 </p>
             </div>
         </div>
         <div class="title-popup__feedback-row mobile">
-            <p class="title-popup__interest-text">ЗАИНТЕРЕСОВАЛИСЬ?</p>
+            <p class="title-popup__interest-text mobile">ЗАИНТЕРЕСОВАЛИСЬ?</p>
             <div class="title-popup__input-rows form-id mobile" id="popup_call">
                 <input type="hidden" name="form" class="form-input" value="call">
                 <div class="title-popup__row form-row mobile">
