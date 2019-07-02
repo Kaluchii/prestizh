@@ -121,7 +121,7 @@
   }
 
   .title-popup{
-    display: block !important;
+    display: none !important;
     margin-top: 25px;
     width: 100%;
     margin-left: 0;
@@ -198,6 +198,11 @@
     &__feedback-row{
       padding-bottom: 25px;
       background: url("/img/form_lighter.png?1") no-repeat left bottom / 397px 360px, url("/img/popup_bg.png?1") repeat;
+
+      &.mobile{
+        padding: 15px 20px;
+        background: #fff;
+      }
     }
 
     &__condition{
@@ -446,11 +451,19 @@
     &__row{
       &--btn{
         text-align: center;
+
+        &.mobile{
+          text-align: left;
+        }
       }
     }
 
     &__interest-text{
       text-align: center;
+
+      &.mobile{
+        padding-left: 0;
+      }
     }
   }
 

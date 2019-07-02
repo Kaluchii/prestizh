@@ -1,7 +1,7 @@
 @extends('front.layout')
 @section('content')
-@include('front.index.objects')
-@yield('objects')
+    @include('front.index.objects')
+    @yield('objects')
     <section class="title-block" id="title">
         <header class="title-block__header header">
             <div class="header__logo-wrap">
@@ -12,17 +12,24 @@
             </div>
             <nav class="header__nav-wrap js_nav_wrap">
                 <ul class="header__nav-list">
-                    <li class="header__nav-item"><a href="#about" class="js_goto_anchor header__nav-link">О комплексе</a></li>
-                    <li class="header__nav-item"><a href="#gallery" class="js_goto_anchor header__nav-link">Галерея</a></li>
-                    <li class="header__nav-item"><a href="#flats" class="js_goto_anchor header__nav-link">Планировки</a></li>
-                    <li class="header__nav-item"><a href="#stages" class="js_goto_anchor header__nav-link">Стройка</a></li>
-                    <li class="header__nav-item"><a href="#contacts" class="js_goto_anchor header__nav-link">Контакты</a></li>
+                    <li class="header__nav-item"><a href="#about" class="js_goto_anchor header__nav-link">О
+                            комплексе</a></li>
+                    <li class="header__nav-item"><a href="#gallery" class="js_goto_anchor header__nav-link">Галерея</a>
+                    </li>
+                    <li class="header__nav-item"><a href="#flats" class="js_goto_anchor header__nav-link">Планировки</a>
+                    </li>
+                    <li class="header__nav-item"><a href="#stages" class="js_goto_anchor header__nav-link">Стройка</a>
+                    </li>
+                    <li class="header__nav-item"><a href="#contacts"
+                                                    class="js_goto_anchor header__nav-link">Контакты</a></li>
                 </ul>
             </nav>
             <div class="header__feedback-wrap">
                 <div class="header__phone-wrap">
                     <p class="header__consult">Позвоните для консультации</p>
-                    <p class="header__phone-number"><a href="tel:{{ $contacts->phone_field }}" class="header__phone-number-link">{{ $contacts->phone_field }}</a></p>
+                    <p class="header__phone-number"><a href="tel:{{ $contacts->phone_field }}"
+                                                       class="header__phone-number-link">{{ $contacts->phone_field }}</a>
+                    </p>
                 </div>
                 <a href="#contacts" class="js_goto_anchor header__order-call button"><span class="header__btn-text">ЗАКАЗАТЬ ЗВОНОК</span></a>
             </div>
@@ -48,9 +55,11 @@
                                 <div class="flat-price__sum-wrap">
                                     <span class="flat-price__pretext">ОТ</span>
                                     <span class="flat-price__discount">
-                                        {{ number_format($item['min_price'], 0, ',', ' ') }}<span class="flat-price__discount-tenge">o</span>
+                                        {{ number_format($item['min_price'], 0, ',', ' ') }}<span
+                                                class="flat-price__discount-tenge">o</span>
                                         <span class="flat-price__discount flat-price__discount--bg">
-                                            {{ number_format($item['min_price'], 0, ',', ' ') }}<span class="flat-price__discount-tenge">o</span>
+                                            {{ number_format($item['min_price'], 0, ',', ' ') }}<span
+                                                    class="flat-price__discount-tenge">o</span>
                                         </span>
                                     </span>
                                 </div>
@@ -61,67 +70,111 @@
                 </div>
             </div>
             <div class="title-block__col2">
-{{--                <p class="title-block__installment">РАССРОЧКА<br>ОТ ЗАСТРОЙЩИКА</p>--}}
+                {{--                <p class="title-block__installment">РАССРОЧКА<br>ОТ ЗАСТРОЙЩИКА</p>--}}
                 <div class="title-block__popup title-popup js_title_popup show-slide-2">
                     <div class="title-popup__wrapper">
-                        <div class="title-popup__info-row title-popup__info-row--discount">
-                            <div class="title-popup__discount">АКЦИОННАЯ <span class="title-popup__discount-row-2">ЦЕНА</span></div>
-                            <div class="title-popup__info-row-text-wrap">
-                                <div class="title-popup__meter-price-wrap">
-                                    <div class="title-popup__meter-price">
+
+
+                        <div class="title-popup__slick">
+                            <div class="title-popup__info-row title-popup__info-row--discount">
+                                <div class="title-popup__discount">АКЦИОННАЯ <span
+                                            class="title-popup__discount-row-2">ЦЕНА</span></div>
+                                <div class="title-popup__info-row-text-wrap">
+                                    <div class="title-popup__meter-price-wrap">
+                                        <div class="title-popup__meter-price">
+                                            {{ $main_block->price }}
+                                            <span class="title-popup__tenge-meter">
+                                        <span class="title-popup__tenge">f</span>
+                                        <span class="title-popup__meter">м<sup>2</sup></span>
+                                    </span>
+                                            <span class="title-popup__meter-price title-popup__meter-price--bg">
                                         {{ $main_block->price }}
                                         <span class="title-popup__tenge-meter">
                                             <span class="title-popup__tenge">f</span>
                                             <span class="title-popup__meter">м<sup>2</sup></span>
                                         </span>
-                                        <span class="title-popup__meter-price title-popup__meter-price--bg">
+                                    </span>
+                                        </div>
+                                    </div>
+                                    <div class="title-popup__discount-price-condition">
+                                        НА ДВУХКОМНАТНЫЕ КВАРТИРЫ <br>
+                                        <span class="title-popup__discount-limit">(КОЛИЧЕСТВО КВАРТИР ОГРАНИЧЕНО)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="title-popup__info-row title-popup__info-row--discount">
+                                <div class="title-popup__discount">АКЦИОННАЯ <span
+                                            class="title-popup__discount-row-2">ЦЕНА</span></div>
+                                <div class="title-popup__info-row-text-wrap">
+                                    <div class="title-popup__meter-price-wrap">
+                                        <div class="title-popup__meter-price">
+                                            {{ $main_block->price }}
+                                            <span class="title-popup__tenge-meter">
+                                            <span class="title-popup__tenge">f</span>
+                                            <span class="title-popup__meter">м<sup>2</sup></span>
+                                        </span>
+                                            <span class="title-popup__meter-price title-popup__meter-price--bg">
                                             {{ $main_block->price }}
                                             <span class="title-popup__tenge-meter">
                                                 <span class="title-popup__tenge">f</span>
                                                 <span class="title-popup__meter">м<sup>2</sup></span>
                                             </span>
                                         </span>
+                                        </div>
+                                    </div>
+                                    <div class="title-popup__discount-price-condition">
+                                        НА ДВУХКОМНАТНЫЕ КВАРТИРЫ <br>
+                                        <span class="title-popup__discount-limit">(КОЛИЧЕСТВО КВАРТИР ОГРАНИЧЕНО)</span>
                                     </div>
                                 </div>
-                                <div class="title-popup__discount-price-condition">
-                                    НА ДВУХКОМНАТНЫЕ КВАРТИРЫ <br>
-                                    <span class="title-popup__discount-limit">(КОЛИЧЕСТВО КВАРТИР ОГРАНИЧЕНО)</span>
-                                </div>
                             </div>
-                            <div class="title-popup__flats-count-wrap">
-                                <div class="title-popup__flats-count">
-                                    <div class="title-popup__flats-count-top">ОСТАЛОСЬ</div>
-                                    <div class="title-popup__flats-count-middle">{{ $main_block->apartments_left }}</div>
-                                    <div class="title-popup__flats-count-bottom">КВАРТИР</div>
-                                </div>
+                            <div class="title-popup__info-row title-popup__info-row--parking">
+                                <p class="title-popup__gift">ПАРКИНГ</p>
+                                <p class="title-popup__gift-row-2">В ПОДАРОК</p>
+                                <p class="title-popup__condition">
+                                    на большие квартиры от 128 м2 <br>
+                                    <span class="title-popup__condition--tiny">(на этажах 2-9)</span>
+                                </p>
                             </div>
                         </div>
-                        <div class="title-popup__info-row title-popup__info-row--parking">
-                            <p class="title-popup__gift">ПАРКИНГ</p>
-                            <p class="title-popup__gift-row-2">В ПОДАРОК!</p>
-                            <p class="title-popup__condition">УСЛОВИЯ УТОЧНЯЙТЕ В ОТДЕЛЕ ПРОДАЖ</p>
-                        </div>
+
+
+
+
                         <div class="title-popup__feedback-row">
+                            <div class="title-popup__flats-count-wrap">
+                                <div class="title-popup__flats-count-middle">АКЦИИ <br> <span class="title-popup__flats-count--tiny">МЕСЯЦА</span></div>
+                            </div>
                             <p class="title-popup__interest-text">ЗАИНТЕРЕСОВАЛИСЬ?</p>
                             <div class="title-popup__input-rows form-id" id="popup_call">
                                 <input type="hidden" name="form" class="form-input" value="call">
                                 <div class="title-popup__row form-row">
                                     <div class="form-row__validation-wrap popup-input">
-                                        <label class="popup-input__label popup-input__label--name" for="popup-client-name"><span class="popup-input__label-text">Имя</span></label>
-                                        <input type="text" name="client_name" required id="popup-client-name" class="form-row__input form-input popup-input__input">
-                                        <div class="form-row__tooltip-wrap form-row__tooltip-wrap--popup-none"><p class="form-row__tooltip form-row__tooltip--border">Как к вам обращаться</p></div>
+                                        <label class="popup-input__label popup-input__label--name"
+                                               for="popup-client-name"><span class="popup-input__label-text">Имя</span></label>
+                                        <input type="text" name="client_name" required id="popup-client-name"
+                                               class="form-row__input form-input popup-input__input">
+                                        <div class="form-row__tooltip-wrap form-row__tooltip-wrap--popup-none"><p
+                                                    class="form-row__tooltip form-row__tooltip--border">Как к вам
+                                                обращаться</p></div>
                                     </div>
                                 </div>
 
                                 <div class="title-popup__row form-row">
                                     <div class="form-row__validation-wrap popup-input">
-                                        <input type="tel" data-require="true" id="popup-phone" class="form-row__input form-input popup-input__input popup-input__input--tel" maxlength="25" data-mask="(000) 000-00-00" name="phone">
-                                        <div class="form-row__tooltip-wrap form-row__tooltip-wrap--popup-none"><p class="form-row__tooltip form-row__tooltip--border">Телефонный номер для связи</p></div>
-                                        <label class="popup-input__label popup-input__label--tel" for="popup-phone"><span class="popup-input__label-text">+7</span></label>
+                                        <input type="tel" data-require="true" id="popup-phone"
+                                               class="form-row__input form-input popup-input__input popup-input__input--tel"
+                                               maxlength="25" data-mask="(000) 000-00-00" name="phone">
+                                        <div class="form-row__tooltip-wrap form-row__tooltip-wrap--popup-none"><p
+                                                    class="form-row__tooltip form-row__tooltip--border">Телефонный номер
+                                                для связи</p></div>
+                                        <label class="popup-input__label popup-input__label--tel"
+                                               for="popup-phone"><span class="popup-input__label-text">+7</span></label>
                                     </div>
                                 </div>
                                 <div class="title-popup__row title-popup__row--btn">
-                                    <input type="submit" value="УЗНАТЬ ПОДРОБНЕЕ" class="title-popup__btn form-row__send-form button-tr button-tr--popup send-form">
+                                    <input type="submit" value="УЗНАТЬ ПОДРОБНЕЕ"
+                                           class="title-popup__btn form-row__send-form button-tr button-tr--popup send-form">
                                 </div>
                             </div>
                         </div>
@@ -135,6 +188,165 @@
             </div>
         </div>
     </section>
+    <section class="stock">
+        <div class="stock__title">
+            акции месяца*
+        </div>
+        <ul class="stock__price-list">
+            <li class="stock__price-item">
+                <div class="stock__item-row-1">
+                    <div class="stock__item-banner">
+                        <p class="stock__item-banner-wrap">
+                            акционная <br>
+                            <span class="stock__item-banner--spacing">цена</span>
+                        </p>
+                    </div>
+                    <p class="stock__item-text">
+                        <span class="stock__item-text-wrap">
+                        на <span class="stock__item-text--bold">2</span>-комнатные <br>
+                        квартиры
+                        </span>
+                    </p>
+                </div>
+                <div class="stock__item-row-2">
+                    <div class="stock__item-price title-popup__meter-price-wrap">
+                        <div class="title-popup__meter-price">
+                            {{ $main_block->price }}
+                            <span class="title-popup__tenge-meter">
+                                            <span class="title-popup__tenge">f</span>
+                                            <span class="title-popup__meter">м<sup>2</sup></span>
+                                        </span>
+                            <span class="title-popup__meter-price title-popup__meter-price--bg">
+                                            {{ $main_block->price }}
+                                <span class="title-popup__tenge-meter">
+                                    <span class="title-popup__tenge">f</span>
+                                    <span class="title-popup__meter">м<sup>2</sup></span>
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="stock__price-item">
+                <div class="stock__item-row-1">
+                    <div class="stock__item-banner">
+                        <p class="stock__item-banner-wrap">
+                            акционная <br>
+                            <span class="stock__item-banner--spacing">цена</span>
+                        </p>
+                    </div>
+                    <p class="stock__item-text">
+                        <span class="stock__item-text-wrap">
+                        на <span class="stock__item-text--bold">2</span>-комнатные <br>
+                        квартиры
+                        </span>
+                    </p>
+                </div>
+                <div class="stock__item-row-2">
+                    <div class="stock__item-price title-popup__meter-price-wrap">
+                        <div class="title-popup__meter-price">
+                            {{ $main_block->price }}
+                            <span class="title-popup__tenge-meter">
+                                            <span class="title-popup__tenge">f</span>
+                                            <span class="title-popup__meter">м<sup>2</sup></span>
+                                        </span>
+                            <span class="title-popup__meter-price title-popup__meter-price--bg">
+                                            {{ $main_block->price }}
+                                <span class="title-popup__tenge-meter">
+                                    <span class="title-popup__tenge">f</span>
+                                    <span class="title-popup__meter">м<sup>2</sup></span>
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="stock__price-item">
+                <div class="stock__item-row-1">
+                    <div class="stock__item-banner">
+                        <p class="stock__item-banner-wrap">
+                            акционная <br>
+                            <span class="stock__item-banner--spacing">цена</span>
+                        </p>
+                    </div>
+                    <p class="stock__item-text">
+                        <span class="stock__item-text-wrap">
+                        на <span class="stock__item-text--bold">2</span>-комнатные <br>
+                        квартиры
+                        </span>
+                    </p>
+                </div>
+                <div class="stock__item-row-2">
+                    <div class="stock__item-price title-popup__meter-price-wrap">
+                        <div class="title-popup__meter-price">
+                            {{ $main_block->price }}
+                            <span class="title-popup__tenge-meter">
+                                            <span class="title-popup__tenge">f</span>
+                                            <span class="title-popup__meter">м<sup>2</sup></span>
+                                        </span>
+                            <span class="title-popup__meter-price title-popup__meter-price--bg">
+                                            {{ $main_block->price }}
+                                <span class="title-popup__tenge-meter">
+                                    <span class="title-popup__tenge">f</span>
+                                    <span class="title-popup__meter">м<sup>2</sup></span>
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <p class="stock__warning">
+            * количество квартир по акциям ограничено
+        </p>
+        <div class="stock__parking">
+            <div class="stock__parking-wrap">
+                <p class="stock__parking-title">
+                    паркинг <br>
+                    <span class="stock__parking-subtitle">в подарок</span>
+                </p>
+                <p class="stock__parking-text">
+                    на большие квартиры от 128 м2 <br>
+                    (на этажах 2-9)
+                </p>
+            </div>
+        </div>
+        <div class="title-popup__feedback-row mobile">
+            <p class="title-popup__interest-text mobile">ЗАИНТЕРЕСОВАЛИСЬ?</p>
+            <div class="title-popup__input-rows form-id mobile" id="popup_call">
+                <input type="hidden" name="form" class="form-input" value="call">
+                <div class="title-popup__row form-row mobile">
+                    <div class="form-row__validation-wrap popup-input">
+                        <label class="popup-input__label popup-input__label--name mobile" for="popup-client-name"><span
+                                    class="popup-input__label-text">Имя</span></label>
+                        <input type="text" name="client_name" required id="popup-client-name"
+                               class="form-row__input form-input popup-input__input mobile">
+                        <div class="form-row__tooltip-wrap form-row__tooltip-wrap--popup-none"><p
+                                    class="form-row__tooltip form-row__tooltip--border">Как к вам обращаться</p></div>
+                    </div>
+                </div>
+
+                <div class="title-popup__row form-row mobile">
+                    <div class="form-row__validation-wrap popup-input">
+                        <input type="tel" data-require="true" id="popup-phone"
+                               class="form-row__input form-input popup-input__input popup-input__input--tel mobile"
+                               maxlength="25" data-mask="(000) 000-00-00" name="phone">
+                        <div class="form-row__tooltip-wrap form-row__tooltip-wrap--popup-none"><p
+                                    class="form-row__tooltip form-row__tooltip--border">Телефонный номер для связи</p>
+                        </div>
+                        <label class="popup-input__label popup-input__label--tel mobile" for="popup-phone"><span
+                                    class="popup-input__label-text">+7</span></label>
+                    </div>
+                </div>
+                <div class="title-popup__row title-popup__row--btn mobile">
+                    <input type="submit" value="УЗНАТЬ ПОДРОБНЕЕ"
+                           class="title-popup__btn form-row__send-form button-tr button-tr--popup send-form mobile">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
     <section class="about">
         <div class="about__wrapper">
             <div class="about__text-wrap">
@@ -144,7 +356,10 @@
             <div class="about__in-detail in-detail">
                 <div class="in-detail__triad">
                     <div class="in-detail__item detail-item detail-item--biggest">
-                        <div class="detail-item__img-wrap"><img src="{{$about->image0->link_field}}?{{$about->image0->cache_index}}" alt="{{$about->image0->alt_field}}" height="540" width="640" class="detail-item__img"></div>
+                        <div class="detail-item__img-wrap"><img
+                                    src="{{$about->image0->link_field}}?{{$about->image0->cache_index}}"
+                                    alt="{{$about->image0->alt_field}}" height="540" width="640"
+                                    class="detail-item__img"></div>
                         <div class="detail-item__text-wrap">
                             <h3 class="detail-item__title">{!! $about->title0_field !!}</h3>
                             <p class="detail-item__text">{!! $about->text0_field !!}</p>
@@ -153,14 +368,20 @@
                 </div>
                 <div class="in-detail__triad">
                     <div class="in-detail__item detail-item">
-                        <div class="detail-item__img-wrap"><img src="{{$about->image1->link_field}}?{{$about->image1->cache_index}}" alt="{{$about->image1->alt_field}}" height="400" width="400" class="detail-item__img"></div>
+                        <div class="detail-item__img-wrap"><img
+                                    src="{{$about->image1->link_field}}?{{$about->image1->cache_index}}"
+                                    alt="{{$about->image1->alt_field}}" height="400" width="400"
+                                    class="detail-item__img"></div>
                         <div class="detail-item__text-wrap">
                             <h3 class="detail-item__title">{!! $about->title1_field !!}</h3>
                             <p class="detail-item__text">{!! $about->text1_field !!}</p>
                         </div>
                     </div>
                     <div class="in-detail__item detail-item detail-item--middle">
-                        <div class="detail-item__img-wrap"><img src="{{$about->image2->link_field}}?{{$about->image2->cache_index}}" alt="{{$about->image2->alt_field}}" height="330" width="330" class="detail-item__img"></div>
+                        <div class="detail-item__img-wrap"><img
+                                    src="{{$about->image2->link_field}}?{{$about->image2->cache_index}}"
+                                    alt="{{$about->image2->alt_field}}" height="330" width="330"
+                                    class="detail-item__img"></div>
                         <div class="detail-item__text-wrap">
                             <h3 class="detail-item__title">{!! $about->title2_field !!}</h3>
                             <p class="detail-item__text">{!! $about->text2_field !!}</p>
@@ -171,19 +392,28 @@
                             <h3 class="detail-item__title">{!! $about->title3_field !!}</h3>
                             <p class="detail-item__text">{!! $about->text3_field !!}</p>
                         </div>
-                        <div class="detail-item__img-wrap"><img src="{{$about->image3->link_field}}?{{$about->image3->cache_index}}" alt="{{$about->image3->alt_field}}" height="170" width="180" class="detail-item__img"></div>
+                        <div class="detail-item__img-wrap"><img
+                                    src="{{$about->image3->link_field}}?{{$about->image3->cache_index}}"
+                                    alt="{{$about->image3->alt_field}}" height="170" width="180"
+                                    class="detail-item__img"></div>
                     </div>
                 </div>
                 <div class="in-detail__triad in-detail__triad--right-align">
                     <div class="in-detail__item detail-item">
-                        <div class="detail-item__img-wrap"><img src="{{$about->image4->link_field}}?{{$about->image4->cache_index}}" alt="{{$about->image4->alt_field}}" height="400" width="400" class="detail-item__img"></div>
+                        <div class="detail-item__img-wrap"><img
+                                    src="{{$about->image4->link_field}}?{{$about->image4->cache_index}}"
+                                    alt="{{$about->image4->alt_field}}" height="400" width="400"
+                                    class="detail-item__img"></div>
                         <div class="detail-item__text-wrap">
                             <h3 class="detail-item__title">{!! $about->title4_field !!}</h3>
                             <p class="detail-item__text">{!! $about->text4_field !!}</p>
                         </div>
                     </div>
                     <div class="in-detail__item detail-item detail-item--middle">
-                        <div class="detail-item__img-wrap"><img src="{{$about->image5->link_field}}?{{$about->image5->cache_index}}" alt="{{$about->image5->alt_field}}" height="330" width="330" class="detail-item__img"></div>
+                        <div class="detail-item__img-wrap"><img
+                                    src="{{$about->image5->link_field}}?{{$about->image5->cache_index}}"
+                                    alt="{{$about->image5->alt_field}}" height="330" width="330"
+                                    class="detail-item__img"></div>
                         <div class="detail-item__text-wrap">
                             <h3 class="detail-item__title">{!! $about->title5_field !!}</h3>
                             <p class="detail-item__text">{!! $about->text5_field !!}</p>
@@ -194,12 +424,18 @@
                             <h3 class="detail-item__title">{!! $about->title6_field !!}</h3>
                             <p class="detail-item__text">{!! $about->text6_field !!}</p>
                         </div>
-                        <div class="detail-item__img-wrap"><img src="{{$about->image6->link_field}}?{{$about->image6->cache_index}}" alt="{{$about->image6->alt_field}}" height="170" width="180" class="detail-item__img"></div>
+                        <div class="detail-item__img-wrap"><img
+                                    src="{{$about->image6->link_field}}?{{$about->image6->cache_index}}"
+                                    alt="{{$about->image6->alt_field}}" height="170" width="180"
+                                    class="detail-item__img"></div>
                     </div>
                 </div>
                 <div class="in-detail__triad">
                     <div class="in-detail__item detail-item">
-                        <div class="detail-item__img-wrap"><img src="{{$about->image7->link_field}}?{{$about->image7->cache_index}}" alt="{{$about->image7->alt_field}}" height="400" width="400" class="detail-item__img"></div>
+                        <div class="detail-item__img-wrap"><img
+                                    src="{{$about->image7->link_field}}?{{$about->image7->cache_index}}"
+                                    alt="{{$about->image7->alt_field}}" height="400" width="400"
+                                    class="detail-item__img"></div>
                         <div class="detail-item__text-wrap">
                             <h3 class="detail-item__title">{!! $about->title7_field !!}</h3>
                             <p class="detail-item__text">{!! $about->text7_field !!}</p>
@@ -251,14 +487,14 @@
         <div class="gallery__wrapper">
             <h2 class="gallery__title" id="gallery">{{ $gallery->block_title_field }}</h2>
             <div class="gallery__fotorama-wrap">
-                <div class="gallery__fotorama js_gallery__fotorama fotorama"  data-auto="false" data-ratio="980/560"
+                <div class="gallery__fotorama js_gallery__fotorama fotorama" data-auto="false" data-ratio="980/560"
                      data-nav="thumbs" data-allowfullscreen="true"
                      data-thumbmargin="15" data-loop="true"
                      data-thumbwidth="110" data-thumbheight="100" data-transition="crossfade">
                     <?php $slider_arr = [] ?>
                     @foreach($gallery->slider_group as $slide)
                         <a href="{{$slide->slide_field->link}}?{{$slide->slide_field->cache_index}}"></a>
-                        <?php $slider_arr[] = $slide->slide_field->link.'?'.$slide->slide_field->cache_index ?>
+                        <?php $slider_arr[] = $slide->slide_field->link . '?' . $slide->slide_field->cache_index ?>
                     @endforeach
                 </div>
             </div>
@@ -271,7 +507,8 @@
                 @foreach($stages->dom_stages_group as $stage)
                     @if($stage->show_field == 1)
                         @foreach($stage->stage_images_group as $stage_img)
-                            <img src="{{$stage_img->stage_photo_field->link}}?{{$stage_img->stage_photo_field->cache_index}}" alt="">
+                            <img src="{{$stage_img->stage_photo_field->link}}?{{$stage_img->stage_photo_field->cache_index}}"
+                                 alt="">
                         @endforeach
                     @endif
                     @break
@@ -281,7 +518,8 @@
                 <ul class="mobile-gallery__list">
                     @php($i = 0)
                     @foreach($slider_arr as $slider_item)
-                        <li class="mobile-gallery__item"><img class="mobile-gallery__img js_open_fotorama" data-img="{{$i}}" src="{{ $slider_item }}" alt=""></li>
+                        <li class="mobile-gallery__item"><img class="mobile-gallery__img js_open_fotorama"
+                                                              data-img="{{$i}}" src="{{ $slider_item }}" alt=""></li>
                         @php($i++)
                     @endforeach
                 </ul>
@@ -295,22 +533,31 @@
                 <input type="hidden" name="form" class="form-input" value="call">
                 <div class="feedback__row form-row">
                     <div class="form-row__validation-wrap feedback-input">
-                        <label class="feedback-input__label feedback-input__label--name" for="feedback_name"><span class="feedback-input__label-text">Имя</span></label>
-                        <input type="text" name="client_name" id="feedback_name" placeholder="Введите имя" autocomplete="false" required class="form-row__input form-input feedback-input__input">
-                        <div class="form-row__tooltip-wrap form-row__tooltip-wrap--popup-none"><p class="form-row__tooltip form-row__tooltip--border">Как к вам обращаться</p></div>
+                        <label class="feedback-input__label feedback-input__label--name" for="feedback_name"><span
+                                    class="feedback-input__label-text">Имя</span></label>
+                        <input type="text" name="client_name" id="feedback_name" placeholder="Введите имя"
+                               autocomplete="false" required class="form-row__input form-input feedback-input__input">
+                        <div class="form-row__tooltip-wrap form-row__tooltip-wrap--popup-none"><p
+                                    class="form-row__tooltip form-row__tooltip--border">Как к вам обращаться</p></div>
                     </div>
                 </div>
 
                 <div class="feedback__row form-row">
                     <div class="form-row__validation-wrap feedback-input">
-                        <label class="feedback-input__label feedback-input__label--tel" for="feedback_tel"><span class="feedback-input__label-text">Телефон</span></label>
-                        <input type="tel" data-require="true" id="feedback_tel" class="form-row__input form-input feedback-input__input feedback-input__input--tel" maxlength="25" data-mask="(000) 000-00-00" name="phone">
-                        <div class="form-row__tooltip-wrap form-row__tooltip-wrap--popup-none"><p class="form-row__tooltip form-row__tooltip--border">Телефонный номер для связи</p></div>
+                        <label class="feedback-input__label feedback-input__label--tel" for="feedback_tel"><span
+                                    class="feedback-input__label-text">Телефон</span></label>
+                        <input type="tel" data-require="true" id="feedback_tel"
+                               class="form-row__input form-input feedback-input__input feedback-input__input--tel"
+                               maxlength="25" data-mask="(000) 000-00-00" name="phone">
+                        <div class="form-row__tooltip-wrap form-row__tooltip-wrap--popup-none"><p
+                                    class="form-row__tooltip form-row__tooltip--border">Телефонный номер для связи</p>
+                        </div>
                         <label class="feedback-input__num-label" for="feedback_tel">+7</label>
                     </div>
                 </div>
                 <div class="feedback__row feedback__row--btn">
-                    <input type="submit" value="ОТПРАВИТЬ ЗАЯВКУ" class="feedback__btn form-row__send-form button send-form">
+                    <input type="submit" value="ОТПРАВИТЬ ЗАЯВКУ"
+                           class="feedback__btn form-row__send-form button send-form">
                 </div>
             </div>
         </div>
@@ -328,7 +575,10 @@
                         <ul class="layout-choice__btns-list">
                             @foreach($flats->dom_flat_group as $item)
                                 @if($item->show_field == 1)
-                                    <li class="layout-choice__btns-item"><button class="layout-choice__button js_rooms_btn" data-id="{{$item->id_field}}">{{$item->dom_flat_name_field}}</button></li>
+                                    <li class="layout-choice__btns-item">
+                                        <button class="layout-choice__button js_rooms_btn"
+                                                data-id="{{$item->id_field}}">{{$item->dom_flat_name_field}}</button>
+                                    </li>
                                 @endif
                             @endforeach
                         </ul>
@@ -338,7 +588,11 @@
                         <ul class="layout-choice__btns-list">
                             @foreach($flats->dom_flat_group as $item)
                                 @foreach($item->layout_group as $layout_item)
-                                    <li class="layout-choice__btns-item"><button class="layout-choice__button js_area_btn layout-choice__button--area @if($layout_item->labeled)layout-choice__button--labeled @endif flat{{$item->id_field}}" data-id="{{$layout_item->id_field}}">{{str_replace('.', ',', $layout_item->area_field)}} м<sup class="layout-choice__btn-sup">2</sup></button></li>
+                                    <li class="layout-choice__btns-item">
+                                        <button class="layout-choice__button js_area_btn layout-choice__button--area @if($layout_item->labeled)layout-choice__button--labeled @endif flat{{$item->id_field}}"
+                                                data-id="{{$layout_item->id_field}}">{{str_replace('.', ',', $layout_item->area_field)}}
+                                            м<sup class="layout-choice__btn-sup">2</sup></button>
+                                    </li>
                                 @endforeach
                             @endforeach
                         </ul>
@@ -357,7 +611,9 @@
                             <div class="layout__info-row">
                                 <div class="layout__row-item">
                                     <p class="layout__info-title">Площадь</p>
-                                    <p class="layout__info-value"><span class="layout__info-value-text js_give_area"></span>м<sup class="layout__area-sup">2</sup></p>
+                                    <p class="layout__info-value"><span
+                                                class="layout__info-value-text js_give_area"></span>м<sup
+                                                class="layout__area-sup">2</sup></p>
                                 </div>
                                 <div class="layout__row-item">
                                     <p class="layout__info-title">Блок</p>
@@ -388,21 +644,32 @@
                             <input type="hidden" name="form" class="form-input" value="call">
                             <div class="layout-feedback__row form-row">
                                 <div class="form-row__validation-wrap layout-feedback-input">
-                                    <label class="layout-feedback-input__label layout-feedback-input__label--name" for="layout_name"><span class="layout-feedback-input__label-text">Имя</span></label>
-                                    <input type="text" name="client_name" id="layout_name" autocomplete="false" required class="form-row__input form-input layout-feedback-input__input">
-                                    <div class="form-row__tooltip-wrap form-row__tooltip-wrap--popup-none"><p class="form-row__tooltip form-row__tooltip--border">Как к вам обращаться</p></div>
+                                    <label class="layout-feedback-input__label layout-feedback-input__label--name"
+                                           for="layout_name"><span class="layout-feedback-input__label-text">Имя</span></label>
+                                    <input type="text" name="client_name" id="layout_name" autocomplete="false" required
+                                           class="form-row__input form-input layout-feedback-input__input">
+                                    <div class="form-row__tooltip-wrap form-row__tooltip-wrap--popup-none"><p
+                                                class="form-row__tooltip form-row__tooltip--border">Как к вам
+                                            обращаться</p></div>
                                 </div>
                             </div>
 
                             <div class="layout-feedback__row form-row">
                                 <div class="form-row__validation-wrap layout-feedback-input">
-                                    <input type="tel" data-require="true" id="layout_tel" class="form-row__input form-input layout-feedback-input__input layout-feedback-input__input--tel" maxlength="25" data-mask="(000) 000-00-00" name="phone">
-                                    <div class="form-row__tooltip-wrap form-row__tooltip-wrap--popup-none"><p class="form-row__tooltip form-row__tooltip--border">Телефонный номер для связи</p></div>
-                                    <label class="layout-feedback-input__label layout-feedback-input__label--tel" for="layout_tel"><span class="layout-feedback-input__label-text layout-feedback-input__label-text--tel">+7</span></label>
+                                    <input type="tel" data-require="true" id="layout_tel"
+                                           class="form-row__input form-input layout-feedback-input__input layout-feedback-input__input--tel"
+                                           maxlength="25" data-mask="(000) 000-00-00" name="phone">
+                                    <div class="form-row__tooltip-wrap form-row__tooltip-wrap--popup-none"><p
+                                                class="form-row__tooltip form-row__tooltip--border">Телефонный номер для
+                                            связи</p></div>
+                                    <label class="layout-feedback-input__label layout-feedback-input__label--tel"
+                                           for="layout_tel"><span
+                                                class="layout-feedback-input__label-text layout-feedback-input__label-text--tel">+7</span></label>
                                 </div>
                             </div>
                             <div class="layout-feedback__row layout-feedback__row--btn">
-                                <input type="submit" value="УЗНАТЬ ПОДРОБНЕЕ" class="layout-feedback__btn form-row__send-form button-tr button-tr--yellow-br send-form">
+                                <input type="submit" value="УЗНАТЬ ПОДРОБНЕЕ"
+                                       class="layout-feedback__btn form-row__send-form button-tr button-tr--yellow-br send-form">
                             </div>
                         </div>
                     </div>
@@ -429,7 +696,9 @@
         <div class="stages__date-list-wrapper">
             <ul class="stages__list">
                 @foreach($stages->dom_stages_group as $stage)
-                    <li class="stages__item js_stage_btn" data-id="{{$stage->id_field}}"><button class="stages__item-btn">{{$stage->dom_stages_name_field}}</button></li>
+                    <li class="stages__item js_stage_btn" data-id="{{$stage->id_field}}">
+                        <button class="stages__item-btn">{{$stage->dom_stages_name_field}}</button>
+                    </li>
                 @endforeach
             </ul>
         </div>
@@ -451,22 +720,33 @@
                         <input type="hidden" name="form" class="form-input" value="call">
                         <div class="contacts__row form-row">
                             <div class="form-row__validation-wrap contacts-input">
-                                <label class="contacts-input__label contacts-input__label--name" for="contact_name"><span class="contacts-input__label-text">Имя</span></label>
-                                <input type="text" name="client_name" id="contact_name" placeholder="Введите имя" autocomplete="false" required class="form-row__input form-input contacts-input__input">
-                                <div class="form-row__tooltip-wrap form-row__tooltip-wrap--popup-none"><p class="form-row__tooltip form-row__tooltip--border">Как к вам обращаться</p></div>
+                                <label class="contacts-input__label contacts-input__label--name"
+                                       for="contact_name"><span class="contacts-input__label-text">Имя</span></label>
+                                <input type="text" name="client_name" id="contact_name" placeholder="Введите имя"
+                                       autocomplete="false" required
+                                       class="form-row__input form-input contacts-input__input">
+                                <div class="form-row__tooltip-wrap form-row__tooltip-wrap--popup-none"><p
+                                            class="form-row__tooltip form-row__tooltip--border">Как к вам обращаться</p>
+                                </div>
                             </div>
                         </div>
 
                         <div class="contacts__row form-row">
                             <div class="form-row__validation-wrap contacts-input">
-                                <label class="contacts-input__label contacts-input__label--tel" for="contact_tel"><span class="contacts-input__label-text">Телефон</span></label>
-                                <input type="tel" data-require="true" id="contact_tel" class="form-row__input form-input contacts-input__input contacts-input__input--tel" maxlength="25" data-mask="(000) 000-00-00" name="phone">
-                                <div class="form-row__tooltip-wrap form-row__tooltip-wrap--popup-none"><p class="form-row__tooltip form-row__tooltip--border">Телефонный номер для связи</p></div>
+                                <label class="contacts-input__label contacts-input__label--tel" for="contact_tel"><span
+                                            class="contacts-input__label-text">Телефон</span></label>
+                                <input type="tel" data-require="true" id="contact_tel"
+                                       class="form-row__input form-input contacts-input__input contacts-input__input--tel"
+                                       maxlength="25" data-mask="(000) 000-00-00" name="phone">
+                                <div class="form-row__tooltip-wrap form-row__tooltip-wrap--popup-none"><p
+                                            class="form-row__tooltip form-row__tooltip--border">Телефонный номер для
+                                        связи</p></div>
                                 <label class="contacts-input__num-label" for="contact_tel">+7</label>
                             </div>
                         </div>
                         <div class="contacts__row contacts__row--btn">
-                            <input type="submit" value="ЗАКАЗАТЬ ЗВОНОК" class="contacts__btn form-row__send-form button send-form">
+                            <input type="submit" value="ЗАКАЗАТЬ ЗВОНОК"
+                                   class="contacts__btn form-row__send-form button send-form">
                         </div>
                     </div>
                 </div>
@@ -474,7 +754,8 @@
             <div class="contacts__map-wrapper">
                 <div class="contacts__map" id="map"></div>
                 <div class="contact-plate">
-                    <a href="tel:{{ $contacts->phone_field }}" class="contact-plate__phone">{{ $contacts->phone_field }}</a>
+                    <a href="tel:{{ $contacts->phone_field }}"
+                       class="contact-plate__phone">{{ $contacts->phone_field }}</a>
                     <p class="contact-plate__addr">{!! $main_block->address_field !!}</p>
                 </div>
             </div>

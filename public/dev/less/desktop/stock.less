@@ -1,0 +1,133 @@
+.stock{
+  display: none;
+  background-color: #fff;
+  padding: 20px 0;
+  
+  &__title{
+    width: 226px;
+    height: 56px;
+    margin: 0 auto;
+    display: flex;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 700;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    background-image: url('/img/stock-banner.png');
+    background-repeat: no-repeat;
+    background-size: 236px 66px;
+    background-position: -5px -5px;
+  }
+  &__item-row-1{
+    display: flex;
+  }
+  &__item-banner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 110px;
+    height: 66px;
+    background-color: #b32b07;
+    text-transform: uppercase;
+    font-size: 12px;
+
+    &--spacing{
+      font-size: 23px;
+      letter-spacing: 5px;
+    }
+  }
+  &__item-banner-wrap{
+    line-height: 1;
+    color: #fff;
+  }
+  &__item-text{
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    text-transform: uppercase;
+    color: #000;
+    letter-spacing: 1px;
+
+    &--bold{
+      font-weight: 700;
+      font-size: 16px;
+    }
+  }
+  &__item-text-wrap{
+    font-size: 16px;
+    line-height: 1.1;
+  }
+  &__price-list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+  }
+  &__price-item{
+    border-top: 1px solid #ddc777;
+
+    &+&{
+      margin-top: 32px;
+    }
+  }
+  &__item-price{
+    margin-top: 8px;
+  }
+  &__warning{
+    font-size: 10px;
+    color: #000000;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    font-weight: 700;
+    margin-top: 7px;
+  }
+  &__parking{
+    position: relative;
+    margin-top: 10px;
+    padding: 20px 25px 23px;
+    background-image: url('/img/fon_car.png');
+    z-index: 5;
+
+    &::before{
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      display: block;
+      width: 105px;
+      height: 143px;
+      background-image: url('/img/car-fon.png');
+      background-repeat: no-repeat;
+      z-index: -1;
+    }
+  }
+  &__parking-title{
+    text-transform: uppercase;
+    color: #000;
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    line-height: 1;
+  }
+  &__parking-subtitle{
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 27px;
+    letter-spacing: 0.9px;
+  }
+  &__parking-text{
+    text-transform: uppercase;
+    line-height: 1;
+    font-size: 10px;
+    color: #010000;
+    margin-top: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  &__form-title{
+    font-size: 17px;
+  }
+}
