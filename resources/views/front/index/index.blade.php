@@ -161,8 +161,6 @@
         </div>
     </section>
 
-
-
     <section class="stock">
         @if($main_block->flat_stocks_group->count())
         <div class="stock__title">
