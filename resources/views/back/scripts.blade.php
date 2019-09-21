@@ -4,6 +4,8 @@
     <script src="/admin/plugins/bootstrap/bootstrap.min.js"></script>
     <script src="/admin/plugins/select2/select2.full.min.js"></script>
     <script src="/admin/plugins/slimScroll/jquery.slimscroll.js"></script>
+    <script src="/admin/plugins/monthly/monthly.js"></script>
+    <script src="/admin/plugins/jqueryMask/jquery.mask.js"></script>
 
     <script src="/admin/plugins/datatables/jquery.dataTables.min.js"></script>
     <script src="/admin/plugins/datatables/dataTables.bootstrap.min.js"></script>
