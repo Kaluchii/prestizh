@@ -291,6 +291,9 @@ $(function () {
     });
 
 
+    $('.js_phone_input').maskInput();
+
+
     /*(function(){
         var $titlePopup = $('.js_title_popup'),
             timer = 0,

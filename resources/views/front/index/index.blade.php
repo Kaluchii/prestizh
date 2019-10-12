@@ -26,7 +26,7 @@
             </nav>
             <div class="header__feedback-wrap">
                 <div class="header__phone-wrap">
-                    <p class="header__consult">Позвоните для консультации</p>
+                    <p class="header__consult">Ежедневно с 9:00 до 19:00</p>
                     <p class="header__phone-number"><a href="tel:{{ $contacts->phone_field }}"
                                                        class="header__phone-number-link">{{ $contacts->phone_field }}</a>
                     </p>
@@ -138,9 +138,9 @@
 
                                 <div class="title-popup__row form-row">
                                     <div class="form-row__validation-wrap popup-input">
-                                        <input type="tel" data-require="true" id="popup-phone"
-                                               class="form-row__input form-input popup-input__input popup-input__input--tel"
-                                               maxlength="25" data-mask="(000) 000-00-00" name="phone">
+                                        <input type="tel" id="popup-phone"
+                                               class="form-row__input form-input popup-input__input popup-input__input--tel js_phone_input"
+                                               maxlength="25" data-mask="(999) 999-99-99" name="phone">
                                         <div class="form-row__tooltip-wrap form-row__tooltip-wrap--popup-none"><p
                                                     class="form-row__tooltip form-row__tooltip--border">Телефонный номер
                                                 для связи</p></div>
@@ -236,9 +236,9 @@
 
                 <div class="title-popup__row form-row mobile">
                     <div class="form-row__validation-wrap popup-input">
-                        <input type="tel" data-require="true" id="popup-phone2"
-                               class="form-row__input form-input popup-input__input popup-input__input--tel mobile"
-                               maxlength="25" data-mask="(000) 000-00-00" name="phone">
+                        <input type="tel" id="popup-phone2"
+                               class="form-row__input form-input popup-input__input popup-input__input--tel mobile js_phone_input"
+                               maxlength="25" data-mask="(999) 999-99-99" name="phone">
                         <div class="form-row__tooltip-wrap form-row__tooltip-wrap--popup-none"><p
                                     class="form-row__tooltip form-row__tooltip--border">Телефонный номер для связи</p>
                         </div>
@@ -443,8 +443,9 @@
                     <div class="form-row__validation-wrap feedback-input">
                         <label class="feedback-input__label feedback-input__label--name" for="feedback_name"><span
                                     class="feedback-input__label-text">Имя</span></label>
-                        <input type="text" name="client_name" id="feedback_name" placeholder="Введите имя"
-                               autocomplete="false" required class="form-row__input form-input feedback-input__input">
+                        <input type="text" name="client_name" id="feedback_name" autocomplete="false" required
+                               class="form-row__input form-input feedback-input__input">
+                        <label class="feedback-input__placeholder" for="feedback_name">Введите имя</label>
                         <div class="form-row__tooltip-wrap form-row__tooltip-wrap--popup-none"><p
                                     class="form-row__tooltip form-row__tooltip--border">Как к вам обращаться</p></div>
                     </div>
@@ -454,9 +455,9 @@
                     <div class="form-row__validation-wrap feedback-input">
                         <label class="feedback-input__label feedback-input__label--tel" for="feedback_tel"><span
                                     class="feedback-input__label-text">Телефон</span></label>
-                        <input type="tel" data-require="true" id="feedback_tel"
-                               class="form-row__input form-input feedback-input__input feedback-input__input--tel"
-                               maxlength="25" data-mask="(000) 000-00-00" name="phone">
+                        <input type="tel" id="feedback_tel"
+                               class="form-row__input form-input feedback-input__input feedback-input__input--tel js_phone_input"
+                               maxlength="25" data-mask="(999) 999-99-99" name="phone">
                         <div class="form-row__tooltip-wrap form-row__tooltip-wrap--popup-none"><p
                                     class="form-row__tooltip form-row__tooltip--border">Телефонный номер для связи</p>
                         </div>
@@ -564,9 +565,9 @@
 
                             <div class="layout-feedback__row form-row">
                                 <div class="form-row__validation-wrap layout-feedback-input">
-                                    <input type="tel" data-require="true" id="layout_tel"
-                                           class="form-row__input form-input layout-feedback-input__input layout-feedback-input__input--tel"
-                                           maxlength="25" data-mask="(000) 000-00-00" name="phone">
+                                    <input type="tel" id="layout_tel"
+                                           class="form-row__input form-input layout-feedback-input__input layout-feedback-input__input--tel js_phone_input"
+                                           maxlength="25" data-mask="(999) 999-99-99" name="phone">
                                     <div class="form-row__tooltip-wrap form-row__tooltip-wrap--popup-none"><p
                                                 class="form-row__tooltip form-row__tooltip--border">Телефонный номер для
                                             связи</p></div>
@@ -622,17 +623,16 @@
         <div class="contacts__wrapper">
             <div class="contacts__contact-block">
                 <div class="contacts__contact-block-wrapper">
-                    <h2 class="contacts__title" id="contacts">{{ $contacts->block_title_field }}</h2>
-                    <p class="contacts__text">{{ $contacts->text_field }}</p>
+                    <h2 class="contacts__title" id="contacts">{!! $contacts->block_title_field !!}</h2>
                     <div class="contacts__input-rows form-id" id="contacts_call">
                         <input type="hidden" name="form" class="form-input" value="call">
                         <div class="contacts__row form-row">
                             <div class="form-row__validation-wrap contacts-input">
                                 <label class="contacts-input__label contacts-input__label--name"
                                        for="contact_name"><span class="contacts-input__label-text">Имя</span></label>
-                                <input type="text" name="client_name" id="contact_name" placeholder="Введите имя"
-                                       autocomplete="false" required
+                                <input type="text" name="client_name" id="contact_name" autocomplete="false" required
                                        class="form-row__input form-input contacts-input__input">
+                                <label class="contacts-input__placeholder" for="contact_name">Введите имя</label>
                                 <div class="form-row__tooltip-wrap form-row__tooltip-wrap--popup-none"><p
                                             class="form-row__tooltip form-row__tooltip--border">Как к вам обращаться</p>
                                 </div>
@@ -643,9 +643,9 @@
                             <div class="form-row__validation-wrap contacts-input">
                                 <label class="contacts-input__label contacts-input__label--tel" for="contact_tel"><span
                                             class="contacts-input__label-text">Телефон</span></label>
-                                <input type="tel" data-require="true" id="contact_tel"
-                                       class="form-row__input form-input contacts-input__input contacts-input__input--tel"
-                                       maxlength="25" data-mask="(000) 000-00-00" name="phone">
+                                <input type="tel" id="contact_tel"
+                                       class="form-row__input form-input contacts-input__input contacts-input__input--tel js_phone_input"
+                                       maxlength="25" data-mask="(999) 999-99-99" name="phone">
                                 <div class="form-row__tooltip-wrap form-row__tooltip-wrap--popup-none"><p
                                             class="form-row__tooltip form-row__tooltip--border">Телефонный номер для
                                         связи</p></div>
