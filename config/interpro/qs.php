@@ -7,7 +7,7 @@ return [
         'bool' => ['parking_actual'],
         'groups' => [
             'flat_stocks' => [
-                'string' => ['name_with_digit', 'name_in_words'],
+                'string' => ['name_with_digit', 'name_in_words', 'discount_condition'],
                 'int' => ['price'],
                 'bool' => ['actual'],
             ]

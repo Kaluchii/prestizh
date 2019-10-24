@@ -97,7 +97,7 @@
                                         </div>
                                         <div class="title-popup__discount-price-condition">
                                             НА {{ $stock_item->name_in_words }} КВАРТИРЫ <br>
-                                            <span class="title-popup__discount-limit">(КОЛИЧЕСТВО КВАРТИР ОГРАНИЧЕНО)</span>
+                                            <span class="title-popup__discount-limit">{{ $stock_item->discount_condition }}</span>
                                         </div>
                                     </div>
                                 </div>

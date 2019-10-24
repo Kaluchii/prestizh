@@ -29,6 +29,17 @@
         </div>
 
         <div class="form-group">
+            <label>Краткие подробности</label>
+            <input class="form-control string"
+                   type="text" placeholder=""
+                   value="{{$item->discount_condition}}"
+                   data-name="discount_condition"
+                   data-type="string"
+                   data-block="flat_stocks"
+                   data-id="{{$item->id_field}}">
+        </div>
+
+        <div class="form-group">
             <label>Акционная стоимость 1 м² площади квартиры</label>
             <input class="form-control int"
                    type="number" placeholder=""
