@@ -66,6 +66,13 @@ class AdminController extends Controller
         ]);
     }
 
+    public function getCommerce(){
+        $commerce = $this->extract->getBlock('commerce');
+        return view('back.blocks.commerce', [
+            'commerce' => $commerce
+        ]);
+    }
+
     public function getFlatsItem( $id ){
         $flat_item = $this->extract->getGroupItem('dom_flat', $id);
         return view('back.groups.dom_flat.dom_flat', [

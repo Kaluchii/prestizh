@@ -4,7 +4,7 @@
             <div class="header__logo-wrap header__logo-wrap--fixed">
                 <a href="#title" class="header__logo-link js_goto_anchor">
                     <picture>
-                        <source srcset="/img/logo_mob.png" media="(max-width: 1010px)">
+                        <source srcset="/img/logo_mob.png" media="(max-width: 1110px)">
                         <img src="/img/logo.png" alt="Жилой комплекс Престиж" class="header__logo header__logo--fixed">
                     </picture>
                 </a>
@@ -13,7 +13,10 @@
                 <ul class="header__nav-list">
                     <li class="header__nav-item header__nav-item--fixed"><a href="#about" class="js_goto_anchor header__nav-link">О комплексе</a></li>
                     <li class="header__nav-item header__nav-item--fixed"><a href="#gallery" class="js_goto_anchor header__nav-link">Галерея</a></li>
-                    <li class="header__nav-item header__nav-item--fixed"><a href="#flats" class="js_goto_anchor header__nav-link">Планировки</a></li>
+                    <li class="header__nav-item header__nav-item--fixed"><a href="#flats" class="js_goto_anchor header__nav-link">Квартиры</a></li>
+                    @if ($commerce->commerce_layout_group->count())
+                    <li class="header__nav-item header__nav-item--fixed"><a href="#commerce" class="js_goto_anchor header__nav-link">Коммерция</a></li>
+                    @endif
                     <li class="header__nav-item header__nav-item--fixed"><a href="#stages" class="js_goto_anchor header__nav-link">Стройка</a></li>
                     <li class="header__nav-item header__nav-item--fixed"><a href="#contacts" class="js_goto_anchor header__nav-link">Контакты</a></li>
                 </ul>

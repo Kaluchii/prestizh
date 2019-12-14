@@ -6,7 +6,7 @@
         <header class="title-block__header header">
             <div class="header__logo-wrap">
                 <picture>
-                    <source srcset="/img/logo_mob.png" media="(max-width: 1010px)">
+                    <source srcset="/img/logo_mob.png" media="(max-width: 1110px)">
                     <img src="/img/logo.png" alt="Жилой комплекс Престиж" class="header__logo">
                 </picture>
             </div>
@@ -16,8 +16,12 @@
                             комплексе</a></li>
                     <li class="header__nav-item"><a href="#gallery" class="js_goto_anchor header__nav-link">Галерея</a>
                     </li>
-                    <li class="header__nav-item"><a href="#flats" class="js_goto_anchor header__nav-link">Планировки</a>
+                    <li class="header__nav-item"><a href="#flats" class="js_goto_anchor header__nav-link">Квартиры</a>
                     </li>
+                    @if ($commerce->commerce_layout_group->count())
+                    <li class="header__nav-item"><a href="#commerce" class="js_goto_anchor header__nav-link">Коммерция</a>
+                    </li>
+                    @endif
                     <li class="header__nav-item"><a href="#stages" class="js_goto_anchor header__nav-link">Стройка</a>
                     </li>
                     <li class="header__nav-item"><a href="#contacts"
@@ -44,8 +48,8 @@
         <div class="title-block__text-wrap">
             <div class="title-block__col1">
                 <h1 class="title-block__title">
-                    Сдан <br>
-                    <span class="title-block__discount-condition">в эксплуатацию!</span>
+                    НОВОГОДНИЕ<br>
+                    <span class="title-block__discount-condition">СКИДКИ!</span>
                 </h1>
                 <div class="title-block__box-prices-wrap">
                     <div class="title-block__box-prices-slider js_prices_slider">
@@ -516,7 +520,7 @@
                 <div class="layout__feedback-info-wrapper">
                     <div class="layout__common-info-wrapper">
                         <div class="layout__info">
-                            <p class="layout__flat-name"></p>
+                            <p class="layout__flat-name js_layout_name"></p>
                             <div class="layout__info-row">
                                 <div class="layout__row-item">
                                     <p class="layout__info-title">Площадь</p>
@@ -537,10 +541,16 @@
                                 <p class="layout__price-title">Цена за 1 м<sup class="layout__sup">2</sup>:</p>
                                 <p class="layout__price js_give_price"></p>
                             </div>
+                            <div class="layout__price-wrap">
+                                <p class="layout__price-title">Стоимость при 100% оплате:</p>
+                                <p class="layout__price js_at_once_price"></p>
+                            </div>
                         </div>
-                        <div class="layout__discount-price-wrap">
-                            <p class="layout__discount-price-title">Стоимость при 100% оплате:</p>
-                            <p class="layout__discount-price js_at_once_price"></p>
+                        <div class="layout__discount-price-wrap js_discount_wrap">
+                            <p class="layout__discount-price-title">Цена за 1 м<sup class="layout__sup">2</sup> cо скидкой:</p>
+                            <p class="layout__discount-price js_give_price_discount"></p>
+                            <p class="layout__discount-price-title">Стоимость cо скидкой:</p>
+                            <p class="layout__discount-price js_at_once_price_discount"></p>
                         </div>
                     </div>
                     <div class="layout__feedback layout-feedback">
@@ -586,6 +596,111 @@
             </div>
         </div>
     </section>
+
+    @if ($commerce->commerce_layout_group->count())
+    <section class="flats">
+        <div class="flats__wrapper">
+            <div class="flats__top-wrapper">
+                <div class="flats__col1">
+                    <h2 class="flats__title flats__title--commerce" id="commerce">{{ $commerce->block_title_field }}</h2>
+                </div>
+                <div class="flats__col2 layout-choice">
+                    <div class="layout-choice__btns-wrapper">
+                        <p class="layout-choice__title">Площадь</p>
+                        <ul class="layout-choice__btns-list">
+                            @foreach($commerce->commerce_layout_group as $layout_item)
+                                <li class="layout-choice__btns-item">
+                                    <button class="layout-choice__button js_area_btn_com layout-choice__button--area @if($layout_item->labeled)layout-choice__button--labeled @endif"
+                                            data-id="{{$layout_item->id_field}}">{{str_replace('.', ',', $layout_item->area_field)}}
+                                        м<sup class="layout-choice__btn-sup">2</sup></button>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flats__layout layout">
+                <div class="layout__img-wrapper">
+                    <img src="" alt="" class="layout__img js_give_src_com">
+                </div>
+                <div class="layout__feedback-info-wrapper">
+                    <div class="layout__common-info-wrapper">
+                        <div class="layout__info">
+                            <p class="layout__flat-name js_com_layout_name"></p>
+                            <div class="layout__info-row">
+                                <div class="layout__row-item">
+                                    <p class="layout__info-title">Площадь</p>
+                                    <p class="layout__info-value"><span
+                                                class="layout__info-value-text js_give_area_com"></span>м<sup
+                                                class="layout__area-sup">2</sup></p>
+                                </div>
+                                <div class="layout__row-item">
+                                    <p class="layout__info-title">Этаж</p>
+                                    <p class="layout__info-value js_give_floor_com"></p>
+                                </div>
+                            </div>
+                            <div class="layout__price-wrap">
+                                <p class="layout__price-title">Цена за 1 м<sup class="layout__sup">2</sup>:</p>
+                                <p class="layout__price js_give_price_com"></p>
+                            </div>
+                            <div class="layout__price-wrap">
+                                <p class="layout__price-title">Стоимость при 100% оплате:</p>
+                                <p class="layout__price js_at_once_price_com"></p>
+                            </div>
+                        </div>
+                        <div class="layout__discount-price-wrap js_discount_wrap_com">
+                            <p class="layout__discount-price-title">Цена за 1 м<sup class="layout__sup">2</sup> cо скидкой:</p>
+                            <p class="layout__discount-price js_give_price_discount_com"></p>
+                            <p class="layout__discount-price-title">Стоимость cо скидкой:</p>
+                            <p class="layout__discount-price js_at_once_price_discount_com"></p>
+                        </div>
+                    </div>
+                    <div class="layout__feedback layout-feedback">
+                        <p class="layout-feedback__calculation-method">
+                            На планировке указана проектная площадь. Расчет осуществляется по фактической площади.
+                        </p>
+                        <p class="layout-feedback__title">ПОНРАВИЛОСЬ ПОМЕЩЕНИЕ?</p>
+                        <p class="layout-feedback__text">Свяжитесь с нами и узнайте подробности</p>
+                        <div class="layout-feedback__input-rows form-id" id="com_layout_call">
+                            <input type="hidden" name="form" class="form-input" value="call">
+                            <div class="layout-feedback__row form-row">
+                                <div class="form-row__validation-wrap layout-feedback-input">
+                                    <label class="layout-feedback-input__label layout-feedback-input__label--name"
+                                           for="com_layout_name"><span class="layout-feedback-input__label-text">Имя</span></label>
+                                    <input type="text" name="client_name" id="com_layout_name" autocomplete="false" required
+                                           class="form-row__input form-input layout-feedback-input__input">
+                                    <div class="form-row__tooltip-wrap form-row__tooltip-wrap--popup-none"><p
+                                                class="form-row__tooltip form-row__tooltip--border">Как к вам
+                                            обращаться</p></div>
+                                </div>
+                            </div>
+
+                            <div class="layout-feedback__row form-row">
+                                <div class="form-row__validation-wrap layout-feedback-input">
+                                    <input type="tel" id="com_layout_tel"
+                                           class="form-row__input form-input layout-feedback-input__input layout-feedback-input__input--tel js_phone_input"
+                                           maxlength="25" data-mask="(999) 999-99-99" name="phone">
+                                    <div class="form-row__tooltip-wrap form-row__tooltip-wrap--popup-none"><p
+                                                class="form-row__tooltip form-row__tooltip--border">Телефонный номер для
+                                            связи</p></div>
+                                    <label class="layout-feedback-input__label layout-feedback-input__label--tel"
+                                           for="com_layout_tel"><span
+                                                class="layout-feedback-input__label-text layout-feedback-input__label-text--tel">+7</span></label>
+                                </div>
+                            </div>
+                            <div class="layout-feedback__row layout-feedback__row--btn">
+                                <input type="submit" value="УЗНАТЬ ПОДРОБНЕЕ"
+                                       class="layout-feedback__btn form-row__send-form button-tr button-tr--yellow-br send-form">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    @endif
+
     <section class="stages">
         <div class="stages__top-wrapper">
             <div class="stages__col1">

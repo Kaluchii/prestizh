@@ -12,16 +12,26 @@
                     src: '{{$layout->layout_scheme_field->link}}?{{$layout->layout_scheme_field->cache_index}}',
                     block: '{{$layout->block_field}}',
                     floor: '{{$layout->floor_field}}',
-                    meter_cost: '{{$layout->meter_cost_field}}',
+                    meter_cost: '{{$layout->stock_price}}',
                     area: '{{$layout->area_field}}',
                     discount: '{{$layout->discount}}',
-                    stock_price: '{{$layout->stock_price}}',
                 },
                 @endforeach
             }
             },
             @endif
         @endforeach
+        };
+        var comObj = {
+            @foreach($commerce->commerce_layout_group as $layout)
+{{$layout->id_field}}: {
+                src: '{{$layout->layout_scheme_field->link}}?{{$layout->layout_scheme_field->cache_index}}',
+                floor: '{{$layout->floor_field}}',
+                meter_cost: '{{$layout->stock_price}}',
+                area: '{{$layout->area_field}}',
+                discount: '{{$layout->discount}}',
+            },
+            @endforeach
         };
         var stageObj = {
             @foreach($stages->dom_stages_group as $stage)

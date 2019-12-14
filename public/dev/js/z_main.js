@@ -145,8 +145,8 @@ $(function () {
         flat_category_id = $(this).data('id');
         $('.js_area_btn').closest('.layout-choice__btns-item').hide().removeClass('visible');
         $('.js_area_btn' + '.' + 'flat' + flat_category_id).closest('.layout-choice__btns-item').show().addClass('visible');
-        $('.layout__flat-name').text(flatsObj[flat_category_id]['singularly']);
-        $('.layout-choice__btns-item.visible:first .js_area_btn').click();
+        $('.js_layout_name').text(flatsObj[flat_category_id]['singularly']);
+        $('.js_area_btn:visible')[0].click();
         $('.js_rooms_btn').removeClass('is-active').closest('.layout-choice__btns-item').removeClass('is-active');
         $(this).addClass('is-active').closest('.layout-choice__btns-item').addClass('is-active');
     });
@@ -154,6 +154,8 @@ $(function () {
     var state = false;
     $('.js_area_btn').on('click', function () {
         var thisLayout = flatsObj[flat_category_id]['layouts'][$(this).data('id')];
+        var basic_price = Math.round(thisLayout.meter_cost * thisLayout.area);
+        var hasDiscount = thisLayout.discount > 0;
 
         if ($window.width() <= 820 && state){
             setTimeout(function () {
@@ -171,23 +173,53 @@ $(function () {
         $('.js_give_area').text(thisLayout.area.replace('.', ','));
         $('.js_give_block').text(thisLayout.block);
         $('.js_give_floor').text(thisLayout.floor);
+        $('.js_give_price').text(number_format(thisLayout.meter_cost, 0, ',', ' ')).toggleClass('is-old', hasDiscount);
+        $('.js_at_once_price').text(number_format(basic_price, 0, ',', ' ')).toggleClass('is-old', hasDiscount);
+        $('.js_discount_wrap').toggle(hasDiscount);
 
-        var basic_price = Math.round(thisLayout.meter_cost * thisLayout.area * EXCHANGE_COST);
-
-        if(+thisLayout.stock_price > 0){
-            $('.js_at_once_price').text(number_format(Math.round(thisLayout.stock_price * thisLayout.area), 0, ',', ' '));
-        } else {
-            $('.js_at_once_price').text(number_format(Math.round(basic_price - basic_price / 100 * thisLayout.discount), 0, ',', ' '));
+        if(hasDiscount){
+            $('.js_give_price_discount').text(number_format(thisLayout.meter_cost - thisLayout.meter_cost / 100 * thisLayout.discount, 0, ',', ' '));
+            $('.js_at_once_price_discount').text(number_format(basic_price - basic_price / 100 * thisLayout.discount, 0, ',', ' '));
         }
 
-        $('.js_give_price').text(number_format(thisLayout.stock_price, 0, ',', ' '));
         $('.js_area_btn').removeClass('is-active').closest('.layout-choice__btns-item').removeClass('is-active');
         $(this).addClass('is-active').closest('.layout-choice__btns-item').addClass('is-active');
 
         state = true;
     });
 
-    $('.layout-choice__btns-item:first-child .js_rooms_btn').click();
+    $('.js_area_btn_com').on('click', function () {
+        var thisLayout = comObj[$(this).data('id')];
+        var basic_price = Math.round(thisLayout.meter_cost * thisLayout.area);
+        var hasDiscount = thisLayout.discount > 0;
+
+        $('.js_give_src_com').animate({opacity: "toggle"}, 200);
+        setTimeout(function () {
+            $('.js_give_src_com').attr('src', thisLayout.src);
+        }, 200);
+        $('.js_give_src_com').animate({opacity: "toggle"}, 200);
+        $('.js_give_area_com').text(thisLayout.area.replace('.', ','));
+        $('.js_com_layout_name').text(thisLayout.layout_name);
+        $('.js_give_floor_com').text(thisLayout.floor);
+        $('.js_give_price_com').text(number_format(thisLayout.meter_cost, 0, ',', ' ')).toggleClass('is-old', hasDiscount);
+        $('.js_at_once_price_com').text(number_format(basic_price, 0, ',', ' ')).toggleClass('is-old', hasDiscount);
+        $('.js_discount_wrap_com').toggle(hasDiscount);
+
+        if(hasDiscount){
+            $('.js_give_price_discount_com').text(number_format(thisLayout.meter_cost - thisLayout.meter_cost / 100 * thisLayout.discount, 0, ',', ' '));
+            $('.js_at_once_price_discount_com').text(number_format(basic_price - basic_price / 100 * thisLayout.discount, 0, ',', ' '));
+        }
+
+        $('.js_area_btn_com').removeClass('is-active').closest('.layout-choice__btns-item').removeClass('is-active');
+        $(this).addClass('is-active').closest('.layout-choice__btns-item').addClass('is-active');
+    });
+
+    if ($('.js_rooms_btn').length) {
+        $('.js_rooms_btn')[0].click();
+    }
+    if ($('.js_area_btn_com').length) {
+        $('.js_area_btn_com')[0].click();
+    }
 
     var $fotorama = $('.js_gallery__fotorama').fotorama({
         navwidth: '90%'

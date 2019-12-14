@@ -1,75 +1,19 @@
 <div class="box">
     <div class="box-header with-border">
-        <h3 class="box-title">Квартира {{$item->sorter_field}}</h3>
+        <h3 class="box-title">Помещение {{$item->sorter_field}}</h3>
         <button type="submit" class="btn btn-primary pull-right remove-flat-item" data-id="{{$item->id_field}}"
-                data-block="layout">Удалить</button>
+                data-block="commerce_layout">Удалить</button>
     </div>
     <div class="box-body">
 
         <div class="form-group">
-            <label>Размер квартиры</label>
-            <input class="form-control float"
-                   type="number" placeholder=""
-                   value="{{$item->area_field}}"
-                   data-name="area"
-                   data-type="float"
-                   data-block="layout"
-                   data-id="{{$item->id_field}}">
-        </div>
-
-        <div class="form-group">
-            <label>
-                <input type="checkbox" class="minimal bool"
-                       data-name="labeled"
-                       data-type="bool"
-                       data-block="layout"
-                       data-id="{{$item->id_field}}"
-                       @if($item->labeled) checked @endif>
-                Выделить кнопку
-            </label>
-        </div>
-
-        {{--<div class="form-group">
-            <label>Цена за 1 м² в тенге</label>
-            <input class="form-control float"
-                   type="number" placeholder=""
-                   value="{{$item->meter_cost_field}}"
-                   data-name="meter_cost"
-                   data-type="float"
-                   data-block="layout"
-                   data-id="{{$item->id_field}}">
-        </div>--}}
-
-        <div class="form-group">
-            <label>Цена за 1 м² в тенге</label>
-            <input class="form-control float"
-                   type="number" placeholder=""
-                   value="{{$item->stock_price_field}}"
-                   data-name="stock_price"
-                   data-type="float"
-                   data-block="layout"
-                   data-id="{{$item->id_field}}">
-        </div>
-
-        <div class="form-group">
-            <label>Размер скидки</label>
-            <input class="form-control float"
-                   type="number" placeholder=""
-                   value="{{$item->discount_field}}"
-                   data-name="discount"
-                   data-type="float"
-                   data-block="layout"
-                   data-id="{{$item->id_field}}">
-        </div>
-
-        <div class="form-group">
-            <label>Блок</label>
+            <label>Название</label>
             <input class="form-control string"
                    type="text" placeholder=""
-                   value="{{$item->block_field}}"
-                   data-name="block"
+                   value="{{$item->layout_name_field}}"
+                   data-name="layout_name"
                    data-type="string"
-                   data-block="layout"
+                   data-block="commerce_layout"
                    data-id="{{$item->id_field}}">
         </div>
 
@@ -80,7 +24,52 @@
                    value="{{$item->floor_field}}"
                    data-name="floor"
                    data-type="string"
-                   data-block="layout"
+                   data-block="commerce_layout"
+                   data-id="{{$item->id_field}}">
+        </div>
+
+        <div class="form-group">
+            <label>Размер помещения</label>
+            <input class="form-control float"
+                   type="number" placeholder=""
+                   value="{{$item->area_field}}"
+                   data-name="area"
+                   data-type="float"
+                   data-block="commerce_layout"
+                   data-id="{{$item->id_field}}">
+        </div>
+
+        <div class="form-group">
+            <label>
+                <input type="checkbox" class="minimal bool"
+                       data-name="labeled"
+                       data-type="bool"
+                       data-block="commerce_layout"
+                       data-id="{{$item->id_field}}"
+                       @if($item->labeled) checked @endif>
+                Выделить кнопку
+            </label>
+        </div>
+
+        <div class="form-group">
+            <label>Цена за 1 м² в тенге</label>
+            <input class="form-control float"
+                   type="number" placeholder=""
+                   value="{{$item->stock_price_field}}"
+                   data-name="stock_price"
+                   data-type="float"
+                   data-block="commerce_layout"
+                   data-id="{{$item->id_field}}">
+        </div>
+
+        <div class="form-group">
+            <label>Размер скидки</label>
+            <input class="form-control float"
+                   type="number" placeholder=""
+                   value="{{$item->discount_field}}"
+                   data-name="discount"
+                   data-type="float"
+                   data-block="commerce_layout"
                    data-id="{{$item->id_field}}">
         </div>
 
@@ -101,7 +90,7 @@
                                          title="{{$item->layout_scheme_field->alt}}">{{$item->layout_scheme_field->name_field}}
                                         <br> </div>
                                     <div class="file-actions">
-                                        <input type="text" class="form-control alt-text" data-block="layout"
+                                        <input type="text" class="form-control alt-text" data-block="commerce_layout"
                                                data-type="images" data-id="{{$item->id_field}}" data-name="alt"
                                                value="{{$item->layout_scheme_field->alt}}">
                                         <div class="clearfix"></div>
@@ -125,7 +114,7 @@
                     <i class="glyphicon glyphicon-folder-open"></i>&nbsp;
                     <span class="hidden-xs">Выбрать изображение …</span>
                     <input type="file" class="form-control file"
-                           data-block="layout"
+                           data-block="commerce_layout"
                            data-name="layout_scheme"
                            data-type="image"
                            data-id="{{$item->id_field}}">
@@ -137,7 +126,7 @@
             <label>Позиция</label>
             <input type="number" class="form-control string"
                    data-id="{{$item->id_field}}"
-                   data-block="layout"
+                   data-block="commerce_layout"
                    data-name="sorter"
                    value="{{$item->sorter_field}}">
         </div>

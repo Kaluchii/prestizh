@@ -19,7 +19,12 @@
             </li>
             <li>
                 <a href="/adm/flats">
-                    <i class="fa fa-home"></i> <span>Планировки</span>
+                    <i class="fa fa-home"></i> <span>Квартиры</span>
+                </a>
+            </li>
+            <li>
+                <a href="/adm/commerce">
+                    <i class="fa fa-home"></i> <span>Коммерция</span>
                 </a>
             </li>
             <li>

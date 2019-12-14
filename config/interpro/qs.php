@@ -42,6 +42,18 @@ return [
         ]
     ],
 
+    'commerce' => [
+        'string' => ['block_title'],
+        'groups' => [
+            'commerce_layout' => [
+                'image' => ['layout_scheme'],
+                'string' => ['layout_name', 'floor'],
+                'float' => ['area', 'stock_price', 'discount'],
+                'bool' => ['labeled'],
+            ]
+        ]
+    ],
+
     'stages' => [
         'string' => ['block_title'],
         'text' => ['text'],

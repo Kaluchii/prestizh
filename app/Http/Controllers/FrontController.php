@@ -32,6 +32,7 @@ class FrontController extends Controller
         $gallery = $this->extract->getBlock('gallery');
         $stages = $this->extract->getBlock('stages');
         $flats = $this->extract->getBlock('flats');
+        $commerce = $this->extract->getBlock('commerce');
         $contacts = $this->extract->getBlock('contacts');
         $prices = $this->extract->getBlock('prices');
         $scripts = $this->extract->getBlock('scripts');
@@ -41,10 +42,8 @@ class FrontController extends Controller
             $min = null;
             $i = 1;
             foreach ($item->layout_group as $layout_item) {
-                if ($layout_item->stock_price > 0) {
-                    $price = round($layout_item->stock_price * $layout_item->area);
-                } else {
-                    $price = round($layout_item->meter_cost * $layout_item->area * $prices->dollar);
+                $price = round($layout_item->stock_price * $layout_item->area);
+                if ($layout_item->discount > 0) {
                     $price = $price - $price / 100 * $layout_item->discount;
                 }
                 if ($i === 1) {
@@ -67,6 +66,7 @@ class FrontController extends Controller
             'gallery' => $gallery,
             'stages' => $stages,
             'flats' => $flats,
+            'commerce' => $commerce,
             'contacts' => $contacts,
             'prices' => $prices,
             'scripts' => $scripts
