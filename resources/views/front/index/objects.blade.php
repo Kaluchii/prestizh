@@ -30,6 +30,7 @@
                 meter_cost: '{{$layout->stock_price}}',
                 area: '{{$layout->area_field}}',
                 discount: '{{$layout->discount}}',
+                layout_name: '{{$layout->layout_name}}',
             },
             @endforeach
         };

@@ -48,8 +48,8 @@
         <div class="title-block__text-wrap">
             <div class="title-block__col1">
                 <h1 class="title-block__title">
-                    НОВОГОДНИЕ<br>
-                    <span class="title-block__discount-condition">СКИДКИ!</span>
+                    <span class="title-block__discount-condition">НОВОГОДНИЕ</span><br>
+                    СКИДКИ!
                 </h1>
                 <div class="title-block__box-prices-wrap">
                     <div class="title-block__box-prices-slider js_prices_slider">
