@@ -51,7 +51,7 @@
                     <span class="title-block__discount-condition">НОВОГОДНИЕ</span><br>
                     СКИДКИ!
                 </h1>
-                <div class="title-block__box-prices-wrap">
+                {{--<div class="title-block__box-prices-wrap">
                     <div class="title-block__box-prices-slider js_prices_slider">
                         @foreach($main_block_flats as $item)
                             <div class="flat-price">
@@ -71,7 +71,7 @@
                         @endforeach
                     </div>
                     <span class="title-block__box-prices-bottom-line"></span>
-                </div>
+                </div>--}}
             </div>
             <div class="title-block__col2">
                 <div class="title-block__popup title-popup js_title_popup show-slide-2">
@@ -122,7 +122,7 @@
                         <div class="title-popup__feedback-row">
                             @if($main_block->parking_actual || $main_block->flat_stocks_group->count())
                             <div class="title-popup__flats-count-wrap">
-                                <div class="title-popup__flats-count-middle">АКЦИИ <br> <span class="title-popup__flats-count--tiny">МЕСЯЦА</span></div>
+                                {{--<div class="title-popup__flats-count-middle">АКЦИИ <br> <span class="title-popup__flats-count--tiny">МЕСЯЦА</span></div>--}}
                             </div>
                             @endif
                             <p class="title-popup__interest-text">ЗАИНТЕРЕСОВАЛИСЬ?</p>
@@ -167,9 +167,14 @@
 
     <section class="stock">
         @if($main_block->flat_stocks_group->count())
-        <div class="stock__title">
-            акции месяца*
+        <div class="stock__title-banner-container">
+            <div class="stock__title-banner-wrap">
+                <div class="stock__title-banner"></div>
+            </div>
         </div>
+        {{--<div class="stock__title">
+            акции месяца*
+        </div>--}}
         <ul class="stock__price-list">
             @foreach($main_block->flat_stocks_group as $stock_item)
             <li class="stock__price-item">
