@@ -4,6 +4,7 @@ var gulp         = require('gulp'),
     less         = require('gulp-less'),
     cssmin       = require('gulp-cssmin'),
     csscomb      = require('gulp-csscomb'),
+    pxtorem      = require('postcss-pxtorem'),
     postcss      = require('gulp-postcss'),
     reporter     = require('postcss-reporter'),
     htmllint     = require('gulp-htmllint'),
@@ -65,7 +66,14 @@ gulp.task('style', function () {
         .pipe(plumber())
         .pipe(_if(isProduction, sourcemaps.init()))// Если передан ключ --production то sourcemap не пишется.
         .pipe(less())
-        .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie9', 'opera 12.1', 'chrome', 'ff', 'ios'))
+        .pipe(postcss([
+            pxtorem({
+                rootValue: 14,
+                unitPrecision: 7,
+                propWhiteList: ['*'],
+            })
+        ]))
+        .pipe(autoprefixer('last 2 version', 'safari 5', 'opera 12.1', 'chrome', 'ff', 'ios'))
         .pipe(csscomb('./dev/config/.csscomb.json'))
         .pipe(_if(!isProduction, cssmin())) // Если передан ключ --production то css файл будет минимизирован и оптимизирован
         .pipe(_if(isProduction, sourcemaps.write() )) // Если передан ключ --production то sourcemap не пишется.

@@ -31,6 +31,7 @@
     "normalize.css": "^5.0.0",
     "postcss-less": "^0.15.0",
     "postcss-reporter": "^2.0.0",
+    "postcss-pxtorem": "^4.0.1",
     "stylelint": "^7.6.0",
     "yargs": "^6.4.0"
   }

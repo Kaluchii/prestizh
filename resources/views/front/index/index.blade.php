@@ -275,7 +275,7 @@
                     <div class="in-detail__item detail-item detail-item--biggest">
                         <div class="detail-item__img-wrap"><img
                                     src="{{$about->image0->link_field}}?{{$about->image0->cache_index}}"
-                                    alt="{{$about->image0->alt_field}}" height="540" width="640"
+                                    alt="{{$about->image0->alt_field}}" width="640"
                                     class="detail-item__img"></div>
                         <div class="detail-item__text-wrap">
                             <h3 class="detail-item__title">{!! $about->title0_field !!}</h3>
@@ -287,7 +287,7 @@
                     <div class="in-detail__item detail-item">
                         <div class="detail-item__img-wrap"><img
                                     src="{{$about->image1->link_field}}?{{$about->image1->cache_index}}"
-                                    alt="{{$about->image1->alt_field}}" height="400" width="400"
+                                    alt="{{$about->image1->alt_field}}" width="400"
                                     class="detail-item__img"></div>
                         <div class="detail-item__text-wrap">
                             <h3 class="detail-item__title">{!! $about->title1_field !!}</h3>
@@ -297,7 +297,7 @@
                     <div class="in-detail__item detail-item detail-item--middle">
                         <div class="detail-item__img-wrap"><img
                                     src="{{$about->image2->link_field}}?{{$about->image2->cache_index}}"
-                                    alt="{{$about->image2->alt_field}}" height="330" width="330"
+                                    alt="{{$about->image2->alt_field}}" width="330"
                                     class="detail-item__img"></div>
                         <div class="detail-item__text-wrap">
                             <h3 class="detail-item__title">{!! $about->title2_field !!}</h3>
@@ -311,7 +311,7 @@
                         </div>
                         <div class="detail-item__img-wrap"><img
                                     src="{{$about->image3->link_field}}?{{$about->image3->cache_index}}"
-                                    alt="{{$about->image3->alt_field}}" height="170" width="180"
+                                    alt="{{$about->image3->alt_field}}" width="180"
                                     class="detail-item__img"></div>
                     </div>
                 </div>
@@ -319,7 +319,7 @@
                     <div class="in-detail__item detail-item">
                         <div class="detail-item__img-wrap"><img
                                     src="{{$about->image4->link_field}}?{{$about->image4->cache_index}}"
-                                    alt="{{$about->image4->alt_field}}" height="400" width="400"
+                                    alt="{{$about->image4->alt_field}}" width="400"
                                     class="detail-item__img"></div>
                         <div class="detail-item__text-wrap">
                             <h3 class="detail-item__title">{!! $about->title4_field !!}</h3>
@@ -329,7 +329,7 @@
                     <div class="in-detail__item detail-item detail-item--middle">
                         <div class="detail-item__img-wrap"><img
                                     src="{{$about->image5->link_field}}?{{$about->image5->cache_index}}"
-                                    alt="{{$about->image5->alt_field}}" height="330" width="330"
+                                    alt="{{$about->image5->alt_field}}" width="330"
                                     class="detail-item__img"></div>
                         <div class="detail-item__text-wrap">
                             <h3 class="detail-item__title">{!! $about->title5_field !!}</h3>
@@ -343,7 +343,7 @@
                         </div>
                         <div class="detail-item__img-wrap"><img
                                     src="{{$about->image6->link_field}}?{{$about->image6->cache_index}}"
-                                    alt="{{$about->image6->alt_field}}" height="170" width="180"
+                                    alt="{{$about->image6->alt_field}}" width="180"
                                     class="detail-item__img"></div>
                     </div>
                 </div>
@@ -351,7 +351,7 @@
                     <div class="in-detail__item detail-item">
                         <div class="detail-item__img-wrap"><img
                                     src="{{$about->image7->link_field}}?{{$about->image7->cache_index}}"
-                                    alt="{{$about->image7->alt_field}}" height="400" width="400"
+                                    alt="{{$about->image7->alt_field}}" width="400"
                                     class="detail-item__img"></div>
                         <div class="detail-item__text-wrap">
                             <h3 class="detail-item__title">{!! $about->title7_field !!}</h3>
