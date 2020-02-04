@@ -592,12 +592,16 @@
     font-size: 87px;
     letter-spacing: initial;
     line-height: .8;
-    color: transparent;
-    background: #c3b06a;
-    background: repeating-linear-gradient(7deg, #eade85 0%, #c3b06a 8.5%, #eade85 17%, #c3b06a 30.5%, #eade85 50%, #c3b06a 61%, #eade85 100%);
-    -webkit-background-clip: text;
+    color: #eade85;
     white-space: nowrap;
     font-family: 'RozhaOne', sans-serif;
+
+    @supports (background: repeating-linear-gradient(7deg, #eade85 0%, #c3b06a 8.5%, #eade85 17%, #c3b06a 30.5%, #eade85 50%, #c3b06a 61%, #eade85 100%)) and (-webkit-background-clip: text){
+      color: transparent;
+      background: repeating-linear-gradient(7deg, #eade85 0%, #c3b06a 8.5%, #eade85 17%, #c3b06a 30.5%, #eade85 50%, #c3b06a 61%, #eade85 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+    }
 
     &--bg {
       position: absolute;
