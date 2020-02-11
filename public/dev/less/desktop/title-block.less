@@ -596,9 +596,13 @@
     white-space: nowrap;
     font-family: 'RozhaOne', sans-serif;
 
-    @supports (background: repeating-linear-gradient(7deg, #eade85 0%, #c3b06a 8.5%, #eade85 17%, #c3b06a 30.5%, #eade85 50%, #c3b06a 61%, #eade85 100%)) and (-webkit-background-clip: text){
+    @supports (background: linear-gradient(7deg, #eade85 0%, #c3b06a 8.5%, #eade85 17%, #c3b06a 30.5%, #eade85 50%, #c3b06a 61%, #eade85 100%)) and (-webkit-background-clip: text){
       color: transparent;
-      background: repeating-linear-gradient(7deg, #eade85 0%, #c3b06a 8.5%, #eade85 17%, #c3b06a 30.5%, #eade85 50%, #c3b06a 61%, #eade85 100%);
+      background:-webkit-linear-gradient(7deg, #eade85 0%, #c3b06a 8.5%, #eade85 17%, #c3b06a 30.5%, #eade85 50%, #c3b06a 61%, #eade85 100%);
+      background:-o-linear-gradient(7deg, #eade85 0%, #c3b06a 8.5%, #eade85 17%, #c3b06a 30.5%, #eade85 50%, #c3b06a 61%, #eade85 100%);
+      background:-moz-linear-gradient(7deg, #eade85 0%, #c3b06a 8.5%, #eade85 17%, #c3b06a 30.5%, #eade85 50%, #c3b06a 61%, #eade85 100%);
+      background:linear-gradient(7deg, #eade85 0%, #c3b06a 8.5%, #eade85 17%, #c3b06a 30.5%, #eade85 50%, #c3b06a 61%, #eade85 100%);
+      //background: repeating-linear-gradient(7deg, #eade85 0%, #c3b06a 8.5%, #eade85 17%, #c3b06a 30.5%, #eade85 50%, #c3b06a 61%, #eade85 100%);
       background-clip: text;
       -webkit-background-clip: text;
     }

@@ -2,7 +2,7 @@ var gulp         = require('gulp'),
 
     autoprefixer = require('gulp-autoprefixer'),
     less         = require('gulp-less'),
-    cssmin       = require('gulp-cssmin'),
+    cleanCSS     = require('gulp-clean-css');
     csscomb      = require('gulp-csscomb'),
     pxtorem      = require('postcss-pxtorem'),
     postcss      = require('gulp-postcss'),
@@ -73,9 +73,9 @@ gulp.task('style', function () {
                 propWhiteList: ['*'],
             })
         ]))
-        .pipe(autoprefixer('last 5 version'))
+        .pipe(autoprefixer('last 55 versions'))
         .pipe(csscomb('./dev/config/.csscomb.json'))
-        .pipe(_if(!isProduction, cssmin())) // Если передан ключ --production то css файл будет минимизирован и оптимизирован
+        .pipe(_if(!isProduction, cleanCSS())) // Если передан ключ --production то css файл будет минимизирован и оптимизирован
         .pipe(_if(isProduction, sourcemaps.write() )) // Если передан ключ --production то sourcemap не пишется.
         .pipe(gulp.dest(production_css))
         .pipe(browserSync.stream());
