@@ -48,8 +48,8 @@
         <div class="title-block__text-wrap">
             <div class="title-block__col1">
                 <h1 class="title-block__title">
-                    <span class="title-block__discount-condition">НОВОГОДНИЕ</span><br>
-                    СКИДКИ!
+                    <span class="title-block__title-text">ВЕСЕННИЕ СКИДКИ</span>
+                    <span class="title-block__discount-condition">ОСТАЛОСЬ ВСЕГО <span class="title-block__flats-left">{{ $main_block->apartments_left }}</span></span>
                 </h1>
                 {{--<div class="title-block__box-prices-wrap">
                     <div class="title-block__box-prices-slider js_prices_slider">
@@ -80,23 +80,14 @@
                         <div class="title-popup__slick js_title_popup_slick">
                             @foreach($main_block->flat_stocks_group as $stock_item)
                                 <div class="title-popup__info-row title-popup__info-row--discount">
-                                    <div class="title-popup__discount">АКЦИОННАЯ <span
-                                                class="title-popup__discount-row-2">ЦЕНА</span></div>
                                     <div class="title-popup__info-row-text-wrap">
                                         <div class="title-popup__meter-price-wrap">
                                             <div class="title-popup__meter-price">
                                                 {{ number_format($stock_item->price, 0, ',', ' ') }}
-                                                <span class="title-popup__tenge-meter">
-                                        <span class="title-popup__tenge">f</span>
-                                        <span class="title-popup__meter">м<sup>2</sup></span>
-                                    </span>
-                                                <span class="title-popup__meter-price title-popup__meter-price--bg">
-                                        {{ number_format($stock_item->price, 0, ',', ' ') }}
-                                        <span class="title-popup__tenge-meter">
-                                            <span class="title-popup__tenge">f</span>
-                                            <span class="title-popup__meter">м<sup>2</sup></span>
-                                        </span>
-                                    </span>
+                                                <div class="title-popup__tenge-meter">
+                                                    <span class="title-popup__tenge">b</span>
+                                                    <span class="title-popup__meter">м<sup>2</sup></span>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="title-popup__discount-price-condition">
@@ -111,7 +102,7 @@
                                 <p class="title-popup__gift">ПАРКИНГ</p>
                                 <p class="title-popup__gift-row-2">В ПОДАРОК</p>
                                 <p class="title-popup__condition">
-                                    на большие квартиры от 128 м² <br>
+                                    на большие квартиры от 135 м² <br>
                                     <span class="title-popup__condition--tiny">(на этажах 2-9)</span>
                                 </p>
                             </div>
@@ -154,7 +145,7 @@
                                 </div>
                                 <div class="title-popup__row title-popup__row--btn">
                                     <input type="submit" value="УЗНАТЬ ПОДРОБНЕЕ"
-                                           class="title-popup__btn form-row__send-form button-tr button-tr--popup send-form">
+                                           class="title-popup__btn form-row__send-form button button--pink send-form">
                                 </div>
                             </div>
                         </div>
@@ -167,52 +158,29 @@
 
     <section class="stock">
         @if($main_block->flat_stocks_group->count())
-        <div class="stock__title-banner-container">
-            <div class="stock__title-banner-wrap">
-                <div class="stock__title-banner"></div>
-            </div>
-        </div>
-        {{--<div class="stock__title">
-            акции месяца*
-        </div>--}}
-        <ul class="stock__price-list">
-            @foreach($main_block->flat_stocks_group as $stock_item)
-            <li class="stock__price-item">
-                <div class="stock__item-row-1">
-                    <div class="stock__item-banner">
-                        <p class="stock__item-banner-wrap">
-                            акционная <br>
-                            <span class="stock__item-banner--spacing">цена</span>
-                        </p>
-                    </div>
-                    <p class="stock__item-text">
-                        <span class="stock__item-text-wrap">на <span class="stock__item-flat-name">{{ $stock_item->name_with_digit }}</span> квартиры</span>
-                    </p>
-                </div>
-                <div class="stock__item-row-2">
-                    <div class="stock__item-price title-popup__meter-price-wrap">
-                        <div class="title-popup__meter-price">
-                            {{ number_format($stock_item->price, 0, ',', ' ') }}
-                            <span class="title-popup__tenge-meter">
-                                            <span class="title-popup__tenge">f</span>
-                                            <span class="title-popup__meter">м<sup>2</sup></span>
-                                        </span>
-                            <span class="title-popup__meter-price title-popup__meter-price--bg">
-                                            {{ number_format($stock_item->price, 0, ',', ' ') }}
-                                <span class="title-popup__tenge-meter">
-                                    <span class="title-popup__tenge">f</span>
+        <div class="stock__price-list-wrap">
+            <ul class="stock__price-list">
+                @foreach($main_block->flat_stocks_group as $stock_item)
+                <li class="stock__price-item">
+                    <div class="stock__item-row-1">
+                        <div class="stock__item-price title-popup__meter-price-wrap">
+                            <div class="title-popup__meter-price">
+                                {{ number_format($stock_item->price, 0, ',', ' ') }}
+                                <div class="title-popup__tenge-meter">
+                                    <span class="title-popup__tenge">b</span>
                                     <span class="title-popup__meter">м<sup>2</sup></span>
-                                </span>
-                            </span>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </li>
-            @endforeach
-        </ul>
-        <p class="stock__warning">
-            * количество квартир по акциям ограничено
-        </p>
+                    <div class="stock__item-row-2">
+                        <div class="stock__item-name">на {{ $stock_item->name_with_digit }} квартиры</div>
+                        <div class="stock__item-left">{{ $stock_item->discount_condition }}</div>
+                    </div>
+                </li>
+                @endforeach
+            </ul>
+        </div>
         @endif
         @if($main_block->parking_actual)
         <div class="stock__parking">
@@ -222,7 +190,7 @@
                     <span class="stock__parking-subtitle">в подарок</span>
                 </p>
                 <p class="stock__parking-text">
-                    на большие квартиры от 128 м<sup class="stock__parking-text">2</sup> <br>
+                    на большие квартиры от 135 м<sup class="stock__parking-text">2</sup> <br>
                     (на этажах 2-9)
                 </p>
             </div>
@@ -257,7 +225,7 @@
                 </div>
                 <div class="title-popup__row title-popup__row--btn">
                     <input type="submit" value="УЗНАТЬ ПОДРОБНЕЕ"
-                           class="title-popup__btn form-row__send-form button-tr button-tr--popup send-form mobile">
+                           class="title-popup__btn form-row__send-form button button--pink send-form mobile">
                 </div>
             </div>
         </div>
@@ -400,6 +368,7 @@
             </div>
         </div>
     </section>
+
     <section class="gallery">
         <div class="gallery__wrapper">
             <h2 class="gallery__title" id="gallery">{{ $gallery->block_title_field }}</h2>
@@ -415,22 +384,6 @@
                     @endforeach
                 </div>
             </div>
-            <div class="for-Google-PageSpeed">
-                @php($i = 0)
-                @foreach($slider_arr as $slider_item)
-                    <img src="{{ $slider_item }}" alt="">
-                    @php($i++)
-                @endforeach
-                @foreach($stages->dom_stages_group as $stage)
-                    @if($stage->show_field == 1)
-                        @foreach($stage->stage_images_group as $stage_img)
-                            <img src="{{$stage_img->stage_photo_field->link}}?{{$stage_img->stage_photo_field->cache_index}}"
-                                 alt="">
-                        @endforeach
-                    @endif
-                    @break
-                @endforeach
-            </div>
             <div class="gallery__mobile-gallery mobile-gallery">
                 <ul class="mobile-gallery__list">
                     @php($i = 0)
@@ -443,7 +396,7 @@
             </div>
         </div>
     </section>
-    <section class="feedback">
+    <section class="feedback lazy-bg js_lazy_bg">
         <div class="feedback__wrapper">
             <h2 class="feedback__title">Хотите посмотреть поближе?<br>Приходите в&nbsp;гости!</h2>
             <div class="feedback__input-rows form-id" id="feedback_call">
@@ -480,7 +433,7 @@
             </div>
         </div>
     </section>
-    <section class="flats">
+    <section class="flats js_flats">
         <div class="flats__wrapper">
             <div class="flats__top-wrapper">
                 <div class="flats__col1">
@@ -603,7 +556,7 @@
     </section>
 
     @if ($commerce->commerce_layout_group->count())
-    <section class="flats">
+    <section class="flats js_commerce">
         <div class="flats__wrapper">
             <div class="flats__top-wrapper">
                 <div class="flats__col1">
@@ -706,13 +659,13 @@
     </section>
     @endif
 
-    <section class="stages">
+    <section class="stages js_stages">
         <div class="stages__top-wrapper">
             <div class="stages__col1">
                 <h2 class="stages__title" id="stages">{{ $stages->block_title_field }}</h2>
                 <p class="stages__text">{{ $stages->text_field }}</p>
             </div>
-            {{--<div class="stages__col2">
+            <div class="stages__col2">
                 <div class="stages__radial-col">
                     <input value="{{ $stages->percent_field }}" data-width="100%" data-thickness=".04" type="text" class="stages__radial js_radial" data-bgColor="#FFFFFF" readonly data-fgColor="#ddc777" data-displayInput="false" data-rotation="anticlockwise">
                 </div>
@@ -720,7 +673,7 @@
                     <p class="stages__percent-text">Готовность<br>жилого комплекса</p>
                     <p class="stages__percent-digit-wrap"><span class="stages__percent-digit">{{ $stages->percent_field }}</span>%</p>
                 </div>
-            </div>--}}
+            </div>
         </div>
         <div class="stages__date-list-wrapper">
             <ul class="stages__list">
@@ -741,7 +694,7 @@
     </section>
     <section class="contacts">
         <div class="contacts__wrapper">
-            <div class="contacts__contact-block">
+            <div class="contacts__contact-block lazy-bg js_lazy_bg">
                 <div class="contacts__contact-block-wrapper">
                     <h2 class="contacts__title" id="contacts">{!! $contacts->block_title_field !!}</h2>
                     <div class="contacts__input-rows form-id" id="contacts_call">

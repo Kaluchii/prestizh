@@ -112,6 +112,8 @@ $(function () {
 
     $('.js_title_popup_slick').slick({
         fade: true,
+        autoplay: true,
+        autoplaySpeed: 7000,
         speed: 800
     });
 
@@ -214,12 +216,6 @@ $(function () {
         $(this).addClass('is-active').closest('.layout-choice__btns-item').addClass('is-active');
     });
 
-    if ($('.js_rooms_btn').length) {
-        $('.js_rooms_btn')[0].click();
-    }
-    if ($('.js_area_btn_com').length) {
-        $('.js_area_btn_com')[0].click();
-    }
 
     var $fotorama = $('.js_gallery__fotorama').fotorama({
         navwidth: '90%'
@@ -307,8 +303,6 @@ $(function () {
         }
     });
 
-    $('.js_stage_btn:first-child').click();
-
     $window.on('resize', function () {
         var activeBtn = $('.js_stage_btn.is-active');
         var left = activeBtn.width() / 2;
@@ -381,6 +375,7 @@ $(function () {
 
     /* Yandex map */
 
+    var myMap;
     var init = function () {
         myMap = new ymaps.Map("map",
             {center: [43.233779, 76.921195], zoom: 16, controls: ['zoomControl']});
@@ -426,6 +421,57 @@ $(function () {
         });
     };
 
-    ymaps.ready(init);
-    var myMap;
+
+    var mapChecker = new Waypoint({
+        element: $('.contacts'),
+        handler: function() {
+            var ymapScript = $('.js_ymaps_script');
+            ymapScript.attr('src', ymapScript.attr('data-src'));
+            mapChecker.destroy();
+            initMap();
+        },
+        offset: '100%'
+    });
+
+    function initMap () {
+        if (typeof(ymaps) === 'undefined') {
+            setTimeout(initMap, 100);
+        } else {
+            ymaps.ready(init);
+        }
+    }
+
+
+    var flatsChecker = new Waypoint({
+        element: $('.js_flats'),
+        handler: function() {
+            if ($('.js_rooms_btn').length) {
+                $('.js_rooms_btn')[0].click();
+            }
+            if ($('.js_area_btn_com').length) {
+                $('.js_area_btn_com')[0].click();
+            }
+
+            flatsChecker.destroy();
+        },
+        offset: '200%'
+    });
+
+    var stagesChecker = new Waypoint({
+        element: $('.js_stages'),
+        handler: function() {
+            $('.js_stage_btn:first-child').click();
+
+            stagesChecker.destroy();
+        },
+        offset: '200%'
+    });
+
+    var lazyBgChecker = new Waypoint({
+        element: $('.js_lazy_bg'),
+        handler: function() {
+            $(this.element).removeClass('lazy-bg')
+        },
+        offset: '150%'
+    });
 });

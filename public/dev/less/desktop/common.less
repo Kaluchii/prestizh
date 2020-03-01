@@ -31,52 +31,58 @@
 }
 @font-face {
   font-family: 'Gilroy';
-  src: local('Gilroy-Medium'), local('GilroyMedium'), url('../fonts/Gilroy/Gilroy-Medium.woff2') format('woff2'), url('../fonts/Gilroy/Gilroy-Medium.woff') format('woff'), url('../fonts/Gilroy/Gilroy-Medium.otf') format('opentype');
+  src: local('Gilroy-Medium'), local('GilroyMedium'), url('../fonts/Gilroy/Gilroy-Medium.woff2') format('woff2'), url('../fonts/Gilroy/Gilroy-Medium.woff') format('woff');
   font-weight: 500;
   font-style: normal;
 }
 @font-face {
   font-family: 'Gilroy';
-  src: local('Gilroy-SemiBold'), local('GilroySemiBold'), url('../fonts/Gilroy/Gilroy-SemiBold.woff2') format('woff2'), url('../fonts/Gilroy/Gilroy-SemiBold.woff') format('woff'), url('../fonts/Gilroy/Gilroy-SemiBold.otf') format('opentype');
+  src: local('Gilroy-SemiBold'), local('GilroySemiBold'), url('../fonts/Gilroy/Gilroy-SemiBold.woff2') format('woff2'), url('../fonts/Gilroy/Gilroy-SemiBold.woff') format('woff');
   font-weight: 600;
   font-style: normal;
 }
 @font-face {
   font-family: 'Gilroy';
-  src: local('Gilroy-Bold'), local('GilroyBold'), url('../fonts/Gilroy/Gilroy-Bold.woff2') format('woff2'), url('../fonts/Gilroy/Gilroy-Bold.woff') format('woff'), url('../fonts/Gilroy/Gilroy-Bold.otf') format('opentype');
+  src: local('Gilroy-Bold'), local('GilroyBold'), url('../fonts/Gilroy/Gilroy-Bold.woff2') format('woff2'), url('../fonts/Gilroy/Gilroy-Bold.woff') format('woff');
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
   font-family: 'Gilroy';
-  src: local('Gilroy-Black'), local('GilroyBlack'), url('../fonts/Gilroy/Gilroy-Black.woff2') format('woff2'), url('../fonts/Gilroy/Gilroy-Black.woff') format('woff'), url('../fonts/Gilroy/Gilroy-Black.otf') format('opentype');
+  src: local('Gilroy-Black'), local('GilroyBlack'), url('../fonts/Gilroy/Gilroy-Black.woff2') format('woff2'), url('../fonts/Gilroy/Gilroy-Black.woff') format('woff');
   font-weight: 800;
   font-style: normal;
 }
 @font-face {
   font-family: 'Gilroy';
-  src: local('Gilroy-Heavy'), local('GilroyHeavy'), url('../fonts/Gilroy/Gilroy-Heavy.woff2') format('woff2'), url('../fonts/Gilroy/Gilroy-Heavy.woff') format('woff'), url('../fonts/Gilroy/Gilroy-Heavy.otf') format('opentype');
+  src: local('Gilroy-Heavy'), local('GilroyHeavy'), url('../fonts/Gilroy/Gilroy-Heavy.woff2') format('woff2'), url('../fonts/Gilroy/Gilroy-Heavy.woff') format('woff');
   font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gilroy';
+  src: local('Gilroy-ExtraBold'), local('GilroyExtraBold'), url('../fonts/Gilroy/Gilroy-ExtraBold.woff2') format('woff2'), url('../fonts/Gilroy/Gilroy-ExtraBold.woff') format('woff');
+  font-weight: 1000;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Georgia';
-  src: local('Georgia-Regular'), local('GeorgiaRegular'), url('../fonts/Georgia/georgia.woff2') format('woff2'), url('../fonts/Georgia/georgia.woff') format('woff'), url('../fonts/Georgia/georgia.ttf') format('truetype');
+  src: local('Georgia-Regular'), local('GeorgiaRegular'), url('../fonts/Georgia/georgia.woff2') format('woff2'), url('../fonts/Georgia/georgia.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
-@font-face {
-  font-family: 'RozhaOne';
-  src: local('RozhaOne-Regular'), local('RozhaOne'), url('../fonts/RozhaOne/RozhaOne-Regular.woff2') format('woff2'), url('../fonts/RozhaOne/RozhaOne-Regular.woff') format('woff'), url('../fonts/RozhaOne/RozhaOne-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
+//@font-face {
+//  font-family: 'RozhaOne';
+//  src: local('RozhaOne-Regular'), local('RozhaOne'), url('../fonts/RozhaOne/RozhaOne-Regular.woff2') format('woff2'), url('../fonts/RozhaOne/RozhaOne-Regular.woff') format('woff');
+//  font-weight: normal;
+//  font-style: normal;
+//}
 
 @font-face {
   font-family: 'Tenge';
-  src: local('Tenge'), url('../fonts/Tenge/tenge.woff2') format('woff2'), url('../fonts/Tenge/tenge.woff') format('woff'), url('../fonts/Tenge/tenge.ttf') format('truetype');
+  src: local('Tenge'), url('../fonts/Tenge/tenge.woff2') format('woff2'), url('../fonts/Tenge/tenge.woff') format('woff');
   font-weight: 400;
   font-style: normal;
 }
@@ -108,6 +114,17 @@
 
   &:not([class*='load']):hover, &:not([class*='load']):focus{
     background-color: #f7e089;
+  }
+
+  &--pink{
+    font-size: 12px;
+    font-weight: 1000;
+    letter-spacing: .03em;
+    background-color: #edc1cd;
+
+    &:not([class*='load']):hover, &:not([class*='load']):focus{
+      background-color: #d3aab4;
+    }
   }
 }
 

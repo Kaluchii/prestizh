@@ -20,17 +20,27 @@
 }
 
 
- @media screen and (max-width: 1300Px){
-   .header{
-     &__phone-wrap{
-       margin-right: 0;
-     }
+@media screen and (max-width: 1300Px){
+  .header{
+    &__phone-wrap{
+      margin-right: 0;
+    }
 
-     &__order-call{
-       display: none;
-     }
-   }
- }
+    &__order-call{
+      display: none;
+    }
+  }
+
+  .title-block{
+    &__title-text{
+      font-size: 44px;
+    }
+
+    &__discount-condition{
+      font-size: 24px;
+    }
+  }
+}
 
 
 @media screen and (max-width: 1240Px) {
@@ -122,7 +132,10 @@
 
     &__feedback-row{
       &.mobile{
-        padding: 15px 30px;
+        padding: 15px 30px 35px;
+        background: url('/img/petal.png') no-repeat 400px -150px,
+                    url('/img/petal.png') no-repeat 680px -120px,
+                    url('/img/petal.png') no-repeat 260px 0, #fff;
       }
     }
 
@@ -188,15 +201,6 @@
             border-color: #d65137;
           }
         }
-      }
-    }
-
-    &__label{
-      &--tel{
-        background: linear-gradient(to left, #dbd193, #dbd193 100%);
-        background-position: 100% 8px;
-        background-size: 1px 34px;
-        background-repeat: no-repeat;
       }
     }
   }
@@ -267,14 +271,17 @@
 @media screen and (max-width: 680Px) {
   .title-block{
     height: 592px;
-    background: url('/img/title_fon_680-winter.jpg?3') no-repeat center bottom;
+    background: url('/img/title_bg_680-spring.jpg') no-repeat center bottom;
 
     &__text-wrap{
       height: ~'calc(100% - 105px)';
     }
 
     &__col1{
-      align-items: center;
+      width: 100%;
+      box-sizing: border-box;
+      align-items: flex-end;
+      padding-right: 25px;
     }
 
     &__col2{
@@ -282,23 +289,69 @@
     }
 
     &__title{
-      max-width: 290px;
       margin-top: -3px;
+      text-align: right;
+    }
+
+    &__title-text{
       font-size: 34px;
     }
 
     &__discount-condition{
-      font-size: 28px;
+      margin-top: 20px;
+      font-size: 20px;
     }
 
     &__box-prices-wrap{
       margin-top: 20px;
     }
   }
+
+  .title-popup{
+    &__meter-price{
+      font-size: 45px;
+      letter-spacing: 2px;
+    }
+
+    &__tenge-meter{
+      margin-left: 10px;
+    }
+
+    &__tenge{
+      font-size: 16px;
+
+      &::after{
+        font-size: 10px;
+      }
+    }
+
+    &__meter{
+      font-size: 16px;
+
+      sup{
+        font-size: 6px;
+      }
+    }
+  }
 }
 
 
 @media screen and (max-width: 480Px) {
+  .title-block{
+    &__title-text{
+      font-size: 23px;
+    }
+
+    &__discount-condition{
+      font-size: 17px;
+    }
+
+    &__flats-left{
+      margin-top: 3px;
+      display: block;
+    }
+  }
+
   .title-popup{
     &__input-rows{
       padding-left: 0;
@@ -314,15 +367,17 @@
     &__interest-text{
       text-align: center;
     }
+
+    &__feedback-row{
+      &.mobile{
+        background: url('/img/petal.png') no-repeat ~'calc(100% + 350px) 0',
+        url('/img/petal.png') no-repeat -180px -180px;
+      }
+    }
   }
 
   .popup-input{
     &__input{
-      background-color: #ffffff;
-
-      &:focus{
-        background-color: #fff;
-      }
     }
   }
 }
@@ -330,32 +385,13 @@
 
 @media screen and (max-width: 410Px) {
   .title-popup{
-    &__meter-price{
-      font-size: 71px;
-
-      &--bg{
-        text-shadow: 0 1px 2px rgba(17,31,65,0.89);
-      }
-    }
-
-    &__tenge{
-      font-size: 22px;
-
-      &::after{
-        font-size: 16px;
-      }
-    }
-
-    &__meter{
-      font-size: 23px;
-    }
   }
 }
 
 
 @media screen and (max-width: 360Px) {
   .title-block{
-    background-image: url('/img/title_fon_360-winter.jpg?3');
+    background-image: url('/img/title_bg_360-spring.jpg');
   }
   .title-popup{
     &__interest-text {
