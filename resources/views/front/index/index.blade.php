@@ -384,11 +384,11 @@
                     @endforeach
                 </div>
             </div>
-            <div class="gallery__mobile-gallery mobile-gallery">
+            <div class="gallery__mobile-gallery mobile-gallery js_mobile_gallery">
                 <ul class="mobile-gallery__list">
                     @php($i = 0)
                     @foreach($slider_arr as $slider_item)
-                        <li class="mobile-gallery__item"><img class="mobile-gallery__img js_open_fotorama"
+                        <li class="mobile-gallery__item"><img class="mobile-gallery__img js_open_fotorama" loading="lazy"
                                                               data-img="{{$i}}" src="{{ $slider_item }}" alt=""></li>
                         @php($i++)
                     @endforeach

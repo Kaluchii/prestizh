@@ -574,6 +574,7 @@
   }
 
   &__tenge{
+    position: relative;
     display: block;
     font-size: 32px;
     line-height: 1;
@@ -581,12 +582,13 @@
     font-family: 'Tenge';
 
     &::after{
-      content: '—';
-      height: 2px;
-      font-size: 22px;
-      font-weight: 900;
-      line-height: 4px;
-      display: block;
+      content: '';
+      position: absolute;
+      left: 2px;
+      bottom: -1px;
+      height: 1px;
+      width: 18px;
+      background-color: #ffffff;
     }
   }
 
@@ -594,6 +596,7 @@
     display: block;
     font-size: 32px;
     font-weight: 700;
+    transform: translateX(1px);
 
     sup{
       font-family: inherit;
@@ -625,7 +628,7 @@
     right: 0;
     height: 100%;
     width: 200px;
-    background: url("/img/gotov.png") no-repeat center;
+    background: url("/img/gotov.png") no-repeat center / 108px 159px;
     transition: .3s .1s;
     opacity: 0;
     
@@ -635,7 +638,7 @@
       top: 20px;
       bottom: 20px;
       left: 0;
-      width: 1px;
+      width: 1Px;
       background-color: #000000;
     }
   }

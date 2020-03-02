@@ -217,58 +217,6 @@ $(function () {
     });
 
 
-    var $fotorama = $('.js_gallery__fotorama').fotorama({
-        navwidth: '90%'
-    });
-    // 2. Get the API object.
-    var fotorama = $fotorama.data('fotorama');
-
-    $fotorama.on('fotorama:show', function () {
-        var activeIndex = fotorama.activeIndex;
-        if(activeIndex == 0){
-            $('.js_img_prev').fadeOut(0).attr('src', fotorama.data[fotorama.size-1]['img']).fadeIn(300);
-            $('.js_img_next').fadeOut(0).attr('src', fotorama.data[activeIndex+1]['img']).fadeIn(300);
-        }else if(activeIndex == fotorama.size-1){
-            $('.js_img_prev').fadeOut(0).attr('src', fotorama.data[activeIndex-1]['img']).fadeIn(300);
-            $('.js_img_next').fadeOut(0).attr('src', fotorama.data[0]['img']).fadeIn(200);
-        }else{
-            $('.js_img_prev').fadeOut(0).attr('src', fotorama.data[activeIndex-1]['img']).fadeIn(300);
-            $('.js_img_next').fadeOut(0).attr('src', fotorama.data[activeIndex+1]['img']).fadeIn(300);
-        }
-    });
-    $fotorama.on('fotorama:load', function () {
-        var activeIndex = fotorama.activeIndex;
-        if(activeIndex == 0){
-            $('.js_img_prev').attr('src', fotorama.data[fotorama.size-1]['img']);
-            $('.js_img_next').attr('src', fotorama.data[activeIndex+1]['img']);
-        }else if(activeIndex == fotorama.size-1){
-            $('.js_img_prev').attr('src', fotorama.data[activeIndex-1]['img']);
-            $('.js_img_next').attr('src', fotorama.data[0]['img']);
-        }else{
-            $('.js_img_prev').attr('src', fotorama.data[activeIndex-1]['img']);
-            $('.js_img_next').attr('src', fotorama.data[activeIndex+1]['img']);
-        }
-    });
-    $("<div class='nav-scroll-btn nav-scroll-btn--prev'></div>").insertBefore(".gallery__fotorama .fotorama__nav.fotorama__nav--thumbs");
-    $("<div class='nav-scroll-btn nav-scroll-btn--next'></div>").insertAfter(".gallery__fotorama .fotorama__nav.fotorama__nav--thumbs");
-
-    $("<div class='gallery__bg-image-block gallery__bg-image-block--prev'><div class='gallery__bg-image-wrap'><img class='gallery__bg-image js_img_prev'></div></div>").insertAfter(".gallery__fotorama .fotorama__arr.fotorama__arr--next");
-    $("<div class='gallery__bg-image-block gallery__bg-image-block--next'><div class='gallery__bg-image-wrap'><img class='gallery__bg-image js_img_next'></div></div>").insertAfter(".gallery__fotorama .fotorama__arr.fotorama__arr--next");
-    // make the buttons functionality
-
-    $('.nav-scroll-btn--prev').click(function () {
-        fotorama.show('<');
-    });
-    $('.nav-scroll-btn--next').click(function () {
-        fotorama.show('>');
-    });
-
-    $('.js_open_fotorama').on('click', function () {
-        fotorama.show($(this).data('img'));
-        fotorama.requestFullScreen();
-    });
-
-
     var $stagesFotorama = $('.js_stages__fotorama').fotorama({
         navwidth: '90%'
     });
@@ -474,4 +422,68 @@ $(function () {
         },
         offset: '150%'
     });
+
+
+    var galleryChecker = new Waypoint({
+        element: $('.js_gallery__fotorama'),
+        handler: function() {
+            var $fotorama = $('.js_gallery__fotorama').fotorama({
+                navwidth: '90%'
+            });
+            initialGalleryFotorama($fotorama);
+            galleryChecker.destroy();
+        },
+        offset: '200%'
+    });
+
+
+    function initialGalleryFotorama ($fotorama) {
+        // 2. Get the API object.
+        var fotorama = $fotorama.data('fotorama');
+
+        $fotorama.on('fotorama:show', function () {
+            var activeIndex = fotorama.activeIndex;
+            if(activeIndex == 0){
+                $('.js_img_prev').fadeOut(0).attr('src', fotorama.data[fotorama.size-1]['img']).fadeIn(300);
+                $('.js_img_next').fadeOut(0).attr('src', fotorama.data[activeIndex+1]['img']).fadeIn(300);
+            }else if(activeIndex == fotorama.size-1){
+                $('.js_img_prev').fadeOut(0).attr('src', fotorama.data[activeIndex-1]['img']).fadeIn(300);
+                $('.js_img_next').fadeOut(0).attr('src', fotorama.data[0]['img']).fadeIn(200);
+            }else{
+                $('.js_img_prev').fadeOut(0).attr('src', fotorama.data[activeIndex-1]['img']).fadeIn(300);
+                $('.js_img_next').fadeOut(0).attr('src', fotorama.data[activeIndex+1]['img']).fadeIn(300);
+            }
+        });
+        $fotorama.on('fotorama:load', function () {
+            var activeIndex = fotorama.activeIndex;
+            if(activeIndex == 0){
+                $('.js_img_prev').attr('src', fotorama.data[fotorama.size-1]['img']);
+                $('.js_img_next').attr('src', fotorama.data[activeIndex+1]['img']);
+            }else if(activeIndex == fotorama.size-1){
+                $('.js_img_prev').attr('src', fotorama.data[activeIndex-1]['img']);
+                $('.js_img_next').attr('src', fotorama.data[0]['img']);
+            }else{
+                $('.js_img_prev').attr('src', fotorama.data[activeIndex-1]['img']);
+                $('.js_img_next').attr('src', fotorama.data[activeIndex+1]['img']);
+            }
+        });
+        $("<div class='nav-scroll-btn nav-scroll-btn--prev'></div>").insertBefore(".gallery__fotorama .fotorama__nav.fotorama__nav--thumbs");
+        $("<div class='nav-scroll-btn nav-scroll-btn--next'></div>").insertAfter(".gallery__fotorama .fotorama__nav.fotorama__nav--thumbs");
+
+        $("<div class='gallery__bg-image-block gallery__bg-image-block--prev'><div class='gallery__bg-image-wrap'><img class='gallery__bg-image js_img_prev'></div></div>").insertAfter(".gallery__fotorama .fotorama__arr.fotorama__arr--next");
+        $("<div class='gallery__bg-image-block gallery__bg-image-block--next'><div class='gallery__bg-image-wrap'><img class='gallery__bg-image js_img_next'></div></div>").insertAfter(".gallery__fotorama .fotorama__arr.fotorama__arr--next");
+        // make the buttons functionality
+
+        $('.nav-scroll-btn--prev').click(function () {
+            fotorama.show('<');
+        });
+        $('.nav-scroll-btn--next').click(function () {
+            fotorama.show('>');
+        });
+
+        $('.js_open_fotorama').on('click', function () {
+            fotorama.show($(this).data('img'));
+            fotorama.requestFullScreen();
+        });
+    }
 });
