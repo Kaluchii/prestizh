@@ -9,6 +9,14 @@
     @include('front.page-scale')
     @include('front.styles')
     @yield('styles')
+
+    <link rel="preload" href="/fonts/Gilroy/Gilroy-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/Gilroy/Gilroy-Black.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/Gilroy/Gilroy-ExtraBold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/Gilroy/Gilroy-Light.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/Georgia/georgia.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/js/scripts.js" as="script">
+
     {!! $scripts->before_head_close_field !!}
     @yield('meta')
 </head>
