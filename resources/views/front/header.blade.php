@@ -23,7 +23,7 @@
             </div>
             <div class="header__feedback-wrap">
                 <div class="header__phone-wrap">
-                    <p class="header__consult">Позвоните для консультации</p>
+                    <p class="header__consult">Ежедневно с 9:00 до 19:00</p>
                     <p class="header__phone-number"><a href="tel:{{ $contacts->phone_field }}" class="header__phone-number-link">{{ $contacts->phone_field }}</a></p>
                 </div>
                 <a href="#contacts" class="js_goto_anchor header__order-call button"><span class="header__btn-text">ЗАКАЗАТЬ ЗВОНОК</span></a>

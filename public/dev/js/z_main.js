@@ -415,10 +415,70 @@ $(function () {
         offset: '200%'
     });
 
-    var lazyBgChecker = new Waypoint({
-        element: $('.js_lazy_bg'),
+    var placesChecker = new Waypoint({
+        element: $('.js_places'),
         handler: function() {
-            $(this.element).removeClass('lazy-bg')
+            $('.js_place_img').each(function() {
+                $(this).attr('src', $(this).attr('data-src')).removeAttr('data-src');
+            });
+
+            placesChecker.destroy();
+        },
+        offset: '100%'
+    });
+
+    var detailsChecker = new Waypoint({
+        element: $('.js_details'),
+        handler: function() {
+            $('.js_details_img').each(function() {
+                $(this).attr('src', $(this).attr('data-src')).removeAttr('data-src');
+            });
+
+            detailsChecker.destroy();
+        },
+        offset: '120%'
+    });
+
+    $(window).on('load', function () {
+        $('.js_title_lazy_bg').removeClass('lazy-bg');
+    });
+
+    // var lazyTitleBgChecker = new Waypoint({
+    //     element: $('.js_title_lazy_bg'),
+    //     handler: function() {
+    //         $(this.element).removeClass('lazy-bg');
+    //
+    //         lazyTitleBgChecker.destroy();
+    //     },
+    //     offset: '150%'
+    // });
+
+    var lazyFeedbackBgChecker = new Waypoint({
+        element: $('.js_feedback_lazy_bg'),
+        handler: function() {
+            $(this.element).removeClass('lazy-bg');
+
+            lazyFeedbackBgChecker.destroy();
+        },
+        offset: '150%'
+    });
+
+    var lazySliderBgChecker = new Waypoint({
+        element: $('.js_mobile_gallery'),
+        handler: function() {
+            $('.js_slider_lazy_bg').removeClass('lazy-bg');
+
+            lazySliderBgChecker.destroy();
+        },
+        offset: '150%'
+    });
+
+    var lazyContactsBgChecker = new Waypoint({
+        element: $('.js_contacts_lazy_bg'),
+        handler: function() {
+            $(this.element).removeClass('lazy-bg');
+
+            lazyContactsBgChecker.destroy();
         },
         offset: '150%'
     });

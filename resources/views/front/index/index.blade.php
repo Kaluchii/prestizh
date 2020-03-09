@@ -2,7 +2,7 @@
 @section('content')
     @include('front.index.objects')
     @yield('objects')
-    <section class="title-block" id="title">
+    <section class="title-block lazy-bg js_title_lazy_bg" id="title">
         <header class="title-block__header header">
             <div class="header__logo-wrap">
                 <picture>
@@ -238,13 +238,16 @@
                 <h2 class="about__title" id="about">{{ $about->block_title_field }}</h2>
                 <p class="about__text">{!! $about->text_field !!}</p>
             </div>
-            <div class="about__in-detail in-detail">
+            <div class="about__in-detail in-detail js_details">
                 <div class="in-detail__triad">
                     <div class="in-detail__item detail-item detail-item--biggest">
-                        <div class="detail-item__img-wrap"><img
-                                    src="{{$about->image0->link_field}}?{{$about->image0->cache_index}}"
+                        <div class="detail-item__img-wrap">
+                            <div class="detail-item__img-container">
+                                <img data-src="{{$about->image0->link_field}}?{{$about->image0->cache_index}}"
                                     alt="{{$about->image0->alt_field}}" width="640"
-                                    class="detail-item__img"></div>
+                                    class="detail-item__img js_details_img">
+                            </div>
+                        </div>
                         <div class="detail-item__text-wrap">
                             <h3 class="detail-item__title">{!! $about->title0_field !!}</h3>
                             <p class="detail-item__text">{!! $about->text0_field !!}</p>
@@ -253,20 +256,26 @@
                 </div>
                 <div class="in-detail__triad">
                     <div class="in-detail__item detail-item">
-                        <div class="detail-item__img-wrap"><img
-                                    src="{{$about->image1->link_field}}?{{$about->image1->cache_index}}"
+                        <div class="detail-item__img-wrap">
+                            <div class="detail-item__img-container">
+                                <img data-src="{{$about->image1->link_field}}?{{$about->image1->cache_index}}"
                                     alt="{{$about->image1->alt_field}}" width="400"
-                                    class="detail-item__img"></div>
+                                    class="detail-item__img js_details_img">
+                            </div>
+                        </div>
                         <div class="detail-item__text-wrap">
                             <h3 class="detail-item__title">{!! $about->title1_field !!}</h3>
                             <p class="detail-item__text">{!! $about->text1_field !!}</p>
                         </div>
                     </div>
                     <div class="in-detail__item detail-item detail-item--middle">
-                        <div class="detail-item__img-wrap"><img
-                                    src="{{$about->image2->link_field}}?{{$about->image2->cache_index}}"
+                        <div class="detail-item__img-wrap">
+                            <div class="detail-item__img-container">
+                                <img data-src="{{$about->image2->link_field}}?{{$about->image2->cache_index}}"
                                     alt="{{$about->image2->alt_field}}" width="330"
-                                    class="detail-item__img"></div>
+                                    class="detail-item__img js_details_img">
+                            </div>
+                        </div>
                         <div class="detail-item__text-wrap">
                             <h3 class="detail-item__title">{!! $about->title2_field !!}</h3>
                             <p class="detail-item__text">{!! $about->text2_field !!}</p>
@@ -277,28 +286,37 @@
                             <h3 class="detail-item__title">{!! $about->title3_field !!}</h3>
                             <p class="detail-item__text">{!! $about->text3_field !!}</p>
                         </div>
-                        <div class="detail-item__img-wrap"><img
-                                    src="{{$about->image3->link_field}}?{{$about->image3->cache_index}}"
+                        <div class="detail-item__img-wrap">
+                            <div class="detail-item__img-container">
+                                <img data-src="{{$about->image3->link_field}}?{{$about->image3->cache_index}}"
                                     alt="{{$about->image3->alt_field}}" width="180"
-                                    class="detail-item__img"></div>
+                                    class="detail-item__img js_details_img">
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="in-detail__triad in-detail__triad--right-align">
                     <div class="in-detail__item detail-item">
-                        <div class="detail-item__img-wrap"><img
-                                    src="{{$about->image4->link_field}}?{{$about->image4->cache_index}}"
+                        <div class="detail-item__img-wrap">
+                            <div class="detail-item__img-container">
+                                <img data-src="{{$about->image4->link_field}}?{{$about->image4->cache_index}}"
                                     alt="{{$about->image4->alt_field}}" width="400"
-                                    class="detail-item__img"></div>
+                                    class="detail-item__img js_details_img">
+                            </div>
+                        </div>
                         <div class="detail-item__text-wrap">
                             <h3 class="detail-item__title">{!! $about->title4_field !!}</h3>
                             <p class="detail-item__text">{!! $about->text4_field !!}</p>
                         </div>
                     </div>
                     <div class="in-detail__item detail-item detail-item--middle">
-                        <div class="detail-item__img-wrap"><img
-                                    src="{{$about->image5->link_field}}?{{$about->image5->cache_index}}"
+                        <div class="detail-item__img-wrap">
+                            <div class="detail-item__img-container">
+                                <img data-src="{{$about->image5->link_field}}?{{$about->image5->cache_index}}"
                                     alt="{{$about->image5->alt_field}}" width="330"
-                                    class="detail-item__img"></div>
+                                    class="detail-item__img js_details_img">
+                            </div>
+                        </div>
                         <div class="detail-item__text-wrap">
                             <h3 class="detail-item__title">{!! $about->title5_field !!}</h3>
                             <p class="detail-item__text">{!! $about->text5_field !!}</p>
@@ -309,25 +327,31 @@
                             <h3 class="detail-item__title">{!! $about->title6_field !!}</h3>
                             <p class="detail-item__text">{!! $about->text6_field !!}</p>
                         </div>
-                        <div class="detail-item__img-wrap"><img
-                                    src="{{$about->image6->link_field}}?{{$about->image6->cache_index}}"
+                        <div class="detail-item__img-wrap">
+                            <div class="detail-item__img-container">
+                                <img data-src="{{$about->image6->link_field}}?{{$about->image6->cache_index}}"
                                     alt="{{$about->image6->alt_field}}" width="180"
-                                    class="detail-item__img"></div>
+                                    class="detail-item__img js_details_img">
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="in-detail__triad">
                     <div class="in-detail__item detail-item">
-                        <div class="detail-item__img-wrap"><img
-                                    src="{{$about->image7->link_field}}?{{$about->image7->cache_index}}"
+                        <div class="detail-item__img-wrap">
+                            <div class="detail-item__img-container">
+                                <img data-src="{{$about->image7->link_field}}?{{$about->image7->cache_index}}"
                                     alt="{{$about->image7->alt_field}}" width="400"
-                                    class="detail-item__img"></div>
+                                    class="detail-item__img js_details_img">
+                            </div>
+                        </div>
                         <div class="detail-item__text-wrap">
                             <h3 class="detail-item__title">{!! $about->title7_field !!}</h3>
                             <p class="detail-item__text">{!! $about->text7_field !!}</p>
-                            <div class="detail-item__places places">
+                            <div class="detail-item__places places js_places">
                                 <div class="places__item">
                                     <div class="places__img-wrap">
-                                        <img src="/img/tree.png" alt="" class="places__img">
+                                        <img data-src="/img/tree.png" alt="" class="places__img js_place_img">
                                     </div>
                                     <div class="places__text-wrap">
                                         <p class="places__time">3 мин.</p>
@@ -336,7 +360,7 @@
                                 </div>
                                 <div class="places__item">
                                     <div class="places__img-wrap">
-                                        <img src="/img/trc_f.png" alt="" class="places__img">
+                                        <img data-src="/img/trc_f.png" alt="" class="places__img js_place_img">
                                     </div>
                                     <div class="places__text-wrap">
                                         <p class="places__time">10 мин.</p>
@@ -345,7 +369,7 @@
                                 </div>
                                 <div class="places__item">
                                     <div class="places__img-wrap">
-                                        <img src="/img/road.png" alt="" class="places__img">
+                                        <img data-src="/img/road.png" alt="" class="places__img js_place_img">
                                     </div>
                                     <div class="places__text-wrap">
                                         <p class="places__time">1 мин.</p>
@@ -354,7 +378,7 @@
                                 </div>
                                 <div class="places__item">
                                     <div class="places__img-wrap">
-                                        <img src="/img/trc_e.png" alt="" class="places__img">
+                                        <img data-src="/img/trc_e.png" alt="" class="places__img js_place_img">
                                     </div>
                                     <div class="places__text-wrap">
                                         <p class="places__time">15 мин.</p>
@@ -388,15 +412,16 @@
                 <ul class="mobile-gallery__list">
                     @php($i = 0)
                     @foreach($slider_arr as $slider_item)
-                        <li class="mobile-gallery__item"><img class="mobile-gallery__img js_open_fotorama" loading="lazy"
-                                                              data-img="{{$i}}" src="{{ $slider_item }}" alt=""></li>
+                        <li class="mobile-gallery__item">
+                            <div class="mobile-gallery__img js_open_fotorama js_slider_lazy_bg lazy-bg" data-img="{{$i}}" style="background-image:url('{{ $slider_item }}');"></div>
+                        </li>
                         @php($i++)
                     @endforeach
                 </ul>
             </div>
         </div>
     </section>
-    <section class="feedback lazy-bg js_lazy_bg">
+    <section class="feedback lazy-bg js_feedback_lazy_bg">
         <div class="feedback__wrapper">
             <h2 class="feedback__title">Хотите посмотреть поближе?<br>Приходите в&nbsp;гости!</h2>
             <div class="feedback__input-rows form-id" id="feedback_call">
@@ -473,7 +498,7 @@
 
             <div class="flats__layout layout">
                 <div class="layout__img-wrapper">
-                    <img src="" alt="" class="layout__img js_give_src">
+                    <img src="" loading="lazy" alt="" class="layout__img js_give_src">
                 </div>
                 <div class="layout__feedback-info-wrapper">
                     <div class="layout__common-info-wrapper">
@@ -580,7 +605,7 @@
 
             <div class="flats__layout layout">
                 <div class="layout__img-wrapper">
-                    <img src="" alt="" class="layout__img js_give_src_com">
+                    <img src="" loading="lazy" alt="" class="layout__img js_give_src_com">
                 </div>
                 <div class="layout__feedback-info-wrapper">
                     <div class="layout__common-info-wrapper">
@@ -694,7 +719,7 @@
     </section>
     <section class="contacts">
         <div class="contacts__wrapper">
-            <div class="contacts__contact-block lazy-bg js_lazy_bg">
+            <div class="contacts__contact-block lazy-bg js_contacts_lazy_bg">
                 <div class="contacts__contact-block-wrapper">
                     <h2 class="contacts__title" id="contacts">{!! $contacts->block_title_field !!}</h2>
                     <div class="contacts__input-rows form-id" id="contacts_call">
