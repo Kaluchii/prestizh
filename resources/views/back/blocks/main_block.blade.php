@@ -7,7 +7,7 @@
         </div>
         <div class="box-body">
             <div class="form-group">
-                <label>Заголовок</label>
+                <label>Заголовок акции</label>
                 <input class="form-control string"
                        type="text" placeholder=""
                        value="{{$main_block->block_title_field}}"
@@ -16,7 +16,7 @@
                        data-block="main_block"
                        data-id="0">
             </div>
-            <div class="form-group">
+            {{--<div class="form-group">
                 <label>Адрес</label>
                 <input class="form-control string"
                        type="text" placeholder=""
@@ -25,9 +25,9 @@
                        data-type="string"
                        data-block="main_block"
                        data-id="0">
-            </div>
+            </div>--}}
             <div class="form-group">
-                <label>Цена 1 кв.м по акции</label>
+                <label>Текст перед количеством</label>
                 <input class="form-control string"
                        type="text" placeholder=""
                        value="{{$main_block->price_field}}"

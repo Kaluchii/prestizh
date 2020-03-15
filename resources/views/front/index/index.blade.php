@@ -48,8 +48,8 @@
         <div class="title-block__text-wrap">
             <div class="title-block__col1">
                 <h1 class="title-block__title">
-                    <span class="title-block__title-text">ВЕСЕННИЕ СКИДКИ</span>
-                    <span class="title-block__discount-condition">ОСТАЛОСЬ ВСЕГО <span class="title-block__flats-left">{{ $main_block->apartments_left }}</span></span>
+                    <span class="title-block__title-text">{{ $main_block->block_title }}</span>
+                    <span class="title-block__discount-condition">{{ $main_block->price }} <span class="title-block__flats-left">{{ $main_block->apartments_left }}</span></span>
                 </h1>
                 {{--<div class="title-block__box-prices-wrap">
                     <div class="title-block__box-prices-slider js_prices_slider">
