@@ -100,7 +100,18 @@
     height: 620px;
 
     &__title{
+      position: relative;
       text-align: center;
+
+      &::after{
+        content: '';
+        position: absolute;
+        top: 110px;
+        right: ~'calc(50% - 45px)';
+        width: 90px;
+        height: 132px;
+        background: url('/img/home-complete-mob.png') no-repeat center / contain;
+      }
     }
 
     &__box-prices-wrap{
@@ -132,11 +143,21 @@
 
     &__feedback-row{
       &.mobile{
-        padding: 15px 30px 35px;
+        height: auto;
+        padding: 35px 30px 35px;
+        text-align: center;
         background: url('/img/petal.png') no-repeat 400px -150px,
                     url('/img/petal.png') no-repeat 680px -120px,
                     url('/img/petal.png') no-repeat 260px 0, #fff;
+
+        &::after{
+          display: none;
+        }
       }
+    }
+
+    &__go-to-layouts{
+      margin-top: 0;
     }
 
     &__close{
@@ -291,6 +312,13 @@
     &__title{
       margin-top: -3px;
       text-align: right;
+
+      &::after{
+        top: 120px;
+        right: 0;
+        width: 60px;
+        height: 88px;
+      }
     }
 
     &__title-text{

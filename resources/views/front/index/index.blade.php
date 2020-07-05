@@ -111,43 +111,44 @@
                         @endif
 
                         <div class="title-popup__feedback-row">
-                            @if($main_block->parking_actual || $main_block->flat_stocks_group->count())
-                            <div class="title-popup__flats-count-wrap">
-                                {{--<div class="title-popup__flats-count-middle">АКЦИИ <br> <span class="title-popup__flats-count--tiny">МЕСЯЦА</span></div>--}}
-                            </div>
-                            @endif
-                            <p class="title-popup__interest-text">ЗАИНТЕРЕСОВАЛИСЬ?</p>
-                            <div class="title-popup__input-rows form-id" id="popup_call">
-                                <input type="hidden" name="form" class="form-input" value="call">
-                                <div class="title-popup__row form-row">
-                                    <div class="form-row__validation-wrap popup-input">
-                                        <label class="popup-input__label popup-input__label--name"
-                                               for="popup-client-name"><span class="popup-input__label-text">Имя</span></label>
-                                        <input type="text" name="client_name" required id="popup-client-name"
-                                               class="form-row__input form-input popup-input__input">
-                                        <div class="form-row__tooltip-wrap form-row__tooltip-wrap--popup-none"><p
-                                                    class="form-row__tooltip form-row__tooltip--border">Как к вам
-                                                обращаться</p></div>
-                                    </div>
-                                </div>
+                            <a href="#flats" class="title-popup__go-to-layouts js_goto_anchor">ВЫБРАТЬ КВАРТИРУ</a>
+{{--                            @if($main_block->parking_actual || $main_block->flat_stocks_group->count())--}}
+{{--                            <div class="title-popup__flats-count-wrap">--}}
+{{--                                --}}{{--<div class="title-popup__flats-count-middle">АКЦИИ <br> <span class="title-popup__flats-count--tiny">МЕСЯЦА</span></div>--}}
+{{--                            </div>--}}
+{{--                            @endif--}}
+{{--                            <p class="title-popup__interest-text">ЗАИНТЕРЕСОВАЛИСЬ?</p>--}}
+{{--                            <div class="title-popup__input-rows form-id" id="popup_call">--}}
+{{--                                <input type="hidden" name="form" class="form-input" value="call">--}}
+{{--                                <div class="title-popup__row form-row">--}}
+{{--                                    <div class="form-row__validation-wrap popup-input">--}}
+{{--                                        <label class="popup-input__label popup-input__label--name"--}}
+{{--                                               for="popup-client-name"><span class="popup-input__label-text">Имя</span></label>--}}
+{{--                                        <input type="text" name="client_name" required id="popup-client-name"--}}
+{{--                                               class="form-row__input form-input popup-input__input">--}}
+{{--                                        <div class="form-row__tooltip-wrap form-row__tooltip-wrap--popup-none"><p--}}
+{{--                                                    class="form-row__tooltip form-row__tooltip--border">Как к вам--}}
+{{--                                                обращаться</p></div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
 
-                                <div class="title-popup__row form-row">
-                                    <div class="form-row__validation-wrap popup-input">
-                                        <input type="tel" id="popup-phone"
-                                               class="form-row__input form-input popup-input__input popup-input__input--tel js_phone_input"
-                                               maxlength="25" data-mask="(999) 999-99-99" name="phone">
-                                        <div class="form-row__tooltip-wrap form-row__tooltip-wrap--popup-none"><p
-                                                    class="form-row__tooltip form-row__tooltip--border">Телефонный номер
-                                                для связи</p></div>
-                                        <label class="popup-input__label popup-input__label--tel"
-                                               for="popup-phone"><span class="popup-input__label-text">+7</span></label>
-                                    </div>
-                                </div>
-                                <div class="title-popup__row title-popup__row--btn">
-                                    <input type="submit" value="УЗНАТЬ ПОДРОБНЕЕ"
-                                           class="title-popup__btn form-row__send-form button button--pink send-form">
-                                </div>
-                            </div>
+{{--                                <div class="title-popup__row form-row">--}}
+{{--                                    <div class="form-row__validation-wrap popup-input">--}}
+{{--                                        <input type="tel" id="popup-phone"--}}
+{{--                                               class="form-row__input form-input popup-input__input popup-input__input--tel js_phone_input"--}}
+{{--                                               maxlength="25" data-mask="(999) 999-99-99" name="phone">--}}
+{{--                                        <div class="form-row__tooltip-wrap form-row__tooltip-wrap--popup-none"><p--}}
+{{--                                                    class="form-row__tooltip form-row__tooltip--border">Телефонный номер--}}
+{{--                                                для связи</p></div>--}}
+{{--                                        <label class="popup-input__label popup-input__label--tel"--}}
+{{--                                               for="popup-phone"><span class="popup-input__label-text">+7</span></label>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                                <div class="title-popup__row title-popup__row--btn">--}}
+{{--                                    <input type="submit" value="УЗНАТЬ ПОДРОБНЕЕ"--}}
+{{--                                           class="title-popup__btn form-row__send-form button button--pink send-form">--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
                         </div>
                         <div class="title-popup__close js_popup_close"></div>
                     </div>
@@ -197,37 +198,38 @@
         </div>
         @endif
         <div class="title-popup__feedback-row mobile">
-            <p class="title-popup__interest-text mobile">ЗАИНТЕРЕСОВАЛИСЬ?</p>
-            <div class="title-popup__input-rows form-id mobile" id="popup_call2">
-                <input type="hidden" name="form" class="form-input" value="call">
-                <div class="title-popup__row form-row mobile">
-                    <div class="form-row__validation-wrap popup-input">
-                        <label class="popup-input__label popup-input__label--name mobile" for="popup-client-name2"><span
-                                    class="popup-input__label-text">Имя</span></label>
-                        <input type="text" name="client_name" required id="popup-client-name2"
-                               class="form-row__input form-input popup-input__input mobile">
-                        <div class="form-row__tooltip-wrap form-row__tooltip-wrap--popup-none"><p
-                                    class="form-row__tooltip form-row__tooltip--border">Как к вам обращаться</p></div>
-                    </div>
-                </div>
+            <a href="#flats" class="title-popup__go-to-layouts js_goto_anchor">ВЫБРАТЬ КВАРТИРУ</a>
+{{--            <p class="title-popup__interest-text mobile">ЗАИНТЕРЕСОВАЛИСЬ?</p>--}}
+{{--            <div class="title-popup__input-rows form-id mobile" id="popup_call2">--}}
+{{--                <input type="hidden" name="form" class="form-input" value="call">--}}
+{{--                <div class="title-popup__row form-row mobile">--}}
+{{--                    <div class="form-row__validation-wrap popup-input">--}}
+{{--                        <label class="popup-input__label popup-input__label--name mobile" for="popup-client-name2"><span--}}
+{{--                                    class="popup-input__label-text">Имя</span></label>--}}
+{{--                        <input type="text" name="client_name" required id="popup-client-name2"--}}
+{{--                               class="form-row__input form-input popup-input__input mobile">--}}
+{{--                        <div class="form-row__tooltip-wrap form-row__tooltip-wrap--popup-none"><p--}}
+{{--                                    class="form-row__tooltip form-row__tooltip--border">Как к вам обращаться</p></div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
 
-                <div class="title-popup__row form-row mobile">
-                    <div class="form-row__validation-wrap popup-input">
-                        <input type="tel" id="popup-phone2"
-                               class="form-row__input form-input popup-input__input popup-input__input--tel mobile js_phone_input"
-                               maxlength="25" data-mask="(999) 999-99-99" name="phone">
-                        <div class="form-row__tooltip-wrap form-row__tooltip-wrap--popup-none"><p
-                                    class="form-row__tooltip form-row__tooltip--border">Телефонный номер для связи</p>
-                        </div>
-                        <label class="popup-input__label popup-input__label--tel mobile" for="popup-phone2"><span
-                                    class="popup-input__label-text">+7</span></label>
-                    </div>
-                </div>
-                <div class="title-popup__row title-popup__row--btn">
-                    <input type="submit" value="УЗНАТЬ ПОДРОБНЕЕ"
-                           class="title-popup__btn form-row__send-form button button--pink send-form mobile">
-                </div>
-            </div>
+{{--                <div class="title-popup__row form-row mobile">--}}
+{{--                    <div class="form-row__validation-wrap popup-input">--}}
+{{--                        <input type="tel" id="popup-phone2"--}}
+{{--                               class="form-row__input form-input popup-input__input popup-input__input--tel mobile js_phone_input"--}}
+{{--                               maxlength="25" data-mask="(999) 999-99-99" name="phone">--}}
+{{--                        <div class="form-row__tooltip-wrap form-row__tooltip-wrap--popup-none"><p--}}
+{{--                                    class="form-row__tooltip form-row__tooltip--border">Телефонный номер для связи</p>--}}
+{{--                        </div>--}}
+{{--                        <label class="popup-input__label popup-input__label--tel mobile" for="popup-phone2"><span--}}
+{{--                                    class="popup-input__label-text">+7</span></label>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="title-popup__row title-popup__row--btn">--}}
+{{--                    <input type="submit" value="УЗНАТЬ ПОДРОБНЕЕ"--}}
+{{--                           class="title-popup__btn form-row__send-form button button--pink send-form mobile">--}}
+{{--                </div>--}}
+{{--            </div>--}}
         </div>
     </section>
 
