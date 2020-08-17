@@ -123,14 +123,14 @@ $(function () {
         var anchor = path.split('/')[4];
         setTimeout(function () {
             $('html, body').stop().animate({
-                scrollTop: $('#'+anchor).offset().top-120
+                scrollTop: $('#'+anchor).offset().top-110
             }, 1000);
         }, 500);
     }
 
     $('.js_goto_anchor').bind("click", function(e){
         $('html, body').stop().animate({
-            scrollTop: $($(this).attr('href')).offset().top-120
+            scrollTop: $($(this).attr('href')).offset().top-110
         }, 1000);
         e.preventDefault();
         if ($window.width() <= 940){
